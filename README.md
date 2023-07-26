@@ -1,6 +1,6 @@
 # Flame's Hub 🔥
 
-Script Hub that will support underrated games with OP features.
+Script Hub that will support various games with OP features.
 
 # Credits 👀
 Discord: ThroughTheFireAndFlames#9925 | Scripter/Owner
