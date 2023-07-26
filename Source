@@ -1,5 +1,5 @@
 --// Flame's Hub 🔥\\--
--- getgenv().ProtectionMode = true
+-- getgenv().Protection_Mode = true
 local AutoExec = game
 
 repeat wait() until AutoExec:IsLoaded();
@@ -17,6 +17,8 @@ end
 -- 1. By publishing this project Open Source, I lose my privileges of ownership due to many skids able to copy my source. You are allowed to use some of its features but you must credit me.
 -- 2. Some of its feature will not work due to your exploit not supporting some of its functions like "setclipboard".
 -- 3. Some exploits like Valyse will not show the emojis and instead show them as "?". Better to use Fluxus, Or Electron cause they show emojis + support the functions.
+-- 4. This script updates a lot and there might be major changes.
+-- 5. 
 
 --// Credits 👀\\
 -- Discord: ThroughTheFireAndFlames#9925 | Scripter/Owner
@@ -24,9 +26,10 @@ end
 -- V3rmillion: Twink | https://v3rmillion.net/member.php?action=profile&uid=1078854 | UI Library 👍
 -- Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 --//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\--
-getgenv().ForbiddenWords = {"hack","exploit","script","report","cheat","executor","skid","owner","creator","admin","staff","anti","mod"};
+getgenv().ForbiddenWords = {"hack","exploit","script","report","cheat","executor","skid","owner","creator","admin","staff","mod"};
 
-if getgenv().ProtectionMode == true then
+task.spawn(function()
+if getgenv().Protection_Mode == true then
 getgenv().Reaction = function() -- Serverhopper: Was not made by me but used rightfully as a open source tool for everyone to look at.
         local HttpService, TPService = game:GetService("HttpService"), game:GetService("TeleportService");
         local OtherServers = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100"));
@@ -67,7 +70,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/AntiReport/ma
 else
     return
 end
+end)
 
+--// Anti afk \\--
 task.spawn(function()
     if getconnections or setclipboard then
         for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
