@@ -95,10 +95,11 @@ local Notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/insaned
 local Supported = {
     Project_Menacing = 5910449407,
     Soul_Cultivation = 12454097560,
+    Chainsaw_ManDH = 11345435986,
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -121,8 +122,6 @@ local FirstButton = FirstPage.AddButton("Discord: Flames 🔥 | Scripter", funct
 	end
 end);
 ----------------------------------------------------------------------------------------------------------
-
-local FirstLabel = FirstPage.AddLabel("Credits 👀");
 local FirstButton = FirstPage.AddButton("Github: insanedude59 | Notification UI 👍", function()
 	if setclipboard then
 	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
@@ -137,6 +136,49 @@ local FirstButton = FirstPage.AddButton("V3rmillion: Twink | UI Library 👍", f
 	if setclipboard then
 	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	    setclipboard("https://v3rmillion.net/member.php?action=profile&uid=1078854");
+	else
+	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	end
+end);
+-----------------------------------------------------------------------------------------------------
+local FirstLabel = FirstPage.AddLabel("Useful Scripts ⚡");
+local FirstButton = FirstPage.AddButton("Health esp", function()
+-- xiba 4/4/2023
+-- join XCT for more scripts
+-- https://discord.gg/Dgp598affj
+
+local function ApplyESP(v)
+    if v.Character and v.Character:FindFirstChildOfClass'Humanoid' then
+        v.Character.Humanoid.NameDisplayDistance = 9e9
+        v.Character.Humanoid.NameOcclusion = "NoOcclusion"
+        v.Character.Humanoid.HealthDisplayDistance = 9e9
+        v.Character.Humanoid.HealthDisplayType = "AlwaysOn"
+        v.Character.Humanoid.Health = v.Character.Humanoid.Health -- triggers changed
+    end
+ end
+ for i,v in pairs(game.Players:GetPlayers()) do
+    ApplyESP(v)
+    v.CharacterAdded:Connect(function()
+        task.wait(0.33)
+        ApplyESP(v)
+    end)
+ end
+
+ game.Players.PlayerAdded:Connect(function(v)
+    ApplyESP(v)
+    v.CharacterAdded:Connect(function()
+        task.wait(0.33)
+        ApplyESP(v)
+    end)
+ end)
+end);
+-----------------------------------------------------------------------------------------------------
+
+local FirstLabel = FirstPage.AddLabel("My Scripts 🔥");
+local FirstButton = FirstPage.AddButton("Infinite Script Storage V2 [Store scripts]", function()
+    if setclipboard then
+	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	    setclipboard("https://github.com/Lvl9999/ScriptStorageV2/blob/main/README.md");
 	else
 	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	end
@@ -564,4 +606,42 @@ local FiveLabel = FivePage.AddLabel("[+] Auto Harvest 🧑🏿‍🌾");
 local FiveLabel = FivePage.AddButton("Working On This... 🟡", function()
     -- In Maintenance
 end);
+end
+-------------------------------------------------------------------------------------
+
+--// Chainsaw Man: Devil's Heart \\--
+if game.PlaceId == Supported.Chainsaw_ManDH then
+    task.spawn(function()
+    wait(3);
+    Notif:Notification("Game Detected ⚠️", "Chainsaw Man Devil's Heart  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+    --// Main Pages \\--
+local SecondPage = MainUI.AddPage("Parrying");
+local SecondAndHalfPage = MainUI.AddPage("Farming");
+
+local SecondLabel = SecondPage.AddLabel("[+] Parries");
+local SecondButton = SecondPage.AddButton("Auto Parry 🙍‍♂️ [Players]", function()
+	task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
+	end);
+    getgenv().Distance = 25
+    getgenv().AutoParry = true
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawManDevilAutoParry"))();
+end);
+local SecondButton = SecondPage.AddButton("Auto Parry 🐞 [Npcs]", function()
+	task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
+	end);
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoParryNpcsChainsawManDevilHeart"))();
+end);
+
+local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash 💸");
+local SecondAndHalfLabel = SecondAndHalfPage.AddButton("Autofarm Fiends  🦟", function()
+	task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
+	end);
+    getgenv().Mantis = {"Ant Fiend","Mantis Shrimp Fiend"}
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawAutofarmDevilHeart"))();
+end);
+
 end
