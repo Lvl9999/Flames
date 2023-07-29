@@ -18,7 +18,6 @@ end
 -- 2. Some of its feature will not work due to your exploit not supporting some of its functions like "setclipboard".
 -- 3. Some exploits like Valyse will not show the emojis and instead show them as "?". Better to use Fluxus, Or Electron cause they show emojis + support the functions.
 -- 4. This script updates a lot and there might be major changes.
--- 5. 
 
 --// Credits 👀\\
 -- Discord: ThroughTheFireAndFlames#9925 | Scripter/Owner
@@ -180,17 +179,6 @@ local function ApplyESP(v)
  end)
 end);
 -----------------------------------------------------------------------------------------------------
-
-local FirstLabel = FirstPage.AddLabel("My Scripts 🔥");
-local FirstButton = FirstPage.AddButton("Infinite Script Storage V2 [Store scripts]", function()
-    if setclipboard then
-	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	    setclipboard("https://github.com/Lvl9999/ScriptStorageV2/blob/main/README.md");
-	else
-	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	end
-end);
---------------------------------------------------
 --// 🟢 Project Menacing \\--
 if game.PlaceId == Supported.Project_Menacing then
 task.spawn(function()
