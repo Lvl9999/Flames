@@ -375,7 +375,7 @@ if game.PlaceId == Supported.Project_Menacing then
     -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm 👀  [Open Source]");
-    local ThirdButton = ThirdPage.AddButton("Link to Script 🔗", function()
+    local ThirdButton = ThirdPage.AddButton("Link to Script 📌", function()
         task.spawn(function()
             Notif:Notification("Flame's Hub 🔥", 'Copied to clipboard 📋', "GothamSemibold", "Gotham", 2.5);
         end);
