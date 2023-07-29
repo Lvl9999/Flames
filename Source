@@ -127,7 +127,7 @@ local FirstButton = FirstPage.AddButton("Discord: Flames 🔥 | Scripter", funct
 	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	end
 end);
-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 local FirstButton = FirstPage.AddButton("Github: insanedude59 | Notification UI 👍", function()
 	if setclipboard then
 	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
