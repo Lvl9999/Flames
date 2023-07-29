@@ -105,18 +105,13 @@ end
 
 local MainUI = UILibrary.Load("Flame's Hub 🔥");
 local FirstPage = MainUI.AddPage("Home");
+local ScriptX = MainUI.AddPage("Scripts");
 
 task.spawn(function()
     Notif:Notification("Flame's Hub 🔥", "Loaded Successfully  ✅", "GothamSemibold", "Gotham", 2.5);
 end)
 
-local FirstButton = FirstPage.AddButton("Feedback 👍 [GUI]", function()
--- Credits: Chatgpt
-
--- Do not troll please
-getgenv().WebH = "https://discord.com/api/webhooks/1134784193109430376/ej1qCgdWKkYgtrV4a6QJqzniDT6YckTXNTNGJ7bnMva14oofVXppygamKyQ4_s71zifq";
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/Feedback"))();
-end);
+local FirstLabel = FirstPage.AddLabel("Credits 👀");
 local FirstButton = FirstPage.AddButton("Discord: Flames 🔥 | Scripter", function()
 	if setclipboard then
 	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
@@ -127,7 +122,7 @@ local FirstButton = FirstPage.AddButton("Discord: Flames 🔥 | Scripter", funct
 	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	end
 end);
------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 local FirstButton = FirstPage.AddButton("Github: insanedude59 | Notification UI 👍", function()
 	if setclipboard then
 	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
@@ -146,9 +141,18 @@ local FirstButton = FirstPage.AddButton("V3rmillion: Twink | UI Library 👍", f
 	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	end
 end);
+
+local FirstLabel = FirstPage.AddLabel("Attention ⚠️");
+local FirstButton = FirstPage.AddButton("Feedback 📝 [GUI]", function()
+    -- Credits: Chatgpt
+    -- Do not troll please
+    getgenv().WebH = "https://discord.com/api/webhooks/1134784193109430376/ej1qCgdWKkYgtrV4a6QJqzniDT6YckTXNTNGJ7bnMva14oofVXppygamKyQ4_s71zifq";
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/Feedback"))();
+end);
+
 -----------------------------------------------------------------------------------------------------
-local FirstLabel = FirstPage.AddLabel("Useful Scripts ⚡");
-local FirstButton = FirstPage.AddButton("Health esp", function()
+local ScriptXLabel = ScriptX.AddLabel("Quick stuff ⚡");
+local ScriptXButton = ScriptX.AddButton("Health esp", function()
 -- xiba 4/4/2023
 -- join XCT for more scripts
 -- https://discord.gg/Dgp598affj
@@ -178,465 +182,542 @@ local function ApplyESP(v)
     end)
  end)
 end);
+
+local ScriptXButton = ScriptX.AddButton("Rejoin", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Rejoining...', "GothamSemibold", "Gotham", 0.5);
+	end);
+    loadstring(game:HttpGet("https://pastebin.com/raw/ZHz8FHJG"))();
+end);
+
+local ScriptXButton = ScriptX.AddButton("Infinite Yield", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 1);
+	end);
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
+end);
+
+local ScriptXButton = ScriptX.AddButton("Remote Spy", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 1);
+	end);
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))();
+end);
+
+local ScriptXButton = ScriptX.AddButton("Dark Explorer", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 1);
+	end);
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))();
+end);
+
+local ScriptXButton = ScriptX.AddButton("GigaChad Hub V4", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 1);
+	end);
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/OWJBWKQLAISH/GigaChad-Hub/main/Gigachad%20Hub%20V4'))();
+end);
+
+local ScriptXButton = ScriptX.AddButton("Teleport Nearest Head", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/TeleportNearest/main/Universal"))();
+end);
+
+local ScriptXLabel = ScriptX.AddLabel("My Scripts 👀🔥  [Clipboard]");
+local ScriptXButton = ScriptX.AddButton("Dodge Key V1", function()
+	if setclipboard then
+	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	    setclipboard("https://scriptblox.com/script/Universal-Script-Dodge-Key-V1-11970");
+	else
+	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	end
+end);
+
+local ScriptXButton = ScriptX.AddButton("Universal Autofarmer", function()
+	if setclipboard then
+	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	    setclipboard("https://scriptblox.com/script/Universal-Script-Universal-Autofarmer-11684");
+	else
+	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	end
+end);
+
+local ScriptXButton = ScriptX.AddButton("Universal Block Holder", function()
+	if setclipboard then
+	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	    setclipboard("https://scriptblox.com/script/Universal-Script-Universal-Auto-Block-Holder-11464");
+	else
+	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	end
+end);
+
+local ScriptXButton = ScriptX.AddButton("Infinite Script Storage V2", function()
+	if setclipboard then
+	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	    setclipboard("https://scriptblox.com/script/Universal-Script-Infinite-Script-Storage-V2-11386");
+	else
+	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
+	end
+end);
+
+-----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 --// 🟢 Project Menacing \\--
 if game.PlaceId == Supported.Project_Menacing then
-task.spawn(function()
-    wait(3);
-	Notif:Notification("Game Detected ⚠️", "Project Menacing  🔥", "GothamSemibold", "Gotham", 2.5);
-end)
---// Main Pages \\--
-local SecondPage = MainUI.AddPage("Shop");
-local ThirdPage = MainUI.AddPage("Farming");
-local FourthPage = MainUI.AddPage("Teleports");
------------------------------------------------
-local SecondLabel = SecondPage.AddLabel("[+] Buy 💰");
-local SecondButton = SecondPage.AddButton("Buy Arrow 🎯 [250 ¥]", function()
-	local args = {[1]="Stand Arrow"};
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
-end);
------------------------------------------------------------------------------------
-
-local SecondButton = SecondPage.AddButton("Buy Fruit 🍎 [250 ¥]", function()
-	local args = {[1]="Rokakaka Fruit"};
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
-end);
------------------------------------------------------------------------------------
-
-local SecondButton = SecondPage.AddButton("Buy DIO's Diary 📕 [15,000 ¥]", function()
-	local args = {[1]="DIO's Diary"};
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
-end);
------------------------------------------------------------------------------------
-
-local SecondButton = SecondPage.AddButton("Buy DIO's Bone 🦴 [30,000 ¥]", function()
-	local args = {[1]="DIO's Bone"};
-	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
-end);
------------------------------------------------------------------------------------
-
-local SecondLabel = SecondPage.AddLabel("[+] Storage 📦");
-local SecondButton = SecondPage.AddButton("Stand Storage 📦", function()
-	local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(71.73101043701172, 27.405519485473633, -187.82508850097656)}):Play();
-	wait(0.35);
-	for i, v in pairs(game:GetService("Workspace").NPC.Rohan:GetDescendants()) do
-		if v:IsA("ProximityPrompt") then
-			fireproximityprompt(v, 0);
-		end
-	end
-	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
-end);
------------------------------------------------------------------------------------
-
-local SecondButton = SecondPage.AddButton("Items Storage 📦", function()
-	local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(31.423873901367188, 27.663740158081055, -71.35455322265625)}):Play();
-	wait(0.35);
-	for i, v in pairs(game:GetService("Workspace").NPC.Darby:GetDescendants()) do
-		if v:IsA("ProximityPrompt") then
-			fireproximityprompt(v, 0);
-		end
-	end
-	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
-end);
------------------------------------------------------------------------------------
-
-local ThirdLabel = ThirdPage.AddLabel("[+] Items 🛍️");
-local FirstToggle = ThirdPage.AddToggle("Teleport Arrow 🎯", false, function(Value)
-	getgenv().AutofarmArrow = Value;
-	while getgenv().AutofarmArrow == true do
-		wait(0.1);
-		if not game:GetService("Workspace"):FindFirstChild("Stand Arrow") then
-			getgenv().AutofarmArrow = false;
-			Notif:Notification("Flame's Hub 🔥", "Stand Arrow not found", "GothamSemibold", "Gotham", 1);
-		end
-		game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Stand Arrow"].Position);
-		wait(0.35);
-		for i, v in pairs(game:GetService("Workspace")["Stand Arrow"]:GetDescendants()) do
-			if v:IsA("ProximityPrompt") then
-				fireproximityprompt(v, 0);
-			end
-		end
-	end
-end);
------------------------------------------------------------------------------------
-
-local FirstToggle = ThirdPage.AddToggle("Teleport Fruit 🍎", false, function(Value)
-	getgenv().AutofarmFruit = Value;
-	while getgenv().AutofarmFruit == true do
-		wait(0.1);
-		if not game:GetService("Workspace"):FindFirstChild("Rokakaka Fruit") then
-			getgenv().AutofarmFruit = false;
-			Notif:Notification("Flame's Hub 🔥", "Rokakaka Fruit not found", "GothamSemibold", "Gotham", 1);
-		end
-		game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Rokakaka Fruit"].Position);
-		wait(0.35);
-		for i, v in pairs(game:GetService("Workspace")["Rokakaka Fruit"]:GetDescendants()) do
-			if v:IsA("ProximityPrompt") then
-				fireproximityprompt(v, 0);
-			end
-		end
-	end
-end);
------------------------------------------------------------------------------------
-
-local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quest Farm 👨🏿‍🌾 👴🏻");
-local ThirdButton = ThirdPage.AddButton("Street Thugs  👨🏿‍🦱", function()
-	task.spawn(function()
-		Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
-	end);
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoFarmProjectMenacing"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm 👀  [Open Source]");
-local ThirdButton = ThirdPage.AddButton("Link to Script 🔗", function()
-	task.spawn(function()
-		Notif:Notification("Flame's Hub 🔥", 'Copied to clipboard 📋', "GothamSemibold", "Gotham", 2.5);
-	end);
-	setclipboard("https://scriptblox.com/script/Project-Menacing-Stand-Autofarm-Open-Source-11506");	
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Train Station 🚉", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-31.46343421936035, 28.627548217773438, -215.8847198486328)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Truck Kun 🚛", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(123.78990173339844, 38.95568084716797, -180.37232971191406)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Clothing Shop 🛒👕", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(124.7226791381836, 28.359607696533203, -116.27722930908203)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Highest Point of View 🦅", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-29.07377815246582, 112.57449340820312, -222.1446533203125)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Morioh High School 🏫 | Basketball Area 🏀", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(252.43658447265625, 27.491676330566406, -90.378173828125)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Yoshikage Kira's House 🏡", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-266.17449951171875, 27.66372299194336, -9.87911319732666)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Thugs Area 👨🏿‍🦱", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(69.41024780273438, 27.48766326904297, -359.31878662109375)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Hill ⛰️", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(431.0728454589844, 62.37518310546875, -0.14900462329387665)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local FourthButton = FourthPage.AddButton("Safe Zone 🦺", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-1735.9013671875, 25.64971160888672, -236.9815216064453)}):Play();
-end);
-
-end
-
-
---------------------------------------------------
---// 🟢 Soul Cultivation \\--
-if game.PlaceId == Supported.Soul_Cultivation then
     task.spawn(function()
-    wait(3);
-    Notif:Notification("Game Detected ⚠️", "Soul Cultivation  🔥", "GothamSemibold", "Gotham", 2.5);
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Project Menacing  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
     --// Main Pages \\--
-local SecondPage = MainUI.AddPage("Shop");
-local SecondAndHalfPage = MainUI.AddPage("Misc");
-local ThirdPage = MainUI.AddPage("Farming");
-local FourthPage = MainUI.AddPage("Training");
-local FivePage = MainUI.AddPage("Harvesting");
-
-------------------------------------------------
-
-local SecondLabel = SecondPage.AddLabel("[+] Shop 🛒");
-local SecondLabel = SecondPage.AddButton("Mod Panel 🤧 [Fake]", function()
-    game:GetService("Players").LocalPlayer.PlayerGui.ModPanel.Frame.Visible = true
-end);
------------------------------------------------------------------------------------
-local SecondLabel = SecondPage.AddButton("Clothing Shop 🛒👕 [Bobux]", function()
-    game:GetService("Players").LocalPlayer.PlayerGui.ClothingGui.Frame.Visible = true
-end);
------------------------------------------------------------------------------------
-
-local SecondLabel = SecondPage.AddButton("Robux Store 💵 [Robux]", function()
-    game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.Frame.Visible = true
-end);
------------------------------------------------------------------------------------
-
-local SecondLabel = SecondPage.AddButton("Book Shop 📚", function()
-    game:GetService("Players").LocalPlayer.PlayerGui.BookShop.Frame.Visible = true
-end);
------------------------------------------------------------------------------------
-local ThirdLabel = ThirdPage.AddLabel("[+] OP Stuff ⚠️");
-local ThirdLabel = ThirdPage.AddButton("NPC Hitbox", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulzInfHitBox"))();
-end);
-
-local ThirdToggle = ThirdPage.AddToggle("Auto Clicker [Use hitbox]", false, function(Value)
-    getgenv().KillAura = Value
-    while getgenv().KillAura == true do wait(0.001)
-        local args = {[1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Right Arm")};
-        game:GetService("Players").LocalPlayer.Character.Combat.Combo.C0:FireServer(unpack(args));
-    
-        local args = {[1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Right Leg")};
-        game:GetService("Players").LocalPlayer.Character.Combat.Combo.C3:FireServer(unpack(args));
-    
-        local args = {[1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Right Leg")};
-        game:GetService("Players").LocalPlayer.Character.Combat.Combo.C1:FireServer(unpack(args));
-    end
-end);
-
------------------------------------------------------------------------------------
-
-local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Stuff❗");
-local SecondAndHalfLabel = SecondAndHalfPage.AddButton("No Cooldown", function()
-    -- Credits: DekuDimz [Owner of V.G Hub] :3
-	local Cooldown; Cooldown = hookfunction(wait, function(v)
-        v = 0;
-        return Cooldown(v);
+    local SecondPage = MainUI.AddPage("Shop");
+    local ThirdPage = MainUI.AddPage("Farming");
+    local FourthPage = MainUI.AddPage("Teleports");
+    -----------------------------------------------
+    local SecondLabel = SecondPage.AddLabel("[+] Buy 💰");
+    local SecondButton = SecondPage.AddButton("Buy Arrow 🎯 [250 ¥]", function()
+        local args = {[1]="Stand Arrow"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
     end);
-end);
-local SecondAndHalfLabel = SecondAndHalfPage.AddButton("Hitbox Players", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/UniversalPlayerHitbox"))();
-end);
-
-
-local ThirdLabel = ThirdPage.AddLabel("[+] Auto Farm 🤑");
-local ThirdLabel = ThirdPage.AddButton("Starter Area [Teleport]", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(269.7801818847656, 70.9062271118164, -305.5054626464844)}):Play();
-end);
-
-local ThirdToggle = ThirdPage.AddToggle("Bandits 🧔🏿 [Required Rank: Mortal I]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Bandit"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Greg - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+    -----------------------------------------------------------------------------------
+    
+    local SecondButton = SecondPage.AddButton("Buy Fruit 🍎 [250 ¥]", function()
+        local args = {[1]="Rokakaka Fruit"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local SecondButton = SecondPage.AddButton("Buy DIO's Diary 📕 [15,000 ¥]", function()
+        local args = {[1]="DIO's Diary"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local SecondButton = SecondPage.AddButton("Buy DIO's Bone 🦴 [30,000 ¥]", function()
+        local args = {[1]="DIO's Bone"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local SecondLabel = SecondPage.AddLabel("[+] Storage 📦");
+    local SecondButton = SecondPage.AddButton("Stand Storage 📦", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(71.73101043701172, 27.405519485473633, -187.82508850097656)}):Play();
+        wait(0.35);
+        for i, v in pairs(game:GetService("Workspace").NPC.Rohan:GetDescendants()) do
+            if v:IsA("ProximityPrompt") then
+                fireproximityprompt(v, 0);
+            end
+        end
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local SecondButton = SecondPage.AddButton("Items Storage 📦", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(31.423873901367188, 27.663740158081055, -71.35455322265625)}):Play();
+        wait(0.35);
+        for i, v in pairs(game:GetService("Workspace").NPC.Darby:GetDescendants()) do
+            if v:IsA("ProximityPrompt") then
+                fireproximityprompt(v, 0);
+            end
+        end
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdLabel = ThirdPage.AddLabel("[+] Items 🛍️");
+    local FirstToggle = ThirdPage.AddToggle("Teleport Arrow 🎯", false, function(Value)
+        getgenv().AutofarmArrow = Value;
+        while getgenv().AutofarmArrow == true do
+            wait(0.1);
+            if not game:GetService("Workspace"):FindFirstChild("Stand Arrow") then
+                getgenv().AutofarmArrow = false;
+                Notif:Notification("Flame's Hub 🔥", "Stand Arrow not found", "GothamSemibold", "Gotham", 1);
+            end
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Stand Arrow"].Position);
+            wait(0.35);
+            for i, v in pairs(game:GetService("Workspace")["Stand Arrow"]:GetDescendants()) do
+                if v:IsA("ProximityPrompt") then
+                    fireproximityprompt(v, 0);
+                end
+            end
+        end
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FirstToggle = ThirdPage.AddToggle("Teleport Fruit 🍎", false, function(Value)
+        getgenv().AutofarmFruit = Value;
+        while getgenv().AutofarmFruit == true do
+            wait(0.1);
+            if not game:GetService("Workspace"):FindFirstChild("Rokakaka Fruit") then
+                getgenv().AutofarmFruit = false;
+                Notif:Notification("Flame's Hub 🔥", "Rokakaka Fruit not found", "GothamSemibold", "Gotham", 1);
+            end
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Rokakaka Fruit"].Position);
+            wait(0.35);
+            for i, v in pairs(game:GetService("Workspace")["Rokakaka Fruit"]:GetDescendants()) do
+                if v:IsA("ProximityPrompt") then
+                    fireproximityprompt(v, 0);
+                end
+            end
+        end
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quest Farm 👨🏿‍🌾 👴🏻");
+    local ThirdButton = ThirdPage.AddButton("Street Thugs  👨🏿‍🦱", function()
+        task.spawn(function()
+            Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
+        end);
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoFarmProjectMenacing"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm 👀  [Open Source]");
+    local ThirdButton = ThirdPage.AddButton("Link to Script 🔗", function()
+        task.spawn(function()
+            Notif:Notification("Flame's Hub 🔥", 'Copied to clipboard 📋', "GothamSemibold", "Gotham", 2.5);
+        end);
+        setclipboard("https://scriptblox.com/script/Project-Menacing-Stand-Autofarm-Open-Source-11506");	
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Train Station 🚉", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-31.46343421936035, 28.627548217773438, -215.8847198486328)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Truck Kun 🚛", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(123.78990173339844, 38.95568084716797, -180.37232971191406)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Clothing Shop 🛒👕", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(124.7226791381836, 28.359607696533203, -116.27722930908203)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Highest Point of View 🦅", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-29.07377815246582, 112.57449340820312, -222.1446533203125)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Morioh High School 🏫 | Basketball Area 🏀", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(252.43658447265625, 27.491676330566406, -90.378173828125)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Yoshikage Kira's House 🏡", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-266.17449951171875, 27.66372299194336, -9.87911319732666)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Thugs Area 👨🏿‍🦱", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(69.41024780273438, 27.48766326904297, -359.31878662109375)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Hill ⛰️", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(431.0728454589844, 62.37518310546875, -0.14900462329387665)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local FourthButton = FourthPage.AddButton("Safe Zone 🦺", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-1735.9013671875, 25.64971160888672, -236.9815216064453)}):Play();
+    end);
+    
     end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdToggle = ThirdPage.AddToggle("Rogue Soldiers 👦🏻 [Required Rank: Qi Codenstation I]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Rogue"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Brickman - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdToggle = ThirdPage.AddToggle("Miners ⛏️ [Required Rank: Qi Codenstation IV]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Nas"
-    getgenv().Quest = function()
-		-- No quest for this NPC
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdToggle = ThirdPage.AddToggle("Strong Miners ⛏️💪[Required Rank: Soul Formation VI]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Stronger"
-    getgenv().Quest = function()
-		-- No quest for this NPC
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdLabel = ThirdPage.AddButton("Advanced Area [Teleport]", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
-	tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(1795.91943359375, 78.19364166259766, 1116.5872802734375)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local ThirdToggle = ThirdPage.AddToggle("Poachers [Required Rank: Core Formation X]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Poache"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Nick - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdToggle = ThirdPage.AddToggle("Evil Cultivators [Required Rank: Nascent Soul V]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Evil Cult"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Monk - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdLabel = ThirdPage.AddButton("Intermediate Area [Teleport]", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
-    tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(1624.8345947265625, 76.9999771118164, 4450.787109375)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local ThirdToggle = ThirdPage.AddToggle("Delinquents [Required Rank: Soul Transformation I]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Delin"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Rick - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
------------------------------------------------------------------------------------
-
-local ThirdLabel = ThirdPage.AddButton("Heavenly Area [Teleport]", function()
-	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
-    tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-709.099853515625, 72.9999771118164, 4017.88232421875)}):Play();
-end);
------------------------------------------------------------------------------------
-
-local ThirdToggle = ThirdPage.AddToggle("Heavenly Cultivator [Required Rank: Transcendent I]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Heavenly"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Junior  - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
-
-local ThirdToggle = ThirdPage.AddToggle("Sect Elders [Required Rank: Celestial Immortal I]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Sect"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Elder - Quest (2)"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
-
-local ThirdLabel = ThirdPage.AddButton("Heavenly Area (2) [Teleport]", function()
-    tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(7, Enum.EasingStyle.Linear)
-    tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-2836.76220703125, 69.9999771118164, 4243.4140625)}):Play();
-end);
-
-local ThirdToggle = ThirdPage.AddToggle("Lesser Angels [Required Rank: Lesser Divinity X]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Less"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Damon - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
-
-local ThirdToggle = ThirdPage.AddToggle("Greater Angels [Required Rank: Greater Divinity X]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Greater"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Damon (2) - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
-
-local ThirdToggle = ThirdPage.AddToggle("Greater Angels [Required Rank: Greater Divinity X]", false, function(Value)
-	getgenv().Farming = Value
-    getgenv().NPC = "Greater"
-    getgenv().Quest = function()
-        local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Damon (2) - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
-        game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
-    end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
-end);
-
-local FourthLabel = FourthPage.AddLabel("[+] Auto Train 💪");
-local FourthToggle = FourthPage.AddToggle("Meditation 🧘‍♂️[Not as good but you can play w it.]", false, function(Value)
-    getgenv().Meditate = Value
-    while getgenv().Meditate do wait(0.0001)
-        local args = {[1] = true}
-        game:GetService("ReplicatedStorage"):WaitForChild("Qi Remote Events"):WaitForChild("Cultivate"):FireServer(unpack(args))
-    end
-end)
-
-local FourthLabel = FourthPage.AddButton("Full Meditation 🧘‍♀️ [Best for AFK]", function()
-    getgenv().Press = function(v)
-        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-    end
-    Press("C");
-end);
--- Lazy to do the "Teleports" part
-
-local FiveLabel = FivePage.AddLabel("[+] Auto Harvest 🧑🏿‍🌾");
-local FiveLabel = FivePage.AddButton("Working On This... 🟡", function()
-    -- In Maintenance
-end);
-end
--------------------------------------------------------------------------------------
-
---// Chainsaw Man: Devil's Heart \\--
-if game.PlaceId == Supported.Chainsaw_ManDH then
-    task.spawn(function()
-    wait(3);
-    Notif:Notification("Game Detected ⚠️", "Chainsaw Man Devil's Heart  🔥", "GothamSemibold", "Gotham", 2.5);
+    
+    --------------------------------------------------
+    --// 🟢 Soul Cultivation \\--
+    if game.PlaceId == Supported.Soul_Cultivation then
+        task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Soul Cultivation  🔥", "GothamSemibold", "Gotham", 2.5);
+        end)
+        --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Shop");
+    local SecondAndHalfPage = MainUI.AddPage("Misc");
+    local ThirdPage = MainUI.AddPage("Farming");
+    local FourthPage = MainUI.AddPage("Training");
+    local FivePage = MainUI.AddPage("Harvesting");
+    
+    ------------------------------------------------
+    
+    local SecondLabel = SecondPage.AddLabel("[+] Shop 🛒");
+    local SecondLabel = SecondPage.AddButton("Mod Panel 🤧 [Fake]", function()
+        game:GetService("Players").LocalPlayer.PlayerGui.ModPanel.Frame.Visible = true
+    end);
+    -----------------------------------------------------------------------------------
+    local SecondLabel = SecondPage.AddButton("Clothing Shop 🛒👕 [Bobux]", function()
+        game:GetService("Players").LocalPlayer.PlayerGui.ClothingGui.Frame.Visible = true
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local SecondLabel = SecondPage.AddButton("Robux Store 💵 [Robux]", function()
+        game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.Frame.Visible = true
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local SecondLabel = SecondPage.AddButton("Book Shop 📚", function()
+        game:GetService("Players").LocalPlayer.PlayerGui.BookShop.Frame.Visible = true
+    end);
+    -----------------------------------------------------------------------------------
+    local ThirdLabel = ThirdPage.AddLabel("[+] OP Stuff ⚠️");
+    local ThirdLabel = ThirdPage.AddButton("NPC Hitbox", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulzInfHitBox"))();
+    end);
+    
+    local ThirdToggle = ThirdPage.AddToggle("Auto Clicker [Use hitbox]", false, function(Value)
+        getgenv().KillAura = Value
+        while getgenv().KillAura == true do wait(0.001)
+            local args = {[1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Right Arm")};
+            game:GetService("Players").LocalPlayer.Character.Combat.Combo.C0:FireServer(unpack(args));
+        
+            local args = {[1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Right Leg")};
+            game:GetService("Players").LocalPlayer.Character.Combat.Combo.C3:FireServer(unpack(args));
+        
+            local args = {[1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Right Leg")};
+            game:GetService("Players").LocalPlayer.Character.Combat.Combo.C1:FireServer(unpack(args));
+        end
+    end);
+    
+    -----------------------------------------------------------------------------------
+    
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Stuff❗");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddButton("No Cooldown", function()
+        -- Credits: DekuDimz [Owner of V.G Hub] :3
+        local Cooldown; Cooldown = hookfunction(wait, function(v)
+            v = 0;
+            return Cooldown(v);
+        end);
+    end);
+    local SecondAndHalfLabel = SecondAndHalfPage.AddButton("Hitbox Players", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/UniversalPlayerHitbox"))();
+    end);
+    
+    
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Farm 🤑");
+    local ThirdLabel = ThirdPage.AddButton("Starter Area [Teleport]", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(269.7801818847656, 70.9062271118164, -305.5054626464844)}):Play();
+    end);
+    
+    local ThirdToggle = ThirdPage.AddToggle("Bandits 🧔🏿 [Required Rank: Mortal I]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Bandit"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Greg - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdToggle = ThirdPage.AddToggle("Rogue Soldiers 👦🏻 [Required Rank: Qi Codenstation I]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Rogue"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Brickman - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdToggle = ThirdPage.AddToggle("Miners ⛏️ [Required Rank: Qi Codenstation IV]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Nas"
+        getgenv().Quest = function()
+            -- No quest for this NPC
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdToggle = ThirdPage.AddToggle("Strong Miners ⛏️💪[Required Rank: Soul Formation VI]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Stronger"
+        getgenv().Quest = function()
+            -- No quest for this NPC
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdLabel = ThirdPage.AddButton("Advanced Area [Teleport]", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(1795.91943359375, 78.19364166259766, 1116.5872802734375)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdToggle = ThirdPage.AddToggle("Poachers [Required Rank: Core Formation X]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Poache"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Nick - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdToggle = ThirdPage.AddToggle("Evil Cultivators [Required Rank: Nascent Soul V]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Evil Cult"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Monk - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdLabel = ThirdPage.AddButton("Intermediate Area [Teleport]", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(1624.8345947265625, 76.9999771118164, 4450.787109375)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdToggle = ThirdPage.AddToggle("Delinquents [Required Rank: Soul Transformation I]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Delin"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Rick - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdLabel = ThirdPage.AddButton("Heavenly Area [Teleport]", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-709.099853515625, 72.9999771118164, 4017.88232421875)}):Play();
+    end);
+    -----------------------------------------------------------------------------------
+    
+    local ThirdToggle = ThirdPage.AddToggle("Heavenly Cultivator [Required Rank: Transcendent I]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Heavenly"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Junior  - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    
+    local ThirdToggle = ThirdPage.AddToggle("Sect Elders [Required Rank: Celestial Immortal I]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Sect"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Elder - Quest (2)"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    
+    local ThirdLabel = ThirdPage.AddButton("Heavenly Area (2) [Teleport]", function()
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(7, Enum.EasingStyle.Linear)
+        tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-2836.76220703125, 69.9999771118164, 4243.4140625)}):Play();
+    end);
+    
+    local ThirdToggle = ThirdPage.AddToggle("Lesser Angels [Required Rank: Lesser Divinity X]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Less"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Damon - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    
+    local ThirdToggle = ThirdPage.AddToggle("Greater Angels [Required Rank: Greater Divinity X]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Greater"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Damon (2) - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    
+    local ThirdToggle = ThirdPage.AddToggle("Greater Angels [Required Rank: Greater Divinity X]", false, function(Value)
+        getgenv().Farming = Value
+        getgenv().NPC = "Greater"
+        getgenv().Quest = function()
+            local args = {[1] = workspace:WaitForChild("Quest NPCS"):WaitForChild("Damon (2) - Quest"):WaitForChild("HumanoidRootPart"):WaitForChild("QuestActivator"):WaitForChild("Quest")};
+            game:GetService("ReplicatedStorage"):WaitForChild("Quest Remote Events"):WaitForChild("EnableQuest"):FireServer(unpack(args));
+        end
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
+    end);
+    
+    local FourthLabel = FourthPage.AddLabel("[+] Auto Train 💪");
+    local FourthToggle = FourthPage.AddToggle("Meditation 🧘‍♂️[Not as good but you can play w it.]", false, function(Value)
+        getgenv().Meditate = Value
+        while getgenv().Meditate do wait(0.0001)
+            local args = {[1] = true}
+            game:GetService("ReplicatedStorage"):WaitForChild("Qi Remote Events"):WaitForChild("Cultivate"):FireServer(unpack(args))
+        end
     end)
-    --// Main Pages \\--
-local SecondPage = MainUI.AddPage("Parrying");
-local SecondAndHalfPage = MainUI.AddPage("Farming");
-
-local SecondLabel = SecondPage.AddLabel("[+] Parries");
-local SecondButton = SecondPage.AddButton("Auto Parry 🙍‍♂️ [Players]", function()
-	task.spawn(function()
-		Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
-	end);
-    getgenv().Distance = 25
-    getgenv().AutoParry = true
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawManDevilAutoParry"))();
-end);
-local SecondButton = SecondPage.AddButton("Auto Parry 🐞 [Npcs]", function()
-	task.spawn(function()
-		Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
-	end);
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoParryNpcsChainsawManDevilHeart"))();
-end);
-
-local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash 💸");
-local SecondAndHalfLabel = SecondAndHalfPage.AddButton("Autofarm Fiends  🦟", function()
-	task.spawn(function()
-		Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
-	end);
-    getgenv().Mantis = {"Ant Fiend","Mantis Shrimp Fiend"}
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawAutofarmDevilHeart"))();
-end);
-
-end
+    
+    local FourthLabel = FourthPage.AddButton("Full Meditation 🧘‍♀️ [Best for AFK]", function()
+        getgenv().Press = function(v)
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+        end
+        Press("C");
+    end);
+    -- Lazy to do the "Teleports" part
+    
+    local FiveLabel = FivePage.AddLabel("[+] Auto Harvest 🧑🏿‍🌾");
+    local FiveLabel = FivePage.AddButton("Working On This... 🟡", function()
+        -- In Maintenance
+    end);
+    end
+    -------------------------------------------------------------------------------------
+    
+    --// Chainsaw Man: Devil's Heart \\--
+    if game.PlaceId == Supported.Chainsaw_ManDH then
+        task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Chainsaw Man Devil's Heart  🔥", "GothamSemibold", "Gotham", 2.5);
+        end)
+        --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Parrying");
+    local SecondAndHalfPage = MainUI.AddPage("Farming");
+    
+    local SecondLabel = SecondPage.AddLabel("[+] Parries");
+    local SecondButton = SecondPage.AddButton("Auto Parry 🙍‍♂️ [Players]", function()
+        task.spawn(function()
+            Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
+        end);
+        getgenv().Distance = 25
+        getgenv().AutoParry = true
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawManDevilAutoParry"))();
+    end);
+    local SecondButton = SecondPage.AddButton("Auto Parry 🐞 [Npcs]", function()
+        task.spawn(function()
+            Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
+        end);
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoParryNpcsChainsawManDevilHeart"))();
+    end);
+    
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash 💸");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddButton("Autofarm Fiends  🦟", function()
+        task.spawn(function()
+            Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
+        end);
+        getgenv().Mantis = {"Ant Fiend","Mantis Shrimp Fiend"}
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawAutofarmDevilHeart"))();
+    end);
+    
+    end
