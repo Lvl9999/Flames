@@ -5,9 +5,9 @@ Script Hub that will support various games with OP features.
 ------------------------------------------------------------------------------------------
 # Supported games
 [GAMES]:
-[+] Project Menacing
-[+] Soul Cultivation
-[+] Chainsaw Man Devil Heart
+| Project Menacing
+| Soul Cultivation
+| Chainsaw Man Devil Heart
 
 -----------------------------------------------------------------------------------------
 # Credits 👀
