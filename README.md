@@ -8,7 +8,6 @@ Script Hub that will support various games with OP features.
 | Soul Cultivation
 | Chainsaw Man Devil Heart
 
------------------------------------------------------------------------------------------
 # Credits 👀
 Discord: ThroughTheFireAndFlames#9925 | Scripter/Owner
 
