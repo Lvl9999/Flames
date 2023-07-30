@@ -2,7 +2,6 @@
 
 Script Hub that will support various games with OP features.
 
-------------------------------------------------------------------------------------------
 # Supported games
 [GAMES]:
 | Project Menacing
