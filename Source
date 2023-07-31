@@ -26,6 +26,7 @@ end
 -- Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 --//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\--
 
+-- Credits to ao-0
 shared.LoaderTitle = "Flame's Hub 🔥"
 shared.LoaderKeyFrames = {
    [1] = {0.5, 100},
