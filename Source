@@ -744,22 +744,8 @@ local vim = game:GetService'VirtualInputManager'
 local x = game:GetService("Players").LocalPlayer.PlayerGui.IntroGui.PlayBtn
 vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
 
-    local SecondPage = MainUI.AddPage("Stuff");
     local SecondAndHalfPage = MainUI.AddPage("Training");
     local ThirdPage = MainUI.AddPage("Teleports 🟠");
-
-    local SecondLabel = SecondPage.AddLabel("[+] Misc");
-    local SecondButton = SecondPage.AddButton("Walkspeed Bypass", function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/kzjFZkYr"))();
-    end);
-
-    local SecondButton = SecondPage.AddButton("No Cooldown", function()
-        -- Credits: DekuDimz [Owner of V.G Hub] :3
-        local Cooldown; Cooldown = hookfunction(wait, function(v)
-            v = 0;
-            return Cooldown(v);
-        end);
-    end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Untouchable  👀");
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("God Mode 🔥", false, function(Value)
