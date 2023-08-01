@@ -701,6 +701,7 @@ if game.PlaceId == Supported.Project_Menacing then
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Chainsaw Man Devil's Heart  🔥", "GothamSemibold", "Gotham", 2.5);
         end)
+
         --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Parrying");
     local SecondAndHalfPage = MainUI.AddPage("Farming");
@@ -737,12 +738,15 @@ if game.PlaceId == Supported.SPTS_Endless then
         wait(3);
         Notif:Notification("Game Detected ⚠️", "SPTS ENDLESS 🔥", "GothamSemibold", "Gotham", 2.5);
     end)
+    -- Auto load for auto exeucte
+-- Thanks to a friend for giving me this
+local vim = game:GetService'VirtualInputManager' 
+local x = game:GetService("Players").LocalPlayer.PlayerGui.IntroGui.PlayBtn
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
 
     local SecondPage = MainUI.AddPage("Stuff");
     local SecondAndHalfPage = MainUI.AddPage("Training");
-    local ThirdPage = MainUI.AddPage("Teleports");
-    local FourthPage = MainUI.AddPage("XXX");
-    local FivePage = MainUI.AddPage("XXX");
+    local ThirdPage = MainUI.AddPage("Teleports 🟠");
 
     local SecondLabel = SecondPage.AddLabel("[+] Misc");
     local SecondButton = SecondPage.AddButton("Walkspeed Bypass", function()
@@ -757,14 +761,14 @@ if game.PlaceId == Supported.SPTS_Endless then
         end);
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Untouchable");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Untouchable  👀");
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("God Mode 🔥", false, function(Value)
         getgenv().GodModded = Value
-        while getgenv().GodModded do wait(3);
+        while getgenv().GodModded do wait(3.5);
             local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
             local args = {[1] = {[1] = "Respawn"}};
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
-            wait(0.85);
+            wait(0.95);
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
         end
     end)
@@ -772,7 +776,7 @@ if game.PlaceId == Supported.SPTS_Endless then
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Train  💪");
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Strengh  👊", false, function(Value)
         getgenv().Fist = Value
-        while getgenv().Fist do wait(0.50);
+        while getgenv().Fist do wait(0.35);
             local args = {[1] = {[1] = "Add_FS_Request"}};
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
         end
@@ -780,7 +784,7 @@ if game.PlaceId == Supported.SPTS_Endless then
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Endurance  🧱", false, function(Value)
         getgenv().BodyThoughness = Value
-        while getgenv().BodyThoughness do wait(0.50);
+        while getgenv().BodyThoughness do wait(0.35);
             local args = {[1] = {[1] = "+BT1"}};
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
         end
@@ -799,7 +803,7 @@ if game.PlaceId == Supported.SPTS_Endless then
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Speed  🏃‍♂️", false, function(Value)
         getgenv().MovementSpeed = Value
-        while getgenv().MovementSpeed do wait(0.50)
+        while getgenv().MovementSpeed do wait(0.35)
             local args = {[1] = {[1] = "Add_MS_Request"}};
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
         end
@@ -807,7 +811,7 @@ if game.PlaceId == Supported.SPTS_Endless then
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Jump Force  🦘", false, function(Value)
         getgenv().JumpForce = Value
-        while getgenv().JumpForce do wait(0.50)
+        while getgenv().JumpForce do wait(0.35)
             local args = {[1] = {[1] = "Add_JF_Request"}};
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
         end
