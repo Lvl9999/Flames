@@ -251,7 +251,7 @@ if game.PlaceId == Supported.Project_Menacing then
         Notif:Notification("Game Detected ⚠️", "Project Menacing  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
     --// Main Pages \\--
-    local SecondPage = MainUI.AddPage("Shop");
+    local SecondPage = MainUI.AddPage("Shoping");
     local SecondAndHalfPage = MainUI.AddPage("Fighting");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Teleports");
@@ -464,7 +464,7 @@ if game.PlaceId == Supported.Project_Menacing then
         Notif:Notification("Game Detected ⚠️", "Soul Cultivation  🔥", "GothamSemibold", "Gotham", 2.5);
         end)
         --// Main Pages \\--
-    local SecondPage = MainUI.AddPage("Shop");
+    local SecondPage = MainUI.AddPage("Shoping");
     local SecondAndHalfPage = MainUI.AddPage("Misc");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Training");
