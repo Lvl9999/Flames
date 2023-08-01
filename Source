@@ -10,7 +10,7 @@ end
 --// STATUS❗\\--
 -- Operational = 🟢
 -- Unoperational = 🔴
--- In Maintenance = 🟡
+-- In Maintenance = 🟠
 
 --//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\--
 --// Readme.file \\
@@ -689,7 +689,7 @@ if game.PlaceId == Supported.Project_Menacing then
     -- Lazy to do the "Teleports" part
     
     local FiveLabel = FivePage.AddLabel("[+] Auto Harvest 🧑🏿‍🌾");
-    local FiveLabel = FivePage.AddButton("Working On This... 🟡", function()
+    local FiveLabel = FivePage.AddButton("Working On This... 🟠", function()
         -- In Maintenance
     end);
     end
@@ -745,7 +745,7 @@ local x = game:GetService("Players").LocalPlayer.PlayerGui.IntroGui.PlayBtn
 vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
 
     local SecondAndHalfPage = MainUI.AddPage("Training");
-    local ThirdPage = MainUI.AddPage("Teleports 🟠");
+    local ThirdPage = MainUI.AddPage("Teleports");
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Untouchable  👀");
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("God Mode 🔥", false, function(Value)
@@ -802,5 +802,10 @@ vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosit
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
         end
     end)
+
+    local ThirdButton = ThirdPage.AddButton("Working on this 🟠", function()
+
+    end);
+
 -- More will be added~
 end
