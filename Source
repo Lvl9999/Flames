@@ -757,7 +757,7 @@ if game.PlaceId == Supported.SPTS_Endless then
         end);
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] OP");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Untouchable");
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("God Mode 🔥", false, function(Value)
         getgenv().GodModded = Value
         while getgenv().GodModded do wait(3);
