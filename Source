@@ -700,7 +700,7 @@ if game.PlaceId == Supported.Project_Menacing then
         task.spawn(function()
             Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
         end);
-        getgenv().Mantis = {"Ant Fiend","Mantis Shrimp Fiend"}
+        getgenv().Mantis = {"Ant Fiend","Mantis Shrimp Fiend","Beetle Fiend"}
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawAutofarmDevilHeart"))();
     end);  
     end
