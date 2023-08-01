@@ -232,38 +232,11 @@ local ScriptXButton = ScriptX.AddButton("Teleport Nearest Head", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/TeleportNearest/main/Universal"))();
 end);
 
-local ScriptXLabel = ScriptX.AddLabel("My Scripts 👀🔥  [Clipboard]");
-local ScriptXButton = ScriptX.AddButton("Dodge Key V1", function()
+local ScriptXLabel = ScriptX.AddLabel("Unique Scripts 👀");
+local ScriptXButton = ScriptX.AddButton("Flame's Scripts  🔥", function()
 	if setclipboard then
 	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	    setclipboard("https://scriptblox.com/script/Universal-Script-Dodge-Key-V1-11970");
-	else
-	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	end
-end);
-
-local ScriptXButton = ScriptX.AddButton("Universal Autofarmer", function()
-	if setclipboard then
-	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	    setclipboard("https://scriptblox.com/script/Universal-Script-Universal-Autofarmer-11684");
-	else
-	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	end
-end);
-
-local ScriptXButton = ScriptX.AddButton("Universal Block Holder", function()
-	if setclipboard then
-	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	    setclipboard("https://scriptblox.com/script/Universal-Script-Universal-Auto-Block-Holder-11464");
-	else
-	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	end
-end);
-
-local ScriptXButton = ScriptX.AddButton("Infinite Script Storage V2", function()
-	if setclipboard then
-	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	    setclipboard("https://scriptblox.com/script/Universal-Script-Infinite-Script-Storage-V2-11386");
+	    setclipboard("https://scriptblox.com/u/Flames");
 	else
 	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	end
