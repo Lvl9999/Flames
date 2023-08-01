@@ -769,7 +769,7 @@ if game.PlaceId == Supported.SPTS_Endless then
         end
     end)
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Train 💪");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Train  💪");
     local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Strengh  👊", false, function(Value)
         getgenv().Fist = Value
         while getgenv().Fist do wait(0.50);
