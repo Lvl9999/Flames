@@ -34,7 +34,6 @@ shared.LoaderKeyFrames = {
 }
 loadstring(game:HttpGet'https://raw.githubusercontent.com/ao-0/miami-nights/main/Resources/Loady/v1/Portable.lua')();
 
-
 getgenv().ForbiddenWords = {"hack","exploit","script","report","cheat","executor","skid","owner","creator","admin","staff","mod"};
 
 task.spawn(function()
@@ -105,10 +104,11 @@ local Supported = {
     Project_Menacing = 5910449407,
     Soul_Cultivation = 12454097560,
     Chainsaw_ManDH = 11345435986,
+    SPTS_Endless = 12603365593,
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -695,7 +695,7 @@ if game.PlaceId == Supported.Project_Menacing then
     end
     -------------------------------------------------------------------------------------
     
-    --// Chainsaw Man: Devil's Heart \\--
+    --// 🟢 Chainsaw Man: Devil's Heart \\--
     if game.PlaceId == Supported.Chainsaw_ManDH then
         task.spawn(function()
         wait(3);
@@ -728,6 +728,74 @@ if game.PlaceId == Supported.Project_Menacing then
         end);
         getgenv().Mantis = {"Ant Fiend","Mantis Shrimp Fiend"}
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawAutofarmDevilHeart"))();
-    end);
-    
+    end);  
     end
+
+    --// 🟢 SPTS Endless \\--
+if game.PlaceId == Supported.SPTS_Endless then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "SPTS ENDLESS 🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    local SecondPage = MainUI.AddPage("Misc");
+    local SecondAndHalfPage = MainUI.AddPage("Training");
+    local ThirdPage = MainUI.AddPage("Teleports");
+    local FourthPage = MainUI.AddPage("XXX");
+    local FivePage = MainUI.AddPage("XXX");
+
+    local SecondLabel = SecondPage.AddLabel("[+] Stuff");
+    local SecondButton = SecondPage.AddButton("Walkspeed Bypass", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/kzjFZkYr"))();
+    end);
+
+    local SecondButton = SecondPage.AddButton("No Cooldown", function()
+        -- Credits: DekuDimz [Owner of V.G Hub] :3
+        local Cooldown; Cooldown = hookfunction(wait, function(v)
+            v = 0;
+            return Cooldown(v);
+        end);
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Train 💪");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Strengh 👊", false, function(Value)
+        getgenv().Fist = Value
+        while getgenv().Fist do wait(0.25)
+            local args = {[1] = {[1] = "Add_FS_Request"}};
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
+        end
+    end)
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Endurance 🧱", false, function(Value)
+        getgenv().BodyThoughness = Value
+        while getgenv().BodyThoughness do wait(0.25)
+            local args = {[1] = {[1] = "+BT1"}};
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
+        end
+    end)
+
+    local SecondandHalfButton = SecondAndHalfPage.AddButton("Meditate 🧘‍♀️", function()
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") and v.Name == "Meditate" then
+                v.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+        end
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Speed 🏃‍♂️", false, function(Value)
+        getgenv().MovementSpeed = Value
+        while getgenv().MovementSpeed do wait(0.25)
+            local args = {[1] = {[1] = "Add_MS_Request"}};
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
+        end
+    end)
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Jump Force 🦘", false, function(Value)
+        getgenv().JumpForce = Value
+        while getgenv().JumpForce do wait(0.25)
+            local args = {[1] = {[1] = "Add_JF_Request"}};
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args));
+        end
+    end)
+-- More will be added~
+end
