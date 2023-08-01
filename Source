@@ -252,6 +252,7 @@ if game.PlaceId == Supported.Project_Menacing then
     end)
     --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Shop");
+    local SecondAndHalfPage = MainUI.AddPage("Fighting");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Teleports");
     -----------------------------------------------
@@ -346,6 +347,40 @@ if game.PlaceId == Supported.Project_Menacing then
             end
         end
     end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Legit");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Legit Auto Dodge", false, function(Value)
+        getgenv().Dodge = Value
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ProjectMenacingLegitDodge"))();
+    end);
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Legit Auto Run", false, function(Value)
+        getgenv().Run = Value
+        while getgenv().Run == true do wait(1.35);
+            local args = {[1] = true};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Sprint"):FireServer(unpack(args));
+            local args = {[1] = true};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("EnableSprint"):FireServer(unpack(args));
+        end
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Unlegit");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Unlegit Auto Block", false, function(Value)
+        getgenv().Block = Value
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ProjectMenacingUnlegitAutoBlock"))();
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Unlegit Auto Escape", false, function(Value)
+        getgenv().Escape = Value
+        getgenv().Back = 7.5
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoEscape"))();
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Unlegit Speed Bypass", false, function(Value)
+        getgenv().Speed = Value
+        getgenv().WS = 50
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SpeedBypass"))();
+    end);
+
     -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quest Farm 👨🏿‍🌾 👴🏻");
