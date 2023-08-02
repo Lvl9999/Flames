@@ -21,4 +21,4 @@ end)
 ```
 
 # User Interface
-![image](https://github.com/Lvl9999/Flames/assets/123672448/faafdb1a-93e9-4a3b-827e-94265d35f50d)
+![image](https://github.com/Lvl9999/Flames/assets/123672448/b2983b74-4bcb-407d-a9ed-ccf66eebe352)
