@@ -316,8 +316,8 @@ if game.PlaceId == Supported.Project_Menacing then
         while getgenv().AutofarmArrow == true do
             wait(0.1);
             if not game:GetService("Workspace"):FindFirstChild("Stand Arrow") then
-                getgenv().AutofarmArrow = false;
                 Notif:Notification("Flame's Hub 🔥", "Stand Arrow not found", "GothamSemibold", "Gotham", 1);
+                return
             end
             game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Stand Arrow"].Position);
             wait(0.35);
@@ -335,8 +335,8 @@ if game.PlaceId == Supported.Project_Menacing then
         while getgenv().AutofarmFruit == true do
             wait(0.1);
             if not game:GetService("Workspace"):FindFirstChild("Rokakaka Fruit") then
-                getgenv().AutofarmFruit = false;
                 Notif:Notification("Flame's Hub 🔥", "Rokakaka Fruit not found", "GothamSemibold", "Gotham", 1);
+                return
             end
             game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Rokakaka Fruit"].Position);
             wait(0.35);
@@ -392,12 +392,157 @@ if game.PlaceId == Supported.Project_Menacing then
     end);
     -----------------------------------------------------------------------------------
     
-    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm 👀  [Open Source]");
-    local ThirdButton = ThirdPage.AddButton("Link to Script 📌", function()
-        task.spawn(function()
-            Notif:Notification("Flame's Hub 🔥", 'Copied to clipboard 📋', "GothamSemibold", "Gotham", 2.5);
-        end);
-        setclipboard("https://scriptblox.com/script/Project-Menacing-Stand-Autofarm-Open-Source-11506");	
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm  👀");
+    local ThirdLabel = ThirdPage.AddDropdown("Selected 1", {
+        "D4C",
+        "DirtyDeeds",
+        "GoldExperience",
+        "GoldExperienceRose",
+        "SixPistolsChariot",
+        "StarPlatinumHeritage",
+        "StarPlatinumOVA",
+        "StarPlatinumPrime",
+        "StarPlatinumStoneOcean",
+        "StarPlatinumTheUniverse",
+        "StarPlatinumTheWorld",
+        "TheWorld",
+        "TheWorldHeritage",
+        "TheWorldOVA",
+        "Whitesnake",
+        "WhitesnakeDemios",
+        "WhitesnakeHeritage",
+    }, 
+    function(StandValue)
+        getgenv().StandFarm = StandValue
+    end)
+
+    local ThirdLabel = ThirdPage.AddDropdown("Selected 2", {
+        "D4C",
+        "DirtyDeeds",
+        "GoldExperience",
+        "GoldExperienceRose",
+        "SixPistolsChariot",
+        "StarPlatinumHeritage",
+        "StarPlatinumOVA",
+        "StarPlatinumPrime",
+        "StarPlatinumStoneOcean",
+        "StarPlatinumTheUniverse",
+        "StarPlatinumTheWorld",
+        "TheWorld",
+        "TheWorldHeritage",
+        "TheWorldOVA",
+        "Whitesnake",
+        "WhitesnakeDemios",
+        "WhitesnakeHeritage",
+    }, 
+    function(StandValue)
+        getgenv().StandFarm = StandValue
+    end)
+
+    local ThirdLabel = ThirdPage.AddDropdown("Selected 3", {
+        "D4C",
+        "DirtyDeeds",
+        "GoldExperience",
+        "GoldExperienceRose",
+        "SixPistolsChariot",
+        "StarPlatinumHeritage",
+        "StarPlatinumOVA",
+        "StarPlatinumPrime",
+        "StarPlatinumStoneOcean",
+        "StarPlatinumTheUniverse",
+        "StarPlatinumTheWorld",
+        "TheWorld",
+        "TheWorldHeritage",
+        "TheWorldOVA",
+        "Whitesnake",
+        "WhitesnakeDemios",
+        "WhitesnakeHeritage",
+    }, 
+    function(StandValue)
+        getgenv().StandFarm = StandValue
+    end)
+
+    local ThirdLabel = ThirdPage.AddDropdown("Selected 4", {
+        "D4C",
+        "DirtyDeeds",
+        "GoldExperience",
+        "GoldExperienceRose",
+        "SixPistolsChariot",
+        "StarPlatinumHeritage",
+        "StarPlatinumOVA",
+        "StarPlatinumPrime",
+        "StarPlatinumStoneOcean",
+        "StarPlatinumTheUniverse",
+        "StarPlatinumTheWorld",
+        "TheWorld",
+        "TheWorldHeritage",
+        "TheWorldOVA",
+        "Whitesnake",
+        "WhitesnakeDemios",
+        "WhitesnakeHeritage",
+    }, 
+    function(StandValue)
+        getgenv().StandFarm = StandValue
+    end)
+
+    local ThirdLabel = ThirdPage.AddDropdown("Selected 5", {
+        "D4C",
+        "DirtyDeeds",
+        "GoldExperience",
+        "GoldExperienceRose",
+        "SixPistolsChariot",
+        "StarPlatinumHeritage",
+        "StarPlatinumOVA",
+        "StarPlatinumPrime",
+        "StarPlatinumStoneOcean",
+        "StarPlatinumTheUniverse",
+        "StarPlatinumTheWorld",
+        "TheWorld",
+        "TheWorldHeritage",
+        "TheWorldOVA",
+        "Whitesnake",
+        "WhitesnakeDemios",
+        "WhitesnakeHeritage",
+    }, 
+    function(StandValue)
+        getgenv().StandFarm = StandValue
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
+        getgenv().AutoStandFarmWithItems = Value
+        while getgenv().AutoStandFarmWithItems == true do wait(0.15)
+            if game:GetService("Players").LocalPlayer.Data.Stand.Value == "None" then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Stand Arrow") == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow"))
+                        local args = {[1] = "Stand Arrow"};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ItemUsage"):FireServer(unpack(args));
+                    end
+                end)
+            elseif game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm then
+                tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+                tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-29.07377815246582, 112.57449340820312, -222.1446533203125)}):Play();
+                Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Stand.Value, "GothamSemibold", "Gotham", 9e9);
+                break
+            else
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka Fruit") == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit"))
+                        local args = {[1] = "Rokakaka Fruit"};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ItemUsage"):FireServer(unpack(args));
+                    end
+                end)
+            end
+        end
+    end)
+
+    local ThirdButton = ThirdPage.AddButton("Buy 🍎 + 🎯 [2,000 ¥] 5x", function()
+        for i = 1,5 do
+            local args = {[1] = "Rokakaka Fruit"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+            local args = {[1] = "Stand Arrow"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+        end	
     end);
     -----------------------------------------------------------------------------------
     
