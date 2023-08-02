@@ -412,8 +412,8 @@ if game.PlaceId == Supported.Project_Menacing then
         "WhitesnakeDemios",
         "WhitesnakeHeritage",
     }, 
-    function(StandValue)
-        getgenv().StandFarm = StandValue
+    function(PlayerStandValue1)
+        getgenv().StandFarm1 = PlayerStandValue1
     end)
 
     local ThirdLabel = ThirdPage.AddDropdown("Selected 2", {
@@ -435,8 +435,8 @@ if game.PlaceId == Supported.Project_Menacing then
         "WhitesnakeDemios",
         "WhitesnakeHeritage",
     }, 
-    function(StandValue)
-        getgenv().StandFarm = StandValue
+    function(PlayerStandValue2)
+        getgenv().StandFarm2 = PlayerStandValue2
     end)
 
     local ThirdLabel = ThirdPage.AddDropdown("Selected 3", {
@@ -458,8 +458,8 @@ if game.PlaceId == Supported.Project_Menacing then
         "WhitesnakeDemios",
         "WhitesnakeHeritage",
     }, 
-    function(StandValue)
-        getgenv().StandFarm = StandValue
+    function(PlayerStandValue3)
+        getgenv().StandFarm3 = PlayerStandValue3
     end)
 
     local ThirdLabel = ThirdPage.AddDropdown("Selected 4", {
@@ -481,8 +481,8 @@ if game.PlaceId == Supported.Project_Menacing then
         "WhitesnakeDemios",
         "WhitesnakeHeritage",
     }, 
-    function(StandValue)
-        getgenv().StandFarm = StandValue
+    function(PlayerStandValue4)
+        getgenv().StandFarm4 = PlayerStandValue4
     end)
 
     local ThirdLabel = ThirdPage.AddDropdown("Selected 5", {
@@ -504,36 +504,38 @@ if game.PlaceId == Supported.Project_Menacing then
         "WhitesnakeDemios",
         "WhitesnakeHeritage",
     }, 
-    function(StandValue)
-        getgenv().StandFarm = StandValue
+    function(PlayerStandValue5)
+        getgenv().StandFarm5 = PlayerStandValue5
     end)
 
     local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
         getgenv().AutoStandFarmWithItems = Value
-        while getgenv().AutoStandFarmWithItems == true do wait(0.15)
+        while getgenv().AutoStandFarmWithItems == true do wait(0.15)  
             if game:GetService("Players").LocalPlayer.Data.Stand.Value == "None" then
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Stand Arrow") == nil then
                         game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow"))
-                        local args = {[1] = "Stand Arrow"};
-                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ItemUsage"):FireServer(unpack(args));
+                        local args = {[1] = "Stand Arrow"}
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ItemUsage"):FireServer(unpack(args))
                     end
                 end)
-            elseif game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm then
-                tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-                tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-29.07377815246582, 112.57449340820312, -222.1446533203125)}):Play();
-                Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Stand.Value, "GothamSemibold", "Gotham", 9e9);
-                break
             else
-                pcall(function()
-                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka Fruit") == nil then
-                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit"))
-                        local args = {[1] = "Rokakaka Fruit"};
-                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ItemUsage"):FireServer(unpack(args));
-                    end
-                end)
+                if game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm1 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm2 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm3 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm4 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm5 then
+                    local tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear)
+                    tweenService:Create(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-29.07377815246582, 112.57449340820312, -222.1446533203125)}):Play()
+                    Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Stand.Value, "GothamSemibold", "Gotham", 9e9)
+                    break
+                else
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka Fruit") == nil then
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit"))
+                            local args = {[1] = "Rokakaka Fruit"}
+                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ItemUsage"):FireServer(unpack(args))
+                        end
+                    end)
+                end
             end
-        end
+        end        
     end)
 
     local ThirdButton = ThirdPage.AddButton("Buy 🍎 + 🎯 [2,000 ¥] 5x", function()
