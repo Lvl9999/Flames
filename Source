@@ -385,7 +385,7 @@ if game.PlaceId == Supported.Project_Menacing then
     -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quest Farm  💸");
-    local ThirdToggle = ThirdPage.AddToggle("Thugs  🧑🏿‍🌾", false, function(Value)
+    local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
     getgenv().FarmingThugs = Value
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoFarmProjectMenacing"))();
     end);
