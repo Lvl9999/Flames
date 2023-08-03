@@ -311,7 +311,7 @@ if game.PlaceId == Supported.Project_Menacing then
     end);
     -----------------------------------------------------------------------------------
 
-    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Store Items 💼");
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Store Items  💼");
     local FirstToggle = ThirdPage.AddToggle("Corpse Part  🌽", false, function(Value)
 	getgenv().Running = Value
     getgenv().ItemToStore = "Corpse Part"
