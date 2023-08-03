@@ -218,7 +218,7 @@ local ScriptXButton = ScriptX.AddButton("Dark Explorer", function()
     task.spawn(function()
 		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 1);
 	end);
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))();
+   loadstring(game:HttpGet('https://ithinkimandrew.site/scripts/tools/dark-dex.lua'))();
 end);
 
 local ScriptXButton = ScriptX.AddButton("GigaChad Hub V4", function()
