@@ -383,11 +383,9 @@ if game.PlaceId == Supported.Project_Menacing then
 
     -----------------------------------------------------------------------------------
     
-    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quest Farm 👨🏿‍🌾 👴🏻");
-    local ThirdButton = ThirdPage.AddButton("Street Thugs  👨🏿‍🦱", function()
-        task.spawn(function()
-            Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
-        end);
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quest Farm  💸");
+    local ThirdToggle = ThirdPage.AddToggle("Thugs  🧑🏿‍🌾", false, function(Value)
+    getgenv().FarmingThugs = Value
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoFarmProjectMenacing"))();
     end);
     -----------------------------------------------------------------------------------
