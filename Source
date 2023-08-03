@@ -311,42 +311,66 @@ if game.PlaceId == Supported.Project_Menacing then
     end);
     -----------------------------------------------------------------------------------
     
-    local ThirdLabel = ThirdPage.AddLabel("[+] Items 🛍️");
-    local FirstToggle = ThirdPage.AddToggle("Teleport Arrow 🎯", false, function(Value)
-        getgenv().AutofarmArrow = Value;
-        while getgenv().AutofarmArrow == true do
-            wait(0.1);
-            if not game:GetService("Workspace"):FindFirstChild("Stand Arrow") then
-                Notif:Notification("Flame's Hub 🔥", "Stand Arrow not found", "GothamSemibold", "Gotham", 1);
-                return
-            end
-            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Stand Arrow"].Position);
-            wait(0.35);
-            for i, v in pairs(game:GetService("Workspace")["Stand Arrow"]:GetDescendants()) do
-                if v:IsA("ProximityPrompt") then
-                    fireproximityprompt(v, 0);
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Teleport Items 🛍️");
+    local FirstToggle = ThirdPage.AddToggle("Stand Arrow  🎯", false, function(Value)
+        getgenv().AutofarmArrow = Value
+        while getgenv().AutofarmArrow == true do wait(0.1);
+            pcall(function()
+                if game:GetService("Workspace"):FindFirstChild("Stand Arrow") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Stand Arrow"].Position);
+                    wait(0.35);
+                    for i, v in pairs(game:GetService("Workspace")["Stand Arrow"]:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v, 0);
+                        end
+                    end
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Stand Arrow not found", "GothamSemibold", "Gotham", 1);
+                    return
                 end
-            end
-        end
+            end)
+        end        
     end);
     -----------------------------------------------------------------------------------
     
-    local FirstToggle = ThirdPage.AddToggle("Teleport Fruit 🍎", false, function(Value)
-        getgenv().AutofarmFruit = Value;
-        while getgenv().AutofarmFruit == true do
-            wait(0.1);
-            if not game:GetService("Workspace"):FindFirstChild("Rokakaka Fruit") then
-                Notif:Notification("Flame's Hub 🔥", "Rokakaka Fruit not found", "GothamSemibold", "Gotham", 1);
-                return
-            end
-            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Rokakaka Fruit"].Position);
-            wait(0.35);
-            for i, v in pairs(game:GetService("Workspace")["Rokakaka Fruit"]:GetDescendants()) do
-                if v:IsA("ProximityPrompt") then
-                    fireproximityprompt(v, 0);
+    local FirstToggle = ThirdPage.AddToggle("Rokakaka Fruit 🍎", false, function(Value)
+        getgenv().AutofarmFruit = Value
+        while getgenv().AutofarmFruit == true do wait(0.1);
+            pcall(function()
+                if game:GetService("Workspace"):FindFirstChild("Rokakaka Fruit") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Rokakaka Fruit"].Position);
+                    wait(0.35);
+                    for i, v in pairs(game:GetService("Workspace")["Rokakaka Fruit"]:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v, 0);
+                        end
+                    end
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Rokakaka Fruit not found", "GothamSemibold", "Gotham", 1);
+                    return
                 end
-            end
-        end
+            end)
+        end  
+    end);
+
+    local FirstToggle = ThirdPage.AddToggle("Corpse Part  🌽", false, function(Value)
+        getgenv().AutofarmCorpse = Value
+        while getgenv().AutofarmCorpse == true do wait(0.1);
+            pcall(function()
+                if game:GetService("Workspace"):FindFirstChild("Corpse Part") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace")["Corpse Part"].Position);
+                    wait(0.35);
+                    for i, v in pairs(game:GetService("Workspace")["Corpse Part"]:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v, 0);
+                        end
+                    end
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Corpse Part not found", "GothamSemibold", "Gotham", 1);
+                    return
+                end
+            end)
+        end  
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Legit");
@@ -537,7 +561,7 @@ if game.PlaceId == Supported.Project_Menacing then
         end        
     end)
 
-    local ThirdButton = ThirdPage.AddButton("Buy 5x 🍎 + 🎯 [2,000 ¥]", function()
+    local ThirdButton = ThirdPage.AddButton("Buy 5x 🍎 + 🎯  [2,000 ¥]", function()
         for i = 1,5 do
             local args = {[1] = "Rokakaka Fruit"};
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
