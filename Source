@@ -549,56 +549,52 @@ if game.PlaceId == Supported.Project_Menacing then
     local ThirdLabel = ThirdPage.AddLabel("[+] Shadow Dio Farm  🔥");
     local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
         getgenv().ShadowDioFarming = Value
-        while getgenv().ShadowDioFarming == true do wait(1);
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+        while getgenv().ShadowDioFarming == true do wait(0.25);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
-            tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-            tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-340.1360168457031, 27.087806701660156, 17.46942138671875)}):Play();
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-336.6607666015625, 27.087810516357422, 22.47588348388672);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
-            wait(1);
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+            wait(0.25);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
-            tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-            tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(283.7627258300781, 27.087806701660156, -117.91667175292969)}):Play();
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(283.3526306152344, 27.087806701660156, -122.81632232666016);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
-            wait(1)
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+            wait(0.25);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
-            tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-            tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(193.4730682373047, 27.442733764648438, 44.449554443359375)}):Play();
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(202.4773406982422, 27.442737579345703, 44.88944625854492);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
-            wait(1)
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+            wait(0.25);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
-            tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
-            tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-121.01083374023438, 27.442642211914062, 148.04293823242188)}):Play();            
-            for i,v in pairs(workspace:GetDescendants()) do
-                if v.ClassName == "ProximityPrompt" then
-                    fireproximityprompt(v,0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.38571166992188, 27.442642211914062, 147.9661102294922);
+            for i, v in pairs(workspace:GetDescendants()) do
+                if (v.ClassName == "ProximityPrompt") then
+                    fireproximityprompt(v, 0);
                 end
             end
         end
