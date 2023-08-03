@@ -252,6 +252,7 @@ if game.PlaceId == Supported.Project_Menacing then
     end)
     --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Shoping");
+    local BackupPage = MainUI.AddPage("Storage");
     local SecondAndHalfPage = MainUI.AddPage("Fighting");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Teleports");
@@ -281,8 +282,8 @@ if game.PlaceId == Supported.Project_Menacing then
     end);
     -----------------------------------------------------------------------------------
     
-    local SecondLabel = SecondPage.AddLabel("[+] Storage 📦");
-    local SecondButton = SecondPage.AddButton("Stand Storage 📦", function()
+    local BackupLabel = BackupPage.AddLabel("[+] Storage 📦");
+    local BackupButton = BackupPage.AddButton("Stand Storage 📦", function()
         local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(71.73101043701172, 27.405519485473633, -187.82508850097656)}):Play();
@@ -296,7 +297,7 @@ if game.PlaceId == Supported.Project_Menacing then
     end);
     -----------------------------------------------------------------------------------
     
-    local SecondButton = SecondPage.AddButton("Items Storage 📦", function()
+    local BackupButton = BackupPage.AddButton("Items Storage 📦", function()
         local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(31.423873901367188, 27.663740158081055, -71.35455322265625)}):Play();
