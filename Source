@@ -1070,7 +1070,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
 
         --// Main Pages \\--
         local SecondPage = MainUI.AddPage("Fighting");
-        local SecondAndHalfPage = MainUI.AddPage("Effects");
+        local SecondAndHalfPage = MainUI.AddPage("Farming");
         local ThirdPage = MainUI.AddPage("Trolling");
         local FourthPage = MainUI.AddPage("Training");
         local FivePage = MainUI.AddPage("Farming");
@@ -1265,6 +1265,30 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
             end  
         end);
 
+
+        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Quests ❗");
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Delivery Quest", false, function(Value)
+            getgenv().Questing = Value -- "questing" 🤓❓
+            while getgenv().Questing == true do wait(1.5);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.454713821411133, 282.23614501953125, -2175.580322265625)
+            wait(1.25);
+            getgenv().Press = function(v)
+                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+            end
+            Press("E");
+            wait(0.60)
+            local vim = game:GetService'VirtualInputManager' 
+            local x = game:GetService("Players").LocalPlayer.PlayerGui.QuestUi.Frame.Template.Accept.TextLabel
+            vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+            wait(1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(290.1357727050781, 321.7126159667969, -2534.514892578125)
+            wait(0.60)
+            getgenv().Press = function(v)
+                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+            end
+            Press("E");
+            end  
+        end);
 
 -- More will be added~
 end
