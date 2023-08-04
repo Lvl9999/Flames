@@ -24,6 +24,8 @@ In Maintenance = 🟠 |
 
 🟢 SPTS Endless: https://www.roblox.com/games/12603365593/SPTS-Endless
 
+🟠 Chainsaw Man X: https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X
+
 # Loadstring:
 ```lua
 --// Flame's Hub 🔥\\--
