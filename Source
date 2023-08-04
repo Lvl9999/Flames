@@ -1075,41 +1075,32 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
         local FourthPage = MainUI.AddPage("Training");
         local FivePage = MainUI.AddPage("Farming");
         
-        local SecondLabel = SecondPage.AddLabel("[+] PVP World");
-        local SecondLabel = SecondPage.AddToggle("M1 | No Cooldown", false, function(Value)
-            getgenv().M1noCooldown = Value
-            while getgenv().M1noCooldown == true do wait(0.1);
+        local SecondLabel = SecondPage.AddLabel("[+] OP  👀");
+        local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
+            getgenv().AutoBlocking = Value
+            while getgenv().AutoBlocking == true do wait(0.1);
                 local args = {
-                    [1] = "One",
-                    [2] = 1
+                    [1] = "Check",
+                    [2] = "Blocking",
+                    [3] = true
                 }
                 
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Check"):FireServer(unpack(args))
                 local args = {
-                    [1] = "Two",
-                    [2] = 2
+                    [1] = "Check",
+                    [2] = "Blocking",
+                    [3] = true,
+                    [4] = false
                 }
                 
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Check"):FireServer(unpack(args))
                 local args = {
-                    [1] = "Three",
-                    [2] = 3
+                    [1] = "Check",
+                    [2] = "SlowDown",
+                    [3] = false
                 }
                 
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
-                local args = {
-                    [1] = "Four",
-                    [2] = 4
-                }
-                
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
-                local args = {
-                    [1] = "Five",
-                    [2] = 5
-                }
-                
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
-                                                                                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Check"):FireServer(unpack(args))
             end  
         end);
 
@@ -1150,8 +1141,43 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
             end  
         end);
 
-        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Effects");
-        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Transform | Crash Server", false, function(Value)
+        local SecondLabel = SecondPage.AddToggle("Barrage | No Cooldown", false, function(Value)
+            getgenv().Barrage = Value
+            while getgenv().Barrage == true do wait(0.1);
+                local args = {
+                    [1] = "BarrageFinal"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Attacks"):FireServer(unpack(args))                            
+                                                                                
+            end  
+        end);
+
+        local SecondLabel = SecondPage.AddToggle("Demonic Slash | No Cooldown", false, function(Value)
+            getgenv().Crimson = Value
+            while getgenv().Crimson == true do wait(0.1);
+                local args = {
+                    [1] = "CrimsonSlash"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Attacks"):FireServer(unpack(args))                                                                                                                              
+            end  
+        end);
+
+        local SecondLabel = SecondPage.AddToggle("UpperCut | No Cooldown", false, function(Value)
+            getgenv().UpperCutnoCooldown = Value
+            while getgenv().UpperCutnoCooldown == true do wait(0.1);
+                local args = {
+                    [1] = "UpperCut"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Attacks"):FireServer(unpack(args))                
+                                                                                
+            end  
+        end);
+
+        local SecondLabel = SecondPage.AddLabel("[+] Server  ⚠️");
+        local SecondLabel = SecondPage.AddToggle("Transform | Crash Server", false, function(Value)
             getgenv().CrashServer = Value
             while getgenv().CrashServer == true do wait(0.1);
                 local args = {
@@ -1162,6 +1188,28 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
             end  
         end);
 
+        local SecondLabel = SecondPage.AddLabel("[+] Effects  ✨");
+        local SecondLabel = SecondPage.AddToggle("JumpSlam | Particle", false, function(Value)
+            getgenv().JumpSlams = Value
+            while getgenv().JumpSlams == true do wait(0.1);
+                local args = {
+                    [1] = "JumpSlam"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Attacks"):FireServer(unpack(args))                                                                                                   
+            end  
+        end);
+
+        local SecondLabel = SecondPage.AddToggle("Dash | Particle", false, function(Value)
+            getgenv().DashH = Value
+            while getgenv().DashH == true do wait(0.1);
+                local args = {
+                    [1] = "DashParticles"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("DashHit"):FireServer(unpack(args))                                                                                                                  
+            end  
+        end);
 
 
 -- More will be added~
