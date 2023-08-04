@@ -1299,7 +1299,50 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
             getgenv().FarminMafiaBoss = Value
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/MafiaBossAutofarmChainsawManX"))();
         end);
-
+        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stats 👀");
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Devil Power", false, function(Value)
+            getgenv().Dpower = Value
+            while getgenv().Dpower == true do wait(0.1);
+                local args = {
+                    [1] = "Stats",
+                    [2] = "Add",
+                    [3] = "DevilPower",
+                    [4] = 1
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))
+                                                                                                        
+            end  
+        end);
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Defense", false, function(Value)
+            getgenv().Def = Value
+            while getgenv().Def == true do wait(0.1);
+                local args = {
+                    [1] = "Stats",
+                    [2] = "Add",
+                    [3] = "Defense",
+                    [4] = 1
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                
+                                                                                                                                
+            end  
+        end);    
+  
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Melee", false, function(Value)
+            getgenv().Melee = Value
+            while getgenv().Melee == true do wait(0.1);
+                local args = {
+                    [1] = "Stats",
+                    [2] = "Add",
+                    [3] = "Melee",
+                    [4] = 1
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                
+                                                                                                                              
+            end  
+        end);  
 
 -- More will be added~
 end
