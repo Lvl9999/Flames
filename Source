@@ -1075,7 +1075,68 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
         local FourthPage = MainUI.AddPage("Training");
         local FivePage = MainUI.AddPage("Farming");
         
-        local SecondLabel = SecondPage.AddLabel("[+] OP  👀");
+        local SecondLabel = SecondPage.AddLabel("[+] GRIND WORLD | OP  👀");
+        local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
+            getgenv().AutoBlockingX = Value
+            while getgenv().AutoBlockingX == true do wait(0.75);
+                local args = {
+                    [1] = "Add",
+                    [2] = "Blocking"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("ServerComm"):FireServer(unpack(args))
+                game:GetService("UserInputService").InputBegan:Connect(function(xb,xa)
+                    if not xa and xb.UserInputType == Enum.UserInputType.MouseButton1 then
+                        local args = {
+                            [1] = "Destroy",
+                            [2] = "Blocking"
+                        }
+                
+                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("ServerComm"):FireServer(unpack(args))
+                    end
+                end)
+            end  
+        end);
+        local SecondLabel = SecondPage.AddToggle("M1 | No Cooldown", false, function(Value)
+            getgenv().M1noCooldownX = Value
+            while getgenv().M1noCooldownX == true do wait(0.1);
+                local args = {
+                    [1] = "M1",
+                    [2] = "DoM1",
+                    [3] = 1,
+                    [4] = false
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("FrameWorkHandle"):FireServer(unpack(args))
+                local args = {
+                    [1] = "M1",
+                    [2] = "DoM1",
+                    [3] = 2,
+                    [4] = false
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("FrameWorkHandle"):FireServer(unpack(args))
+                local args = {
+                    [1] = "M1",
+                    [2] = "DoM1",
+                    [3] = 3,
+                    [4] = false
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("FrameWorkHandle"):FireServer(unpack(args))
+                local args = {
+                    [1] = "M1",
+                    [2] = "DoM1",
+                    [3] = 4,
+                    [4] = false
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("FrameWorkHandle"):FireServer(unpack(args))                                                                
+                                                                                
+            end  
+        end);
+
+        local SecondLabel = SecondPage.AddLabel("[+] PVP WORLD | OP  👀");
         local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
             getgenv().AutoBlocking = Value
             while getgenv().AutoBlocking == true do wait(0.1);
@@ -1091,13 +1152,6 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
                     [2] = "Blocking",
                     [3] = true,
                     [4] = false
-                }
-                
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Check"):FireServer(unpack(args))
-                local args = {
-                    [1] = "Check",
-                    [2] = "SlowDown",
-                    [3] = false
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Check"):FireServer(unpack(args))
