@@ -1071,9 +1071,9 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
         --// Main Pages \\--
         local SecondPage = MainUI.AddPage("Fighting");
         local SecondAndHalfPage = MainUI.AddPage("Farming");
-        local ThirdPage = MainUI.AddPage("Trolling");
-        local FourthPage = MainUI.AddPage("Training");
-        local FivePage = MainUI.AddPage("Farming");
+        -- local ThirdPage = MainUI.AddPage("Trolling");
+        -- local FourthPage = MainUI.AddPage("Training");
+        -- local FivePage = MainUI.AddPage("Farming");
         
         local SecondLabel = SecondPage.AddLabel("[+] GRIND WORLD | OP  👀");
         local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
