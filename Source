@@ -1265,30 +1265,36 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
             end  
         end);
 
-
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Quests ❗");
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Delivery Quest", false, function(Value)
-            getgenv().Questing = Value -- "questing" 🤓❓
-            while getgenv().Questing == true do wait(1.5);
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.454713821411133, 282.23614501953125, -2175.580322265625)
-            wait(1.25);
-            getgenv().Press = function(v)
-                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+            getgenv().QuestGrabbing = Value -- "questing" 🤓❓
+            while getgenv().QuestGrabbing == true do wait(2.25);
+                task.spawn(function()
+                    while getgenv().QuestGrabbing == true do wait(0.1)
+                        getgenv().Press = function(v)
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");
+                    end
+                end)
+                task.spawn(function()
+                    while getgenv().QuestGrabbing == true do wait(0.35)
+                        local vim = game:GetService'VirtualInputManager' 
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui.QuestUi.Frame.Template.Accept.TextLabel
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                    end
+                end)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(421.67694091796875, 282.4922790527344, -2246.27099609375)  
+                wait(2)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(412.2997741699219, 282.57952880859375, -2740.576904296875)
             end
-            Press("E");
-            wait(0.60)
-            local vim = game:GetService'VirtualInputManager' 
-            local x = game:GetService("Players").LocalPlayer.PlayerGui.QuestUi.Frame.Template.Accept.TextLabel
-            vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-            wait(1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(290.1357727050781, 321.7126159667969, -2534.514892578125)
-            wait(0.60)
-            getgenv().Press = function(v)
-                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-            end
-            Press("E");
-            end  
         end);
+
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Mafia Boss Quest", false, function(Value)
+            getgenv().FarminMafiaBoss = Value
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/MafiaBossAutofarmChainsawManX"))();
+        end);
+
 
 -- More will be added~
 end
