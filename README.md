@@ -11,11 +11,11 @@ V3rmillion: Twink | https://v3rmillion.net/member.php?action=profile&uid=1078854
 Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 
 # Supported Games:
-Status ❗:
+
 
 Operational = 🟢 |
 Unoperational = 🔴 |
-In Maintenance = 🟠 |
+In Maintenance = 🟠
 
 🟢 Project Menacing: https://www.roblox.com/games/5910449407/Project-Menacing
 
