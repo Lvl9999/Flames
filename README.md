@@ -10,7 +10,7 @@ V3rmillion: Twink | https://v3rmillion.net/member.php?action=profile&uid=1078854
 
 Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 
-# Supported Games:
+# Supported Games ✅:
 Operational = 🟢 Unoperational = 🔴 In Maintenance = 🟠
 -------------------------------------------------------------------------------
 
