@@ -2,7 +2,7 @@
 
 Script Hub that will support various games with OP features.
 
-# Credits 👀
+# Credits: 👀
 Discord: ThroughTheFireAndFlames#9925 | Scripter/Owner
 
 
@@ -20,7 +20,7 @@ Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 
 [+] SPTS Endless: https://www.roblox.com/games/12603365593/SPTS-Endless
 
-# Loadstring
+# Loadstring:
 ```lua
 --// Flame's Hub 🔥\\--
 getgenv().Protection_Mode = true  -- Turn "false" for afk farming
@@ -34,5 +34,5 @@ end)
 # User Interface
 ![image](https://github.com/Lvl9999/Flames/assets/123672448/b2983b74-4bcb-407d-a9ed-ccf66eebe352)
 
-# Explanation about "Protection Mode":
+# Protection Mode:
 Protection Mode is an unique feature that let you become protected to some degree from bans and kicks, It will server hop you if anyone says anything related to cheats.
