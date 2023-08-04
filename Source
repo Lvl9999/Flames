@@ -105,10 +105,13 @@ local Supported = {
     Soul_Cultivation = 12454097560,
     Chainsaw_ManDH = 11345435986,
     SPTS_Endless = 12603365593,
+    Chainsaw_ManXPVP = 14070046506,
+    Chainsaw_ManXGrind = 13566086428,
+
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -704,7 +707,7 @@ if game.PlaceId == Supported.Project_Menacing then
         task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Soul Cultivation  🔥", "GothamSemibold", "Gotham", 2.5);
-        end)
+    end)
         --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Shoping");
     local SecondAndHalfPage = MainUI.AddPage("Misc");
@@ -989,10 +992,10 @@ if game.PlaceId == Supported.SPTS_Endless then
         Notif:Notification("Game Detected ⚠️", "SPTS ENDLESS 🔥", "GothamSemibold", "Gotham", 2.5);
     end)
     -- Auto load for auto exeucte
--- Thanks to a friend for giving me this
-local vim = game:GetService'VirtualInputManager' 
-local x = game:GetService("Players").LocalPlayer.PlayerGui.IntroGui.PlayBtn
-vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+    -- Thanks to a friend for giving me this
+    local vim = game:GetService'VirtualInputManager' 
+    local x = game:GetService("Players").LocalPlayer.PlayerGui.IntroGui.PlayBtn
+    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
 
     local SecondAndHalfPage = MainUI.AddPage("Training");
     local ThirdPage = MainUI.AddPage("Teleports");
@@ -1056,6 +1059,110 @@ vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosit
     local ThirdButton = ThirdPage.AddButton("Working on this 🟠", function()
 
     end);
+end
+
+--// 🟢 Chainsaw Man X \\--
+if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Chainsaw Man X  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+        --// Main Pages \\--
+        local SecondPage = MainUI.AddPage("Fighting");
+        local SecondAndHalfPage = MainUI.AddPage("Effects");
+        local ThirdPage = MainUI.AddPage("Trolling");
+        local FourthPage = MainUI.AddPage("Training");
+        local FivePage = MainUI.AddPage("Farming");
+        
+        local SecondLabel = SecondPage.AddLabel("[+] PVP World");
+        local SecondLabel = SecondPage.AddToggle("M1 | No Cooldown", false, function(Value)
+            getgenv().M1noCooldown = Value
+            while getgenv().M1noCooldown == true do wait(0.1);
+                local args = {
+                    [1] = "One",
+                    [2] = 1
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Two",
+                    [2] = 2
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Three",
+                    [2] = 3
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Four",
+                    [2] = 4
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Five",
+                    [2] = 5
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                                                                                
+            end  
+        end);
+
+        local SecondLabel = SecondPage.AddToggle("M1 | No Cooldown", false, function(Value)
+            getgenv().M1noCooldown = Value
+            while getgenv().M1noCooldown == true do wait(0.1);
+                local args = {
+                    [1] = "One",
+                    [2] = 1
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Two",
+                    [2] = 2
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Three",
+                    [2] = 3
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Four",
+                    [2] = 4
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                local args = {
+                    [1] = "Five",
+                    [2] = 5
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("M1s"):FireServer(unpack(args))
+                                                                                
+            end  
+        end);
+
+        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Effects");
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Transform | Crash Server", false, function(Value)
+            getgenv().CrashServer = Value
+            while getgenv().CrashServer == true do wait(0.1);
+                local args = {
+                    [1] = "Transform"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Transform"):FireServer(unpack(args))                                                                                      
+            end  
+        end);
+
+
 
 -- More will be added~
 end
