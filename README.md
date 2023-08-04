@@ -12,13 +12,17 @@ Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 
 # Supported Games:
 
-[🟢] Project Menacing: https://www.roblox.com/games/5910449407/Project-Menacing
+Operational = 🟢
+Unoperational = 🔴
+In Maintenance = 🟠
 
-[🟢] Soul Cultivation: https://www.roblox.com/games/12454097560/Soul-Cultivation
+🟢 Project Menacing: https://www.roblox.com/games/5910449407/Project-Menacing
 
-[🟢] Chainsaw Man Devil Heart: https://www.roblox.com/games/11345435986/Chainsaw-Man-Devils-Heart
+🟢 Soul Cultivation: https://www.roblox.com/games/12454097560/Soul-Cultivation
 
-[🟢] SPTS Endless: https://www.roblox.com/games/12603365593/SPTS-Endless
+🟢 Chainsaw Man Devil Heart: https://www.roblox.com/games/11345435986/Chainsaw-Man-Devils-Heart
+
+🟢 SPTS Endless: https://www.roblox.com/games/12603365593/SPTS-Endless
 
 # Loadstring:
 ```lua
