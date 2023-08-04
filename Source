@@ -1290,6 +1290,11 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
             end
         end);
 
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Mafias Quest", false, function(Value)
+            getgenv().FarminMafias = Value
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/MafiasAutofarmChainsawManX"))();
+        end);
+
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Mafia Boss Quest", false, function(Value)
             getgenv().FarminMafiaBoss = Value
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/MafiaBossAutofarmChainsawManX"))();
