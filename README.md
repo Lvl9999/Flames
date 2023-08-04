@@ -12,7 +12,7 @@ Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 
 # Supported Games:
 
-https://www.roblox.com/games/5910449407/Project-Menacing
+Project Menacing: https://www.roblox.com/games/5910449407/Project-Menacing
 
 
 # Loadstring
