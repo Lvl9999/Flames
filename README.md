@@ -12,7 +12,7 @@ Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 # Loadstring
 ```lua
 --// Flame's Hub 🔥\\--
-getgenv().Protection_Mode = false  -- Turn "false" for afk farming
+getgenv().Protection_Mode = true  -- Turn "false" for afk farming
 getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/Source";
 
 pcall(function()
