@@ -1324,31 +1324,6 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Quests ❗");
-        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Delivery Quest [Bugged]", false, function(Value)
-            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
-            getgenv().QuestGrabbing = Value -- "questing" 🤓❓
-            while getgenv().QuestGrabbing == true do wait(1);
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(422.9122314453125, 282.396240234375, -2241.543212890625)
-                wait(0.45)
-                getgenv().Press = function(v)
-                    return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                end
-                Press("E");
-                wait(0.35)
-                local vim = game:GetService'VirtualInputManager' 
-                local x = game:GetService("Players").LocalPlayer.PlayerGui.QuestUi.Frame.Template.Accept.TextLabel
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                wait(0.15)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(411.5158386230469, 282.5735168457031, -2739.82666015625)
-                wait(0.45)
-                getgenv().Press = function(v)
-                    return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                end
-                Press("E");
-                wait(0.15)
-            end
-        end);
-
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Mafias Quest", false, function(Value)
             if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().FarminMafias = Value
