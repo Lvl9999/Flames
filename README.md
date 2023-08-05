@@ -37,6 +37,6 @@ end)
 ### Special Credits:
 - [Flames](https://discord.com/users/656455297979908106) | Scripter / Support / Owner.
 
-**Thanks to**
+**Thanks to these people 👇**
 - [Twink](https://v3rmillion.net/member.php?action=profile&uid=1078854) | UI Library 👍
 - [insanedude59](https://github.com/insanedude59) | Notification UI 👍
