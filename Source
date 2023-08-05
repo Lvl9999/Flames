@@ -1335,6 +1335,13 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
             getgenv().FarminMafiaBoss = Value
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/MafiaBossAutofarmChainsawManX"))();
         end);
+
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Uncanny Boss Quest", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
+            getgenv().FarminUncanny = Value
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/UncannyAutofarmChainsawManX"))();
+        end);
+
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stats 👀");
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Devil Power", false, function(Value)
             if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
