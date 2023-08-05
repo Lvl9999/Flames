@@ -1407,7 +1407,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
                 local args = {
                     [1] = "Stats",
                     [2] = "Add",
-                    [3] = "Defense",
+                    [3] = "Melee",
                     [4] = 5
                 }
                 
