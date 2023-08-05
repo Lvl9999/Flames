@@ -2,6 +2,12 @@
 
 Script Hub that supports various games with OP features.
 
+## Credits 👀
+
+- [Flames 🔥](https://discord.com/users/656455297979908106) | Scripter 👍
+- [Twink](https://v3rmillion.net/member.php?action=profile&uid=1078854) | UI Library 👍
+- [insanedude59](https://github.com/insanedude59) | Notification UI 👍
+
 ## Supported Executors
 
 - Krnl
@@ -38,10 +44,3 @@ end)
 
 ## Protection Mode:
 Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
-
-## Credits 👀
-
-- [Flames 🔥](https://discord.com/users/656455297979908106) | Scripter  
-- [Twink](https://v3rmillion.net/member.php?action=profile&uid=1078854) | UI Library 👍
-- [insanedude59](https://github.com/insanedude59) | Notification UI 👍
-
