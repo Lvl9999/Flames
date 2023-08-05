@@ -169,70 +169,59 @@ local ScriptXSlider = ScriptX.AddSlider("Gravity", {Min = 0, Max = 1000, Def = 5
     game.Workspace.Gravity = Value
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("WalkSpeed", {Min = 0, Max = 500, Def = 16}, function(Value)
-    local plr = game.Players.LocalPlayer
-    local char = plr.Character
-
-    local ws = Value
-    char.Humanoid.WalkSpeed = ws
-end)
-
-local plr = game.Players.LocalPlayer
-
 local mt = getrawmetatable(game)
-setreadonly(mt,false)
+setreadonly(mt, false)
 local index = mt.__index
 local newindex = mt.__newindex
 
-local spoofTo = plr.Character.Humanoid.WalkSpeed
+local WSPEED = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+local JPOWER = game.Players.LocalPlayer.Character.Humanoid.JumpPower
+local JHEIGHT = game.Players.LocalPlayer.Character.Humanoid.JumpHeight
 
 mt.__index = newcclosure(function(t, i)
     if tostring(i) == "WalkSpeed" then
         if not checkcaller() then
-            return spoofTo
+            return WSPEED
         end
     end
     return index(t, i)
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("JumpPower", {Min = 0, Max = 500, Def = 16}, function(Value)
-    local plr = game.Players.LocalPlayer
-    local char = plr.Character
-
-    local jp = Value
-    char.Humanoid.JumpPower = jp
-end)
-
-local plr = game.Players.LocalPlayer
-
-local char = plr.Character
-local humanoid = char and char:FindFirstChild("Humanoid")
-if not humanoid then
-    char.ChildAdded:Connect(function(child)
-        if child.Name == "Humanoid" then
-            humanoid = child
-        end
-    end)
-end
-
-local mt = getrawmetatable(humanoid)
-setreadonly(mt, false)
-local index = mt.__index
-
-local spoofJumpPower = humanoid.JumpPower
-
-mt.__index = newcclosure(function(t, i)
-    if tostring(i) == "JumpPower" then
+mt.__newindex = newcclosure(function(t, i, v)
+    if tostring(i) == "JumpPower" or tostring(i) == "JumpHeight" then
         if not checkcaller() then
-            return spoofJumpPower
+            return JPOWER
         end
     end
-    return index(t, i)
+    return newindex(t, i, v)
+end)
+
+setreadonly(mt, true)
+
+local ScriptXWalkSpeedSlider = ScriptX.AddSlider("WalkSpeed", {Min = 0, Max = 500, Def = 16}, function(Value)
+    WSPEED = Value
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = WSPEED
+end)
+
+local ScriptXJumpPowerSlider = ScriptX.AddSlider("JumpPower", {Min = 0, Max = 250, Def = 50}, function(Value)
+    JPOWER = Value
+    JHEIGHT = Value
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = JPOWER
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = JHEIGHT
+end)
+
+local char = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+    char.Humanoid.WalkSpeed = WSPEED
+end)
+
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
+    char.Humanoid.JumpPower = JPOWER
+    char.Humanoid.JumpHeight = JHEIGHT
 end)
 
 local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
     -- Credits to Xiba
-    getgenv().FlaggingESP = false
     getgenv().FlaggingESP = Value
 
     local function ApplyESP(v)
@@ -1367,7 +1356,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
                     [1] = "Stats",
                     [2] = "Add",
                     [3] = "DevilPower",
-                    [4] = 10
+                    [4] = 5
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                        
@@ -1388,7 +1377,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
                     [1] = "Stats",
                     [2] = "Add",
                     [3] = "Defense",
-                    [4] = 10
+                    [4] = 5
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                                                 
@@ -1410,7 +1399,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
                     [1] = "Stats",
                     [2] = "Add",
                     [3] = "Defense",
-                    [4] = 10
+                    [4] = 5
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                                               
