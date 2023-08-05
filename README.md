@@ -25,7 +25,8 @@ Operational = 🟢 Unoperational = 🔴 In Maintenance = 🟠
 🟢 | Chainsaw Man X: https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X
 
 # Supported Execeutors ✅:
-![image](https://github.com/Lvl9999/Flames/assets/123672448/ab9ed1bb-1378-4afb-aa57-1ab60986a679) ![image](https://github.com/Lvl9999/Flames/assets/123672448/365a066c-95e9-4234-9449-86286122225c)
+![image](https://github.com/Lvl9999/Flames/assets/123672448/ab9ed1bb-1378-4afb-aa57-1ab60986a679) ![image](https://github.com/Lvl9999/Flames/assets/123672448/606a5512-ecbb-480b-a5a5-975abf34c0cc)
+
 
 
 
