@@ -18,7 +18,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠
 
 - [SPTS Endless](https://www.roblox.com/games/12603365593/SPTS-Endless) | **🟢**
 
-- [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | **🟢**
+- [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | **🟢** [New!!🔥]
 
 ### Protection Mode:
 - **Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.**
