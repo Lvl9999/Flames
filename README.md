@@ -13,7 +13,8 @@ Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 # Supported Games ✅:
 Operational = 🟢 Unoperational = 🔴 In Maintenance = 🟠
 -------------------------------------------------------------------------------
-![krnl](https://github.com/Lvl9999/Flames/assets/123672448/6e9e0eb0-72f3-4677-833b-4092e785636b) ![fluxus-7292021](https://github.com/Lvl9999/Flames/assets/123672448/6671ba28-1c94-491f-a489-d0c185ca8a1f)
+![krnl](https://github.com/Lvl9999/Flames/assets/123672448/6e9e0eb0-72f3-4677-833b-4092e785636b) ![fluxus-7292021](https://github.com/Lvl9999/Flames/assets/123672448/6671ba28-1c94-491f-a489-d0c185ca8a1f) ![oxygenu-112520](https://github.com/Lvl9999/Flames/assets/123672448/385fbf5b-dd3c-460b-b877-f22d6cd4a9db)
+
 
 
 
