@@ -10,15 +10,15 @@
 
 Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠
 
-- [Project Menacing](https://www.roblox.com/games/5910449407/Project-Menacing)
+- [Project Menacing](https://www.roblox.com/games/5910449407/Project-Menacing) **🟢**
 
-- [Soul Cultivation](https://www.roblox.com/games/12454097560/Soul-Cultivation)
+- [Soul Cultivation](https://www.roblox.com/games/12454097560/Soul-Cultivation) **🟢**
 
-- [Chainsaw Man Devil Heart](https://www.roblox.com/games/11345435986/Chainsaw-Man-Devils-Heart)
+- [Chainsaw Man Devil Heart](https://www.roblox.com/games/11345435986/Chainsaw-Man-Devils-Heart) **🟢**
 
-- [SPTS Endless](https://www.roblox.com/games/12603365593/SPTS-Endless)
+- [SPTS Endless](https://www.roblox.com/games/12603365593/SPTS-Endless) **🟢**
 
-- [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X)
+- [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) **🟢**
 
 ### Protection Mode:
 - **Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.**
