@@ -269,7 +269,7 @@ if game.PlaceId == Supported.Project_Menacing then
     local FourthPage = MainUI.AddPage("Teleports");
     -----------------------------------------------
     local SecondLabel = SecondPage.AddLabel("[+] Buy 💰");
-    local SecondButton = SecondPage.AddButton("Buy Arrow 🎯 [250 ¥]", function()
+    local SecondButton = SecondPage.AddButton("Buy Arrow 🎯 [150 ¥]", function()
         local args = {[1]="Stand Arrow"};
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
     end);
@@ -589,8 +589,8 @@ if game.PlaceId == Supported.Project_Menacing then
         end        
     end)
 
-    local ThirdButton = ThirdPage.AddButton("Buy 5x 🍎 + 🎯  [2,000 ¥]", function()
-        for i = 1,5 do
+    local ThirdButton = ThirdPage.AddButton("Buy 3x 🍎 + 🎯  [1,300 ¥]", function()
+        for i = 1,3 do
             local args = {[1] = "Rokakaka Fruit"};
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
             local args = {[1] = "Stand Arrow"};
