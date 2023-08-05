@@ -15,7 +15,7 @@ Script Hub that supports various games with OP features.
 - Fluxus
 - Oxy-U
 - Valyse
-- Etc...
+- etc...
 
 ## Supported Games
 
@@ -27,7 +27,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠
 🟢 [SPTS Endless]: (https://www.roblox.com/games/12603365593/SPTS-Endless)
 🟢 [Chainsaw Man X]: (https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X)
 
-## Loadstring
+## Main Source
 
 ```lua
 --// Flame's Hub 🔥\\--
@@ -37,3 +37,10 @@ getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/So
 pcall(function()
     loadstring(game:HttpGet(getgenv().Flames_Hub))();
 end)
+
+## User Interface
+![image](https://github.com/Lvl9999/Flames/assets/123672448/9250a851-734c-4862-8b99-6506443c307a)
+
+## Protection Mode:
+Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
+
