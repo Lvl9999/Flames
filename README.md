@@ -1,6 +1,6 @@
 # Flame's Hub 🔥
 
-Script Hub that supports various games with OP features.
+- Script Hub that supports various games with OP features.
 
 ## Credits 👀
 
@@ -23,7 +23,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠
 🟢 [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X)
 
 ## Protection Mode:
-Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
+- Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
 
 ## Main Source
 
