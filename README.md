@@ -14,11 +14,11 @@ Operational = 🟢 Unoperational = 🔴 In Maintenance = 🟠
 -------------------------------------------------------------------------------
 
 # Supported Executors: 
-🟢 | Krnl
-🟢 | Electron
-🟢 | Fluxus
-🟢 | Oxy-U
-🟢 | Valyse
+ | Krnl
+ | Electron
+ | Fluxus
+ | Oxy-U
+ | Valyse
 
 # Supported Games:
 
