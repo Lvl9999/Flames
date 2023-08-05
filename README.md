@@ -2,10 +2,10 @@
 
 - Script Hub that supports various games with OP features.
 
-##### Main Credits:
+### Main Credits:
 - [Flames](https://discord.com/users/656455297979908106) | Scripter / Owner 🔥
 
-## Supported Exploits:
+### Supported Exploits:
 
 - **Krnl** | **Electron** | **Fluxus** | **Oxy-U** | **Valyse** | **etc...**
 
