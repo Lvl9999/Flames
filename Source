@@ -7,25 +7,6 @@ if not AutoExec:IsLoaded() then
     AutoExec.Loaded:Wait();
 end
 
---// STATUS❗\\--
--- Operational = 🟢
--- Unoperational = 🔴
--- In Maintenance = 🟠
-
---//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\--
---// Readme.file \\
--- 1. By publishing this project Open Source, I lose my privileges of ownership due to many skids able to copy my source. You are allowed to use some of its features but you must credit me.
--- 2. Some of its feature will not work due to your exploit not supporting some of its functions like "setclipboard".
--- 3. Some exploits like Valyse will not show the emojis and instead show them as "?". Better to use Fluxus, Or Electron cause they show emojis + support the functions.
--- 4. This script updates a lot and there might be major changes.
-
---// Credits 👀\\
--- Discord: ThroughTheFireAndFlames#9925 | Scripter/Owner
-
--- V3rmillion: Twink | https://v3rmillion.net/member.php?action=profile&uid=1078854 | UI Library 👍
--- Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
---//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\\--
-
 -- Credits to ao-0
 shared.LoaderTitle = "Flame's Hub 🔥"
 shared.LoaderKeyFrames = {
@@ -80,20 +61,6 @@ else
 end
 end)
 
---// Anti afk V1 \\--
-task.spawn(function()
-    if getconnections and setclipboard then
-        for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
-           v:Disable();
-        end
-        warn("Good Exploit");
-        else
-        game:GetService("Players").LocalPlayer.Idled:connect(function()
-            game:GetService("VirtalUser"):ClickButton2(Vector2.new());
-        end)
-        warn("Trash Exploit");
-    end
-end)
 -- // Anti afk V2 \\--
 task.spawn(function()
     getgenv().Press = function(v)
@@ -110,13 +77,12 @@ local Notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/insaned
 
 --// Supported Games \\--
 local Supported = {
-    Project_Menacing = 5910449407,
-    Soul_Cultivation = 12454097560,
-    Chainsaw_ManDH = 11345435986,
-    SPTS_Endless = 12603365593,
-    Chainsaw_ManXPVP = 14070046506,
-    Chainsaw_ManXGrind = 13566086428,
-
+    Project_Menacing = 5910449407, -- Project Menacing
+    Soul_Cultivation = 12454097560, -- Soul Cultivation
+    Chainsaw_ManDH = 11345435986, -- Chainsaw Man Devil Heart
+    SPTS_Endless = 12603365593, -- SPTS Endless
+    Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
+    Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
 }
 
 --// Unsupported Game Result \\--
@@ -178,11 +144,11 @@ local ScriptXSlider = ScriptX.AddSlider("Gravity", {Min = 0, Max = 1000, Def = 5
     game.Workspace.Gravity = Value
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("Fixing 🟠", {Min = 0, Max = 1000, Def = 16}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("Soon  🟠", {Min = 0, Max = 1000, Def = 16}, function(Value)
     -- Soon
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("Fixing 🟠", {Min = 0, Max = 1000, Def = 50}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("Soon  🟠", {Min = 0, Max = 1000, Def = 50}, function(Value)
     -- Soon
 end)
 
