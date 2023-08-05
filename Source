@@ -1302,7 +1302,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stats 👀");
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Devil Power", false, function(Value)
             getgenv().Dpower = Value
-            while getgenv().Dpower == true do wait(0.1);
+            while getgenv().Dpower == true do wait(0.001);
                 local args = {
                     [1] = "Stats",
                     [2] = "Add",
@@ -1311,12 +1311,19 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))
-                                                                                                        
+                local args = {
+                    [1] = "Stats",
+                    [2] = "Add",
+                    [3] = "DevilPower",
+                    [4] = 5
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                        
             end  
         end);
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Defense", false, function(Value)
             getgenv().Def = Value
-            while getgenv().Def == true do wait(0.1);
+            while getgenv().Def == true do wait(0.001);
                 local args = {
                     [1] = "Stats",
                     [2] = "Add",
@@ -1325,13 +1332,20 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                
-                                                                                                                                
+                local args = {
+                    [1] = "Stats",
+                    [2] = "Add",
+                    [3] = "Defense",
+                    [4] = 5
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                                                 
             end  
         end);    
   
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Melee", false, function(Value)
             getgenv().Melee = Value
-            while getgenv().Melee == true do wait(0.1);
+            while getgenv().Melee == true do wait(0.001);
                 local args = {
                     [1] = "Stats",
                     [2] = "Add",
@@ -1340,7 +1354,14 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                
-                                                                                                                              
+                local args = {
+                    [1] = "Stats",
+                    [2] = "Add",
+                    [3] = "Defense",
+                    [4] = 5
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                                               
             end  
         end);  
 
