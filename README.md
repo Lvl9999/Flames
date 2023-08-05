@@ -37,6 +37,6 @@ end)
 ## User Interface
 ![image](https://github.com/Lvl9999/Flames/assets/123672448/9250a851-734c-4862-8b99-6506443c307a)
 
-## Special Credits:
+##$ Special Credits:
 - [Twink](https://v3rmillion.net/member.php?action=profile&uid=1078854) | UI Library 👍
 - [insanedude59](https://github.com/insanedude59) | Notification UI 👍
