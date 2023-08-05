@@ -18,7 +18,6 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠
 
 ### Protection Mode:
 - **Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.**
-- Basics: when "true" = executing | when "false" = not executing
 
 ## Main Source:
 
