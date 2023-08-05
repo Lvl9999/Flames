@@ -10,11 +10,11 @@ Script Hub that supports various games with OP features.
 
 ## Supported Executors
 
-- `Krnl`
-- `Electron`
-- `Fluxus`
-- `Oxy-U`
-- `Valyse`
+- **Krnl**
+- **Electron**
+- **Fluxus**
+- **Oxy-U**
+- **Valyse**
 
 ## Supported Games
 
