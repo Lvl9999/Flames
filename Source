@@ -164,38 +164,101 @@ local FirstButton = FirstPage.AddButton("Feedback 📝 [GUI]", function()
 end);
 
 -----------------------------------------------------------------------------------------------------
-local ScriptXLabel = ScriptX.AddLabel("Quick stuff ⚡");
-local ScriptXButton = ScriptX.AddButton("Health esp", function()
--- xiba 4/4/2023
--- join XCT for more scripts
--- https://discord.gg/Dgp598affj
+local ScriptXLabel = ScriptX.AddLabel("Lightweight Cheats  🍃");
+local ScriptXSlider = ScriptX.AddSlider("Gravity", {Min = 0, Max = 1000, Def = 50}, function(Value)
+    game.Workspace.Gravity = Value
+end)
 
-local function ApplyESP(v)
-    if v.Character and v.Character:FindFirstChildOfClass'Humanoid' then
-        v.Character.Humanoid.NameDisplayDistance = 9e9
-        v.Character.Humanoid.NameOcclusion = "NoOcclusion"
-        v.Character.Humanoid.HealthDisplayDistance = 9e9
-        v.Character.Humanoid.HealthDisplayType = "AlwaysOn"
-        v.Character.Humanoid.Health = v.Character.Humanoid.Health -- triggers changed
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed", {Min = 0, Max = 500, Def = 16}, function(Value)
+    local plr = game.Players.LocalPlayer
+    local char = plr.Character
+
+    local ws = Value
+    char.Humanoid.WalkSpeed = ws
+end)
+
+local plr = game.Players.LocalPlayer
+
+local mt = getrawmetatable(game)
+setreadonly(mt,false)
+local index = mt.__index
+local newindex = mt.__newindex
+
+local spoofTo = plr.Character.Humanoid.WalkSpeed
+
+mt.__index = newcclosure(function(t, i)
+    if tostring(i) == "WalkSpeed" then
+        if not checkcaller() then
+            return spoofTo
+        end
     end
- end
- for i,v in pairs(game.Players:GetPlayers()) do
-    ApplyESP(v)
-    v.CharacterAdded:Connect(function()
-        task.wait(0.33)
-        ApplyESP(v)
-    end)
- end
+    return index(t, i)
+end)
 
- game.Players.PlayerAdded:Connect(function(v)
-    ApplyESP(v)
-    v.CharacterAdded:Connect(function()
-        task.wait(0.33)
-        ApplyESP(v)
-    end)
- end)
-end);
+local ScriptXSlider = ScriptX.AddSlider("JumpPower", {Min = 0, Max = 500, Def = 16}, function(Value)
+    local plr = game.Players.LocalPlayer
+    local char = plr.Character
 
+    local jp = Value
+    char.Humanoid.JumpPower = jp
+end)
+
+local plr = game.Players.LocalPlayer
+
+local char = plr.Character
+local humanoid = char and char:FindFirstChild("Humanoid")
+if not humanoid then
+    char.ChildAdded:Connect(function(child)
+        if child.Name == "Humanoid" then
+            humanoid = child
+        end
+    end)
+end
+
+local mt = getrawmetatable(humanoid)
+setreadonly(mt, false)
+local index = mt.__index
+
+local spoofJumpPower = humanoid.JumpPower
+
+mt.__index = newcclosure(function(t, i)
+    if tostring(i) == "JumpPower" then
+        if not checkcaller() then
+            return spoofJumpPower
+        end
+    end
+    return index(t, i)
+end)
+
+local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
+    -- Credits to Xiba
+    getgenv().FlaggingESP = false
+    getgenv().FlaggingESP = Value
+
+    local function ApplyESP(v)
+        if v.Character and v.Character:FindFirstChildOfClass('Humanoid') then
+            v.Character.Humanoid.NameDisplayDistance = getgenv().FlaggingESP and 9e9 or 0
+            v.Character.Humanoid.NameOcclusion = getgenv().FlaggingESP and "NoOcclusion" or "OccludeAll"
+            v.Character.Humanoid.HealthDisplayDistance = getgenv().FlaggingESP and 9e9 or 0
+            v.Character.Humanoid.HealthDisplayType = getgenv().FlaggingESP and "AlwaysOn" or "Never"
+            v.Character.Humanoid.Health = v.Character.Humanoid.Health
+        end
+    end
+
+    for i, v in pairs(game.Players:GetPlayers()) do
+        ApplyESP(v)
+    end
+
+    game.Players.PlayerAdded:Connect(function(v)
+        ApplyESP(v)
+        v.CharacterAdded:Connect(function()
+            task.wait(0.33)
+            ApplyESP(v)
+        end)
+    end)
+end)
+
+local ScriptXLabel = ScriptX.AddLabel("Quick Scripts  ⚡");
 local ScriptXButton = ScriptX.AddButton("Rejoin", function()
     task.spawn(function()
 		Notif:Notification("Flame's Hub 🔥", 'Rejoining...', "GothamSemibold", "Gotham", 0.5);
@@ -233,16 +296,6 @@ end);
 
 local ScriptXButton = ScriptX.AddButton("Teleport Nearest Head", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/TeleportNearest/main/Universal"))();
-end);
-
-local ScriptXLabel = ScriptX.AddLabel("Unique Scripts 👀");
-local ScriptXButton = ScriptX.AddButton("Flame's Scripts  🔥", function()
-	if setclipboard then
-	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	    setclipboard("https://scriptblox.com/u/Flames");
-	else
-	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
-	end
 end);
 
 -----------------------------------------------------------------------------------------------------
@@ -1062,20 +1115,19 @@ if game.PlaceId == Supported.SPTS_Endless then
 end
 
 --// 🟢 Chainsaw Man X \\--
-if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  then
+if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chainsaw_ManXGrind then
     task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Chainsaw Man X  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
-
         --// Main Pages \\--
         local SecondPage = MainUI.AddPage("Fighting");
         local SecondAndHalfPage = MainUI.AddPage("Farming");
-        -- local ThirdPage = MainUI.AddPage("Trolling");
+        local ThirdPage = MainUI.AddPage("Teleports");
         -- local FourthPage = MainUI.AddPage("Training");
         -- local FivePage = MainUI.AddPage("Farming");
         
-        local SecondLabel = SecondPage.AddLabel("[+] GRIND WORLD | OP  👀");
+        local SecondLabel = SecondPage.AddLabel("[+] Grind World");
         local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
             getgenv().AutoBlockingX = Value
             while getgenv().AutoBlockingX == true do wait(0.75);
@@ -1136,7 +1188,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
             end  
         end);
 
-        local SecondLabel = SecondPage.AddLabel("[+] PVP WORLD | OP  👀");
+        local SecondLabel = SecondPage.AddLabel("[+] PVP World");
         local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
             getgenv().AutoBlocking = Value
             while getgenv().AutoBlocking == true do wait(0.1);
@@ -1315,7 +1367,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
                     [1] = "Stats",
                     [2] = "Add",
                     [3] = "DevilPower",
-                    [4] = 5
+                    [4] = 10
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                        
@@ -1336,7 +1388,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
                     [1] = "Stats",
                     [2] = "Add",
                     [3] = "Defense",
-                    [4] = 5
+                    [4] = 10
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                                                 
@@ -1358,7 +1410,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP or Supported.Chainsaw_ManXGrind  t
                     [1] = "Stats",
                     [2] = "Add",
                     [3] = "Defense",
-                    [4] = 5
+                    [4] = 10
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                                               
