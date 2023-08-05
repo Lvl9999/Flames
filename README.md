@@ -1,5 +1,5 @@
 # Flame's Hub 🔥
-- [Flames 🔥](https://discord.com/users/656455297979908106) | Scripter 👍
+- [ThroughTheFireAndFlames#9925](https://discord.com/users/656455297979908106) | Flame's Hub Owner
 
 - Script Hub that supports various games with OP features.
 
