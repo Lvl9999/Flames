@@ -45,5 +45,5 @@ end)
 ## Protection Mode:
 Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
 
-![3f34ac87a3661e9b26a0c418440dbe53](https://github.com/Lvl9999/Flames/assets/123672448/31d31d60-49f7-450a-8a12-9ec10c791a3f)
 
+![FlamboyantFrightenedAfghanhound-size_restricted](https://github.com/Lvl9999/Flames/assets/123672448/7466801a-f07f-46f6-b6c6-c5a7969fecb4)
