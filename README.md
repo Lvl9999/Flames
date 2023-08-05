@@ -8,7 +8,7 @@
 
 ## Supported Games:
 
-Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠
+Operational = 🟢 | Unoperational = 🔴 | In Progress = 🟡 | In Maintenance = 🟠 
 
 - [Project Menacing](https://www.roblox.com/games/5910449407/Project-Menacing) | **🟢**
 
