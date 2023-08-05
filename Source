@@ -80,9 +80,9 @@ else
 end
 end)
 
---// Anti afk \\--
+--// Anti afk V1 \\--
 task.spawn(function()
-    if getconnections or setclipboard then
+    if getconnections and setclipboard then
         for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
            v:Disable();
         end
@@ -92,6 +92,15 @@ task.spawn(function()
             game:GetService("VirtalUser"):ClickButton2(Vector2.new());
         end)
         warn("Trash Exploit");
+    end
+end)
+-- // Anti afk V2 \\--
+task.spawn(function()
+    getgenv().Press = function(v)
+        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+    end
+    while true do wait(0.1)
+        Press("RightBracket")
     end
 end)
 
