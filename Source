@@ -1122,11 +1122,10 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         local SecondPage = MainUI.AddPage("Fighting");
         local SecondAndHalfPage = MainUI.AddPage("Farming");
         local ThirdPage = MainUI.AddPage("Teleports");
-        -- local FourthPage = MainUI.AddPage("Training");
-        -- local FivePage = MainUI.AddPage("Farming");
-        
+  
         local SecondLabel = SecondPage.AddLabel("[+] Grind World");
         local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().AutoBlockingX = Value
             while getgenv().AutoBlockingX == true do wait(0.75);
                 local args = {
@@ -1148,6 +1147,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
             end  
         end);
         local SecondLabel = SecondPage.AddToggle("M1 | No Cooldown", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().M1noCooldownX = Value
             while getgenv().M1noCooldownX == true do wait(0.1);
                 local args = {
@@ -1188,6 +1188,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 
         local SecondLabel = SecondPage.AddLabel("[+] PVP World");
         local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().AutoBlocking = Value
             while getgenv().AutoBlocking == true do wait(0.1);
                 local args = {
@@ -1209,6 +1210,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondLabel = SecondPage.AddToggle("M1 | No Cooldown", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().M1noCooldown = Value
             while getgenv().M1noCooldown == true do wait(0.1);
                 local args = {
@@ -1246,6 +1248,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondLabel = SecondPage.AddToggle("Barrage | No Cooldown", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().Barrage = Value
             while getgenv().Barrage == true do wait(0.1);
                 local args = {
@@ -1258,6 +1261,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondLabel = SecondPage.AddToggle("Demonic Slash | No Cooldown", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().Crimson = Value
             while getgenv().Crimson == true do wait(0.1);
                 local args = {
@@ -1269,6 +1273,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondLabel = SecondPage.AddToggle("UpperCut | No Cooldown", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().UpperCutnoCooldown = Value
             while getgenv().UpperCutnoCooldown == true do wait(0.1);
                 local args = {
@@ -1282,6 +1287,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 
         local SecondLabel = SecondPage.AddLabel("[+] Server  ⚠️");
         local SecondLabel = SecondPage.AddToggle("Transform | Crash Server", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().CrashServer = Value
             while getgenv().CrashServer == true do wait(0.1);
                 local args = {
@@ -1294,6 +1300,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 
         local SecondLabel = SecondPage.AddLabel("[+] Effects  ✨");
         local SecondLabel = SecondPage.AddToggle("JumpSlam | Particle", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().JumpSlams = Value
             while getgenv().JumpSlams == true do wait(0.1);
                 local args = {
@@ -1305,6 +1312,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondLabel = SecondPage.AddToggle("Dash | Particle", false, function(Value)
+            if game.PlaceId == 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in pvp World", "GothamSemibold", "Gotham", 1); return end
             getgenv().DashH = Value
             while getgenv().DashH == true do wait(0.1);
                 local args = {
@@ -1316,7 +1324,8 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Quests ❗");
-        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Delivery Quest", false, function(Value)
+        local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Delivery Quest [Bugged]", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().QuestGrabbing = Value -- "questing" 🤓❓
             while getgenv().QuestGrabbing == true do wait(1);
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(422.9122314453125, 282.396240234375, -2241.543212890625)
@@ -1341,16 +1350,19 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);
 
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Mafias Quest", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().FarminMafias = Value
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/MafiasAutofarmChainsawManX"))();
         end);
 
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Mafia Boss Quest", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().FarminMafiaBoss = Value
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/MafiaBossAutofarmChainsawManX"))();
         end);
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stats 👀");
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Devil Power", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().Dpower = Value
             while getgenv().Dpower == true do wait(0.001);
                 local args = {
@@ -1372,6 +1384,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
             end  
         end);
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Defense", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().Def = Value
             while getgenv().Def == true do wait(0.001);
                 local args = {
@@ -1394,6 +1407,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);    
   
         local SecondAndHalfLabel = SecondAndHalfPage.AddToggle("Melee", false, function(Value)
+            if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
             getgenv().Melee = Value
             while getgenv().Melee == true do wait(0.001);
                 local args = {
@@ -1407,7 +1421,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
                 local args = {
                     [1] = "Stats",
                     [2] = "Add",
-                    [3] = "Melee",
+                    [3] = "Defense",
                     [4] = 5
                 }
                 
