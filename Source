@@ -226,9 +226,9 @@ local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
 
     local function ApplyESP(v)
         if v.Character and v.Character:FindFirstChildOfClass('Humanoid') then
-            v.Character.Humanoid.NameDisplayDistance = getgenv().FlaggingESP and 9e9 or 0
+            v.Character.Humanoid.NameDisplayDistance = getgenv().FlaggingESP and 9e9 or 10
             v.Character.Humanoid.NameOcclusion = getgenv().FlaggingESP and "NoOcclusion" or "OccludeAll"
-            v.Character.Humanoid.HealthDisplayDistance = getgenv().FlaggingESP and 9e9 or 0
+            v.Character.Humanoid.HealthDisplayDistance = getgenv().FlaggingESP and 9e9 or 10
             v.Character.Humanoid.HealthDisplayType = getgenv().FlaggingESP and "AlwaysOn" or "Never"
             v.Character.Humanoid.Health = v.Character.Humanoid.Health
         end
