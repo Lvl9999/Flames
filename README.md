@@ -13,7 +13,8 @@ Github: insanedude59 | https://github.com/insanedude59 | Notification UI 👍
 # Supported Games ✅:
 Operational = 🟢 Unoperational = 🔴 In Maintenance = 🟠
 -------------------------------------------------------------------------------
-![image](https://github.com/Lvl9999/Flames/assets/123672448/c504b62a-4df5-4ff1-8aaf-85ec7c053955)
+![krnl](https://github.com/Lvl9999/Flames/assets/123672448/6e9e0eb0-72f3-4677-833b-4092e785636b) ![fluxus-7292021](https://github.com/Lvl9999/Flames/assets/123672448/6671ba28-1c94-491f-a489-d0c185ca8a1f)
+
 
 
 🟢 | Project Menacing: https://www.roblox.com/games/5910449407/Project-Menacing
