@@ -1,9 +1,8 @@
 # Flame's Hub 🔥
+- [Flames](https://discord.com/users/656455297979908106) | Scripter / Owner 🔥
+
 
 - Script Hub that supports various games with OP features.
-
-### Main Credits:
-- [Flames](https://discord.com/users/656455297979908106) | Scripter / Owner 🔥
 
 ### Supported Exploits:
 
