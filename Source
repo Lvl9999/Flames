@@ -1078,8 +1078,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         --// Main Pages \\--
         local SecondPage = MainUI.AddPage("Fighting");
         local SecondAndHalfPage = MainUI.AddPage("Farming");
-        local ThirdPage = MainUI.AddPage("Teleports");
-  
+
         local SecondLabel = SecondPage.AddLabel("[+] Grind World");
         local SecondLabel = SecondPage.AddToggle("Auto Block | No Cooldown", false, function(Value)
             if game.PlaceId ~= 13566086428 then Notif:Notification("Flame's Hub 🔥", "Not in grind World", "GothamSemibold", "Gotham", 1); return end
