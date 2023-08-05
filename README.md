@@ -15,6 +15,7 @@ Script Hub that supports various games with OP features.
 - **Fluxus**
 - **Oxy-U**
 - **Valyse**
+- etc...
 
 ## Supported Games
 
