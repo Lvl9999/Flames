@@ -27,6 +27,9 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠
 🟢 [SPTS Endless](https://www.roblox.com/games/12603365593/SPTS-Endless)
 🟢 [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X)
 
+## Protection Mode:
+Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
+
 ## Main Source
 
 ```lua
@@ -41,9 +44,3 @@ end)
 
 ## User Interface
 ![image](https://github.com/Lvl9999/Flames/assets/123672448/9250a851-734c-4862-8b99-6506443c307a)
-
-## Protection Mode:
-Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
-
-
-![FlamboyantFrightenedAfghanhound-size_restricted](https://github.com/Lvl9999/Flames/assets/123672448/7466801a-f07f-46f6-b6c6-c5a7969fecb4)
