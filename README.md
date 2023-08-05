@@ -41,7 +41,7 @@ Protection Mode is an unique feature that server hop you if anyone says anything
 
 ## Credits 👀
 
-- Discord: ThroughTheFireAndFlames#9925 | Scripter/Owner
-- V3rmillion: Twink | [UI Library](https://v3rmillion.net/member.php?action=profile&uid=1078854) 👍
+- [ThroughTheFireAndFlames#9925](https://discord.com/users/656455297979908106) | Scripter/Owner  
+- [Twink](https://v3rmillion.net/member.php?action=profile&uid=1078854) | UI Library 👍
 - Github: insanedude59 | [Notification UI](https://github.com/insanedude59) 👍
 
