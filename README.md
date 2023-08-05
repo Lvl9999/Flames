@@ -36,7 +36,7 @@ end)
 ```
 
 # User Interface
-![image](https://github.com/Lvl9999/Flames/assets/123672448/b2983b74-4bcb-407d-a9ed-ccf66eebe352)
+![image](https://github.com/Lvl9999/Flames/assets/123672448/9250a851-734c-4862-8b99-6506443c307a)
 
 # Protection Mode:
 Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.
