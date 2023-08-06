@@ -211,6 +211,13 @@ local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
 end)
 
 local ScriptXLabel = ScriptX.AddLabel("Quick Scripts  ⚡");
+local ScriptXButton = ScriptX.AddButton("Teleport GUI", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 0.5);
+	end);
+    loadstring(game:HttpGet("https://pastebin.com/raw/BJ7uaPJd"))();
+end);
+
 local ScriptXButton = ScriptX.AddButton("Rejoin", function()
     task.spawn(function()
 		Notif:Notification("Flame's Hub 🔥", 'Rejoining...', "GothamSemibold", "Gotham", 0.5);
