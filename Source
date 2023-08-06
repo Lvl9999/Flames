@@ -1,5 +1,5 @@
 --// Flame's Hub 🔥\\--
--- getgenv().Protection_Mode = true -- if "true" then serverhop when anyone says anything related in line '37'.
+-- getgenv().Protection_Mode = true -- if "true" then serverhop when anyone says anything related in line '18'.
 local AutoExec = game
 
 repeat wait() until AutoExec:IsLoaded();
