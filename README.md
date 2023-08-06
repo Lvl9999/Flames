@@ -2,8 +2,6 @@
 
 - Script Hub that supports various games with OP features.
 
-- Stay tuned for updates!
-
 ### Supported Exploits:
 
 - **Krnl** | **Electron** | **Fluxus** | **Oxy-U** | **Valyse** | **etc...**
@@ -46,3 +44,5 @@ end)
 **Thanks to these people: 👇**
 - [Twink](https://v3rmillion.net/member.php?action=profile&uid=1078854) | UI Library 👍
 - [insanedude59](https://github.com/insanedude59) | Notification UI 👍
+
+- Stay tuned for updates!
