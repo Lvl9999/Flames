@@ -61,6 +61,26 @@ else
 end
 end)
 
+-- // Walkspeed + JumpPower Bypass \\--
+task.spawn(function()
+    local mt = getrawmetatable(game)
+    local oldindex = mt.__index
+    setreadonly(mt, false)
+    mt.__index = newcclosure(function(self, method)
+
+    if method == 'JumpPower' then
+      return 50
+    end
+
+    if method == 'WalkSpeed' then
+       return 16
+    end
+
+    return oldindex(self, method)
+    end)
+    setreadonly(mt, true)
+end)
+
 -- // Anti afk V2 \\--
 task.spawn(function()
     getgenv().Press = function(v)
@@ -140,16 +160,27 @@ end);
 
 -----------------------------------------------------------------------------------------------------
 local ScriptXLabel = ScriptX.AddLabel("Lightweight Cheats  🍃");
-local ScriptXSlider = ScriptX.AddSlider("Gravity", {Min = 0, Max = 1000, Def = 50}, function(Value)
-    game.Workspace.Gravity = Value
+local ScriptXSlider = ScriptX.AddSlider("Gravity", {Min = 0, Max = 196.2, Def = 196.2}, function(Value)
+    getgenv().GravityValue = Value
+    game.Workspace.Gravity = getgenv().GravityValue
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("Soon  🟠", {Min = 0, Max = 1000, Def = 16}, function(Value)
-    -- Soon
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed", {Min = 16, Max = 500, Def = 16}, function(Value)
+    getgenv().WalkSpeedValue = Value
+    game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
+end)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("Soon  🟠", {Min = 0, Max = 1000, Def = 50}, function(Value)
-    -- Soon
+local ScriptXSlider = ScriptX.AddSlider("JumpPower", {Min = 50, Max = 1000, Def = 50}, function(Value)
+    getgenv().JumpPowerValue = Value
+    game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
+end)
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
 end)
 
 local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
