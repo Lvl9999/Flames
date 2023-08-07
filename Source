@@ -167,14 +167,16 @@ end)
 
 local ScriptXSlider = ScriptX.AddSlider("WalkSpeed", {Min = 16, Max = 500, Def = 16}, function(Value)
     getgenv().WalkSpeedValue = Value
+
     game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
 end)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("JumpPower", {Min = 50, Max = 1000, Def = 50}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("JumpPower", {Min = 50, Max = 500, Def = 50}, function(Value)
     getgenv().JumpPowerValue = Value
+
     game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
     game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
@@ -183,15 +185,57 @@ end)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
 end)
 
+local ScriptXButton = ScriptX.AddButton("Reset WalkSpeed + JumpPower  🟠", function()
+    -- Soon 🟠
+end);
+
+local ScriptXToggle = ScriptX.AddToggle("Noclip", false, function(Value)
+    getgenv().TheyreMagsNotClips = Value
+
+    while true do if getgenv().TheyreMagsNotClips == true then wait(0.001)
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = false
+            end
+        end
+    else
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = true
+            end
+        end
+            break
+        end
+    end     
+end)
+
+local ScriptXToggle = ScriptX.AddToggle("X Ray", false, function(Value)
+    getgenv().XrayToggle = Value
+    if getgenv().XrayToggle == true then
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
+                v.LocalTransparencyModifier = 0.5
+            end
+        end
+    end
+    if getgenv().XrayToggle == false then
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
+                v.LocalTransparencyModifier =  0
+            end
+        end
+    end    
+end)
+
 local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
     -- Credits to Xiba
     getgenv().FlaggingESP = Value
 
     local function ApplyESP(v)
         if v.Character and v.Character:FindFirstChildOfClass('Humanoid') then
-            v.Character.Humanoid.NameDisplayDistance = getgenv().FlaggingESP and 9e9 or 10
+            v.Character.Humanoid.NameDisplayDistance = getgenv().FlaggingESP and 9e9 or 50
             v.Character.Humanoid.NameOcclusion = getgenv().FlaggingESP and "NoOcclusion" or "OccludeAll"
-            v.Character.Humanoid.HealthDisplayDistance = getgenv().FlaggingESP and 9e9 or 10
+            v.Character.Humanoid.HealthDisplayDistance = getgenv().FlaggingESP and 9e9 or 50
             v.Character.Humanoid.HealthDisplayType = getgenv().FlaggingESP and "AlwaysOn" or "Never"
             v.Character.Humanoid.Health = v.Character.Humanoid.Health
         end
@@ -210,8 +254,32 @@ local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
     end)
 end)
 
+getgenv().Stored = {}
+
+for i,v in ipairs(game.Players:GetPlayers()) do
+    if v ~= game.Players.LocalPlayer then
+        table.insert(getgenv().Stored, v.Name)
+    end
+end
+
+local ScriptXToggle = ScriptX.AddDropdown("Teleport", getgenv().Stored, function(Value)
+    for i,v in ipairs(game.Players:GetPlayers()) do
+        if v.Name == Value then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
+        end
+    end
+end)
+
+local ScriptXToggle = ScriptX.AddDropdown("Tween", getgenv().Stored, function(Value)
+    for i,v in ipairs(game.Players:GetPlayers()) do
+        if v.Name == Value then
+            game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"), TweenInfo.new((v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude / 100, Enum.EasingStyle.Linear), {CFrame = CFrame.new(v.Character.HumanoidRootPart.Position)}):Play();
+        end
+    end
+end)
+
 local ScriptXLabel = ScriptX.AddLabel("Quick Scripts  ⚡");
-local ScriptXButton = ScriptX.AddButton("Teleport GUI", function()
+local ScriptXButton = ScriptX.AddButton("Teleport GUI [Better]", function()
     task.spawn(function()
 		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 0.5);
 	end);
@@ -1373,3 +1441,10 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 
 -- More will be added~
 end
+
+local Settings = MainUI.AddPage("Settings  🟠");
+
+local SettingsLabel = Settings.AddLabel("Coming Soon  🟠");
+local SettingsButton = Settings.AddButton("Stay tuned for Updates!", function()
+    -- Soon 🟠
+end);
