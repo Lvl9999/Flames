@@ -1442,7 +1442,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 -- More will be added~
 end
 
-local Settings = MainUI.AddPage("Settings  🟠");
+local Settings = MainUI.AddPage("Settings");
 
 local SettingsLabel = Settings.AddLabel("Coming Soon  🟠");
 local SettingsButton = Settings.AddButton("Stay tuned for Updates!", function()
