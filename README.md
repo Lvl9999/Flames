@@ -36,8 +36,8 @@ end)
 ```
 
 # User Interface:
-![image](![image](https://github.com/Lvl9999/Flames/assets/123672448/4c475790-bd7b-4241-a3c5-e47a341904af)
-)
+![image](https://github.com/Lvl9999/Flames/assets/123672448/2d8011de-371e-4df8-8e6b-1d7e491f71c8)
+
 
 ### Special Credits:
 - [Flames](https://discord.com/users/656455297979908106) | Scripter / Support / Owner ✍️
