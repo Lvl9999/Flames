@@ -20,6 +20,9 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | 🟢    👈 Newest Release 🔥
 
+- [Elemental Battlegrounds]([https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X](https://www.roblox.com/games/566399244/SOLAR-Elemental-Battlegrounds)) | 🔵
+
+
 ### Protection Mode:
 - **Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.**
 
