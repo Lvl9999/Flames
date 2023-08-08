@@ -1443,23 +1443,6 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 -- More will be added~
 end
 
---// 🟢 Elemental Battlegrounds \\--
-if game.PlaceId == Supported.ElementalBattleGrounds then
-    task.spawn(function()
-        wait(3);
-        Notif:Notification("Game Detected ⚠️", "Elemental Battlegrounds  🔥", "GothamSemibold", "Gotham", 2.5);
-    end)
-        --// Main Pages \\--
-        local SecondPage = MainUI.AddPage("Farming");
-
-        local SecondLabel = SecondPage.AddLabel("[+] Kills  😈");
-        local SecondLabel = SecondPage.AddToggle("Start Farming   🟠", false, function(Value)
-            -- Soon 🟠
-        end);
-
-end
-
-
 local Settings = MainUI.AddPage("Settings");
 
 local SettingsLabel = Settings.AddLabel("Coming Soon  🟠");
