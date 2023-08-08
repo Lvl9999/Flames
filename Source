@@ -199,24 +199,60 @@ local ScriptXButton = ScriptX.AddButton("Reset WalkSpeed + JumpPower  🟠", fun
     -- Soon 🟠
 end);
 
+local ScriptXToggle = ScriptX.AddToggle("Invisible", false, function(Value)
+    getgenv().InvisibleToggle = Value
+
+    getgenv().InvisibleToggle = not getgenv().InvisibleToggle
+    local Invisible = workspace:FindFirstChild('invischair')
+    for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+        if v:IsA("BasePart") and v ~= game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            v.Transparency = 0
+        end
+    end
+    if getgenv().InvisibleToggle == true then
+        if Invisible then
+            Invisible:Remove()
+        end
+    else
+        for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v:IsA("BasePart") and v ~= game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                v.Transparency = 0.5
+            end
+        end
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e9,9e9)
+        if not Invisible then
+            Invisible = Instance.new('Seat', game.Workspace)
+            Invisible.Name = 'invischair'
+            Invisible.Transparency = 1
+            Invisible.Position = Vector3.new(9e9, 9e9, 9e9)
+            local Weld = Instance.new("Weld", Invisible)
+            Weld.Part0 = Invisible
+            Weld.Part1 = game.Players.LocalPlayer.Character:FindFirstChild("Torso") or game.Players.LocalPlayer.Character.UpperTorso
+        end
+        Invisible.Anchored = false
+        Invisible.CanCollide = false
+        Invisible.CFrame = X
+    end  
+end)
+
 local ScriptXToggle = ScriptX.AddToggle("Noclip", false, function(Value)
     getgenv().TheyreMagsNotClips = Value
 
-    while true do if getgenv().TheyreMagsNotClips == true then wait(0.001)
+    while getgenv().TheyreMagsNotClips == true do
+        wait(0.1)
         for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
             if v:IsA("BasePart") then
                 v.CanCollide = false
             end
         end
-    else
-        for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
-            if v:IsA("BasePart") then
-                v.CanCollide = true
-            end
+    end
+ 
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+        if v:IsA("BasePart") then
+            v.CanCollide = true
         end
-            break
-        end
-    end     
+    end    
 end)
 
 local ScriptXToggle = ScriptX.AddToggle("X Ray", false, function(Value)
