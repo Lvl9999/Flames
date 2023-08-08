@@ -1443,7 +1443,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 -- More will be added~
 end
 
---// 🟢 Chainsaw Man X \\--
+--// 🟢 Elemental Battlegrounds \\--
 if game.PlaceId == Supported.ElementalBattleGrounds then
     task.spawn(function()
         wait(3);
