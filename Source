@@ -103,10 +103,11 @@ local Supported = {
     SPTS_Endless = 12603365593, -- SPTS Endless
     Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
     Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
+    ElementalBattleGrounds = 566399244, -- Elemental BattleGrounds
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.ElementalBattleGrounds then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -1441,6 +1442,23 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 
 -- More will be added~
 end
+
+--// 🟢 Chainsaw Man X \\--
+if game.PlaceId == Supported.ElementalBattleGrounds then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Elemental Battlegrounds  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+        --// Main Pages \\--
+        local SecondPage = MainUI.AddPage("Farming");
+
+        local SecondLabel = SecondPage.AddLabel("[+] Kills  😈");
+        local SecondLabel = SecondPage.AddToggle("Start Farming   🟠", false, function(Value)
+            -- Soon 🟠
+        end);
+
+end
+
 
 local Settings = MainUI.AddPage("Settings");
 
