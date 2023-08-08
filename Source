@@ -1637,8 +1637,8 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local ThirdLabel1 = SecondPage.AddLabel("[+] Auto Stand Farm   ✨")
-        local FirstDropdown = SecondPage.AddDropdown("Selected", {
+        local ThirdLabel1 = SecondPage.AddLabel("[+] Auto Stand Farm  🤩")
+        local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
             "Star_Platinum",
             "King_Crimson",
@@ -1686,6 +1686,9 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end)
+        
+
+        
 
 -- Auto Stand farm! [I will continue this later]
 --[[
