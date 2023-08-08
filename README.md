@@ -50,3 +50,4 @@ end)
 - [insanedude59](https://github.com/insanedude59) | Notification UI 👍
 
 - Stay tuned for updates!
+- *SneakPeaks*: https://medal.tv/u/throughthefireandflames
