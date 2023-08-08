@@ -257,14 +257,14 @@ end)
 local ScriptXToggle = ScriptX.AddToggle("X Ray", false, function(Value)
     getgenv().XrayToggle = Value
     if getgenv().XrayToggle == true then
-        for i,v in pairs(workspace:GetDescendants()) do
+        for i, v in pairs(workspace:GetDescendants()) do
             if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
                 v.LocalTransparencyModifier = 0.5
             end
         end
     end
     if getgenv().XrayToggle == false then
-        for i,v in pairs(workspace:GetDescendants()) do
+        for i, v in pairs(workspace:GetDescendants()) do
             if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
                 v.LocalTransparencyModifier =  0
             end
@@ -1524,10 +1524,41 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end)
             end
         end);
+-- Auto Stand farm! [I will continue this later]
+--[[
+getgenv().StandFarming = true
+
+while getgenv().StandFarming == true do wait(0.25)
+    if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
+        pcall(function()
+            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow") == nil then
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
+                wait(0.15)
+                mouse1click() 
+            end
+        end)
+    elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == "Star_Platinum" then -- IT WILL FARM FOR STAR PLATINUM! WARNING, It can reset your stand!
+        print("got stand") -- Soon going to put here notif
+    else
+        pcall(function()
+            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
+                wait(0.15)
+                mouse1click() 
+                wait(0.35)
+                local vim = game:GetService'VirtualInputManager'
+                local x = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Rokakaka_UI.Yes
+                
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+            end
+        end)
+    end
+end
+--]]
 
 -- More Yet to come!
 end
-
 
 local Settings = MainUI.AddPage("Settings");
 
