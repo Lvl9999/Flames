@@ -80,6 +80,17 @@ task.spawn(function()
     setreadonly(mt, true)
 end)
 
+--// Anti Client Kick \\--
+-- Credits to https://scriptblox.com/u/Stars ✨
+task.spawn(function()
+    local Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
+        if getnamecallmethod() == "Kick" then
+            return
+        end
+        return Kick(Self, ...)
+    end)
+end)
+
 -- // Anti afk V2 \\--
 task.spawn(function()
     getgenv().Press = function(v)
