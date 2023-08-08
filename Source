@@ -1637,6 +1637,55 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
+        local ThirdLabel1 = SecondPage.AddLabel("[+] Auto Stand Farm   ✨")
+        local FirstDropdown = SecondPage.AddDropdown("Selected", {
+            "Crazy_Diamond",
+            "Star_Platinum",
+            "King_Crimson",
+            "Star_Platinum:The_World",
+            "Killer_Queen",
+            "Gold_Experience",
+        }, 
+        function(PlayerStandValue1)
+            getgenv().StandFarm1 = PlayerStandValue1
+        end)
+        
+        local ThirdToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
+            getgenv().Farming1 = Value
+            if getgenv().Farming1 == true then
+                Notif:Notification("Flame's Hub 🔥", "Aim your mouse away quickly", "GothamSemibold", "Gotham", 2.5);
+            end
+            while getgenv().Farming1 do
+                wait(0.15)
+        
+                if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow") == nil then
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
+                            wait(0.15)
+                            mouse1click() 
+                        end
+                    end)
+                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 then
+                    Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Ability.Value, "GothamSemibold", "Gotham", 9e9)
+                    break
+                else
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
+                            wait(0.15)
+                            mouse1click() 
+                            wait(0.35)
+                            local vim = game:GetService('VirtualInputManager')
+                            local x = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Rokakaka_UI.Yes
+        
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                        end
+                    end)
+                end
+            end
+        end)
 
 -- Auto Stand farm! [I will continue this later]
 --[[
