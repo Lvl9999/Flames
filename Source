@@ -1545,11 +1545,11 @@ if game.PlaceId == Supported.Heaven_Stand then
         end);
 
         local SecondLabel = SecondPage.AddLabel("[+] Selling  💸");
-        local SecondButton = SecondPage.AddButton("Bypass", function()
+        local SecondButton = SecondPage.AddButton("Bypass [Must Use]", function()
             SellerGuiBypass();
         end);
     
-        local SecondToggle = SecondPage.AddToggle('Click this after "Bypass"', false, function(Value)
+        local SecondToggle = SecondPage.AddToggle("Selling GUI  🖼️", false, function(Value)
             getgenv().SellerGui = Value
 
             while true do if getgenv().SellerGui == true then
