@@ -1503,6 +1503,25 @@ if game.PlaceId == Supported.Heaven_Stand then
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Heaven Stand  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
+    --// Bypass to interact with seller GUI at any range \\--
+    local SellerGuiBypass = function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Seller.HumanoidRootPart.Position);
+        for i,v in pairs(game:GetService("Workspace").NPC.Seller:GetDescendants()) do
+            if v:IsA("ClickDetector") then
+                fireclickdetector(v);
+                wait(0.35);
+                local vim = game:GetService'VirtualInputManager'
+                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+            end
+        end
+        wait(0.15)
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X
+    end
+    -- SellerGuiBypass();
         --// Main Pages \\--
         local SecondPage = MainUI.AddPage("Farming");
         -- local SecondAndHalfPage = MainUI.AddPage("Farming");
@@ -1524,6 +1543,81 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end)
             end
         end);
+
+        local SecondLabel = SecondPage.AddLabel("[+] Selling  💸");
+        local SecondButton = SecondPage.AddButton("Bypass", function()
+            SellerGuiBypass();
+        end);
+    
+        local SecondToggle = SecondPage.AddToggle('Click this after "Bypass"', false, function(Value)
+            getgenv().SellerGui = Value
+
+            while true do if getgenv().SellerGui == true then
+                    game:GetService("Players").LocalPlayer.PlayerGui.Seller.Frame.Visible = true
+                else
+                    game:GetService("Players").LocalPlayer.PlayerGui.Seller.Frame.Visible = false
+                end
+                wait(0.01)
+            end                    
+        end);
+
+        local SecondToggle = SecondPage.AddToggle("Arrows  🎯", false, function(Value)
+            getgenv().SellArrows = Value
+
+            while getgenv().SellArrows == true do wait(1.5)
+                pcall(function()
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.Seller.Frame["Item List"].Arrow.TextLabel
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end)
+            end
+        end);
+
+        local SecondToggle = SecondPage.AddToggle("Rokakakas  🍎", false, function(Value)
+            getgenv().SellFruits = Value
+
+            while getgenv().SellFruits == true do wait(1.5)
+                pcall(function()
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.Seller.Frame["Item List"].Rokakaka.TextLabel
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end)
+            end
+        end);
+
+        local SecondToggle = SecondPage.AddToggle("Stone Masks  🎭", false, function(Value)
+            getgenv().SellStoneMasks = Value
+
+            while getgenv().SellStoneMasks == true do wait(3.15)
+                pcall(function()
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.Seller.Frame["Item List"]["Stone Mask"].TextLabel
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end)
+            end
+        end);
+
+        local SecondToggle = SecondPage.AddToggle("Eye's of Saint's Corpses  👁️", false, function(Value)
+            getgenv().SellEyeOfSaints = Value
+
+            while getgenv().SellEyeOfSaints == true do wait(3.15)
+                pcall(function()
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.Seller.Frame["Item List"]["Eye's of Saint's Corpse"].TextLabel
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end)
+            end
+        end);
+
+
 -- Auto Stand farm! [I will continue this later]
 --[[
 getgenv().StandFarming = true
