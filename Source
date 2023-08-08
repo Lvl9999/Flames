@@ -54,8 +54,7 @@ getgenv().Reaction = function() -- Serverhopper: Was not made by me but used rig
                 TPService:TeleportToPlaceInstance(game.PlaceId, server);
         end
 end;
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/AntiReport/main/Universal"))();
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/AntiReport/main/Universal"))();
 else
     return
 end
@@ -103,11 +102,11 @@ local Supported = {
     SPTS_Endless = 12603365593, -- SPTS Endless
     Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
     Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
-    ElementalBattleGrounds = 566399244, -- Elemental BattleGrounds
+    Heaven_Stand = 11981520251, -- Heaven Stand
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.ElementalBattleGrounds then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -258,14 +257,14 @@ end)
 local ScriptXToggle = ScriptX.AddToggle("X Ray", false, function(Value)
     getgenv().XrayToggle = Value
     if getgenv().XrayToggle == true then
-        for i, v in pairs(workspace:GetDescendants()) do
+        for i,v in pairs(workspace:GetDescendants()) do
             if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
                 v.LocalTransparencyModifier = 0.5
             end
         end
     end
     if getgenv().XrayToggle == false then
-        for i, v in pairs(workspace:GetDescendants()) do
+        for i,v in pairs(workspace:GetDescendants()) do
             if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
                 v.LocalTransparencyModifier =  0
             end
@@ -1496,9 +1495,39 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Menu"):FireServer(unpack(args))                                                                                                                               
             end  
         end);  
-
--- More will be added~
 end
+
+--// 🟢 Heaven Stand \\--
+if game.PlaceId == Supported.Heaven_Stand then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Heaven Stand  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+        --// Main Pages \\--
+        local SecondPage = MainUI.AddPage("Farming");
+        -- local SecondAndHalfPage = MainUI.AddPage("Farming");
+
+        local SecondLabel = SecondPage.AddLabel("[+] Auto Chest  🧰");
+        local SecondToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
+            getgenv().ChestFarming = Value
+
+            while getgenv().ChestFarming == true do wait(0.01)
+                pcall(function()
+                    if #game:GetService("Workspace").Item_Spawnner.Box:GetChildren() > 0 then
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Item_Spawnner.Box:GetChildren()[math.random(1,#game:GetService("Workspace").Item_Spawnner.Box:GetChildren())].Box.Base.Position)
+                        for i,v in pairs(game:GetService("Workspace").Item_Spawnner.Box:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                            end
+                        end
+                    end
+                end)
+            end
+        end);
+
+-- More Yet to come!
+end
+
 
 local Settings = MainUI.AddPage("Settings");
 
