@@ -1537,13 +1537,28 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end)
             end
         end);
+        local SecondLabel = SecondPage.AddLabel("[+] Rares Items  💎");
+        local SecondToggle = SecondPage.AddToggle("Start Farming (Any Item)", false, function(Value)
+            getgenv().RareFarming = Value
 
-        local SecondToggle = SecondPage.AddToggle("Safe Zone [For farming]", false, function(Value)
-            getgenv().SafeFromDeath = Value
-
-            while getgenv().SafeFromDeath == true do wait(1.15)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-63.611202239990234, 1813.3817138671875, -1468.9007568359375);
-            end
+            local Paths = {
+                workspace.Item_Spawnner["Dual Knife"],
+                workspace.Item_Spawnner.Green_Baby,
+                workspace.Item_Spawnner["Requiem Arrow"],
+                workspace.Item_Spawnner.Watch,
+            }
+            
+            while getgenv().RareFarming == true do wait(0.001)
+                for i,v in ipairs(Paths) do
+                    for i,b in pairs(v:GetDescendants()) do
+                        if b:IsA("ClickDetector") then
+                            game.Players.LocalPlayer.Character:MoveTo(b.Parent:IsA("BasePart") and b.Parent.Position or b.Position)
+                            wait(0.5)
+                            fireclickdetector(b)
+                        end
+                    end
+                end
+            end            
         end);
 
         local SecondLabel = SecondPage.AddLabel("[+] Selling  💸");
