@@ -186,31 +186,41 @@ local ScriptXSlider = ScriptX.AddSlider("Gravity", {Min = 0, Max = 196.2, Def = 
     game.Workspace.Gravity = getgenv().GravityValue
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("WalkSpeed", {Min = 16, Max = 500, Def = 16}, function(Value)
+getgenv().Saves = {
+    WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed,
+    JumpHeight = game.Players.LocalPlayer.Character.Humanoid.JumpHeight,
+    JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
+}
+
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 16, Max = 500, Def = 16}, function(Value)
     getgenv().WalkSpeedValue = Value
 
-    game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
-end)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
 end)
 
-local ScriptXSlider = ScriptX.AddSlider("JumpPower", {Min = 50, Max = 500, Def = 50}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500, Def = 50}, function(Value)
     getgenv().JumpPowerValue = Value
 
-    game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
-    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
-end)
     game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
 end)
 
-local ScriptXButton = ScriptX.AddButton("Reset WalkSpeed + JumpPower  🟠", function()
-    -- Soon 🟠
+local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower", false, function(Value)
+    getgenv().LoopingPowers = Value
+    while getgenv().LoopingPowers == true do wait(0.0001)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue        
+        game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
+    end
+end)
+
+local ScriptXButton = ScriptX.AddButton("Reset WalkSpeed + JumpPower", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().Saves.WalkSpeed
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().Saves.JumpHeight
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().Saves.JumpPower
 end);
 
-local ScriptXToggle = ScriptX.AddToggle("Invisible", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("Invisible  👻", false, function(Value)
     getgenv().InvisibleToggle = Value
 
     getgenv().InvisibleToggle = not getgenv().InvisibleToggle
@@ -247,7 +257,7 @@ local ScriptXToggle = ScriptX.AddToggle("Invisible", false, function(Value)
     end  
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("Noclip", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("Noclip   🧱", false, function(Value)
     getgenv().TheyreMagsNotClips = Value
 
     while getgenv().TheyreMagsNotClips == true do
@@ -266,7 +276,7 @@ local ScriptXToggle = ScriptX.AddToggle("Noclip", false, function(Value)
     end    
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("X Ray", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("X Ray   👁️", false, function(Value)
     getgenv().XrayToggle = Value
     if getgenv().XrayToggle == true then
         for i, v in pairs(workspace:GetDescendants()) do
@@ -284,7 +294,7 @@ local ScriptXToggle = ScriptX.AddToggle("X Ray", false, function(Value)
     end    
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("Esp   👁️", false, function(Value)
     -- Credits to Xiba
     getgenv().FlaggingESP = Value
 
@@ -311,7 +321,7 @@ local ScriptXToggle = ScriptX.AddToggle("Esp", false, function(Value)
     end)
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("FreeCam", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("FreeCam   🚁", false, function(Value)
     getgenv().Press = function(v)
         return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
     end
@@ -331,7 +341,7 @@ for i,v in ipairs(game.Players:GetPlayers()) do
     end
 end
 
-local ScriptXToggle = ScriptX.AddDropdown("Teleport", getgenv().Stored, function(Value)
+local ScriptXToggle = ScriptX.AddDropdown("Teleport Player   💁‍♂️", getgenv().Stored, function(Value)
     for i,v in ipairs(game.Players:GetPlayers()) do
         if v.Name == Value then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
@@ -339,7 +349,7 @@ local ScriptXToggle = ScriptX.AddDropdown("Teleport", getgenv().Stored, function
     end
 end)
 
-local ScriptXToggle = ScriptX.AddDropdown("Tween", getgenv().Stored, function(Value)
+local ScriptXToggle = ScriptX.AddDropdown("Tween Player   💁‍♂️", getgenv().Stored, function(Value)
     for i,v in ipairs(game.Players:GetPlayers()) do
         if v.Name == Value then
             game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"), TweenInfo.new((v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude / 100, Enum.EasingStyle.Linear), {CFrame = CFrame.new(v.Character.HumanoidRootPart.Position)}):Play();
