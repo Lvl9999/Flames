@@ -241,7 +241,9 @@ local ScriptXToggle = ScriptX.AddToggle("Invisible  👻", false, function(Value
             end
         end
         local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        wait(0.0001)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e9,9e9)
+        wait(0.15)
         if not Invisible then
             Invisible = Instance.new('Seat', game.Workspace)
             Invisible.Name = 'invischair'
