@@ -181,7 +181,7 @@ end);
 
 -----------------------------------------------------------------------------------------------------
 local ScriptXLabel = ScriptX.AddLabel("Lightweight Cheats  🍃");
-local ScriptXSlider = ScriptX.AddSlider("Gravity", {Min = 0, Max = 196.2, Def = 196.2}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("Gravity  🌎", {Min = 0, Max = 196.2, Def = 196.2}, function(Value)
     getgenv().GravityValue = Value
     game.Workspace.Gravity = getgenv().GravityValue
 end)
