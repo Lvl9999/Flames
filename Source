@@ -1819,7 +1819,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-63.611202239990234, 1813.3817138671875, -1468.9007568359375);
         end);
 
-        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Places");
+        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Main");
         local SecondAndHalfButton = SecondAndHalfPage.AddButton("Stand Storage  🗃️", function()
             game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Pucci.HumanoidRootPart.Position);
             for i,v in pairs(game:GetService("Workspace").NPC.Pucci:GetDescendants()) do
@@ -1850,6 +1850,40 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Shop  🏪", function()
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
+            for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
+                if v:IsA("ClickDetector") then
+                    fireclickdetector(v);
+                    wait(0.35);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+        end);
+
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Seller  💰", function()
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Seller.HumanoidRootPart.Position);
+            for i,v in pairs(game:GetService("Workspace").NPC.Seller:GetDescendants()) do
+                if v:IsA("ClickDetector") then
+                    fireclickdetector(v);
+                    wait(0.35);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+        end);
+
+        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Places");
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Baseball Area  🧢", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(270.7659606933594, 1602.248291015625, -1288.3497314453125)            
+        end);
 
 -- More Yet to come!
 end
