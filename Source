@@ -1664,7 +1664,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "King_Crimson",
             "Star_Platinum:The_World",
             "Killer_Queen",
-            "Gold_Experience",
+            -- "Gold_Experience",
         },
         function(PlayerStandValue1)
             getgenv().StandFarm1 = PlayerStandValue1
@@ -1677,7 +1677,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "King_Crimson",
             "Star_Platinum:The_World",
             "Killer_Queen",
-            "Gold_Experience",
+            -- "Gold_Experience",
         }, 
         function(PlayerStandValue2)
             getgenv().StandFarm2 = PlayerStandValue2
@@ -1689,7 +1689,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "King_Crimson",
             "Star_Platinum:The_World",
             "Killer_Queen",
-            "Gold_Experience",
+            -- "Gold_Experience",
         }, 
         function(PlayerStandValue3)
             getgenv().StandFarm3 = PlayerStandValue3
@@ -1701,7 +1701,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "King_Crimson",
             "Star_Platinum:The_World",
             "Killer_Queen",
-            "Gold_Experience",
+            -- "Gold_Experience",
         }, 
         function(PlayerStandValue4)
             getgenv().StandFarm4 = PlayerStandValue4
@@ -1713,7 +1713,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "King_Crimson",
             "Star_Platinum:The_World",
             "Killer_Queen",
-            "Gold_Experience",
+            -- "Gold_Experience",
         }, 
         function(PlayerStandValue5)
             getgenv().StandFarm5 = PlayerStandValue5
