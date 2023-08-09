@@ -1515,28 +1515,9 @@ if game.PlaceId == Supported.Heaven_Stand then
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Heaven Stand  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
-    --// Bypass to interact with seller GUI at any range \\--
-    local SellerGuiBypass = function()
-        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Seller.HumanoidRootPart.Position);
-        for i,v in pairs(game:GetService("Workspace").NPC.Seller:GetDescendants()) do
-            if v:IsA("ClickDetector") then
-                fireclickdetector(v);
-                wait(0.35);
-                local vim = game:GetService'VirtualInputManager'
-                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
-                
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-            end
-        end
-        wait(0.15)
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X
-    end
-    -- SellerGuiBypass();
         --// Main Pages \\--
         local SecondPage = MainUI.AddPage("Farming");
-        -- local SecondAndHalfPage = MainUI.AddPage("Farming");
+        local SecondAndHalfPage = MainUI.AddPage("Teleports");
 
         local SecondLabel = SecondPage.AddLabel("[+] Auto Chest  🧰");
         local SecondToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
@@ -1566,7 +1547,21 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local SecondLabel = SecondPage.AddLabel("[+] Selling  💸");
         local SecondButton = SecondPage.AddButton("Bypass [Must Use]", function()
-            SellerGuiBypass();
+            local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Seller.HumanoidRootPart.Position);
+            for i,v in pairs(game:GetService("Workspace").NPC.Seller:GetDescendants()) do
+                if v:IsA("ClickDetector") then
+                    fireclickdetector(v);
+                    wait(0.35);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+            wait(0.15)
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X
         end);
     
         local SecondToggle = SecondPage.AddToggle("Selling GUI  🖼️", false, function(Value)
@@ -1637,7 +1632,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local ThirdLabel1 = SecondPage.AddLabel("[+] Auto Stand Farm  🤩")
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrow]  ✨")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
             "Star_Platinum",
@@ -1645,11 +1640,60 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Star_Platinum:The_World",
             "Killer_Queen",
             "Gold_Experience",
-        }, 
+        },
         function(PlayerStandValue1)
             getgenv().StandFarm1 = PlayerStandValue1
         end)
+
+
+        local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
+            "Crazy_Diamond",
+            "Star_Platinum",
+            "King_Crimson",
+            "Star_Platinum:The_World",
+            "Killer_Queen",
+            "Gold_Experience",
+        }, 
+        function(PlayerStandValue2)
+            getgenv().StandFarm2 = PlayerStandValue2
+        end)
         
+        local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
+            "Crazy_Diamond",
+            "Star_Platinum",
+            "King_Crimson",
+            "Star_Platinum:The_World",
+            "Killer_Queen",
+            "Gold_Experience",
+        }, 
+        function(PlayerStandValue3)
+            getgenv().StandFarm3 = PlayerStandValue3
+        end)
+    
+        local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
+            "Crazy_Diamond",
+            "Star_Platinum",
+            "King_Crimson",
+            "Star_Platinum:The_World",
+            "Killer_Queen",
+            "Gold_Experience",
+        }, 
+        function(PlayerStandValue4)
+            getgenv().StandFarm4 = PlayerStandValue4
+        end)
+
+        local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
+            "Crazy_Diamond",
+            "Star_Platinum",
+            "King_Crimson",
+            "Star_Platinum:The_World",
+            "Killer_Queen",
+            "Gold_Experience",
+        }, 
+        function(PlayerStandValue5)
+            getgenv().StandFarm5 = PlayerStandValue5
+        end)
+
         local ThirdToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
             getgenv().Farming1 = Value
             if getgenv().Farming1 == true then
@@ -1666,7 +1710,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                             mouse1click() 
                         end
                     end)
-                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 then
+                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm2 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm3 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm4 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm5 then
                     Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Ability.Value, "GothamSemibold", "Gotham", 9e9)
                     break
                 else
@@ -1686,42 +1730,126 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end)
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Mystery Arrow]  ✨")
+        local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
+            "Gold_Experience_Requiem",
+            "Tusk_Act_4",
+            "Made_In_Heaven",
+        },
+        function(PlayerStandValue1)
+            getgenv().StandFarm1 = PlayerStandValue1
+        end)
+
+
+        local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
+            "Gold_Experience_Requiem",
+            "Tusk_Act_4",
+            "Made_In_Heaven",
+        }, 
+        function(PlayerStandValue2)
+            getgenv().StandFarm2 = PlayerStandValue2
+        end)
         
+        local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
+            "Gold_Experience_Requiem",
+            "Tusk_Act_4",
+            "Made_In_Heaven",
+        }, 
+        function(PlayerStandValue3)
+            getgenv().StandFarm3 = PlayerStandValue3
+        end)
+    
+        local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
+            "Gold_Experience_Requiem",
+            "Tusk_Act_4",
+            "Made_In_Heaven",
+        }, 
+        function(PlayerStandValue4)
+            getgenv().StandFarm4 = PlayerStandValue4
+        end)
 
-        
+        local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
+            "Gold_Experience_Requiem",
+            "Tusk_Act_4",
+            "Made_In_Heaven",
+        }, 
+        function(PlayerStandValue5)
+            getgenv().StandFarm5 = PlayerStandValue5
+        end)
 
--- Auto Stand farm! [I will continue this later]
---[[
-getgenv().StandFarming = true
-
-while getgenv().StandFarming == true do wait(0.25)
-    if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
-        pcall(function()
-            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow") == nil then
-                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
+        local ThirdToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
+            getgenv().Farming1 = Value
+            if getgenv().Farming1 == true then
+                Notif:Notification("Flame's Hub 🔥", "Aim your mouse away quickly", "GothamSemibold", "Gotham", 2.5);
+            end
+            while getgenv().Farming1 do
                 wait(0.15)
-                mouse1click() 
+        
+                if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mystery Arrow") == nil then
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow"))
+                            wait(0.15)
+                            mouse1click() 
+                        end
+                    end)
+                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm2 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm3 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm4 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm5 then
+                    Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Ability.Value, "GothamSemibold", "Gotham", 9e9)
+                    break
+                else
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
+                            wait(0.15)
+                            mouse1click() 
+                            wait(0.35)
+                            local vim = game:GetService('VirtualInputManager')
+                            local x = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Rokakaka_UI.Yes
+        
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                        end
+                    end)
+                end
             end
         end)
-    elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == "Star_Platinum" then -- IT WILL FARM FOR STAR PLATINUM! WARNING, It can reset your stand!
-        print("got stand") -- Soon going to put here notif
-    else
-        pcall(function()
-            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
-                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
-                wait(0.15)
-                mouse1click() 
-                wait(0.35)
-                local vim = game:GetService'VirtualInputManager'
-                local x = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Rokakaka_UI.Yes
-                
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+
+        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Safe Zone");
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Safe Zone  🦺", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-63.611202239990234, 1813.3817138671875, -1468.9007568359375);
+        end);
+
+        local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Places");
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Stand Storage  🗃️", function()
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Pucci.HumanoidRootPart.Position);
+            for i,v in pairs(game:GetService("Workspace").NPC.Pucci:GetDescendants()) do
+                if v:IsA("ClickDetector") then
+                    fireclickdetector(v);
+                    wait(0.35);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
             end
-        end)
-    end
-end
---]]
+        end);
+
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Item Storage  🗃️", function()
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+            for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                if v:IsA("ClickDetector") then
+                    fireclickdetector(v);
+                    wait(0.35);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+        end);
+
 
 -- More Yet to come!
 end
