@@ -1552,7 +1552,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             for i,v in pairs(game:GetService("Workspace").NPC.Seller:GetDescendants()) do
                 if v:IsA("ClickDetector") then
                     fireclickdetector(v);
-                    wait(0.35);
+                    wait(0.55);
                     local vim = game:GetService'VirtualInputManager'
                     local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
                     
@@ -1719,7 +1719,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                             game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
                             wait(0.15)
                             mouse1click() 
-                            wait(0.35)
+                            wait(0.55)
                             local vim = game:GetService('VirtualInputManager')
                             local x = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Rokakaka_UI.Yes
         
@@ -1802,7 +1802,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                             game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
                             wait(0.15)
                             mouse1click() 
-                            wait(0.35)
+                            wait(0.55)
                             local vim = game:GetService('VirtualInputManager')
                             local x = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Rokakaka_UI.Yes
         
@@ -1825,7 +1825,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             for i,v in pairs(game:GetService("Workspace").NPC.Pucci:GetDescendants()) do
                 if v:IsA("ClickDetector") then
                     fireclickdetector(v);
-                    wait(0.35);
+                    wait(0.55);
                     local vim = game:GetService'VirtualInputManager'
                     local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
                     
@@ -1840,7 +1840,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
                 if v:IsA("ClickDetector") then
                     fireclickdetector(v);
-                    wait(0.35);
+                    wait(0.55);
                     local vim = game:GetService'VirtualInputManager'
                     local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
                     
@@ -1855,7 +1855,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
                 if v:IsA("ClickDetector") then
                     fireclickdetector(v);
-                    wait(0.35);
+                    wait(0.55);
                     local vim = game:GetService'VirtualInputManager'
                     local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
                     
@@ -1870,7 +1870,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             for i,v in pairs(game:GetService("Workspace").NPC.Seller:GetDescendants()) do
                 if v:IsA("ClickDetector") then
                     fireclickdetector(v);
-                    wait(0.35);
+                    wait(0.55);
                     local vim = game:GetService'VirtualInputManager'
                     local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
                     
@@ -1885,23 +1885,23 @@ if game.PlaceId == Supported.Heaven_Stand then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(270.7659606933594, 1602.248291015625, -1288.3497314453125);         
         end);
 
-        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 1", function()
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Untitled Area 1", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-48.822303771972656, 1601.148681640625, -159.07952880859375);
         end);
 
-        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 2", function()
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Untitled Area 2", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(396.4667663574219, 1600.86181640625, -358.9969482421875);
         end);
 
-        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 3", function()
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Untitled Area 3", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(410.8349914550781, 1600.6031494140625, -544.82421875);
         end);
 
-        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 4", function()
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Untitled Area 4", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.00613403320312, 1600.797119140625, -100.12725830078125);
         end);
 
-        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 5", function()
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Untitled Area 5", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(292.3304138183594, 1601.976318359375, -411.74566650390625);
         end);
 
