@@ -319,9 +319,8 @@ local ScriptXToggle = ScriptX.AddToggle("FreeCam   🚁", false, function(Value)
     end
     if not getgenv().Running then
         getgenv().Running = true
-        loadstring(game:HttpGet("https://pastebin.com/raw/Jq6r8VAm"))();
+        loadstring(game:HttpGet("https://pastebin.com/raw/CMw96iFd"))();
     end
-    Press("LeftBracket")
     Press("N")
 end)
 
