@@ -1882,8 +1882,29 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Places");
         local SecondAndHalfButton = SecondAndHalfPage.AddButton("Baseball Area  🧢", function()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(270.7659606933594, 1602.248291015625, -1288.3497314453125)            
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(270.7659606933594, 1602.248291015625, -1288.3497314453125);         
         end);
+
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 1", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-48.822303771972656, 1601.148681640625, -159.07952880859375);
+        end);
+
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 2", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(396.4667663574219, 1600.86181640625, -358.9969482421875);
+        end);
+
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 3", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(410.8349914550781, 1600.6031494140625, -544.82421875);
+        end);
+
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 4", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-165.00613403320312, 1600.797119140625, -100.12725830078125);
+        end);
+
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Unnamed Area 5", function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(292.3304138183594, 1601.976318359375, -411.74566650390625);
+        end);
+
 
 -- More Yet to come!
 end
