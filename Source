@@ -1,4 +1,5 @@
 --// Flame's Hub 🔥\\--
+-- getgenv().Protection_Mode = true -- if "true" then serverhop when anyone says anything related in line '18'.
 local AutoExec = game
 
 repeat wait() until AutoExec:IsLoaded();
@@ -13,6 +14,51 @@ shared.LoaderKeyFrames = {
    [2] = {0.5, 0.5}
 }
 loadstring(game:HttpGet'https://raw.githubusercontent.com/ao-0/miami-nights/main/Resources/Loady/v1/Portable.lua')();
+
+getgenv().ForbiddenWords = {"hack","exploit","script","report","cheat","executor","skid","owner","creator","admin","staff","mod"};
+
+task.spawn(function()
+if getgenv().Protection_Mode == true then
+getgenv().Reaction = function() -- Serverhopper: Was not made by me but used rightfully as a open source tool for everyone to look at.
+        local HttpService, TPService = game:GetService("HttpService"), game:GetService("TeleportService");
+        local OtherServers = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100"));
+        function joinNew()
+                if not isfile("servers.sss") then
+                        writefile("servers.sss", HttpService:JSONEncode({}));
+                end
+                local dontJoin = readfile("servers.sss");
+                dontJoin = HttpService:JSONDecode(dontJoin);
+                for Index, Server in next, OtherServers['data'] do
+                        if (Server ~= game.JobId) then
+                                local j = true;
+                                for a, c in pairs(dontJoin) do
+                                        if (c == Server.id) then
+                                                j = false;
+                                        end
+                                end
+                                if j then
+                                        table.insert(dontJoin, Server['id']);
+                                        writefile("servers.sss", HttpService:JSONEncode(dontJoin));
+                                        wait();
+                                        return Server['id'];
+                                end
+                        end
+                end
+        end
+        local server = joinNew();
+        if not server then
+                writefile("servers.sss", HttpService:JSONEncode({}));
+                local server = joinNew();
+                TPService:TeleportToPlaceInstance(game.PlaceId, server);
+        else
+                TPService:TeleportToPlaceInstance(game.PlaceId, server);
+        end
+end;
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/AntiReport/main/Universal"))();
+else
+    return
+end
+end)
 
 -- // Walkspeed + JumpPower Bypass \\--
 task.spawn(function()
@@ -1518,6 +1564,277 @@ if game.PlaceId == Supported.Heaven_Stand then
             end            
         end);
 
+        local SecondLabel = SecondPage.AddLabel("[+] Auto Store Items  💼");
+        local SecondToggle = SecondPage.AddToggle("Normal Arrow  🎯", false, function(Value)
+            getgenv().StoringItems1 = Value
+            getgenv().ItemToStorage1 = "Arrow"
+            
+            local Slots = function(X)
+                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
+                    local vim = game:GetService('VirtualInputManager')
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    wait(0.5)
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+            
+            while getgenv().StoringItems1 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage1) and game:GetService("Players").LocalPlayer.Character:FindFirstChild(getgenv().ItemToStorage1) == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage1))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService'VirtualInputManager'
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                                wait(0.65)
+                                for X = 1,5 do
+                                    Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Mystery Arrow  ❓", false, function(Value)
+            getgenv().StoringItems2 = Value
+            getgenv().ItemToStorage2 = "Mystery Arrow"
+            
+            local Slots = function(X)
+                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
+                    local vim = game:GetService('VirtualInputManager')
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    wait(0.5)
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+            
+            while getgenv().StoringItems2 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage2) and game:GetService("Players").LocalPlayer.Character:FindFirstChild(getgenv().ItemToStorage2) == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage2))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService'VirtualInputManager'
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                                wait(0.65)
+                                for X = 1,5 do
+                                    Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Requiem Arrow  ✨", false, function(Value)
+            getgenv().StoringItems3 = Value
+            getgenv().ItemToStorage3 = "Requiem Arrow"
+            
+            local Slots = function(X)
+                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
+                    local vim = game:GetService('VirtualInputManager')
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    wait(0.5)
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+            
+            while getgenv().StoringItems3 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage3) and game:GetService("Players").LocalPlayer.Character:FindFirstChild(getgenv().ItemToStorage3) == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage3))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService'VirtualInputManager'
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                                wait(0.65)
+                                for X = 1,5 do
+                                    Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Rokakaka  🍎", false, function(Value)
+            getgenv().StoringItemsA = Value
+            getgenv().ItemToStorageA = "Rokakaka"
+            
+            local Slots = function(X)
+                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
+                    local vim = game:GetService('VirtualInputManager')
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    wait(0.5)
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+            
+            while getgenv().StoringItemsA == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorageA) and game:GetService("Players").LocalPlayer.Character:FindFirstChild(getgenv().ItemToStorageA) == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorageA))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService'VirtualInputManager'
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                                wait(0.65)
+                                for X = 1,5 do
+                                    Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Stone Mask  🎭", false, function(Value)
+            getgenv().StoringItems4 = Value
+            getgenv().ItemToStorage4 = "Stone Mask"
+            
+            local Slots = function(X)
+                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
+                    local vim = game:GetService('VirtualInputManager')
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    wait(0.5)
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+            
+            while getgenv().StoringItems4 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage4) and game:GetService("Players").LocalPlayer.Character:FindFirstChild(getgenv().ItemToStorage4) == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage4))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService'VirtualInputManager'
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                                wait(0.65)
+                                for X = 1,5 do
+                                    Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Eyes Of The Saint Corpse  👁️", false, function(Value)
+            getgenv().StoringItems4 = Value
+            getgenv().ItemToStorage4 = "Eye's of Saint's Corpse"
+            
+            local Slots = function(X)
+                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
+                    local vim = game:GetService('VirtualInputManager')
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    wait(0.5)
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
+            
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+            
+            while getgenv().StoringItems4 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage4) and game:GetService("Players").LocalPlayer.Character:FindFirstChild(getgenv().ItemToStorage4) == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage4))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService'VirtualInputManager'
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                                wait(0.65)
+                                for X = 1,5 do
+                                    Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
         local SecondLabel = SecondPage.AddLabel("[+] Selling  💸");
         local SecondButton = SecondPage.AddButton("Bypass [Must Use]", function()
             local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -1591,7 +1908,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local SecondToggle = SecondPage.AddToggle("Eye's of Saint's Corpses  👁️", false, function(Value)
+        local SecondToggle = SecondPage.AddToggle("Eyes Of The Saint Corpses  👁️", false, function(Value)
             getgenv().SellEyeOfSaints = Value
 
             while getgenv().SellEyeOfSaints == true do wait(3.15)
@@ -1960,6 +2277,7 @@ end)
 local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function()
     Notif:Notification("Flame's Hub 🔥", "Restarting...", "GothamSemibold", "Gotham", 1);
     --// Flame's Hub 🔥\\--
+    getgenv().Protection_Mode = false  -- Turn "false" for AFK farming
     getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/Source";
 
     pcall(function()
