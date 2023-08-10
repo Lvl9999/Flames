@@ -1565,6 +1565,23 @@ if game.PlaceId == Supported.Heaven_Stand then
             end            
         end);
 
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Quests  📜")
+        local SecondToggle = SecondPage.AddToggle("Take Damage  🤕", false, function(Value)
+            getgenv().TakingPain = Value
+
+            while getgenv().TakingPain == true do wait(0.015)
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["S:Diavolo Attacking"].HumanoidRootPart.Position + workspace.Enemies["S:Diavolo Attacking"].HumanoidRootPart.CFrame.LookVector * 5);
+            end
+        end);
+
+        local SecondToggle = SecondPage.AddToggle("Deal Damage  👊😈", false, function(Value)
+            getgenv().DealingPain = Value
+
+            while getgenv().DealingPain == true do wait(0.015)
+                
+            end
+        end);
+
         getgenv().Slots = function(X)
             if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
                 local vim = game:GetService('VirtualInputManager')
@@ -1633,6 +1650,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1662,6 +1680,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1691,6 +1710,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1720,6 +1740,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1749,6 +1770,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1778,6 +1800,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1807,6 +1830,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1836,6 +1860,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1865,6 +1890,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1894,6 +1920,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1923,6 +1950,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1952,6 +1980,37 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Yamato  ⚔️", false, function(Value)
+            getgenv().StoringItems13 = Value
+            getgenv().ItemToStorage13 = "Yamato"
+       
+            while getgenv().StoringItems13 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage13) then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage13))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService('VirtualInputManager')
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                                wait(0.65)
+                                for X = 1,6 do
+                                   getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -2050,12 +2109,16 @@ if game.PlaceId == Supported.Heaven_Stand then
         local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrow]  🎯")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
+            "Crazy_Female",
             "Crazy_Heaven",
             "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
+            "Ruby_Diamond",
             "Star_Platinum",
+            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
+            "Tendou Alice",
             "-- MORE WILL BE ADDED SOON --",
         },
         function(PlayerStandValue1)
@@ -2064,12 +2127,17 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
             "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
             "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
+            "Ruby_Diamond",
             "Star_Platinum",
+            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
-            "------",
+            "Tendou Alice",
+            "-- MORE WILL BE ADDED SOON --",
         }, 
         function(PlayerStandValue2)
             getgenv().StandFarm2 = PlayerStandValue2
@@ -2077,12 +2145,17 @@ if game.PlaceId == Supported.Heaven_Stand then
         
         local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
             "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
             "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
+            "Ruby_Diamond",
             "Star_Platinum",
+            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
-            "------",
+            "Tendou Alice",
+            "-- MORE WILL BE ADDED SOON --",
         }, 
         function(PlayerStandValue3)
             getgenv().StandFarm3 = PlayerStandValue3
@@ -2090,12 +2163,17 @@ if game.PlaceId == Supported.Heaven_Stand then
     
         local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
             "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
             "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
+            "Ruby_Diamond",
             "Star_Platinum",
+            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
-            "------",
+            "Tendou Alice",
+            "-- MORE WILL BE ADDED SOON --",
         }, 
         function(PlayerStandValue4)
             getgenv().StandFarm4 = PlayerStandValue4
@@ -2103,12 +2181,17 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
             "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
             "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
+            "Ruby_Diamond",
             "Star_Platinum",
+            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
-            "------",
+            "Tendou Alice",
+            "-- MORE WILL BE ADDED SOON --",
         }, 
         function(PlayerStandValue5)
             getgenv().StandFarm5 = PlayerStandValue5
@@ -2119,7 +2202,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             if getgenv().Farming1 == true then
                 Notif:Notification("Flame's Hub 🔥", "Aim your mouse away quickly", "GothamSemibold", "Gotham", 1.5);
             end
-            while getgenv().Farming1 do wait(0.015)
+            while getgenv().Farming1 do wait(0.55)
                 if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
                     pcall(function()
                         if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") then
@@ -2148,7 +2231,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end)
-    --[[
+
         local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Mystery Arrow]  ✨")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Gold Experience_Requiem",
@@ -2206,7 +2289,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             if getgenv().Farming2 == true then
                 Notif:Notification("Flame's Hub 🔥", "Aim your mouse away quickly", "GothamSemibold", "Gotham", 1.5);
             end
-            while getgenv().Farming2 do wait(0.015)
+            while getgenv().Farming2 do wait(0.55)
                 if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
                     pcall(function()
                         if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow") then
@@ -2235,7 +2318,6 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end)
-        --]]
 
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Safe Zone");
         local SecondAndHalfButton = SecondAndHalfPage.AddButton("Safe Zone  🦺", function()
