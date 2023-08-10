@@ -1585,7 +1585,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Normal Arrow  🎯", false, function(Value)
             getgenv().StoringItems1 = Value
             getgenv().ItemToStorage1 = "Arrow"
-           
+            
             while getgenv().StoringItems1 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage1) then
@@ -1603,6 +1603,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 wait(0.65)
                                 for X = 1,6 do
                                    getgenv().Slots(X);
+                                   wait(0.015);
                                 end
                             end
                         end
@@ -1730,23 +1731,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Eyes Of The Saint Corpse  👁️", false, function(Value)
             getgenv().StoringItems5 = Value
             getgenv().ItemToStorage5 = "Eye's of Saint's Corpse"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+
             while getgenv().StoringItems5 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage5) then
