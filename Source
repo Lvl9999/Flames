@@ -1518,7 +1518,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Safe Zone  [For farming]", false, function(Value)
             getgenv().SafeFromDeath = Value
 
-            while getgenv().SafeFromDeath == true do wait(1.15)
+            while getgenv().SafeFromDeath == true do wait(2.15)
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-63.611202239990234, 1813.3817138671875, -1468.9007568359375);
             end
         end);
@@ -1564,27 +1564,27 @@ if game.PlaceId == Supported.Heaven_Stand then
             end            
         end);
 
+        getgenv().Slots = function(X)
+            if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
+                local vim = game:GetService('VirtualInputManager')
+                local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
+        
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                wait(0.5)
+                local vim = game:GetService'VirtualInputManager'
+                local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
+        
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+            end
+        end
+
         local SecondLabel = SecondPage.AddLabel("[+] Auto Store Items  💼");
         local SecondToggle = SecondPage.AddToggle("Normal Arrow  🎯", false, function(Value)
             getgenv().StoringItems1 = Value
             getgenv().ItemToStorage1 = "Arrow"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+           
             while getgenv().StoringItems1 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage1) then
@@ -1601,7 +1601,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1613,23 +1613,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Mystery Arrow  ❓", false, function(Value)
             getgenv().StoringItems2 = Value
             getgenv().ItemToStorage2 = "Mystery Arrow"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+                  
             while getgenv().StoringItems2 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage2) then
@@ -1646,7 +1630,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1658,22 +1642,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Requiem Arrow  ✨", false, function(Value)
             getgenv().StoringItems3 = Value
             getgenv().ItemToStorage3 = "Requiem Arrow"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
             
             while getgenv().StoringItems3 == true do wait(0.1)
                 pcall(function()
@@ -1691,7 +1659,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1703,22 +1671,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Rokakaka  🍎", false, function(Value)
             getgenv().StoringItemsA = Value
             getgenv().ItemToStorageA = "Rokakaka"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
 
             while getgenv().StoringItemsA == true do wait(0.1)
                 pcall(function()
@@ -1736,7 +1688,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1748,23 +1700,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Stone Mask  🎭", false, function(Value)
             getgenv().StoringItems4 = Value
             getgenv().ItemToStorage4 = "Stone Mask"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+        
             while getgenv().StoringItems4 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage4) then
@@ -1781,7 +1717,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1826,7 +1762,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1838,23 +1774,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Green Baby  🍏", false, function(Value)
             getgenv().StoringItems6 = Value
             getgenv().ItemToStorage6 = "Green Baby"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+                      
             while getgenv().StoringItems6 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage6) then
@@ -1871,7 +1791,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1883,23 +1803,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Blind Fold   👨‍🦯", false, function(Value)
             getgenv().StoringItems7 = Value
             getgenv().ItemToStorage7 = "Blindfold"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+         
             while getgenv().StoringItems7 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage7) then
@@ -1916,7 +1820,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1928,23 +1832,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("Boxing Gloves  🥊", false, function(Value)
             getgenv().StoringItems8 = Value
             getgenv().ItemToStorage8 = "Boxing Gloves"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+         
             while getgenv().StoringItems8 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage8) then
@@ -1961,7 +1849,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
@@ -1973,23 +1861,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondToggle = SecondPage.AddToggle("DIO Technics  🕺", false, function(Value)
             getgenv().StoringItems9 = Value
             getgenv().ItemToStorage9 = "DIO Technics"
-            
-            local Slots = function(X)
-                if game:GetService("Players").LocalPlayer.Data.Item_Storage["Slot" .. X].Value == "None" then
-                    local vim = game:GetService('VirtualInputManager')
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item List"].ScrollingFrame["Slot" .. X].TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                    wait(0.5)
-                    local vim = game:GetService'VirtualInputManager'
-                    local x = game:GetService("Players").LocalPlayer.PlayerGui["Item Storage"].Frame["Item Info"]["Item Original"].Equip.TextButton
-            
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
-                end
-            end
-            
+       
             while getgenv().StoringItems9 == true do wait(0.1)
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage9) then
@@ -2006,7 +1878,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
                                 for X = 1,6 do
-                                    Slots(X);
+                                   getgenv().Slots(X);
                                 end
                             end
                         end
