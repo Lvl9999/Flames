@@ -1812,20 +1812,22 @@ if game.PlaceId == Supported.Heaven_Stand then
             
             while getgenv().StoringItems5 == true do wait(0.1)
                 pcall(function()
-                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage5))
-                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
-                    for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
-                        if v:IsA("ClickDetector") then
-                            fireclickdetector(v);
-                            wait(0.55);
-                            local vim = game:GetService('VirtualInputManager')
-                            local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
-        
-                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                            wait(0.65)
-                            for X = 1,6 do
-                                Slots(X);
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage5) then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage5))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService('VirtualInputManager')
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                                wait(0.65)
+                                for X = 1, 5 do
+                                    Slots(X);
+                                end
                             end
                         end
                     end
@@ -1965,7 +1967,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrow]  ✨")
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrow]  🎯")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
             "Gold_Experience",
@@ -1978,7 +1980,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         function(PlayerStandValue1)
             getgenv().StandFarm1 = PlayerStandValue1
         end)
-
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
             "Crazy_Diamond",
