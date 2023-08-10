@@ -356,12 +356,6 @@ local ScriptXButton = ScriptX.AddButton("Teleport GUI [Better]", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/BJ7uaPJd"))();
 end);
 
-local ScriptXButton = ScriptX.AddButton("Rejoin", function()
-    task.spawn(function()
-		Notif:Notification("Flame's Hub 🔥", 'Rejoining...', "GothamSemibold", "Gotham", 0.5);
-	end);
-    loadstring(game:HttpGet("https://pastebin.com/raw/ZHz8FHJG"))();
-end);
 
 local ScriptXButton = ScriptX.AddButton("Infinite Yield", function()
     task.spawn(function()
@@ -1660,11 +1654,12 @@ if game.PlaceId == Supported.Heaven_Stand then
         local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrow]  ✨")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
-            "Star_Platinum",
+            "Gold_Experience",
             "King_Crimson",
-            "Star_Platinum:The_World",
             "Killer_Queen",
-            -- "Gold_Experience",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "------",
         },
         function(PlayerStandValue1)
             getgenv().StandFarm1 = PlayerStandValue1
@@ -1673,11 +1668,12 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
             "Crazy_Diamond",
-            "Star_Platinum",
+            "Gold_Experience",
             "King_Crimson",
-            "Star_Platinum:The_World",
             "Killer_Queen",
-            -- "Gold_Experience",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "------",
         }, 
         function(PlayerStandValue2)
             getgenv().StandFarm2 = PlayerStandValue2
@@ -1685,11 +1681,12 @@ if game.PlaceId == Supported.Heaven_Stand then
         
         local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
             "Crazy_Diamond",
-            "Star_Platinum",
+            "Gold_Experience",
             "King_Crimson",
-            "Star_Platinum:The_World",
             "Killer_Queen",
-            -- "Gold_Experience",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "------",
         }, 
         function(PlayerStandValue3)
             getgenv().StandFarm3 = PlayerStandValue3
@@ -1697,11 +1694,12 @@ if game.PlaceId == Supported.Heaven_Stand then
     
         local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
             "Crazy_Diamond",
-            "Star_Platinum",
+            "Gold_Experience",
             "King_Crimson",
-            "Star_Platinum:The_World",
             "Killer_Queen",
-            -- "Gold_Experience",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "------",
         }, 
         function(PlayerStandValue4)
             getgenv().StandFarm4 = PlayerStandValue4
@@ -1709,11 +1707,12 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
             "Crazy_Diamond",
-            "Star_Platinum",
+            "Gold_Experience",
             "King_Crimson",
-            "Star_Platinum:The_World",
             "Killer_Queen",
-            -- "Gold_Experience",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "------",
         }, 
         function(PlayerStandValue5)
             getgenv().StandFarm5 = PlayerStandValue5
@@ -1758,6 +1757,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Gold_Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
+            "------",
         },
         function(PlayerStandValue11)
             getgenv().StandFarm11 = PlayerStandValue11
@@ -1768,6 +1768,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Gold_Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
+            "------",
         }, 
         function(PlayerStandValue22)
             getgenv().StandFarm22 = PlayerStandValue22
@@ -1777,6 +1778,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Gold_Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
+            "------",
         }, 
         function(PlayerStandValue33)
             getgenv().StandFarm33 = PlayerStandValue33
@@ -1786,6 +1788,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Gold_Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
+            "------",
         }, 
         function(PlayerStandValue44)
             getgenv().StandFarm44 = PlayerStandValue44
@@ -1795,6 +1798,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Gold_Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
+            "------",
         }, 
         function(PlayerStandValue55)
             getgenv().StandFarm55 = PlayerStandValue55
@@ -2008,4 +2012,76 @@ local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function(
     pcall(function()
         loadstring(game:HttpGet(getgenv().Flames_Hub))();
     end)
+end);
+
+local SettingsLabel = Settings.AddLabel("Server  🖥️");
+
+local SettingsButton = Settings.AddButton("Rejoin", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Rejoining...', "GothamSemibold", "Gotham", 0.5);
+	end);
+    local TeleportService = game:GetService("TeleportService");
+    local Players = game:GetService("Players");
+    if (#Players:GetPlayers() == 1) then
+        game:GetService("Players").LocalPlayer:Kick();
+        TeleportService:Teleport(game.PlaceId);
+    else
+        TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players:GetPlayers()[1]);
+    end
+end);
+
+local SettingsButton = Settings.AddButton("Server Hop", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Hopping...', "GothamSemibold", "Gotham", 0.5);
+	end);
+    -- Got from https://robloxscripts.com
+    local Player = game.Players.LocalPlayer    
+    local Http = game:GetService("HttpService")
+    local TPS = game:GetService("TeleportService")
+    local Api = "https://games.roblox.com/v1/games/"
+    
+    local _place,_id = game.PlaceId, game.JobId
+    local _servers = Api.._place.."/servers/Public?sortOrder=Desc&limit=100"
+    function ListServers(cursor)
+       local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+       return Http:JSONDecode(Raw)
+    end
+    
+    local Next; repeat
+       local Servers = ListServers(Next)
+       for i,v in next, Servers.data do
+           if v.playing < v.maxPlayers and v.id ~= _id then
+               local s,r = pcall(TPS.TeleportToPlaceInstance,TPS,_place,v.id,Player)
+               if s then break end
+           end
+       end
+       
+       Next = Servers.nextPageCursor
+    until not Next
+end);
+
+
+local SettingsButton = Settings.AddButton("Low Server Hop", function()
+    task.spawn(function()
+		Notif:Notification("Flame's Hub 🔥", 'Hopping...', "GothamSemibold", "Gotham", 0.5);
+	end);
+    -- Got from https://robloxscripts.com
+    local Http = game:GetService("HttpService")
+    local TPS = game:GetService("TeleportService")
+    local Api = "https://games.roblox.com/v1/games/"
+    
+    local _place = game.PlaceId
+    local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+    function ListServers(cursor)
+       local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+       return Http:JSONDecode(Raw)
+    end
+    
+    local Server, Next; repeat
+       local Servers = ListServers(Next)
+       Server = Servers.data[1]
+       Next = Servers.nextPageCursor
+    until Server
+    
+    TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
 end);
