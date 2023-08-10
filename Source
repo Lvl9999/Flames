@@ -2067,12 +2067,11 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Crazy_Diamond",
             "Crazy_Heaven",
             "Gold Experience",
-            "The_World:Greatest_High",
             "King_Crimson",
             "Killer_Queen",
             "Star_Platinum",
             "Star_Platinum:The_World",
-            "------",
+            "-- MORE WILL BE ADDED SOON --",
         },
         function(PlayerStandValue1)
             getgenv().StandFarm1 = PlayerStandValue1
@@ -2164,6 +2163,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end)
+    --[[
         local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Mystery Arrow]  ✨")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Gold Experience_Requiem",
@@ -2250,6 +2250,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end)
+        --]]
 
         local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Safe Zone");
         local SecondAndHalfButton = SecondAndHalfPage.AddButton("Safe Zone  🦺", function()
