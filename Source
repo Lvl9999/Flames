@@ -2138,7 +2138,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             while getgenv().Farming1 do wait(0.015)
                 if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
                     pcall(function()
-                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow") == nil then
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") then
                             game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
                             wait(0.15)
                             mouse1click() 
@@ -2149,7 +2149,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                     break
                 else
                     pcall(function()
-                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") then
                             game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
                             wait(0.15)
                             mouse1click() 
@@ -2224,7 +2224,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             while getgenv().Farming2 do wait(0.015)
                 if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
                     pcall(function()
-                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mystery Arrow") == nil then
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow") then
                             game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow"))
                             wait(0.15)
                             mouse1click() 
@@ -2235,7 +2235,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                     break
                 else
                     pcall(function()
-                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") then
                             game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
                             wait(0.15)
                             mouse1click() 
