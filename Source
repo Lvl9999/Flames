@@ -1574,7 +1574,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local SecondToggle = SecondPage.AddToggle("Deal Damage  👊😈", false, function(Value)
+        local SecondToggle = SecondPage.AddToggle("Deal Damage  👊😈  | SOON 🟠", false, function(Value)
             getgenv().DealingPain = Value
 
             while getgenv().DealingPain == true do wait(0.015)
