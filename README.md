@@ -22,15 +22,10 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
   
 - [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🔵
 
-
-### Protection Mode:
-- **Protection Mode is an unique feature that server hop you if anyone says anything related to cheats.**
-
 ## Main Source:
 
 ```lua
 --// Flame's Hub 🔥\\--
-getgenv().Protection_Mode = true  -- Turn "false" for AFK farming
 getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/Source";
 
 pcall(function()
