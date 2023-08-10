@@ -1540,8 +1540,9 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end)
             end
         end);
+
         local SecondLabel = SecondPage.AddLabel("[+] Rares Items  💎");
-        local SecondToggle = SecondPage.AddToggle("Start Farming (Any Item)", false, function(Value)
+        local SecondToggle = SecondPage.AddToggle("Start Farming (Any Item)", true, function(Value)
             getgenv().RareFarming = Value
 
             local Paths = {
@@ -1887,6 +1888,93 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end)
 
+        local SecondToggle = SecondPage.AddToggle("Dual Knife  🔪", false, function(Value)
+            getgenv().StoringItems10 = Value
+            getgenv().ItemToStorage10 = "Dual Knife"
+       
+            while getgenv().StoringItems10 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage10) then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage10))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService('VirtualInputManager')
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                                wait(0.65)
+                                for X = 1,6 do
+                                   getgenv().Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Minos Prime Orb  🌌", false, function(Value)
+            getgenv().StoringItems11 = Value
+            getgenv().ItemToStorage11 = "Minos Prime Orb"
+       
+            while getgenv().StoringItems11 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage11) then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage11))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService('VirtualInputManager')
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                                wait(0.65)
+                                for X = 1,6 do
+                                   getgenv().Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
+        local SecondToggle = SecondPage.AddToggle("Garou Photo  📸", false, function(Value)
+            getgenv().StoringItems12 = Value
+            getgenv().ItemToStorage12 = "Garou Photo"
+       
+            while getgenv().StoringItems12 == true do wait(0.1)
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage12) then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().ItemToStorage12))
+                        game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.RaymondZl.HumanoidRootPart.Position);
+                        for i,v in pairs(game:GetService("Workspace").NPC.RaymondZl:GetDescendants()) do
+                            if v:IsA("ClickDetector") then
+                                fireclickdetector(v);
+                                wait(0.55);
+                                local vim = game:GetService('VirtualInputManager')
+                                local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+            
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                                wait(0.65)
+                                for X = 1,6 do
+                                   getgenv().Slots(X);
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+
         local SecondLabel = SecondPage.AddLabel("[+] Selling  💸");
         local SecondButton = SecondPage.AddButton("Bypass [Must Use]", function()
             local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -1977,7 +2065,9 @@ if game.PlaceId == Supported.Heaven_Stand then
         local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrow]  🎯")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
-            "Gold_Experience",
+            "Crazy_Heaven",
+            "Gold Experience",
+            "The_World:Greatest_High",
             "King_Crimson",
             "Killer_Queen",
             "Star_Platinum",
@@ -1990,7 +2080,7 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
             "Crazy_Diamond",
-            "Gold_Experience",
+            "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
             "Star_Platinum",
@@ -2003,7 +2093,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         
         local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
             "Crazy_Diamond",
-            "Gold_Experience",
+            "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
             "Star_Platinum",
@@ -2016,7 +2106,7 @@ if game.PlaceId == Supported.Heaven_Stand then
     
         local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
             "Crazy_Diamond",
-            "Gold_Experience",
+            "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
             "Star_Platinum",
@@ -2029,7 +2119,7 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
             "Crazy_Diamond",
-            "Gold_Experience",
+            "Gold Experience",
             "King_Crimson",
             "Killer_Queen",
             "Star_Platinum",
@@ -2076,7 +2166,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         end)
         local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Mystery Arrow]  ✨")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
-            "Gold_Experience_Requiem",
+            "Gold Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
             "------",
@@ -2087,7 +2177,7 @@ if game.PlaceId == Supported.Heaven_Stand then
 
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
-            "Gold_Experience_Requiem",
+            "Gold Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
             "------",
@@ -2097,7 +2187,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         end)
         
         local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
-            "Gold_Experience_Requiem",
+            "Gold Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
             "------",
@@ -2107,7 +2197,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         end)
     
         local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
-            "Gold_Experience_Requiem",
+            "Gold Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
             "------",
@@ -2117,7 +2207,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         end)
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
-            "Gold_Experience_Requiem",
+            "Gold Experience_Requiem",
             "Tusk_Act_4",
             "Made_In_Heaven",
             "------",
