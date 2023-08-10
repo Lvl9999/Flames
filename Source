@@ -1825,7 +1825,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
-                                for X = 1, 5 do
+                                for X = 1,6 do
                                     Slots(X);
                                 end
                             end
@@ -1870,7 +1870,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
                                 vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X/2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
                                 wait(0.65)
-                                for X = 1, 5 do
+                                for X = 1,6 do
                                     Slots(X);
                                 end
                             end
