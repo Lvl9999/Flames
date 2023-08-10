@@ -1960,7 +1960,6 @@ end)
 local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function()
     Notif:Notification("Flame's Hub 🔥", "Restarting...", "GothamSemibold", "Gotham", 1);
     --// Flame's Hub 🔥\\--
-    getgenv().Protection_Mode = false  -- Turn "false" for AFK farming
     getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/Source";
 
     pcall(function()
