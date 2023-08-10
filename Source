@@ -1574,12 +1574,44 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local SecondToggle = SecondPage.AddToggle("Deal Damage  👊😈  | SOON 🟠", false, function(Value)
+        local SecondToggle = SecondPage.AddToggle("Deal Damage  👊😈", false, function(Value)
             getgenv().DealingPain = Value
 
-            while getgenv().DealingPain == true do wait(0.015)
+            getgenv().Attacking = function()
+                local args = {[1]="MouseButton1"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
                 
-            end
+                local args = {[1]="E+"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+                
+                local args = {[1]="R+"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+                
+                local args = {[1]="T"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+                
+                local args = {[1]="Y"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+                
+                local args = {[1]="X"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+                
+                local args = {[1]="Z"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+                
+                local args = {[1]="V"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+                
+                local args = {[1]="H+"};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            end;
+
+            while getgenv().DealingPain == true do wait(0.0005)
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * 5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * 5, workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position - -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * 5));                           
+                task.spawn(function()
+                    getgenv().Attacking();
+                end)
+            end            
         end);
 
         getgenv().Slots = function(X)
