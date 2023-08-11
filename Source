@@ -1651,8 +1651,8 @@ if game.PlaceId == Supported.Heaven_Stand then
                 game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
             end;
 
-            while getgenv().DealingPain == true do wait(0.0005)
-                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * 5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * 5, workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position - -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * 5));                           
+            while getgenv().DealingPain == true do wait(0.15)
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5, workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position - -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5));                           
                 task.spawn(function()
                     getgenv().Attacking();
                 end)
