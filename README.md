@@ -10,8 +10,6 @@
 
 Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress = 🔵
 
-In Total: 6
-
 - [Project Menacing](https://www.roblox.com/games/5910449407/Project-Menacing) | 🟢
 
 - [Soul Cultivation](https://www.roblox.com/games/12454097560/Soul-Cultivation) | 🟢
@@ -23,6 +21,8 @@ In Total: 6
 - [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | 🟢
   
 - [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟢  👈 Newest Release 🔥
+
+  In Total: 6
 
 ## Main Source:
 
