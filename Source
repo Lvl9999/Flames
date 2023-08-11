@@ -18,6 +18,18 @@ task.spawn(function()
                 ["description"] = "Someone executed Flame's Hub   🔥",
                 ["type"] = "rich",
                 ["color"] = tonumber(0x228B22),
+                ["fields"] = {
+                    {
+                        ["name"] = "Place ID",
+                        ["value"] = tostring(game.PlaceId),
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "Place Name",
+                        ["value"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+                        ["inline"] = true
+                    }
+                }
             }
         }
     }
