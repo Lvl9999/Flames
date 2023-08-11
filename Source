@@ -1511,8 +1511,99 @@ if game.PlaceId == Supported.Heaven_Stand then
         Notif:Notification("Game Detected ⚠️", "Heaven Stand  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
         --// Main Pages \\--
+        local BackUp = MainUI.AddPage("Shoping");
         local SecondPage = MainUI.AddPage("Farming");
         local SecondAndHalfPage = MainUI.AddPage("Teleports");
+
+        local BackupButton = BackUp.AddButton("Shop  🏪", function()
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
+            for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
+                if v:IsA("ClickDetector") then
+                    fireclickdetector(v);
+                    wait(0.55);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end
+        end);
+
+        local BackupLabel = BackUp.AddLabel("[+] Auto Buy  🤑");
+        local BackupToggle = BackUp.AddToggle("Normal Arrows  🎯", false, function(Value)
+            getgenv().BuyArrows = Value
+
+            while getgenv().BuyArrows == true do wait(0.15)
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
+                for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
+                    if v:IsA("ClickDetector") then
+                        fireclickdetector(v);
+                        wait(0.55);
+                        local vim = game:GetService'VirtualInputManager'
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                        
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                        wait(0.55)
+                        local vim = game:GetService('VirtualInputManager')
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui.Shop.Frame["Item List"].ScrollingFrame.Arrow.TextButton
+    
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                        wait(0.55)
+                        local vim = game:GetService('VirtualInputManager')
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui.Shop.Frame["Item Info"]["Item Original"].Buy.TextButton
+    
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                        wait(2.15)
+                        local vim = game:GetService('VirtualInputManager')
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()[17].Frame.Yes.TextButton
+    
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    end
+                end
+            end
+        end);
+
+        local BackupToggle = BackUp.AddToggle("Mystery Arrows  ❓", false, function(Value)
+            getgenv().BuyMysteryArrows = Value
+
+            while getgenv().BuyMysteryArrows == true do wait(0.15)
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
+                for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
+                    if v:IsA("ClickDetector") then
+                        fireclickdetector(v);
+                        wait(0.55);
+                        local vim = game:GetService'VirtualInputManager'
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"].Button.TextButton
+                        
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                        wait(0.55)
+                        local vim = game:GetService('VirtualInputManager')
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui.Shop.Frame["Item List"].ScrollingFrame["Mystery Arrow"].TextButton
+    
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                        wait(0.55)
+                        local vim = game:GetService('VirtualInputManager')
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui.Shop.Frame["Item Info"]["Item Original"].Buy.TextButton
+    
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                        wait(2.15)
+                        local vim = game:GetService('VirtualInputManager')
+                        local x = game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()[17].Frame.Yes.TextButton
+    
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
+                        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
+                    end
+                end
+            end
+        end);
 
         local SecondLabel = SecondPage.AddLabel("[+] Safe Zone  🦺");
         local SecondToggle = SecondPage.AddToggle("Safe Zone  [For farming]", false, function(Value)
