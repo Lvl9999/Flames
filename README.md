@@ -10,6 +10,8 @@
 
 Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress = 🔵
 
+In Total: 6
+
 - [Project Menacing](https://www.roblox.com/games/5910449407/Project-Menacing) | 🟢
 
 - [Soul Cultivation](https://www.roblox.com/games/12454097560/Soul-Cultivation) | 🟢
