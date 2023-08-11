@@ -2189,14 +2189,16 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Crazy_Female",
             "Crazy_Heaven",
             "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
             "King_Crimson",
             "Killer Queen",
             "Ruby_Diamond",
             "Star_Platinum",
-            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
             "Tendou Alice",
-            "-- MORE WILL BE ADDED SOON --",
+            "------------",
         },
         function(PlayerStandValue1)
             getgenv().StandFarm1 = PlayerStandValue1
@@ -2207,14 +2209,16 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Crazy_Female",
             "Crazy_Heaven",
             "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
             "King_Crimson",
             "Killer Queen",
             "Ruby_Diamond",
             "Star_Platinum",
-            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
             "Tendou Alice",
-            "-- MORE WILL BE ADDED SOON --",
+            "------------",
         }, 
         function(PlayerStandValue2)
             getgenv().StandFarm2 = PlayerStandValue2
@@ -2225,14 +2229,16 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Crazy_Female",
             "Crazy_Heaven",
             "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
             "King_Crimson",
             "Killer Queen",
             "Ruby_Diamond",
             "Star_Platinum",
-            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
             "Tendou Alice",
-            "-- MORE WILL BE ADDED SOON --",
+            "------------",
         }, 
         function(PlayerStandValue3)
             getgenv().StandFarm3 = PlayerStandValue3
@@ -2243,14 +2249,16 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Crazy_Female",
             "Crazy_Heaven",
             "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
             "King_Crimson",
             "Killer Queen",
             "Ruby_Diamond",
             "Star_Platinum",
-            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
             "Tendou Alice",
-            "-- MORE WILL BE ADDED SOON --",
+            "------------",
         }, 
         function(PlayerStandValue4)
             getgenv().StandFarm4 = PlayerStandValue4
@@ -2261,14 +2269,16 @@ if game.PlaceId == Supported.Heaven_Stand then
             "Crazy_Female",
             "Crazy_Heaven",
             "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
             "King_Crimson",
             "Killer Queen",
             "Ruby_Diamond",
             "Star_Platinum",
-            "Star_Platinum_OVA",
             "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
             "Tendou Alice",
-            "-- MORE WILL BE ADDED SOON --",
+            "------------",
         }, 
         function(PlayerStandValue5)
             getgenv().StandFarm5 = PlayerStandValue5
@@ -2309,12 +2319,14 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end)
 
-        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Mystery Arrow]  ✨")
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Requiem Arrow]  ✨")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
-            "Gold Experience_Requiem",
-            "Tusk_Act_4",
-            "Made_In_Heaven",
-            "------",
+            "Female_Weather_Report",
+            "Gold_Experience_(Requiem)",
+            "Inosuke",
+            "Weather_Report",
+            "White_Snake",
+            "------------",
         },
         function(PlayerStandValue11)
             getgenv().StandFarm11 = PlayerStandValue11
@@ -2322,40 +2334,48 @@ if game.PlaceId == Supported.Heaven_Stand then
 
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
-            "Gold Experience_Requiem",
-            "Tusk_Act_4",
-            "Made_In_Heaven",
-            "------",
+            "Female_Weather_Report",
+            "Gold_Experience_(Requiem)",
+            "Inosuke",
+            "Weather_Report",
+            "White_Snake",
+            "------------",
         }, 
         function(PlayerStandValue22)
             getgenv().StandFarm22 = PlayerStandValue22
         end)
         
         local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
-            "Gold Experience_Requiem",
-            "Tusk_Act_4",
-            "Made_In_Heaven",
-            "------",
+            "Female_Weather_Report",
+            "Gold_Experience_(Requiem)",
+            "Inosuke",
+            "Weather_Report",
+            "White_Snake",
+            "------------",
         }, 
         function(PlayerStandValue33)
             getgenv().StandFarm33 = PlayerStandValue33
         end)
     
         local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
-            "Gold Experience_Requiem",
-            "Tusk_Act_4",
-            "Made_In_Heaven",
-            "------",
+            "Female_Weather_Report",
+            "Gold_Experience_(Requiem)",
+            "Inosuke",
+            "Weather_Report",
+            "White_Snake",
+            "------------",
         }, 
         function(PlayerStandValue44)
             getgenv().StandFarm44 = PlayerStandValue44
         end)
 
         local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
-            "Gold Experience_Requiem",
-            "Tusk_Act_4",
-            "Made_In_Heaven",
-            "------",
+            "Female_Weather_Report",
+            "Gold_Experience_(Requiem)",
+            "Inosuke",
+            "Weather_Report",
+            "White_Snake",
+            "------------",
         }, 
         function(PlayerStandValue55)
             getgenv().StandFarm55 = PlayerStandValue55
@@ -2369,8 +2389,8 @@ if game.PlaceId == Supported.Heaven_Stand then
             while getgenv().Farming2 do wait(0.55)
                 if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
                     pcall(function()
-                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow") then
-                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Mystery Arrow"))
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Requiem Arrow") then
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Requiem Arrow"))
                             wait(0.15)
                             mouse1click() 
                         end
