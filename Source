@@ -1619,44 +1619,64 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local SecondToggle = SecondPage.AddToggle("Deal Damage  👊😈", false, function(Value)
+        getgenv().Attacking = function()
+            local args = {[1]="MouseButton1"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="E+"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="R+"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="T"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="Y"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="X"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="Z"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="V"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+            
+            local args = {[1]="H+"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
+        end;
+
+        local SecondToggle = SecondPage.AddToggle("Deal Damage   👊", false, function(Value)
             getgenv().DealingPain = Value
-
-            getgenv().Attacking = function()
-                local args = {[1]="MouseButton1"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="E+"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="R+"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="T"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="Y"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="X"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="Z"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="V"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-                
-                local args = {[1]="H+"};
-                game:GetService("ReplicatedStorage"):WaitForChild("Remote_Events"):WaitForChild("Input_Remote"):InvokeServer(unpack(args));
-            end;
-
+            
             while getgenv().DealingPain == true do wait(0.15)
-                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5, workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position - -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5));                           
-                task.spawn(function()
-                    getgenv().Attacking();
-                end)
-            end            
+                if workspace.Enemies:FindFirstChild("250 Health : S:Diavolo Dummy") and workspace.Enemies:FindFirstChild("250 Health : S:Diavolo Dummy"):FindFirstChild("HumanoidRootPart") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position + -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5, workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.Position - -workspace.Enemies["250 Health : S:Diavolo Dummy"].HumanoidRootPart.CFrame.LookVector * -5));                           
+                    task.spawn(function()
+                        getgenv().Attacking();
+                    end)
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Npc not found", "GothamSemibold", "Gotham", 1.5);
+                end 
+            end          
+        end);
+
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Bosses  💥")
+        local SecondToggle = SecondPage.AddToggle("DIO   👊", false, function(Value)
+            getgenv().BossingDIO = Value
+            
+            while getgenv().BossingDIO == true do wait(0.015)
+                if workspace.Enemies:FindFirstChild("DIO") and workspace.Enemies:FindFirstChild("DIO"):FindFirstChild("HumanoidRootPart") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 7, workspace.Enemies.DIO.HumanoidRootPart.Position - -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 7));                    
+                    task.spawn(function()
+                        getgenv().Attacking();
+                    end)
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Npc not found", "GothamSemibold", "Gotham", 1.5);
+                end 
+            end          
         end);
 
         getgenv().Slots = function(X)
@@ -2183,7 +2203,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrow]  🎯")
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Normal Arrows]  🎯")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
             "Crazy_Female",
@@ -2319,11 +2339,10 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end)
 
-        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Requiem Arrow]  ✨")
+        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Requiem Arrows]  ✨")
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Female_Weather_Report",
             "Gold_Experience_(Requiem)",
-            "Inosuke",
             "Weather_Report",
             "White_Snake",
             "------------",
@@ -2336,7 +2355,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
             "Female_Weather_Report",
             "Gold_Experience_(Requiem)",
-            "Inosuke",
             "Weather_Report",
             "White_Snake",
             "------------",
@@ -2348,7 +2366,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
             "Female_Weather_Report",
             "Gold_Experience_(Requiem)",
-            "Inosuke",
             "Weather_Report",
             "White_Snake",
             "------------",
@@ -2360,7 +2377,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
             "Female_Weather_Report",
             "Gold_Experience_(Requiem)",
-            "Inosuke",
             "Weather_Report",
             "White_Snake",
             "------------",
@@ -2372,7 +2388,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
             "Female_Weather_Report",
             "Gold_Experience_(Requiem)",
-            "Inosuke",
             "Weather_Report",
             "White_Snake",
             "------------",
