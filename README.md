@@ -22,8 +22,9 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
   
 - [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟢  👈 Newest Release 🔥
 
+- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🔵 [BETA]
 
-  In Total: 6
+  In Total: 7
 
 ## Main Source:
 
