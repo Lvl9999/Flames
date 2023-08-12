@@ -106,10 +106,11 @@ local Supported = {
     Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
     Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
     Heaven_Stand = 11981520251, -- Heaven Stand
+    Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Stand_Upright_Rebooted then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -2558,6 +2559,200 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondAndHalfButton = SecondAndHalfPage.AddButton("Untitled Area 5", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(292.3304138183594, 1601.976318359375, -411.74566650390625);
         end);
+end
+
+--// 🟢 Stand Upright: Rebooted \\--
+if game.PlaceId == Supported.Stand_Upright_Rebooted then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Stand Upright: Rebooted  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Shoping");
+    local SecondAndHalfPage = MainUI.AddPage("Storage");
+    local ThirdPage = MainUI.AddPage("Farming");
+    local FourthPage = MainUI.AddPage("Teleports");
+
+
+    local SecondLabel = SecondPage.AddLabel("[+] Buy 💰");
+    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
+
+    end);
+
+    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
+
+    end);
+
+    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
+
+    end);
+
+    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
+
+    end);
+
+    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
+
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Storage  🗃️");
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Stand Storage  📦", function()
+        workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("admpn"):WaitForChild("Done"):FireServer();
+    end);
+
+    local ThirdLabel = ThirdPage.AddLabel("[+] Items  💎");
+    local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
+        getgenv().ItemsFarming = Value
+
+        getgenv().Press = function(v)
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+        end
+        
+        while getgenv().ItemsFarming == true do wait(1.15);
+            for i,v in pairs(game.Workspace.Vfx:GetChildren()) do wait(0.25);
+                if v:IsA("Tool") then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Handle.Position);wait(0.1525);
+                    task.spawn(function()
+                        getgenv().Press("E");
+                    end)
+                end
+            end
+        end
+    end);
+
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm  💥");
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 1", {
+
+        "------------",
+    },
+    function(PlayerStandValue111)
+        getgenv().StandFarm111 = PlayerStandValue111
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 2", {
+
+        "------------",
+    },
+    function(PlayerStandValue222)
+        getgenv().StandFarm222 = PlayerStandValue222
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 3", {
+
+        "------------",
+    },
+    function(PlayerStandValue333)
+        getgenv().StandFarm333 = PlayerStandValue333
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 4", {
+
+        "------------",
+    },
+    function(PlayerStandValue444)
+        getgenv().StandFarm444 = PlayerStandValue444
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 5", {
+
+        "------------",
+    },
+    function(PlayerStandValue555)
+        getgenv().StandFarm555 = PlayerStandValue555
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 6", {
+
+        "------------",
+    },
+    function(PlayerStandValue666)
+        getgenv().StandFarm666 = PlayerStandValue666
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 7", {
+
+        "------------",
+    },
+    function(PlayerStandValue777)
+        getgenv().StandFarm777 = PlayerStandValue777
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 8", {
+
+        "------------",
+    },
+    function(PlayerStandValue888)
+        getgenv().StandFarm888 = PlayerStandValue888
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 9", {
+
+        "------------",
+    },
+    function(PlayerStandValue999)
+        getgenv().StandFarm999 = PlayerStandValue999
+    end)
+
+    local FirstDropdown = ThirdPage.AddDropdown("Selected 10", {
+
+        "------------",
+    },
+    function(PlayerStandValue000)
+        getgenv().StandFarm000 = PlayerStandValue000
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Start Farming [ SOON 🟠]", false, function(Value)
+        getgenv().Farming111 = Value
+    
+        while getgenv().Farming111 do wait(0.1);
+            if game:GetService("Players").LocalPlayer.Data.Stand.Value == "None" then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Stand Arrow") == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow"))
+                        Notif:Notification("Flame's Hub 🔥", "You couldn't wait Huh?", "GothamSemibold", "Gotham", 1);
+                        -- game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UseItem"):FireServer();
+                    end
+                end)
+            elseif game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm111 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm222 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm333 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm444 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm555 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm666 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm777 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm888 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm999 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm999 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm000 then
+                Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Stand.Value, "GothamSemibold", "Gotham", 9e9)
+                break
+            else
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
+                        Notif:Notification("Flame's Hub 🔥", "You couldn't wait Huh?", "GothamSemibold", "Gotham", 1);
+                        -- game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UseItem"):FireServer();
+                    end
+                end)
+            end
+        end
+    end)
+
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quests  ❗");
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
 
 
 -- More Yet to come!
