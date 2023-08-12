@@ -1706,7 +1706,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             
             while getgenv().BossingDIO == true do wait(0.015)
                 if workspace.Enemies:FindFirstChild("DIO") and workspace.Enemies:FindFirstChild("DIO"):FindFirstChild("HumanoidRootPart") then
-                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 7, workspace.Enemies.DIO.HumanoidRootPart.Position - -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 7));                    
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 8.25) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 8.25, workspace.Enemies.DIO.HumanoidRootPart.Position - -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 8.25));                    
                     task.spawn(function()
                         getgenv().Attacking();
                     end)
