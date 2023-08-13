@@ -2756,6 +2756,15 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
         workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("admpn"):WaitForChild("Done"):FireServer();
     end);
 
+    local ThirdLabel = ThirdPage.AddLabel("[+] Safe Zone  🦺");
+    local ThirdToggle = ThirdPage.AddToggle("Safe Zone [For farming]", false, function(Value)
+        getgenv().SafeInHell = Value
+
+        while getgenv().SafeInHell == true do wait(1.5);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-556.783935546875, -420.8061828613281, -10576.720703125)
+        end
+    end);
+
     local ThirdLabel = ThirdPage.AddLabel("[+] Items  💎");
     local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
         getgenv().ItemsFarming = Value
