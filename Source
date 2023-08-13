@@ -2639,8 +2639,53 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end);
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm  💥");
+    local ThirdButton = ThirdPage.AddButton("Info  📜", function()
+        task.spawn(function()
+            Notif:Notification("Flame's Hub 🔥", "Open F9 console", "GothamSemibold", "Gotham", 1);
+        end)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-652.4725952148438, 66.72492980957031, -453.6540832519531);
+        
+        warn("D4C - Dirty Deeds")
+        print("GE - Golden Experience")
+        warn("HG - Hierophant Green")
+        print("MR - Maigican's Red")
+        warn("--------------------")
+        warn("PM - Premier Macho")
+        print("SCOVA - Silver Chariot OVA")
+        warn("TWOVA - The World OVA")
+        print("TWAU - The World Alternate Universe")
+        warn("DTW - Dio's The World [Rarest]")
+    end);
     local FirstDropdown = ThirdPage.AddDropdown("Selected 1", {
-        "Very Soon  🟠",
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue111)
@@ -2648,7 +2693,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 2", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue222)
@@ -2656,7 +2729,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 3", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue333)
@@ -2664,7 +2765,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 4", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue444)
@@ -2672,7 +2801,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 5", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue555)
@@ -2680,7 +2837,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 6", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue666)
@@ -2688,7 +2873,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 7", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue777)
@@ -2696,7 +2909,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 8", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue888)
@@ -2704,7 +2945,35 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 9", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue999)
@@ -2712,23 +2981,53 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local FirstDropdown = ThirdPage.AddDropdown("Selected 10", {
-
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
         "------------",
     },
     function(PlayerStandValue000)
         getgenv().StandFarm000 = PlayerStandValue000
     end)
 
-    local ThirdToggle = ThirdPage.AddToggle("Start Farming [ SOON 🟠]", false, function(Value)
+    local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
         getgenv().Farming111 = Value
     
         while getgenv().Farming111 do wait(0.1);
             if game:GetService("Players").LocalPlayer.Data.Stand.Value == "None" then
                 pcall(function()
-                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Stand Arrow") == nil then
+                    if math.random(1, 2) == 1 and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Stand Arrow") == nil then
                         game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Stand Arrow"))
-                        Notif:Notification("Flame's Hub 🔥", "You couldn't wait Huh?", "GothamSemibold", "Gotham", 1);
-                        -- game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UseItem"):FireServer();
+                        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UseItem"):FireServer();
+                    elseif math.random(1, 2) == 2 and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Charged Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Charged Arrow") == nil then
+                        game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Charged Arrow"))
+                        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UseItem"):FireServer();
                     end
                 end)
             elseif game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm111 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm222 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm333 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm444 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm555 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm666 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm777 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm888 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm999 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm999 or game:GetService("Players").LocalPlayer.Data.Stand.Value == getgenv().StandFarm000 then
@@ -2738,8 +3037,7 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka") == nil then
                         game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
-                        Notif:Notification("Flame's Hub 🔥", "You couldn't wait Huh?", "GothamSemibold", "Gotham", 1);
-                        -- game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UseItem"):FireServer();
+                        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("UseItem"):FireServer();
                     end
                 end)
             end
