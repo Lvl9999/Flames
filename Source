@@ -2571,34 +2571,164 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Shoping");
     local SecondAndHalfPage = MainUI.AddPage("Storage");
+    local SecondAndHalfHalfPage = MainUI.AddPage("Stats");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Teleports");
 
+    local SecondAndHalfHalfLabel = SecondAndHalfHalfPage.AddLabel("Auto Stats  😳");
+    local SecondAndHalfHalfButton = SecondAndHalfHalfPage.AddButton("Max Vitallity [6+ skill points]", function()
+        local args = {
+            [1] = "Vitality_1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Vitality_2"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Vitality_3"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))         
+    end);
+
+    local SecondAndHalfHalfButton = SecondAndHalfHalfPage.AddButton("Max Health [21+ skill points]", function()
+        local args = {
+            [1] = "Health_1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Health_2"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Health_3"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Health_4"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Health_5"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Health_6"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+    end);
+
+    local SecondAndHalfHalfButton = SecondAndHalfHalfPage.AddButton("Max Pickpocket [4+ skill points]", function()
+        local args = {
+            [1] = "Pickpocket_1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Pickpocket_2"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+    end);
+
+    local SecondAndHalfHalfButton = SecondAndHalfHalfPage.AddButton("Max Securepocket [6+ skill points]", function()
+        local args = {
+            [1] = "SecurePocket_1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))        
+    end);
+
+    local SecondAndHalfHalfButton = SecondAndHalfHalfPage.AddButton("Max Experience [16+ skill points]", function()
+        local args = {
+            [1] = "Experience_1"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Experience_2"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Experience_3"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+        wait(0.35)
+        local args = {
+            [1] = "Experience_4"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GetSkillTree"):FireServer(unpack(args))
+    end);
+
+    local SecondAndHalfHalfButton = SecondAndHalfHalfPage.AddButton("Agility [Useless]", function()
+        Notif:Notification("Flame's Hub 🔥", "Use my walkspeed slider...", "GothamSemibold", "Gotham", 1);
+    end);
+
+    local SecondButton = SecondPage.AddButton("Teleport  🏪", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-560.3442993164062, 66.23101806640625, -689.8358764648438);
+    end);
     local SecondLabel = SecondPage.AddLabel("[+] Shopy  🛒💨");
     local SecondButton = SecondPage.AddButton("Stand Arrow | 1x 🎯", function()
-        local args = {[1] = "Merchant1",[2] = "Option4"}
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-560.3442993164062, 66.23101806640625, -689.8358764648438);
+        wait(0.25)
+		local args = {[1] = "Merchant1",[2] = "Option4"};
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));
+        wait(0.25)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X
     end);
 
     local SecondButton = SecondPage.AddButton("Stand Arrow | 10x  🎯", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-560.3442993164062, 66.23101806640625, -689.8358764648438);
+        wait(0.25)
         local args = {[1] = "Merchant1",[2] = "Option3"};
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args))      ;  
+        wait(0.25)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X
     end);
 
     local SecondLabel = SecondPage.AddLabel("--------------------------------------------------------");
     local SecondButton = SecondPage.AddButton("Rokakaka Fruit | 1x  🍎", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-560.3442993164062, 66.23101806640625, -689.8358764648438);
+        wait(0.25)
         local args = {[1] = "Merchant1",[2] = "Option2"};
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));     
+        wait(0.25)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X
     end);
 
     local SecondButton = SecondPage.AddButton("Rokakaka Fruit | 10x  🍎", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-560.3442993164062, 66.23101806640625, -689.8358764648438);
+        wait(0.25)
         local args = {[1] = "Merchant1",[2] = "Option1"};
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));
-    end);
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Storage  🗃️");
-    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Stand Storage  📦", function()
-        workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("admpn"):WaitForChild("Done"):FireServer();
+        wait(0.25)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X
     end);
 
     local SecondLabel = SecondPage.AddLabel("[+] Auto Shopy  🛒💨");
@@ -2618,6 +2748,11 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
             local args = {[1] = "Merchant1",[2] = "Option2"};
             game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));  
         end
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Storage  🗃️");
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Stand Storage  📦", function()
+        workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("admpn"):WaitForChild("Done"):FireServer();
     end);
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Items  💎");
