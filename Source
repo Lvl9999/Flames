@@ -1653,7 +1653,12 @@ if game.PlaceId == Supported.Heaven_Stand then
             getgenv().TakingPain = Value
 
             while getgenv().TakingPain == true do wait(0.015)
-                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["S:Diavolo Attacking"].HumanoidRootPart.Position + workspace.Enemies["S:Diavolo Attacking"].HumanoidRootPart.CFrame.LookVector * 5);
+                if workspace.Enemies:FindFirstChild("S:Diavolo Attacking") and workspace.Enemies:FindFirstChild("S:Diavolo Attacking"):FindFirstChild("HumanoidRootPart") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies["S:Diavolo Attacking"].HumanoidRootPart.Position + workspace.Enemies["S:Diavolo Attacking"].HumanoidRootPart.CFrame.LookVector * 5);
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Npc not found", "GothamSemibold", "Gotham", 3);
+                    break
+                end
             end
         end);
 
@@ -1696,7 +1701,8 @@ if game.PlaceId == Supported.Heaven_Stand then
                         getgenv().Attacking();
                     end)
                 else
-                    Notif:Notification("Flame's Hub 🔥", "Npc not found", "GothamSemibold", "Gotham", 1.5);
+                    Notif:Notification("Flame's Hub 🔥", "Npc not found", "GothamSemibold", "Gotham", 3);
+                    break
                 end 
             end          
         end);
@@ -1707,14 +1713,31 @@ if game.PlaceId == Supported.Heaven_Stand then
             
             while getgenv().BossingDIO == true do wait(0.015)
                 if workspace.Enemies:FindFirstChild("DIO") and workspace.Enemies:FindFirstChild("DIO"):FindFirstChild("HumanoidRootPart") then
-                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 8.25) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 8.25, workspace.Enemies.DIO.HumanoidRootPart.Position - -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 8.25));                    
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 9) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies.DIO.HumanoidRootPart.Position + -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 9, workspace.Enemies.DIO.HumanoidRootPart.Position - -workspace.Enemies.DIO.HumanoidRootPart.CFrame.LookVector * 9));                    
                     task.spawn(function()
                         getgenv().Attacking();
                     end)
                 else
-                    Notif:Notification("Flame's Hub 🔥", "Npc not found", "GothamSemibold", "Gotham", 1.5);
+                    Notif:Notification("Flame's Hub 🔥", "DIO not found", "GothamSemibold", "Gotham", 3);
+                    break
                 end 
             end          
+        end);
+
+        local SecondToggle = SecondPage.AddToggle("Garou   👊", false, function(Value)
+            getgenv().BossingGarou = Value
+
+            while getgenv().BossingGarou == true do wait(0.15)
+                if workspace.Enemies:FindFirstChild("Garou") and workspace.Enemies.Garou:FindFirstChild("HumanoidRootPart") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Enemies.Garou.HumanoidRootPart.Position + -workspace.Enemies.Garou.HumanoidRootPart.CFrame.LookVector * 9) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Enemies.Garou.HumanoidRootPart.Position + -workspace.Enemies.Garou.HumanoidRootPart.CFrame.LookVector * 9, workspace.Enemies.Garou.HumanoidRootPart.Position - -workspace.Enemies.Garou.HumanoidRootPart.CFrame.LookVector * 9))
+                    task.spawn(function()
+                        getgenv().Attacking();
+                    end)
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Garou not found", "GothamSemibold", "Gotham", 3)
+                    break
+                end
+            end                 
         end);
 
         getgenv().Slots = function(X)
@@ -2357,98 +2380,6 @@ if game.PlaceId == Supported.Heaven_Stand then
                         end
                     end)
                 elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm2 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm3 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm4 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm5 then
-                    Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Ability.Value, "GothamSemibold", "Gotham", 9e9)
-                    break
-                else
-                    pcall(function()
-                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka") then
-                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka"))
-                            wait(0.15)
-                            mouse1click() 
-                            wait(0.55)
-                            local vim = game:GetService('VirtualInputManager')
-                            local x = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Rokakaka_UI.Yes
-        
-                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
-                            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                        end
-                    end)
-                end
-            end
-        end)
-
-        local ThirdLabel = SecondPage.AddLabel("[+] Auto Stand Farm [Requiem Arrows]  ✨")
-        local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
-            "Female_Weather_Report",
-            "Gold_Experience_(Requiem)",
-            "Weather_Report",
-            "White_Snake",
-            "------------",
-        },
-        function(PlayerStandValue11)
-            getgenv().StandFarm11 = PlayerStandValue11
-        end)
-
-
-        local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
-            "Female_Weather_Report",
-            "Gold_Experience_(Requiem)",
-            "Weather_Report",
-            "White_Snake",
-            "------------",
-        }, 
-        function(PlayerStandValue22)
-            getgenv().StandFarm22 = PlayerStandValue22
-        end)
-        
-        local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
-            "Female_Weather_Report",
-            "Gold_Experience_(Requiem)",
-            "Weather_Report",
-            "White_Snake",
-            "------------",
-        }, 
-        function(PlayerStandValue33)
-            getgenv().StandFarm33 = PlayerStandValue33
-        end)
-    
-        local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
-            "Female_Weather_Report",
-            "Gold_Experience_(Requiem)",
-            "Weather_Report",
-            "White_Snake",
-            "------------",
-        }, 
-        function(PlayerStandValue44)
-            getgenv().StandFarm44 = PlayerStandValue44
-        end)
-
-        local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
-            "Female_Weather_Report",
-            "Gold_Experience_(Requiem)",
-            "Weather_Report",
-            "White_Snake",
-            "------------",
-        }, 
-        function(PlayerStandValue55)
-            getgenv().StandFarm55 = PlayerStandValue55
-        end)
-
-        local ThirdToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
-            getgenv().Farming2 = Value
-            if getgenv().Farming2 == true then
-                Notif:Notification("Flame's Hub 🔥", "Aim your mouse away quickly", "GothamSemibold", "Gotham", 1.5);
-            end
-            while getgenv().Farming2 do wait(0.55)
-                if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
-                    pcall(function()
-                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Requiem Arrow") then
-                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Requiem Arrow"))
-                            wait(0.15)
-                            mouse1click() 
-                        end
-                    end)
-                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm11 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm22 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm33 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm44 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm55 then
                     Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Ability.Value, "GothamSemibold", "Gotham", 9e9)
                     break
                 else
