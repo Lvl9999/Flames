@@ -3229,8 +3229,17 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightGiornoQuest"))();
     end)
 
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
+    local ThirdToggle = ThirdPage.AddToggle("Lvl 30+ | aLLmemester [BEST + LEGIT]", false, function(Value)
+        getgenv().Rker = Value
+        while getgenv().Rker == true do wait(0.01)
+            workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("aLLmemester"):WaitForChild("Done"):FireServer();
+            workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("aLLmemester"):WaitForChild("QuestDone"):FireServer();
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-614.3890380859375, 66.4660415649414, -476.27557373046875);
+            game:GetService("Players").LocalPlayer.Character.StandEvents.M1:FireServer();
+            local args = {[1] = true};
+            game:GetService("Players").LocalPlayer.Character.StandEvents.Barrage:FireServer(unpack(args));
+            game:GetService("Players").LocalPlayer.Character.StandEvents.Heavy:FireServer();
+        end
     end)
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Lairs  👀");
