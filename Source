@@ -2624,17 +2624,15 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
         getgenv().ItemsFarming = Value
 
-        getgenv().Press = function(v)
-            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-        end
-        
-        while getgenv().ItemsFarming == true do wait(1.15);
-            for i,v in pairs(game.Workspace.Vfx:GetChildren()) do wait(0.25);
+        while getgenv().ItemsFarming == true do wait(0.1);
+            for i,v in pairs(game.Workspace.Vfx:GetChildren()) do
                 if v:IsA("Tool") then
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Handle.Position);wait(0.1525);
-                    task.spawn(function()
-                        getgenv().Press("E");
-                    end)
+                    for i,v in pairs(game.Workspace.Vfx:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v,0)
+                       end
+                   end
                 end
             end
         end
