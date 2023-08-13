@@ -2268,7 +2268,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 1", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2288,7 +2287,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 2", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2308,7 +2306,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 3", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2328,7 +2325,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 4", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2348,7 +2344,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 5", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2368,7 +2363,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 6", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2388,7 +2382,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 7", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2408,7 +2401,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 8", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2428,7 +2420,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 9", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
@@ -2448,7 +2439,6 @@ if game.PlaceId == Supported.Heaven_Stand then
         local FirstDropdown = SecondPage.AddDropdown("Selected 10", {
             "Crazy_Diamond",
             "Crazy_Female",
-            "Crazy_Heaven",
             "Gold Experience",
             "Hitori Gotoh",
             "Hitori Gotoh (SSJ)",
