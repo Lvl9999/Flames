@@ -2570,8 +2570,8 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
 
     --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Shoping");
-    local SecondAndHalfPage = MainUI.AddPage("Storage");
     local SecondAndHalfHalfPage = MainUI.AddPage("Stats");
+    local SecondAndHalfPage = MainUI.AddPage("Storage");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Teleports");
 
