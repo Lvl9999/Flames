@@ -43,6 +43,22 @@ task.spawn(function()
     request(abcdef)
 end)
 
+if not isfile("Flame's_File.txt") then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/JoinDiscordPrompt"))();
+    writefile("Flame's_File.txt", "Seen")
+else
+    if not isfile("Flame's_File2.txt") then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/JoinDiscordPrompt"))();
+        writefile("Flame's_File2.txt", "Seen")
+	else
+        if not isfile("Flame's_File3.txt") then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/JoinDiscordPrompt"))();
+            writefile("Flame's_File3.txt", "Seen");
+
+		end
+    end
+end
+
 -- // Credits to ao-0
 shared.LoaderTitle = "Flame's Hub 🔥"
 shared.LoaderKeyFrames = {
