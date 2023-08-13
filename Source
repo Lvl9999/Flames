@@ -3242,6 +3242,18 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
         end
     end)
 
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Lairs  👀");
     local ThirdToggle = ThirdPage.AddToggle("Lvl 15+ | Lair 1", false, function(Value)
         getgenv().Lair1 = Value
@@ -3252,6 +3264,10 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
 
     end)
 
+    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
+
+    end)
+    
     local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
 
     end)
