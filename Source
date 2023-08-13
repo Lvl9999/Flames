@@ -6,9 +6,6 @@ if not AutoExec:IsLoaded() then
     AutoExec.Loaded:Wait();
 end
 
--- ** You are allowed to take some of the source however you must credit me. :(ThroughTheFireAndFlames#9925) ** --
-
-
 -- // I am curious to see who executed my script.
 
 getgenv().WebHookz = "https://discord.com/api/webhooks/1139637670851641454/hA_jFyhj0TPK6TRXA4h0_iBsDEP37Pk_s8g2wY2xlJHV8jW68Rd9rpyp9-DVBD5l1ltm"
@@ -2645,7 +2642,7 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm  💥");
     local FirstDropdown = ThirdPage.AddDropdown("Selected 1", {
-
+        "Very Soon  🟠",
         "------------",
     },
     function(PlayerStandValue111)
@@ -2752,8 +2749,9 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quests  ❗");
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
+    local ThirdToggle = ThirdPage.AddToggle("Lvl 1+ | Giorno Givoanna", false, function(Value)
+        getgenv().BadGi = Value
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightBadGiQuest"))();
     end)
 
     local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
@@ -2852,7 +2850,6 @@ end)
 local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function()
     Notif:Notification("Flame's Hub 🔥", "Restarting...", "GothamSemibold", "Gotham", 1);
     --// Flame's Hub 🔥\\--
-    getgenv().Protection_Mode = false  -- Turn "false" for AFK farming
     getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/Source";
 
     pcall(function()
