@@ -3199,6 +3199,12 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
 
     end)
 
+    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Lairs  👀");
+    local ThirdToggle = ThirdPage.AddToggle("Lvl 15+ | Lair 1", false, function(Value)
+        getgenv().Lair1 = Value
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightLair1Farm"))();
+    end)
+
     local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
 
     end)
