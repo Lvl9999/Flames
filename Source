@@ -6,6 +6,9 @@ if not AutoExec:IsLoaded() then
     AutoExec.Loaded:Wait();
 end
 
+-- // Might use this in the future
+-- if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") end
+
 -- // I am curious to see who executed my script.
 
 getgenv().WebHookz = "https://discord.com/api/webhooks/1139637670851641454/hA_jFyhj0TPK6TRXA4h0_iBsDEP37Pk_s8g2wY2xlJHV8jW68Rd9rpyp9-DVBD5l1ltm"
@@ -42,22 +45,6 @@ task.spawn(function()
     local abcdef = {Url = getgenv().WebHookz, Body = newdata, Method = "POST", Headers = headers}
     request(abcdef)
 end)
-
-if not isfile("Flame's_File.txt") then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/JoinDiscordPrompt"))();
-    writefile("Flame's_File.txt", "Seen")
-else
-    if not isfile("Flame's_File2.txt") then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/JoinDiscordPrompt"))();
-        writefile("Flame's_File2.txt", "Seen")
-	else
-        if not isfile("Flame's_File3.txt") then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/JoinDiscordPrompt"))();
-            writefile("Flame's_File3.txt", "Seen");
-
-		end
-    end
-end
 
 -- // Credits to ao-0
 shared.LoaderTitle = "Flame's Hub 🔥"
@@ -3237,8 +3224,9 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightScaredNoobQuest"))();
     end)
 
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
+    local ThirdToggle = ThirdPage.AddToggle("Lvl 20+ | Koichi", false, function(Value)
+        getgenv().Giorno = Value
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightGiornoQuest"))();
     end)
 
     local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
