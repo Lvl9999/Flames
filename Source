@@ -2365,6 +2365,106 @@ if game.PlaceId == Supported.Heaven_Stand then
             getgenv().StandFarm5 = PlayerStandValue5
         end)
 
+        local FirstDropdown = SecondPage.AddDropdown("Selected 6", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue6)
+            getgenv().StandFarm6 = PlayerStandValue6
+        end)
+
+        local FirstDropdown = SecondPage.AddDropdown("Selected 7", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue7)
+            getgenv().StandFarm7 = PlayerStandValue7
+        end)
+
+        local FirstDropdown = SecondPage.AddDropdown("Selected 8", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue8)
+            getgenv().StandFarm8 = PlayerStandValue8
+        end)
+
+        local FirstDropdown = SecondPage.AddDropdown("Selected 9", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue9)
+            getgenv().StandFarm9 = PlayerStandValue9
+        end)
+
+        local FirstDropdown = SecondPage.AddDropdown("Selected 10", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Crazy_Heaven",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue0)
+            getgenv().StandFarm0 = PlayerStandValue0
+        end)
+
         local ThirdToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
             getgenv().Farming1 = Value
             if getgenv().Farming1 == true then
@@ -2379,7 +2479,7 @@ if game.PlaceId == Supported.Heaven_Stand then
                             mouse1click() 
                         end
                     end)
-                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm2 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm3 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm4 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm5 then
+                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm2 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm3 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm4 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm5 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm6 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm7 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm8 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm9 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm10 then
                     Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Ability.Value, "GothamSemibold", "Gotham", 9e9)
                     break
                 else
