@@ -3231,7 +3231,7 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
 
     local ThirdToggle = ThirdPage.AddToggle("Lvl 30+ | aLLmemester [BEST + LEGIT]", false, function(Value)
         getgenv().Rker = Value
-        while getgenv().Rker == true do wait(0.01)
+        while getgenv().Rker == true do wait(0.15)
             workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("aLLmemester"):WaitForChild("Done"):FireServer();
             workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("aLLmemester"):WaitForChild("QuestDone"):FireServer();
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-618.796630859375, 66.4908218383789, -475.3385925292969);            local args = {[1] = true};
