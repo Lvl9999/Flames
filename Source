@@ -2754,8 +2754,9 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightBadGiQuest"))();
     end)
 
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
+    local ThirdToggle = ThirdPage.AddToggle("Lvl 10+ | Scared Noob", false, function(Value)
+        getgenv().ScaredNoob = Value
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightScaredNoobQuest"))();
     end)
 
     local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
@@ -2773,7 +2774,6 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
 
     end)
-
 
 -- More Yet to come!
 end
