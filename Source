@@ -1,5 +1,4 @@
 -- // Flame's Hub 🔥\\ --
-
 local AutoExec = game
 
 repeat wait() until AutoExec:IsLoaded();
@@ -7,9 +6,7 @@ if not AutoExec:IsLoaded() then
     AutoExec.Loaded:Wait();
 end
 
--- 1. You are allowed to take some of the source however you must credit me. :(ThroughTheFireAndFlames#9925)
-
--- 2. Have a good day and do NOT skid! 👊😠
+-- ** You are allowed to take some of the source however you must credit me. :(ThroughTheFireAndFlames#9925) ** --
 
 
 -- // I am curious to see who executed my script.
@@ -2580,31 +2577,50 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Teleports");
 
-
-    local SecondLabel = SecondPage.AddLabel("[+] Buy 💰");
-    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
-
+    local SecondLabel = SecondPage.AddLabel("[+] Shopy  🛒💨");
+    local SecondButton = SecondPage.AddButton("Stand Arrow | 1x 🎯", function()
+        local args = {[1] = "Merchant1",[2] = "Option4"}
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));
     end);
 
-    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
-
+    local SecondButton = SecondPage.AddButton("Stand Arrow | 10x  🎯", function()
+        local args = {[1] = "Merchant1",[2] = "Option3"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args))      ;  
     end);
 
-    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
-
+    local SecondLabel = SecondPage.AddLabel("--------------------------------------------------------");
+    local SecondButton = SecondPage.AddButton("Rokakaka Fruit | 1x  🍎", function()
+        local args = {[1] = "Merchant1",[2] = "Option2"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));     
     end);
 
-    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
-
-    end);
-
-    local SecondButton = SecondPage.AddButton("Soon 🟠", function()
-
+    local SecondButton = SecondPage.AddButton("Rokakaka Fruit | 10x  🍎", function()
+        local args = {[1] = "Merchant1",[2] = "Option1"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Storage  🗃️");
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Stand Storage  📦", function()
         workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("admpn"):WaitForChild("Done"):FireServer();
+    end);
+
+    local SecondLabel = SecondPage.AddLabel("[+] Auto Shopy  🛒💨");
+    local SecondToggle = SecondPage.AddToggle("Stand Arrow | 1x every 1 sec  🎯", false, function(Value)
+        getgenv().LoopArrow = Value
+
+        while getgenv().LoopArrow == true do wait(1)
+            local args = {[1] = "Merchant1",[2] = "Option4"}
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));
+        end
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Rokakaka Fruit | 1x every 1 sec  🍎", false, function(Value)
+        getgenv().LoopFruit = Value
+
+        while getgenv().LoopFruit == true do wait(1)
+            local args = {[1] = "Merchant1",[2] = "Option2"};
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("BuyItem"):FireServer(unpack(args));  
+        end
     end);
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Items  💎");
