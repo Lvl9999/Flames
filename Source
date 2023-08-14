@@ -1564,7 +1564,7 @@ if game.PlaceId == Supported.Heaven_Stand then
     
                         vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
                         vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                        wait(2.15)
+                        wait(2.55)
                         local vim = game:GetService('VirtualInputManager')
                         local x = game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()[17].Frame.Yes.TextButton
     
@@ -1601,7 +1601,7 @@ if game.PlaceId == Supported.Heaven_Stand then
     
                         vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1)
                         vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1)
-                        wait(2.15)
+                        wait(2.55)
                         local vim = game:GetService('VirtualInputManager')
                         local x = game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()[17].Frame.Yes.TextButton
     
@@ -1611,6 +1611,237 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end);
+        local ThirdLabel = BackUp.AddLabel("[+] Auto Stand Farm [Without Rokakaka]")
+        local ThirdLabel = BackUp.AddLabel("(Buy arrows first)")
+        local FirstDropdown = BackUp.AddDropdown("Selected 1", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        },
+        function(PlayerStandValue1)
+            getgenv().StandFarm1 = PlayerStandValue1
+        end)
+
+        local FirstDropdown = BackUp.AddDropdown("Selected 2", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue2)
+            getgenv().StandFarm2 = PlayerStandValue2
+        end)
+        
+        local FirstDropdown = BackUp.AddDropdown("Selected 3", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue3)
+            getgenv().StandFarm3 = PlayerStandValue3
+        end)
+    
+        local FirstDropdown = BackUp.AddDropdown("Selected 4", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue4)
+            getgenv().StandFarm4 = PlayerStandValue4
+        end)
+
+        local FirstDropdown = BackUp.AddDropdown("Selected 5", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue5)
+            getgenv().StandFarm5 = PlayerStandValue5
+        end)
+
+        local FirstDropdown = BackUp.AddDropdown("Selected 6", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue6)
+            getgenv().StandFarm6 = PlayerStandValue6
+        end)
+
+        local FirstDropdown = BackUp.AddDropdown("Selected 7", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue7)
+            getgenv().StandFarm7 = PlayerStandValue7
+        end)
+
+        local FirstDropdown = BackUp.AddDropdown("Selected 8", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue8)
+            getgenv().StandFarm8 = PlayerStandValue8
+        end)
+
+        local FirstDropdown = BackUp.AddDropdown("Selected 9", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue9)
+            getgenv().StandFarm9 = PlayerStandValue9
+        end)
+
+        local FirstDropdown = BackUp.AddDropdown("Selected 10", {
+            "Crazy_Diamond",
+            "Crazy_Female",
+            "Gold Experience",
+            "Hitori Gotoh",
+            "Hitori Gotoh (SSJ)",
+            "King_Crimson",
+            "Killer Queen",
+            "Ruby_Diamond",
+            "Star_Platinum",
+            "Star_Platinum:The_World",
+            "Star_Platinum_OVA",
+            "Tendou Alice",
+            "------------",
+        }, 
+        function(PlayerStandValue0)
+            getgenv().StandFarm0 = PlayerStandValue0
+        end)
+
+        local ThirdToggle = BackUp.AddToggle("Start Farming", false, function(Value)
+            getgenv().Farming2 = Value
+            if getgenv().Farming2 == true then
+                Notif:Notification("Flame's Hub 🔥", "Aim your mouse away quickly", "GothamSemibold", "Gotham", 1.5);
+            end
+            while getgenv().Farming2 do wait(1.5)
+                if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") then
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
+                            wait(0.15)
+                            mouse1click() 
+                        end
+                    end)
+                elseif game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm1 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm2 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm3 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm4 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm5 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm6 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm7 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm8 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm9 or game:GetService("Players").LocalPlayer.Data.Ability.Value == getgenv().StandFarm10 then
+                    Notif:Notification("Flame's Hub 🔥", "🥳🎉: " .. game:GetService("Players").LocalPlayer.Data.Ability.Value, "GothamSemibold", "Gotham", 9e9)
+                    break
+                else
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Pucci.HumanoidRootPart.Position);
+                    for i,v in pairs(game:GetService("Workspace").NPC.Pucci:GetDescendants()) do
+                        if v:IsA("ClickDetector") then
+                            fireclickdetector(v);
+                            wait(0.55);
+                            local vim = game:GetService'VirtualInputManager'
+                            local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"]:GetChildren()[3].TextButton
+                            
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                            wait(1.5);
+                            local vim = game:GetService'VirtualInputManager'
+                            local x = game:GetService("Players").LocalPlayer.PlayerGui.Choosing.Frame.Yes.TextButton
+                            
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                            vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                        end
+                    end                    
+                end
+            end
+        end)
 
         local SecondLabel = SecondPage.AddLabel("[+] Safe Zone  🦺");
         local SecondToggle = SecondPage.AddToggle("Safe Zone  [For farming]", false, function(Value)
