@@ -1522,7 +1522,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local SecondPage = MainUI.AddPage("Farming");
         local SecondAndHalfPage = MainUI.AddPage("Teleports");
 
-        local BackupButton = BackUp.AddButton("Shop  🏪", function()
+        local BackupButton = BackUp.AddButton("Teleport | Shop 🏪", function()
             game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
             for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
                 if v:IsA("ClickDetector") then
@@ -2798,7 +2798,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Teleport | Shop  🏪", function()
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Shop  🏪", function()
             game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
             for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
                 if v:IsA("ClickDetector") then
