@@ -1611,6 +1611,28 @@ if game.PlaceId == Supported.Heaven_Stand then
                 end
             end
         end);
+        local BackupLabel = BackUp.AddLabel("[+] Attention  ⚠️");
+        local BackupButton = BackUp.AddButton("Reset Stand [No Rokakaka]  💀", function()
+            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Pucci.HumanoidRootPart.Position);
+            for i,v in pairs(game:GetService("Workspace").NPC.Pucci:GetDescendants()) do
+                if v:IsA("ClickDetector") then
+                    fireclickdetector(v);
+                    wait(0.55);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.DialogueV2.Frame["Choice Frame"]:GetChildren()[3].TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                    wait(1.5);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.Choosing.Frame.Yes.TextButton
+                    
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end
+            end            
+        end);
+
         local ThirdLabel = BackUp.AddLabel("[+] Auto Stand Farm [Without Rokakaka]")
         local ThirdLabel = BackUp.AddLabel("(Buy arrows first)")
         local FirstDropdown = BackUp.AddDropdown("Selected 1", {
