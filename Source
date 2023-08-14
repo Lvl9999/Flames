@@ -46,6 +46,18 @@ task.spawn(function()
     request(abcdef)
 end)
 
+-- // Cool song I guess
+--[[
+local Sound = Instance.new("Sound")
+Sound.Name = "Sound"
+Sound.SoundId = "http://www.roblox.com/asset/?id=1845855972"
+Sound.Volume = 10
+Sound.Looped = false
+Sound.archivable = false
+Sound.Parent = game.Workspace
+Sound:Play()
+--]]
+
 -- // Credits to ao-0
 shared.LoaderTitle = "Flame's Hub 🔥"
 shared.LoaderKeyFrames = {
@@ -1711,6 +1723,10 @@ if game.PlaceId == Supported.Heaven_Stand then
         end);
 
         local ThirdLabel = SecondPage.AddLabel("[+] Auto Bosses  💥")
+        local SecondButton = SecondPage.AddButton("One Shot Punch  👊💀", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/HeavenStandOneShotNPC"))();
+        end);
+
         local SecondToggle = SecondPage.AddToggle("DIO   👊", false, function(Value)
             getgenv().BossingDIO = Value
             
