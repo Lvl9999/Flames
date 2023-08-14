@@ -2798,7 +2798,7 @@ if game.PlaceId == Supported.Heaven_Stand then
             end
         end);
 
-        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Shop  🏪", function()
+        local SecondAndHalfButton = SecondAndHalfPage.AddButton("Teleport | Shop  🏪", function()
             game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
             for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
                 if v:IsA("ClickDetector") then
@@ -2980,7 +2980,7 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
         Notif:Notification("Flame's Hub 🔥", "Use my walkspeed slider...", "GothamSemibold", "Gotham", 1);
     end);
 
-    local SecondButton = SecondPage.AddButton("Teleport  🏪", function()
+    local SecondButton = SecondPage.AddButton("Teleport | Shop 🏪", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-560.3442993164062, 66.23101806640625, -689.8358764648438);
     end);
     local SecondLabel = SecondPage.AddLabel("[+] Shopy  🛒💨");
