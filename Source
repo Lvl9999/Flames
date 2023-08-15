@@ -9,18 +9,6 @@ end
 -- // Might use this in the future
 -- if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") end
 
--- // Cool song I guess
---[[
-local Sound = Instance.new("Sound")
-Sound.Name = "Sound"
-Sound.SoundId = "http://www.roblox.com/asset/?id=1845855972"
-Sound.Volume = 10
-Sound.Looped = false
-Sound.archivable = false
-Sound.Parent = game.Workspace
-Sound:Play()
---]]
-
 -- // Credits to ao-0
 shared.LoaderTitle = "Flame's Hub 🔥"
 shared.LoaderKeyFrames = {
@@ -1505,7 +1493,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local BackupToggle = BackUp.AddToggle("Normal Arrows  🎯", false, function(Value)
             getgenv().BuyArrows = Value
 
-            while getgenv().BuyArrows == true do wait(0.15)
+            while getgenv().BuyArrows == true do wait(1.15)
                 pcall(function()
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
                     for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
@@ -1544,7 +1532,7 @@ if game.PlaceId == Supported.Heaven_Stand then
         local BackupToggle = BackUp.AddToggle("Mystery Arrows  ❓", false, function(Value)
             getgenv().BuyMysteryArrows = Value
 
-            while getgenv().BuyMysteryArrows == true do wait(0.15)
+            while getgenv().BuyMysteryArrows == true do wait(1.15)
                 pcall(function()
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").NPC.Shop.HumanoidRootPart.Position);
                     for i,v in pairs(game:GetService("Workspace").NPC.Shop:GetDescendants()) do
