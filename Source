@@ -1787,9 +1787,7 @@ if game.PlaceId == Supported.Heaven_Stand then
 
         local ThirdToggle = BackUp.AddToggle("Start Farming", false, function(Value)
             getgenv().Farming2 = Value
-            if getgenv().Farming2 == true then
-                Notif:Notification("Flame's Hub 🔥", "Aim your mouse away quickly", "GothamSemibold", "Gotham", 1.5);
-            end
+
             while getgenv().Farming2 do wait(1.5)
                 if game:GetService("Players").LocalPlayer.Data.Ability.Value == "Standless" then
                     pcall(function()
