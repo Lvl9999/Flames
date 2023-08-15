@@ -122,10 +122,11 @@ local Supported = {
     Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
     Heaven_Stand = 11981520251, -- Heaven Stand
     Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
+    AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Stand_Upright_Rebooted then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -3541,6 +3542,212 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
 -- More Yet to come!
+
+end
+
+--// 🟢 AUT:OldUniverse \\--
+if game.PlaceId == Supported.AUT_OldUniverse then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "AUT:OldUniverse  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Stuff");
+    local SecondAndHalfPage = MainUI.AddPage("Farming");
+
+    local SecondLabel = SecondPage.AddLabel("[+] Deadly  💀");
+    local SecondToggle = SecondPage.AddToggle("Kill Aura", false, function(Value)
+        getgenv().KillAuraX = Value
+
+        while getgenv().KillAuraX == true do wait(0.15)
+            for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                if v.Name ~= game.Players.LocalPlayer.Name then
+                    local args = {
+                        [1] = game:GetService("Players"):WaitForChild(v.Name).Character.Humanoid,
+                        [2] = 5000,
+                        [3] = Vector3.new(-7.990391254425049, 1.5294826027911768e-07, -0.39198222756385803),
+                        [4] = "rbxassetid://260430079",
+                        [5] = 0.3,
+                        [6] = "rbxassetid://241837157",
+                        [7] = 20,
+                        [8] = 0.5,
+                        [9] = false,
+                        [10] = false,
+                        [11] = false,
+                        [13] = 5
+                    }
+                    
+                    game:GetService("ReplicatedStorage"):WaitForChild("newremotes"):WaitForChild("dmgsystem"):WaitForChild("basicdmg"):FireServer(unpack(args))
+                end
+            end
+        end
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Inf Heal [Ge needed]", false, function(Value)
+        getgenv().InfHealing = Value
+
+        while getgenv().InfHealing == true do wait(1)
+            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("GoldExperience") then
+                Notif:Notification("Flame's Hub 🔥", "Soon", "GothamSemibold", "Gotham", 1);
+            else
+                Notif:Notification("Flame's Hub 🔥", "Soon", "GothamSemibold", "Gotham", 1);
+                break
+            end
+        end
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Items  💎");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
+        getgenv().iTEMS = Value
+
+        local Tools = {}
+        while getgenv().iTEMS == true do wait(3.15)
+            pcall(function()
+                for i,v in pairs(workspace.Items:GetChildren()) do
+                    if v:IsA("Tool") then
+                        table.insert(Tools,v)
+                    end
+                end
+                for i,v in ipairs(Tools) do
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(v)
+                end
+                wait(0.25)
+                for i,v in ipairs(Tools) do
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+                end
+            end)
+        end
+    end);
+    
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  ❗");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dawn", false, function(Value)
+        getgenv().Bossing1 = Value
+
+        while getgenv().Bossing1 == true do wait(1)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Living["Dawn (Boss)"].HumanoidRootPart.Position);
+                local args = {
+                    [1] = workspace:WaitForChild("Living"):WaitForChild("Dawn (Boss)"):WaitForChild("Humanoid"),
+                    [2] = 5555,
+                    [3] = Vector3.new(-7.3831987380981445, 0.8633949756622314, 2.9568440914154053),
+                    [4] = "rbxassetid://260430079",
+                    [5] = 0.3,
+                    [6] = "rbxassetid://241837157",
+                    [7] = 20,
+                    [8] = 0.5,
+                    [9] = false,
+                    [10] = false,
+                    [11] = false,
+                    [13] = 5
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("newremotes"):WaitForChild("dmgsystem"):WaitForChild("basicdmg"):FireServer(unpack(args))
+            end)
+        end
+    end);
+
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Soon  🟠", false, function(Value)
+        getgenv().Bossing2 = Value
+
+        while getgenv().Bossing2 == true do wait(1)
+            pcall(function()
+
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Soon  🟠", false, function(Value)
+        getgenv().Bossing3 = Value
+
+        while getgenv().Bossing3 == true do wait(1)
+            pcall(function()
+
+            end)
+        end
+    end);
+
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Soon  🟠", false, function(Value)
+        getgenv().Bossing4 = Value
+
+        while getgenv().Bossing4 == true do wait(1)
+            pcall(function()
+
+            end)
+        end
+    end);
+
+
+    local FirstDropdown = SecondAndHalfPage.AddDropdown("Selected 1", {
+        "Soon 🟠",
+--[[ -- Stands from upright (Will use that cause some have same names.)
+        "Aerosmith",
+        "Cream",
+        "CrazyDiamond",
+        "D4C",
+        "DiverDown",
+        "GE",
+        "HG",
+        "KillerQueen",
+        "KingCrimson",
+        "MR",
+        "PurpleHaze",
+        "SilverChariot",
+        "SoftAndWet",
+        "StarPlatinum",
+        "StarPlatinumStoneOcean",
+        "StickyFingers",
+        "StoneFree",
+        "TheEmperor",
+        "TheHand",
+        "TheWorld",
+        "WeatherReport",
+        "WhiteSnake",
+        "PM",
+        "SCOVA",
+        "TWOVA",
+        "JotarosStarPlatinum",
+        "StarPlatinumOVA",
+        "TWAU",
+        "DTW",
+--]]
+        "------------",
+    },
+    function(StandoDa1)
+        getgenv().StandoDa1 = StandoDa1
+    end)
+
+    local FirstToggle = SecondAndHalfPage.AddToggle("Start Farming  🟠", false, function(Value)
+        getgenv().StandoDa1 = Value
+
+        while getgenv().StandoDa1 do wait(1.5)
+            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Standless") then
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow") == nil then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
+                    wait(0.25);
+                   -- game:GetService("ReplicatedStorage"):WaitForChild("newremotes"):WaitForChild("UseItem"):FireServer();
+                end
+            end)
+            elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandoDa1) then
+                Notif:Notification("Flame's Hub 🔥", "You got it!", "GothamSemibold", "Gotham", 1);
+                break
+            else
+                pcall(function()
+                    --game:GetService("Players").LocalPlayer.PlayerGui.resetgui.reset.Visible = true
+                    wait(0.25)
+                    --local vim = game:GetService'VirtualInputManager'
+                   -- local x = game:GetService("Players").LocalPlayer.PlayerGui.resetgui.reset.yes
+                    
+                    --vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    --vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                end)
+            end
+        end
+    end)
+
 end
 
 local Settings = MainUI.AddPage("Settings");
