@@ -3558,7 +3558,7 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
 
 end
 
---// 🟢 AUT:OldUniverse \\--
+--// 🟢 AUT:OldUniverse \\-- [Lazy to continue, But enjoy what it has
 if game.PlaceId == Supported.AUT_OldUniverse then
     task.spawn(function()
         wait(3);
@@ -3694,68 +3694,39 @@ if game.PlaceId == Supported.AUT_OldUniverse then
 
 
     local FirstDropdown = SecondAndHalfPage.AddDropdown("Selected 1", {
-        "Soon 🟠",
---[[ -- Stands from upright (Will use that cause some have same names.)
-        "Aerosmith",
-        "Cream",
-        "CrazyDiamond",
-        "D4C",
-        "DiverDown",
-        "GE",
-        "HG",
-        "KillerQueen",
-        "KingCrimson",
-        "MR",
-        "PurpleHaze",
-        "SilverChariot",
-        "SoftAndWet",
-        "StarPlatinum",
-        "StarPlatinumStoneOcean",
-        "StickyFingers",
-        "StoneFree",
-        "TheEmperor",
-        "TheHand",
-        "TheWorld",
-        "WeatherReport",
-        "WhiteSnake",
-        "PM",
-        "SCOVA",
-        "TWOVA",
-        "JotarosStarPlatinum",
-        "StarPlatinumOVA",
-        "TWAU",
-        "DTW",
---]]
+        "Works but names are needed",
+        "Here too",
         "------------",
     },
-    function(StandoDa1)
-        getgenv().StandoDa1 = StandoDa1
+    function(StandoDa11)
+        getgenv().StandoDa11 = StandoDa11
     end)
 
-    local FirstToggle = SecondAndHalfPage.AddToggle("Start Farming  🟠", false, function(Value)
+    local FirstToggle = SecondAndHalfPage.AddToggle("Start Farming", false, function(Value)
         getgenv().StandoDa1 = Value
 
-        while getgenv().StandoDa1 do wait(1.5)
+        while getgenv().StandoDa1 do wait(0.5)
             if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Standless") then
             pcall(function()
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow") == nil then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
                     wait(0.25);
-                   -- game:GetService("ReplicatedStorage"):WaitForChild("newremotes"):WaitForChild("UseItem"):FireServer();
+                    game:GetService("ReplicatedStorage"):WaitForChild("newremotes"):WaitForChild("UseItem"):FireServer();
                 end
             end)
-            elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandoDa1) then
+            elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandoDa11) then
                 Notif:Notification("Flame's Hub 🔥", "You got it!", "GothamSemibold", "Gotham", 1);
                 break
             else
                 pcall(function()
-                    --game:GetService("Players").LocalPlayer.PlayerGui.resetgui.reset.Visible = true
+                    Notif:Notification("Flame's Hub 🔥", "Reset", "GothamSemibold", "Gotham", 1);
+                    game:GetService("Players").LocalPlayer.PlayerGui.resetgui.reset.Visible = true
                     wait(0.25)
-                    --local vim = game:GetService'VirtualInputManager'
-                   -- local x = game:GetService("Players").LocalPlayer.PlayerGui.resetgui.reset.yes
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.resetgui.reset.yes
                     
-                    --vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
-                    --vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
                 end)
             end
         end
