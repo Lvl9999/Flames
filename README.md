@@ -22,7 +22,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
   
 - [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟢  👈 Newest Release 🔥
 
-- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🔵 [BETA]
+- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🔵 [BETA] (Grinding on heaven stand, Will take longer than expected)
 
   In Total: 7
 
