@@ -20,9 +20,11 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | 🟢
   
-- [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟢  👈 Newest Release 🔥
+- [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟠 [GAME CLOSED UNTIL FURTHER NOTICE]
 
-- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🔵 [BETA] (Grinding on heaven stand, Will take longer than expected)
+- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🟢  👈 Newest Release 🔥 [ 🔵 Lazy to continue] 
+  
+- [Sakura Stand](https://www.roblox.com/games/8534845015/Gojo-Rework-Sakura-Stand) | 🔵  [SOON]
 
   In Total: 7
 
