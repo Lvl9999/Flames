@@ -71,13 +71,16 @@ local Supported = {
     SPTS_Endless = 12603365593, -- SPTS Endless
     Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
     Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
+    Heaven_StandTestingPlace = 13748856054, -- Heaven Stand (Testing Place)
     Heaven_Stand = 11981520251, -- Heaven Stand
     Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
-    AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe
+    AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe [Scrapped Project]
+    Sakura_Stand = 8534845015, -- Sakura Stand
+
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -1464,7 +1467,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
 end
 
 --// 🟢 Heaven Stand \\--
-if game.PlaceId == Supported.Heaven_Stand then
+if game.PlaceId == Supported.Heaven_Stand or game.PlaceId == Supported.Heaven_StandTestingPlace then
     task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Heaven Stand  🔥", "GothamSemibold", "Gotham", 2.5);
@@ -3643,8 +3646,7 @@ if game.PlaceId == Supported.AUT_OldUniverse then
 
 
     local FirstDropdown = SecondAndHalfPage.AddDropdown("Selected 1", {
-        "Works but names are needed",
-        "Here too",
+        "This is gonna reset your stand, Watch out!",
         "------------",
     },
     function(StandoDa11)
@@ -3680,6 +3682,32 @@ if game.PlaceId == Supported.AUT_OldUniverse then
             end
         end
     end)
+
+
+end
+
+
+--// 🟢 Sakura Stand \\--
+if game.PlaceId == Supported.Sakura_Stand then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Sakura Stand  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("SOON");
+    local SecondAndHalfPage = MainUI.AddPage("SOON");
+
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Soon  🟠", false, function(Value)
+        getgenv().FarmingItemsAndChests = Value
+
+        while getgenv().FarmingItemsAndChests == true do wait(1)
+            pcall(function()
+
+            end)
+        end
+    end);
 
 end
 
