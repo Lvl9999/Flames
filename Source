@@ -3823,7 +3823,10 @@ if game.PlaceId == Supported.Sakura_Stand then
                         Base.Size = Vector3.new(9e9,5,9e9)
                         Base.Anchored = true
                         Base.Transparency = 1
-                        Base.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-20,0);wait(5);Base:Destroy();
+                        Base.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-20,0);
+                        task.spawn(function()
+                            wait(5);Base:Destroy();
+                        end)
                     end)
                 end)
             end
