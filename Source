@@ -3907,15 +3907,71 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
     end);
+
+    getgenv().AttackingOnSakuraX = function() -- bruh 1
+        getgenv().Press = function(v) -- bruh 2
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+        end
+        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+    end
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  🧾");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Deal Damage [Soon  🟠]", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry", false, function(Value)
+        getgenv().Parry = Value
+
+        while getgenv().Parry == true do wait(0.001)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5, game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5));
+                game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                if workspace.Living["Attacking Dummy"].CDValues:FindFirstChild("OnCooldown") then
+                    getgenv().Press = function(v)
+                        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                    end
+                    getgenv().Unpress = function(v)
+                        return game:GetService("VirtualInputManager"):SendKeyEvent(false, v, false, game);
+                    end
+                    Press("F");wait(0.15);Unpress("F");
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Deal Damage", false, function(Value)
         getgenv().DealingPainX = Value
         
-        while getgenv().DealingPainX == true do wait(0.15)
-            game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position + -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position + -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -5, game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position - -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -5));                           
-            task.spawn(function()
-                -- getgenv().AttackingOnSakuraX();
+        while getgenv().DealingPainX == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position + -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -3); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position + -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -3, game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position - -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -3));                           
+                task.spawn(function()
+                    getgenv().AttackingOnSakuraX();
+                end)
             end)
+        end          
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Take Damage", false, function(Value)
+        getgenv().Masochist = Value
+        
+        while getgenv().Masochist == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5, game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5));            
+            end)
+        end          
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Take Damage [Public Edition]", false, function(Value)
+        getgenv().MouthSluring = Value
+        
+        local Slurs = {
+            "Please someone kill me, Its for quest!",
+            "If you not attack me then you are noob",
+            "1v1 me or noob",
+            "Whoever kills me gets true anubis",
+         }
+         
+        while getgenv().MouthSluring == true do 
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Slurs[math.random(1, #Slurs)], "All");wait(7);
         end          
     end);
 
