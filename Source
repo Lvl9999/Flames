@@ -3694,6 +3694,17 @@ if game.PlaceId == Supported.Sakura_Stand then
         Notif:Notification("Game Detected ⚠️", "Sakura Stand  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
 
+    --// Anti Ban Bypass\\--
+    task.spawn(function()
+        local OldNameCall;
+        OldNameCall = hookmetamethod(game,"__namecall",newcclosure(function(Self,...)
+            if Self.Name == "BanRemote" and getnamecallmethod() == "FireServer" then
+                return
+            end
+            return OldNameCall(Self,...)
+        end))
+    end)
+
     --// Main Pages \\--
     local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
@@ -3994,6 +4005,11 @@ if game.PlaceId == Supported.Sakura_Stand then
             "If you not attack me then you are noob",
             "1v1 me or noob",
             "Whoever kills me gets true anubis",
+            "I am going to rk you if you wont attack me",
+            "You will get spawn killed if you not attack me",
+            "Giving free gojo only to who kills me",
+            "EZ, HIT ME NOW OR SUFFER!",
+            
          }
          
         while getgenv().MouthSluring == true do 
