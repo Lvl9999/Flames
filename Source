@@ -3917,10 +3917,10 @@ if game.PlaceId == Supported.Sakura_Stand then
     end
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  🧾");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry", false, function(Value)
-        getgenv().Parry = Value
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage", false, function(Value)
+        getgenv().ParryLolz = Value
 
-        while getgenv().Parry == true do wait(0.001)
+        while getgenv().ParryLolz == true do wait(0.001)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5, game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5));
                 game:GetService("VirtualUser"):ClickButton1(Vector2.new());
