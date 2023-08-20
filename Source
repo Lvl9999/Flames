@@ -3695,8 +3695,45 @@ if game.PlaceId == Supported.Sakura_Stand then
     end)
 
     --// Main Pages \\--
+    local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
     local SecondAndHalfPage = MainUI.AddPage("Farming");
+
+    local BackupLabel = BackupPage.AddLabel("[+] Shop 🏪");
+    local BackupButton = BackupPage.AddButton("Arrow   🎯  [$100]", function()
+        local args = {[1] = ""};
+        game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Arrow"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Rokakaka  🍎  [$75]", function()
+        local args = {[1] = ""};
+        game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Stop Sign  ⛔  [$750]", function()
+        local args = {[1] = ""};
+        game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("StopSign"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Hamon Manual  ⚡  [$1,250]", function()
+        local args = {[1] = ""};
+        game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Hamon"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Spin Manual  💫  [$1,250]", function()
+        local args = {[1] = ""};
+        game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Spin"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Stone Mask  🎭  [$1,000]", function()
+        local args = {[1] = ""};
+        game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Vampire"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Camera  📸  [$1,500]", function()
+        local args = {[1] = ""};
+        game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Camera"):FireServer(unpack(args));      
+    end);
 
     local SecondPageLabel = SecondPage.AddLabel("[+] Storage  🗃️");
     local SecondPageToggle = SecondPage.AddToggle("Item Storage  💼", false, function(Value)
@@ -3721,17 +3758,6 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] AFK  🕑");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Safe Zone [For Farming]", false, function(Value)
-        getgenv().Safing = Value
-
-        while getgenv().Safing == true do wait(2.15) -- wtf?, is "safing" ??? lol
-            pcall(function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-399.73858642578125, 80.37528228759766, 1085.0352783203125)
-            end)
-        end
-    end);
-
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Items  👜");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingItemsLoL = Value
@@ -3746,7 +3772,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         else
             Press("P");
         end
-        wait(1.15)
+        wait(0.7);
         task.spawn(function()
         while getgenv().FarmingItemsLoL == true do wait(1.25)
                 pcall(function()
