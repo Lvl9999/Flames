@@ -3747,7 +3747,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondPageLabel = SecondPage.AddLabel("[+] Item Storage  🗃️");
-    local SecondPageToggle = SecondPage.AddToggle("Storage Acess 💼", false, function(Value)
+    local SecondPageToggle = SecondPage.AddToggle("Storage Acess  💼", false, function(Value)
         getgenv().ItemsToGUI = Value
         if getgenv().ItemsToGUI == true then
             game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Visible = true
@@ -3757,7 +3757,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondPageLabel = SecondPage.AddLabel("[+] Stand Storage  🗃️");
-    local SecondButton = SecondPage.AddButton("Storage Acess 💼", function()
+    local SecondButton = SecondPage.AddButton("Storage Acess  💼", function()
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-394.4962463378906, -31.704174041748047, 1821.9903564453125)
         wait(0.15);
