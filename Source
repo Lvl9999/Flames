@@ -3746,8 +3746,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Camera"):FireServer(unpack(args));      
     end);
 
-    local SecondPageLabel = SecondPage.AddLabel("[+] Storage  🗃️");
-    local SecondPageToggle = SecondPage.AddToggle("Item Storage  💼", false, function(Value)
+    local SecondPageLabel = SecondPage.AddLabel("[+] Item Storage  🗃️");
+    local SecondPageToggle = SecondPage.AddToggle("Storage Acess 💼", false, function(Value)
         getgenv().ItemsToGUI = Value
         if getgenv().ItemsToGUI == true then
             game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Visible = true
@@ -3756,7 +3756,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondButton = SecondPage.AddButton("Stand Storage  💼", function()
+    local SecondPageLabel = SecondPage.AddLabel("[+] Stand Storage  🗃️");
+    local SecondButton = SecondPage.AddButton("Storage Acess 💼", function()
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-394.4962463378906, -31.704174041748047, 1821.9903564453125)
         wait(0.15);
@@ -3767,6 +3768,31 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
         wait(0.15)
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
+    end);
+
+    local SecondPageLabel = SecondPage.AddLabel("[+] Fast Stand Switch  🔁");
+    local SecondButton = SecondPage.AddButton("Slot 1 [Free]", function()
+        game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot1"):FireServer();
+    end);
+
+    local SecondButton = SecondPage.AddButton("Slot 2 [Free]", function()
+        game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot2"):FireServer();
+    end);
+
+    local SecondButton = SecondPage.AddButton("Slot 3 [Free]", function()
+        game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot3"):FireServer();
+    end);
+
+    local SecondButton = SecondPage.AddButton("Slot 4 [50 Robux]", function()
+        game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot4"):FireServer();
+    end);
+
+    local SecondButton = SecondPage.AddButton("Slot 5 [50 Robux]", function()
+        game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot5"):FireServer();
+    end);
+
+    local SecondButton = SecondPage.AddButton("Slot 6 [75 Robux]", function()
+        game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Items  👜");
@@ -4008,6 +4034,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "I am going to rk you if you wont attack me",
             "You will get spawn killed if you not attack me",
             "Giving free gojo only to who kills me",
+            "Giving free astolfo only to who kills me",
             "EZ, HIT ME NOW OR SUFFER!",
             
          }
