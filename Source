@@ -3795,7 +3795,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Items  👜");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Items  👜");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingItemsLoL = Value
 
