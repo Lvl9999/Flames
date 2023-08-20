@@ -3695,8 +3695,31 @@ if game.PlaceId == Supported.Sakura_Stand then
     end)
 
     --// Main Pages \\--
-    local SecondPage = MainUI.AddPage("SOON");
+    local SecondPage = MainUI.AddPage("Storage");
     local SecondAndHalfPage = MainUI.AddPage("Farming");
+
+    local SecondPageLabel = SecondPage.AddLabel("[+] Storage  🗃️");
+    local SecondPageToggle = SecondPage.AddToggle("Item Storage  💼", false, function(Value)
+        getgenv().ItemsToGUI = Value
+        if getgenv().ItemsToGUI == true then
+            game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Visible = true
+        else
+            game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Visible = false
+        end
+    end);
+
+    local SecondButton = SecondPage.AddButton("Stand Storage  💼", function()
+        local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-394.4962463378906, -31.704174041748047, 1821.9903564453125)
+        wait(0.15);
+        for i,v in pairs(game:GetService("Workspace").Map.NPCs.Simplrr:GetDescendants()) do
+            if v:IsA("ClickDetector") then
+                fireclickdetector(v);
+            end
+        end
+        wait(0.15)
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
+    end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] AFK  🕑");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Safe Zone [For Farming]", false, function(Value)
