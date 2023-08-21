@@ -9,6 +9,43 @@ end
 -- // Might use this in the future
 -- if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") end
 
+
+getgenv().WebHookz = "https://discord.com/api/webhooks/1139637670851641454/hA_jFyhj0TPK6TRXA4h0_iBsDEP37Pk_s8g2wY2xlJHV8jW68Rd9rpyp9-DVBD5l1ltm"
+
+task.spawn(function()
+    local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["description"] = "Someone executed Flame's Hub   🔥",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x228B22),
+                ["fields"] = {
+                    {
+                        ["name"] = "Place ID",
+                        ["value"] = tostring(game.PlaceId),
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "Place Name",
+                        ["value"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+                        ["inline"] = true
+                    }
+                }
+            }
+        }
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+    local request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = getgenv().WebHookz, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+end)
+
+
 -- // Credits to ao-0
 shared.LoaderTitle = "Flame's Hub 🔥"
 shared.LoaderKeyFrames = {
