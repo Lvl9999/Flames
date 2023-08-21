@@ -3700,6 +3700,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
     local SecondAndHalfPage = MainUI.AddPage("Farming");
+    local BackupEndPage = MainUI.AddPage("Teleports");
 
     local BackupLabel = BackupPage.AddLabel("[+] Shop 🏪");
     local BackupButton = BackupPage.AddButton("Arrow   🎯  [$100]", function()
@@ -4132,6 +4133,72 @@ if game.PlaceId == Supported.Sakura_Stand then
                 break
             end
         end        
+    end);
+
+    local BackupEndLabel = BackupEndPage.AddLabel("[+] Places  🗺️");
+    local BackupEndButton = BackupEndPage.AddButton("Shop   🏪", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-375.9766845703125, -31.704181671142578, 1810.9178466796875);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Cafe   ☕", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-237.51318359375, -32.0684814453125, 1452.0396728515625);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Guilds  ⚔️", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-688.5193481445312, -31.074769973754883, 1662.5528564453125);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Battle Field  💥", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-520.662841796875, -31.358125686645508, 1584.3505859375)
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Park  🏞️", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-537.5374145507812, -32.051334381103516, 1419.20361328125);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Side Park  ⛲", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-73.15850830078125, -32.01318359375, 1636.9390869140625);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Cave  💀", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2343.34326171875, -393.6280822753906, -5044.39013671875);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Hall of Heroes  🦸", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3642.984619140625, -234.16964721679688, 4537.80078125);
+    end);
+
+    local BackupEndLabel = BackupEndPage.AddLabel("[+] NPC  🌐");
+    local BackupEndButton = BackupEndPage.AddButton("Skin Remover [$5,000]", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55.15070724487305, -32.537261962890625, 1576.3802490234375);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Normal Dummies", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.98736572265625, -32.53725814819336, 1775.2222900390625);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Blocking Dummies", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-40.976383209228516, -32.73731231689453, 1755.3009033203125);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Attacking Dummies", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-659.4290161132812, -33.014976501464844, 1851.7779541015625);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Drago | Daily Quest", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-97.93447875976562, -32.013179779052734, 1671.56298828125);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("All Might | Quest", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-433.9189147949219, -32.64363098144531, 1133.6900634765625)
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Gojo | Quest", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-581.3973999023438, -32.15133285522461, 1416.25390625);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Hikarishi | Quest", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-508.49334716796875, -32.792144775390625, 1508.5386962890625);
     end);
 
 -- More to come!
