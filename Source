@@ -3686,7 +3686,6 @@ if game.PlaceId == Supported.AUT_OldUniverse then
 
 end
 
-
 --// 🟢 Sakura Stand \\--
 if game.PlaceId == Supported.Sakura_Stand then
     task.spawn(function()
@@ -3746,18 +3745,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Camera"):FireServer(unpack(args));      
     end);
 
-    local SecondPageLabel = SecondPage.AddLabel("[+] Item Storage  🗃️");
-    local SecondPageToggle = SecondPage.AddToggle("Storage Acess  💼", false, function(Value)
-        getgenv().ItemsToGUI = Value
-        if getgenv().ItemsToGUI == true then
-            game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Visible = true
-        else
-            game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Visible = false
-        end
-    end);
-
     local SecondPageLabel = SecondPage.AddLabel("[+] Stand Storage  🗃️");
-    local SecondButton = SecondPage.AddButton("Storage Acess  💼", function()
+    local SecondButton = SecondPage.AddButton("Open It", function()
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-394.4962463378906, -31.704174041748047, 1821.9903564453125)
         wait(0.15);
@@ -3841,7 +3830,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Sell  💸");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🛒", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🖐️", false, function(Value)
         getgenv().EverythingLoL = Value
         while getgenv().EverythingLoL == true do wait(0.015)
             pcall(function()
@@ -3854,7 +3843,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Barrel  🤷‍♀️", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Barrels  😑", false, function(Value)
         getgenv().SellingBarrels = Value
         while getgenv().SellingBarrels == true do wait(0.15)
             pcall(function()
@@ -3864,7 +3853,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Arrow  🎯", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Arrows   🎯", false, function(Value)
         getgenv().SellingArrows = Value
         while getgenv().SellingArrows == true do wait(0.15)
             pcall(function()
@@ -3874,7 +3863,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Rokakaka  🍎", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Rokakakas  🍎", false, function(Value)
         getgenv().SellingRoks = Value
         while getgenv().SellingRoks == true do wait(0.15)
             pcall(function()
@@ -3884,7 +3873,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Stop Sign  🛑", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Stop Signs  🛑", false, function(Value)
         getgenv().SellingSigns = Value
         while getgenv().SellingSigns == true do wait(0.15)
             pcall(function()
@@ -3894,7 +3883,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mysterious Camera  📸", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mysterious Cameras  📸", false, function(Value)
         getgenv().SellingCams = Value
         while getgenv().SellingCams == true do wait(0.15)
             pcall(function()
@@ -3904,7 +3893,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Haunted Sword  ⚔️", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Haunted Swords  ⚔️", false, function(Value)
         getgenv().SellingSwords = Value
         while getgenv().SellingSwords == true do wait(0.15)
             pcall(function()
@@ -3914,7 +3903,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Spin Manual  💫", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Spin Manuals  💫", false, function(Value)
         getgenv().SellingSpinManuals = Value
         while getgenv().SellingSpinManuals == true do wait(0.15)
             pcall(function()
@@ -3924,7 +3913,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Hamon Manual  ⚡", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Hamon Manuals  ⚡", false, function(Value)
         getgenv().SellingHamons = Value
         while getgenv().SellingHamons == true do wait(0.15)
             pcall(function()
@@ -3934,7 +3923,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Stone Mask  🎭", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Stone Masks  🎭", false, function(Value)
         getgenv().SellingStoneMasks = Value
         while getgenv().SellingStoneMasks == true do wait(0.15)
             pcall(function()
@@ -3944,7 +3933,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bomu Bomu Devil Fruit", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bomu Bomu Devil Fruits", false, function(Value)
         getgenv().SellingBomu = Value
         while getgenv().SellingBomu == true do wait(0.15)
             pcall(function()
@@ -3954,7 +3943,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mochi Mochi Devil Fruit", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mochi Mochi Devil Fruits", false, function(Value)
         getgenv().SellingMochi = Value
         while getgenv().SellingMochi == true do wait(0.15)
             pcall(function()
@@ -3964,7 +3953,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bari Bari Devil Fruit", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bari Bari Devil Fruits", false, function(Value)
         getgenv().SellingBari = Value
         while getgenv().SellingBari == true do wait(0.15)
             pcall(function()
@@ -3993,8 +3982,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("VirtualUser"):ClickButton1(Vector2.new());
     end
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  🧾");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage  ✊⚔️", false, function(Value)
         getgenv().ParryLolz = Value
 
         while getgenv().ParryLolz == true do wait(0.001)
@@ -4014,7 +4003,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Deal Damage", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Deal Damage   👊", false, function(Value)
         getgenv().DealingPainX = Value
         
         while getgenv().DealingPainX == true do wait(0.015)
@@ -4027,7 +4016,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end          
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Take Damage", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Take Damage  🤕", false, function(Value)
         getgenv().Masochist = Value
         
         while getgenv().Masochist == true do wait(0.015)
@@ -4037,26 +4026,41 @@ if game.PlaceId == Supported.Sakura_Stand then
         end          
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Take Damage [Public Edition]", false, function(Value)
-        getgenv().MouthSluring = Value
-        
-        local Slurs = {
-            "Please someone kill me, Its for quest!",
-            "If you not attack me then you are noob",
-            "1v1 me or noob",
-            "Whoever kills me gets true anubis",
-            "I am going to rk you if you wont attack me",
-            "You will get spawn killed if you not attack me",
-            "Giving free gojo only to who kills me",
-            "Giving free astolfo only to who kills me",
-            "EZ, HIT ME NOW OR SUFFER!",
-            
-         }
-         
-        while getgenv().MouthSluring == true do 
-            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Slurs[math.random(1, #Slurs)], "All");wait(7);
-        end          
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
+        getgenv().BossingJotaroKuzo = Value
+
+        while getgenv().BossingJotaroKuzo == true do wait(0.015)
+            if workspace.Living:FindFirstChild("Jotaro Kujo") and workspace.Living:FindFirstChild("Jotaro Kujo"):FindFirstChild("HumanoidRootPart") then
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 5, game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 5));                    
+                task.spawn(function()
+                    getgenv().Attacking();
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Jotaro Kuzo not found", "GothamSemibold", "Gotham", 3);
+                break
+            end
+        end     
     end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Chariot Requiem  💀", false, function(Value)
+        getgenv().BossingChriotRequiem = Value
+
+        while getgenv().BossingChriotRequiem == true do wait(0.015)
+            if workspace.Living:FindFirstChild("Chariot Requiem") and workspace.Living:FindFirstChild("Chariot Requiem"):FindFirstChild("HumanoidRootPart") then
+                pcall(function()
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * -3); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * -3, game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * -3));                           
+                    task.spawn(function()
+                        getgenv().AttackingOnSakuraX();
+                    end)
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Chariot not found", "GothamSemibold", "Gotham", 3);
+                break
+            end
+        end        
+    end);
+
 
 end
 
