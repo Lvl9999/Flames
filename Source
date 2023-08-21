@@ -135,12 +135,11 @@ local ScriptXSlider = ScriptX.AddSlider("Gravity  🌎", {Min = 0, Max = 196.2, 
 end)
 
 getgenv().Saves = {
-    WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed,
     JumpHeight = game.Players.LocalPlayer.Character.Humanoid.JumpHeight,
     JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
 }
 
-local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 10, Max = 100, Def = 1}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 16, Max = 500, Def = 1}, function(Value)
     getgenv().Speed = tonumber(Value)
 end)
 
@@ -173,6 +172,8 @@ local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower", false, fun
     end
 end)
 
+-- I will decide what to do with this soon.
+--[[
 local ScriptXToggle = ScriptX.AddToggle("Invisible  👻", false, function(Value)
     getgenv().InvisibleToggle = Value
 
@@ -211,6 +212,7 @@ local ScriptXToggle = ScriptX.AddToggle("Invisible  👻", false, function(Value
         Invisible.CFrame = X
     end  
 end)
+--]]
 
 local ScriptXToggle = ScriptX.AddToggle("Noclip   🧱", false, function(Value)
     getgenv().TheyreMagsNotClips = Value
