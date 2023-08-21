@@ -3784,6 +3784,16 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming", false, function(Value)
+        getgenv().Rebirthss = Value
+        while getgenv().Rebirthss == true do wait(0.25)
+            pcall(function()
+                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("UpgradeMas"):FireServer();
+            end)
+        end
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Items  👜");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingItemsLoL = Value
