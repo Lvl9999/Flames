@@ -3785,6 +3785,18 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell |  Rokakaka  🍎 [Drains Money]", false, function(Value)
+        getgenv().Rokia = Value
+        while getgenv().Rokia == true do wait(0.01)
+            pcall(function()
+                local args = {[1] = ""};
+                game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
+                local args = {[1] = "Rokakaka"};
+                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("SellItem"):FireServer(unpack(args));      
+            end)
+        end
+    end);
+
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming", false, function(Value)
         getgenv().Rebirthss = Value
         while getgenv().Rebirthss == true do wait(0.25)
@@ -3793,6 +3805,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
     end);
+
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Items  👜");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
