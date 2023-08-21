@@ -3974,14 +3974,6 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    getgenv().AttackingOnSakuraX = function() -- bruh 1
-        getgenv().Press = function(v) -- bruh 2
-            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-        end
-        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-    end
-
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage  ✊⚔️", false, function(Value)
         getgenv().ParryLolz = Value
@@ -4010,7 +4002,11 @@ if game.PlaceId == Supported.Sakura_Stand then
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position + -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -3); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position + -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -3, game:GetService("Workspace").Living.Dummy.HumanoidRootPart.Position - -game:GetService("Workspace").Living.Dummy.HumanoidRootPart.CFrame.LookVector * -3));                           
                 task.spawn(function()
-                    getgenv().AttackingOnSakuraX();
+                    getgenv().Press = function(v) -- bruh 2
+                        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                    end
+                    Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                    game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                 end)
             end)
         end          
@@ -4026,18 +4022,23 @@ if game.PlaceId == Supported.Sakura_Stand then
         end          
     end);
 
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
         getgenv().BossingJotaroKuzo = Value
 
         while getgenv().BossingJotaroKuzo == true do wait(0.015)
             if workspace.Living:FindFirstChild("Jotaro Kujo") and workspace.Living:FindFirstChild("Jotaro Kujo"):FindFirstChild("HumanoidRootPart") then
-                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 5, game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 5));                    
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7.5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7.5, game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7.5));                    
                 task.spawn(function()
-                    getgenv().Attacking();
+                    getgenv().Press = function(v) -- bruh 2
+                        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                    end
+                    Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                    game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                 end)
             else
-                Notif:Notification("Flame's Hub 🔥", "Jotaro Kuzo not found", "GothamSemibold", "Gotham", 3);
+                Notif:Notification("Flame's Hub 🔥", "Jotaro Bozo not found", "GothamSemibold", "Gotham", 3);
                 break
             end
         end     
@@ -4049,9 +4050,13 @@ if game.PlaceId == Supported.Sakura_Stand then
         while getgenv().BossingChriotRequiem == true do wait(0.015)
             if workspace.Living:FindFirstChild("Chariot Requiem") and workspace.Living:FindFirstChild("Chariot Requiem"):FindFirstChild("HumanoidRootPart") then
                 pcall(function()
-                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * -3); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * -3, game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * -3));                           
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * 7.5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * 7.5, game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * 7.5));                    
                     task.spawn(function()
-                        getgenv().AttackingOnSakuraX();
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());                    
                     end)
                 end)
             else
