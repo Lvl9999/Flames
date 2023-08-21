@@ -3784,6 +3784,23 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset | God Mode  💀", function()
+        local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        local BaseReset = Instance.new("Part")
+        BaseReset.Size = Vector3.new(100, 5, 100)
+        BaseReset.Anchored = true
+        BaseReset.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, -1000, 0)
+        BaseReset.Parent = workspace
+        BaseReset.Transparency = 1 
+        wait(0.1)
+		game.Workspace.Gravity = 9e9
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = BaseReset.CFrame + Vector3.new(0, 0, 0)
+        BaseReset:Destroy()
+		wait(2.35)
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
+        game.Workspace.Gravity = 192.2
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell |  Rokakaka  🍎 [Drains Money]", false, function(Value)
         getgenv().Rokia = Value
