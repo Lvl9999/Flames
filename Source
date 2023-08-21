@@ -4003,13 +4003,23 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Arcade  🎰");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Gambling   🎲", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Arcade + Banner  👀");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Gambling | Arcade", false, function(Value)
         getgenv().Arcading = Value -- wtf?
         while getgenv().Arcading == true do wait(0.15)
             pcall(function()
                 local args = {[1] = false,[2] = true};
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("ArcadePurchase"):FireServer(unpack(args));                         
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Rolling | Banner", false, function(Value)
+        getgenv().Bannering = Value -- wtf?
+        while getgenv().Bannering == true do wait(0.15)
+            pcall(function()
+                local args = {[1] = "Single",[2] = "ArrowOfNavae"};
+                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("BannerPull"):FireServer(unpack(args));
             end)
         end
     end);
