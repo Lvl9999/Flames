@@ -4116,114 +4116,21 @@ if game.PlaceId == Supported.Sakura_Stand then
         end        
     end);
 
-
+-- More to come!
 end
 
 local Settings = MainUI.AddPage("Settings");
 
 local SettingsLabel = Settings.AddLabel("Settings  ⚙️");
-local SettingsToggle = Settings.AddToggle("Fps Booster  📈  |  300+ [Fps]", false, function(Value)
-    setfpscap(math.huge) -- Fun fact: your eyes are stuck at 60 fps ;)
-end)
+local SettingsToggle = Settings.AddToggle("Fps Booster  📈", true, function(Value)
+    getgenv().Fps = Value
 
-local SettingsToggle = Settings.AddToggle("Cpu Reducer 📉  |  -15 [Cpu]", false, function(Value)
-    -- Credit: Unknown
-    if not game:IsLoaded() then repeat wait() until game:IsLoaded() end
-    if hookfunction and setreadonly then
-        local mt = getrawmetatable(game)
-        local old = mt.__newindex
-        setreadonly(mt, false)
-        local sda
-        sda = hookfunction(old, function(t, k, v)
-            if k == "Material" then
-                if v ~= Enum.Material.Neon and v ~= Enum.Material.Plastic and v ~= Enum.Material.ForceField then v = Enum.Material.Plastic end
-            elseif k == "TopSurface" then v = "Smooth"
-            elseif k == "Reflectance" or k == "WaterWaveSize" or k == "WaterWaveSpeed" or k == "WaterReflectance" then v = 0
-            elseif k == "WaterTransparency" then v = 1
-            elseif k == "GlobalShadows" then v = false end
-            return sda(t, k, v)
-        end)
-        setreadonly(mt, true)
-    end
-    local g = game
-    local w = g.Workspace
-    local l = g:GetService"Lighting"
-    local t = w:WaitForChild"Terrain"
-    t.WaterWaveSize = 0
-    t.WaterWaveSpeed = 0
-    t.WaterReflectance = 0
-    t.WaterTransparency = 1
-    l.GlobalShadows = false
-    
-    function change(v)
-        pcall(function()
-            if v.Material ~= Enum.Material.Neon and v.Material ~= Enum.Material.Plastic and v.Material ~= Enum.Material.ForceField then
-                pcall(function() v.Reflectance = 0 end)
-                pcall(function() v.Material = Enum.Material.Plastic end)
-                pcall(function() v.TopSurface = "Smooth" end)
-            end
-        end)
-    end
-    
-    game.DescendantAdded:Connect(function(v)
-        pcall(function()
-            if v:IsA"Part" then change(v)
-            elseif v:IsA"MeshPart" then change(v)
-            elseif v:IsA"TrussPart" then change(v)
-            elseif v:IsA"UnionOperation" then change(v)
-            elseif v:IsA"CornerWedgePart" then change(v)
-            elseif v:IsA"WedgePart" then change(v) end
-        end)
-    end)
-    for i, v in pairs(game:GetDescendants()) do
-        pcall(function()
-            if v:IsA"Part" then change(v)
-            elseif v:IsA"MeshPart" then change(v)
-            elseif v:IsA"TrussPart" then change(v)
-            elseif v:IsA"UnionOperation" then change(v)
-            elseif v:IsA"CornerWedgePart" then change(v)
-            elseif v:IsA"WedgePart" then change(v) end
-        end)
-        if string.find(tostring(i), "50$") or string.find(tostring(i), "00$") then game:FindService"RunService".Heartbeat:wait() end
+    if getgenv().Fps == true then
+        setfpscap(math.huge); -- Fun fact: your eyes are stuck at 60 fps ;)
+    else
+        setfpscap(60);
     end
 end)
-
-local SettingsButton = Settings.AddButton("Old Roblox  😳", function()
-    Notif:Notification("Flame's Hub 🔥", "Oooo!", "GothamSemibold", "Gotham", 1);
-    for i,v in pairs(workspace:GetDescendants()) do
-        if v:IsA("BasePart") then
-            local dec = Instance.new("Texture", v)
-            dec.Texture = "rbxassetid://48715260"
-            dec.Face = "Top"
-            dec.StudsPerTileU = "1"
-            dec.StudsPerTileV = "1"
-            dec.Transparency = v.Transparency
-            v.Material = "Plastic"
-            local dec2 = Instance.new("Texture", v)
-            dec2.Texture = "rbxassetid://20299774"
-            dec2.Face = "Bottom"
-            dec2.StudsPerTileU = "1"
-            dec2.StudsPerTileV = "1"
-            dec2.Transparency = v.Transparency
-            v.Material = "Plastic"
-        end
-    end
-    game.Lighting.ClockTime = 12
-    game.Lighting.GlobalShadows = false
-    game.Lighting.Outlines = false
-    for i,v in pairs(game.Lighting:GetDescendants()) do
-        if v:IsA("Sky") then
-            v:Destroy()
-        end
-    end
-    local sky = Instance.new("Sky", game.Lighting)
-    sky.SkyboxBk = "rbxassetid://161781263"
-    sky.SkyboxDn = "rbxassetid://161781258"
-    sky.SkyboxFt = "rbxassetid://161781261"
-    sky.SkyboxLf = "rbxassetid://161781267"
-    sky.SkyboxRt = "rbxassetid://161781268"
-    sky.SkyboxUp = "rbxassetid://161781260"
-end);
 
 local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function()
     Notif:Notification("Flame's Hub 🔥", "Restarting...", "GothamSemibold", "Gotham", 1);
