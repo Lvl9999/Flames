@@ -3859,7 +3859,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                         Base.Size = Vector3.new(9e9,5,9e9)
                         Base.Anchored = true
                         Base.Transparency = 1
-                        Base.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-20,0);
+                        Base.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-10,0);
                         task.spawn(function()
                             wait(5);Base:Destroy();
                         end)
@@ -3896,7 +3896,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Sell  💸");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("[ Everything ]  🖐️", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🖐️", false, function(Value)
         getgenv().EverythingLoL = Value
         while getgenv().EverythingLoL == true do wait(0.015)
             pcall(function()
