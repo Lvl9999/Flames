@@ -28,10 +28,6 @@ task.spawn(function()
       return 50
     end
 
-    if method == 'WalkSpeed' then
-       return 16
-    end
-
     return oldindex(self, method)
     end)
     setreadonly(mt, true)
@@ -144,10 +140,8 @@ getgenv().Saves = {
     JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
 }
 
-local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 16, Max = 500, Def = 16}, function(Value)
-    getgenv().WalkSpeedValue = Value
-
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 10, Max = 100, Def = 1}, function(Value)
+    getgenv().Speed = tonumber(Value)
 end)
 
 local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500, Def = 50}, function(Value)
@@ -158,19 +152,26 @@ local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500,
 end)
 
 local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower", false, function(Value)
-    getgenv().LoopingPowers = Value
-    while getgenv().LoopingPowers == true do wait(0.0001)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue        
-        game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
+    getgenv().TpWalking = Value
+
+    local speaker = game:GetService("Players").LocalPlayer
+    local chr = speaker.Character
+    local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+
+    while getgenv().TpWalking == true and chr and hum and hum.Parent do wait(0.0015)
+        local delta = 0.0015
+        if hum.MoveDirection.Magnitude > 0 then
+            chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
+            game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
+        else
+            chr:TranslateBy(hum.MoveDirection * delta * 10)
+            wait(0.25)
+            game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().Saves.JumpHeight
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().Saves.JumpPower
+        end
     end
 end)
-
-local ScriptXButton = ScriptX.AddButton("Reset WalkSpeed + JumpPower", function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().Saves.WalkSpeed
-    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().Saves.JumpHeight
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().Saves.JumpPower
-end);
 
 local ScriptXToggle = ScriptX.AddToggle("Invisible  👻", false, function(Value)
     getgenv().InvisibleToggle = Value
@@ -273,17 +274,6 @@ local ScriptXToggle = ScriptX.AddToggle("Esp   👁️", false, function(Value)
             ApplyESP(v)
         end)
     end)
-end)
-
-local ScriptXToggle = ScriptX.AddToggle("FreeCam   🚁", false, function(Value)
-    getgenv().Press = function(v)
-        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-    end
-    if not getgenv().Running then
-        getgenv().Running = true
-        loadstring(game:HttpGet("https://pastebin.com/raw/CMw96iFd"))();
-    end
-    Press("N")
 end)
 
 getgenv().Stored = {}
