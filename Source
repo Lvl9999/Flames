@@ -3867,6 +3867,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                 end)
             end
         end)
+        --[[ idk what i am supposed to do with this
         task.spawn(function()
             while getgenv().FarmingItemsLoL == true do wait(13.5)
                 -- Fast resets so you wont have to wait for cooldown
@@ -3886,7 +3887,9 @@ if game.PlaceId == Supported.Sakura_Stand then
                 end)
             end
         end)
+        --]]
     end);
+ 
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Sell  💸");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🖐️", false, function(Value)
