@@ -75,7 +75,6 @@ task.spawn(function()
     end
 end)
 
-
 -- // Anti Client Kick \\ --
 -- Credits to https://scriptblox.com/u/Stars ✨
 task.spawn(function()
@@ -99,11 +98,11 @@ task.spawn(function()
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
         end
         while true do wait(3.5)
-            Press("RightBracket")
+            Press("RightBracket");
         end
     else
         while true do wait(3.5)
-            keypress(0xDD)
+            keypress(0xDD);
         end
     end
 end)
@@ -125,12 +124,13 @@ local Supported = {
     Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
     AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe [Scrapped Project]
     Sakura_Stand = 8534845015, -- Sakura Stand
-    Ragdoll_Engine = 9848789324 -- Ragdoll Engine
+    Ragdoll_Engine = 9848789324, -- Ragdoll Engine
+    Stardust_Reborn = 9821272782, -- Stardust Reborn
 
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -4294,7 +4294,6 @@ if game.PlaceId == Supported.Ragdoll_Engine then
     local SecondPage = MainUI.AddPage("Trolling");
 
     local SecondLabel = SecondPage.AddLabel("[+] Fun To Mess With  🤪");
-
     local SecondButton = SecondPage.AddButton("Anti Push 👀", function()
         spawn(function()
             game:GetService("Workspace"):FindFirstChild("Ragdoll-Admin"):Destroy();
@@ -4361,6 +4360,89 @@ if game.PlaceId == Supported.Ragdoll_Engine then
 
 end
 
+--// 🟠 Stardust Reborn \\--
+if game.PlaceId == Supported.Stardust_Reborn then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Stardust Reborn  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Farming");
+
+    local SecondLabel = SecondPage.AddLabel("[+] Auto Pick Items  💍");
+    local SecondToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
+        getgenv().PickItems = Value
+
+        while getgenv().PickItems == true do wait(0.15)
+            pcall(function()
+                for i,v in pairs(workspace.Game.Items:GetDescendants()) do
+                    if v:IsA("MeshPart") then
+                        v.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+                    end
+                end
+           end)
+        end
+    end);
+--[[
+    -- Auto stand farmer soon!
+    getgenv().FarmingEz = true
+    
+    local Toggle = true
+
+    local WantedStand1 = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Client"):FindFirstChild("Movesets"):FindFirstChild("Gold Experience") -- stand that you want to farm for
+
+    local Standless = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Client"):FindFirstChild("Movesets"):FindFirstChild("Standless")
+    
+    while getgenv().FarmingEz == true do wait(0.35)
+        if Standless and not WantedStand1 then
+            if Toggle then
+                pcall(function()
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"))
+                    wait(0.15);
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow"):Activate()
+                end)
+            else
+                pcall(function()
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Roka"))
+                    wait(0.15);
+    
+                    local Main = game:GetService("Players").LocalPlayer.PlayerGui.RokaGUI.Frame
+                    mousemoverel((Main.AbsolutePosition.x + Main.AbsoluteSize.x / 2),(Main.AbsolutePosition.y + Main.AbsoluteSize.y / 2 - -100));
+    
+                    wait(0.15);
+                    mouse1press();
+                end)
+            end
+            
+            Toggle = not Toggle
+        elseif Standless and WantedStand1 then
+            print("OMGGGG1!111!1");break
+        end
+    end
+--]]
+
+    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
+        
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
+        
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
+        
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
+        
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
+        
+    end);
+
+end
 
 local Settings = MainUI.AddPage("Settings");
 
