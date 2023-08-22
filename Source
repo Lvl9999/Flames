@@ -91,7 +91,6 @@ task.spawn(function()
         return
     end
 end)
---]]
 
 -- // Anti afk V2 \\--
 task.spawn(function()
