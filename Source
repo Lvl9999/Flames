@@ -54,7 +54,7 @@ shared.LoaderKeyFrames = {
 }
 loadstring(game:HttpGet'https://raw.githubusercontent.com/ao-0/miami-nights/main/Resources/Loady/v1/Portable.lua')();
 
--- // Walkspeed + JumpPower Bypass \\ --
+-- // JumpPower Bypass \\ --
 task.spawn(function()
     local mt = getrawmetatable(game)
     local oldindex = mt.__index
@@ -109,11 +109,12 @@ local Supported = {
     Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
     AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe [Scrapped Project]
     Sakura_Stand = 8534845015, -- Sakura Stand
+    Ragdoll_Engine = 9848789324 -- Ragdoll Engine
 
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -176,7 +177,7 @@ getgenv().Saves = {
     JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
 }
 
-local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 16, Max = 500, Def = 1}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 5, Max = 50, Def = 50}, function(Value)
     getgenv().Speed = tonumber(Value)
 end)
 
@@ -187,25 +188,22 @@ local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500,
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed", false, function(Value)
+    -- Skidded from inf yield :3
     getgenv().TpWalking = Value
 
     local speaker = game:GetService("Players").LocalPlayer
     local chr = speaker.Character
     local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+    local hb = game:GetService("RunService").Heartbeat
 
-    while getgenv().TpWalking == true and chr and hum and hum.Parent do wait(0.0015)
-        local delta = 0.0015
+    while getgenv().TpWalking == true and chr and hum and hum.Parent do
+        local delta = hb:Wait()
         if hum.MoveDirection.Magnitude > 0 then
             chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
-            game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
         else
             chr:TranslateBy(hum.MoveDirection * delta * 10)
-            wait(0.25)
-            game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().Saves.JumpHeight
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().Saves.JumpPower
-        end
+        end    
     end
 end)
 
@@ -1495,7 +1493,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);  
 end
 
---// 🟢 Heaven Stand \\--
+--// 🟠 Heaven Stand \\--
 if game.PlaceId == Supported.Heaven_Stand or game.PlaceId == Supported.Heaven_StandTestingPlace then
     task.spawn(function()
         wait(3);
@@ -4268,6 +4266,85 @@ if game.PlaceId == Supported.Sakura_Stand then
 
 -- More to come!
 end
+
+--// 🟢 Ragdoll Engine \\--
+if game.PlaceId == Supported.Ragdoll_Engine then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Ragdoll Engine  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Trolling");
+
+    local SecondLabel = SecondPage.AddLabel("[+] Fun To Mess With  🤪");
+
+    local SecondButton = SecondPage.AddButton("Anti Push 👀", function()
+        spawn(function()
+            game:GetService("Workspace"):FindFirstChild("Ragdoll-Admin"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace"):FindFirstChild("Ragdoll 1"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace"):FindFirstChild("Ragdoll 2"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("Falling down"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("KillScript"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("Pushed"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("RagdollMe"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("FirstPerson"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("Swimming"):Destroy();
+            end)
+            spawn(function()
+            game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name]:FindFirstChild("StartRagdoll"):Destroy();
+        end)
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Push Aura  ✋", false, function(Value)
+        getgenv().PushAura = Value
+
+        while getgenv().PushAura == true do wait(0.15)
+            pcall(function()
+                for i,v in ipairs(game:GetService("Players"):GetPlayers()) do
+                    if v ~= game:GetService("Players").LocalPlayer then
+                        if (game:GetService("Players").LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude < 25 then
+                            local args = {[1] = workspace:WaitForChild(v.Name)};
+                            game:GetService("Players").LocalPlayer.Character.Push.PushTool:FireServer(unpack(args));
+                        end
+                    end
+                end                
+            end)
+        end
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Bombastic  💣", false, function(Value)
+        getgenv().Bombastics = Value
+
+        while getgenv().Bombastics == true do wait(0.015)
+            pcall(function()
+                for i,v in pairs(workspace.Landmines:GetDescendants()) do 
+                    if v.Name == "TouchInterest" then
+                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1);
+                    end
+                end
+            end)
+        end
+    end);
+
+end
+
 
 local Settings = MainUI.AddPage("Settings");
 
