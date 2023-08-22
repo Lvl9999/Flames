@@ -24,7 +24,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🟢  👈 Newest Release 🔥 [ 🔵 Lazy to continue] 
   
-- [Sakura Stand](https://www.roblox.com/games/8534845015/Gojo-Rework-Sakura-Stand) | 🔵  [BETA] | 90% Completed (Grinding on the game rn)
+- [Sakura Stand](https://www.roblox.com/games/8534845015/Gojo-Rework-Sakura-Stand) | 🟢 [90% Completed] (Grinding on the game rn)
 
   In Total: 8
 
