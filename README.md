@@ -1,6 +1,7 @@
 # Flame's Hub 🔥
 
 - Script Hub that supports various games with OP features.
+-  (Mobile Support) Soon
 
 ### Supported Exploits:
 
