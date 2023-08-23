@@ -49,10 +49,10 @@ end)
 
 ```lua
 -- // Flame's Hub 🔥 [Mobile Support] \\
-getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/MobileSource";
+getgenv().Flames_HubMobile = "https://raw.githubusercontent.com/Lvl9999/Flames/main/MobileSource";
 
 pcall(function()
-    loadstring(game:HttpGet(getgenv().Flames_Hub))();
+    loadstring(game:HttpGet(getgenv().Flames_HubMobile))();
 end)
 ```
 
