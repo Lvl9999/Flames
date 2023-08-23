@@ -45,7 +45,7 @@ end)
 ```
 
 ## Mobile Source:
-- Unfinished
+- Unfinished (Going to take a long time)
 
 ```lua
 -- // Flame's Hub 🔥 [Mobile Support] \\
