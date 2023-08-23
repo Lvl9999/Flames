@@ -51,19 +51,7 @@ shared.LoaderKeyFrames = {
 loadstring(game:HttpGet'https://raw.githubusercontent.com/ao-0/miami-nights/main/Resources/Loady/v1/Portable.lua')();
 
 -- // LoL
-if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") 
-    for i,v in pairs(game.Players:GetPlayers()) do
-        spawn(function()
-            local Scare = Instance.new("ScreenGui",v.PlayerGui)
-            Scare.Name = "Jeff The Killer"
-            local Scare = Instance.new("ImageLabel",Scare)
-            Scare.Image = "rbxassetid://142410803"
-            Scare.Size = UDim2.new(1,0,1,0)
-            wait(5)
-            game:shutdown()
-        end)
-    end
-end
+if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") end
 
 -- // JumpPower Bypass \\ --
 task.spawn(function()
