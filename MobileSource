@@ -1,0 +1,332 @@
+-- // Flame's Hub 🔥 [Mobile Support] \\ --
+local AutoExec = game
+
+repeat wait() until AutoExec:IsLoaded();
+if not AutoExec:IsLoaded() then
+    AutoExec.Loaded:Wait();
+end
+
+-- Curious to who using my hub 💀 (only logs game place ID)
+getgenv().WebHookz = "https://discord.com/api/webhooks/1139637670851641454/hA_jFyhj0TPK6TRXA4h0_iBsDEP37Pk_s8g2wY2xlJHV8jW68Rd9rpyp9-DVBD5l1ltm"
+
+task.spawn(function()
+    local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["description"] = "Someone executed Flame's Hub   🔥 (From Mobile)",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x228B22),
+                ["fields"] = {
+                    {
+                        ["name"] = "Place ID",
+                        ["value"] = tostring(game.PlaceId),
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "Place Name",
+                        ["value"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+                        ["inline"] = true
+                    }
+                }
+            }
+        }
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+    local request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = getgenv().WebHookz, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+end)
+
+-- // JumpPower Bypass \\ --
+task.spawn(function()
+    if game.PlaceId ~= 9821272782 then
+        local mt = getrawmetatable(game)
+        local oldindex = mt.__index
+        setreadonly(mt, false)
+        mt.__index = newcclosure(function(self, method)
+
+        if method == 'JumpPower' then
+          return 50
+        end
+
+        return oldindex(self, method)
+        end)
+        setreadonly(mt, true)
+    else
+        return
+    end
+end)
+
+-- // Anti Client Kick \\ --
+-- Credits to https://scriptblox.com/u/Stars ✨
+task.spawn(function()
+    if game.PlaceId ~= 9821272782 then
+        local Kick 
+        Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
+            if getnamecallmethod() == "Kick" then
+                return
+            end
+            return Kick(Self, ...)
+        end)
+    else
+        return
+    end
+end)
+
+-- // Anti afk V2 \\--
+task.spawn(function()
+    if game.PlaceId ~= 9821272782 then
+        getgenv().Press = function(v)
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+        end
+        while true do wait(3.5)
+            Press("RightBracket");
+        end
+    else
+        while true do wait(3.5)
+            keypress(0xDD);
+        end
+    end
+end)
+
+--// Main Libs \\--
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Twink/main/BackUp"))();
+local Notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/insanedude59/notiflib/main/main"))();
+
+--// Supported Games \\--
+local Supported = {
+    Project_Menacing = 5910449407, -- Project Menacing
+    Soul_Cultivation = 12454097560, -- Soul Cultivation
+    Chainsaw_ManDH = 11345435986, -- Chainsaw Man Devil Heart
+    SPTS_Endless = 12603365593, -- SPTS Endless
+    Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
+    Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
+    Heaven_StandTestingPlace = 13748856054, -- Heaven Stand (Testing Place)
+    Heaven_Stand = 11981520251, -- Heaven Stand
+    Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
+    AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe [Scrapped Project]
+    Sakura_Stand = 8534845015, -- Sakura Stand
+    Ragdoll_Engine = 9848789324, -- Ragdoll Engine
+    Stardust_Reborn = 9821272782, -- Stardust Reborn
+
+}
+
+--// Unsupported Game Result \\--
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn then
+
+    return
+end
+
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))();
+
+local Home = DrRayLibrary:Load("Flame's Hub 🔥", "Default");
+
+local Scripts = DrRayLibrary.newTab("Scripts", "ImageIdHere")
+
+Scripts.newLabel("Local Player")
+Scripts.newSlider("Gravity", "(Changes your gravity)", 196.2, false, function(Value)
+    getgenv().GravityValue = Value
+    game.Workspace.Gravity = getgenv().GravityValue
+end)
+
+getgenv().Saves = {
+    JumpHeight = game.Players.LocalPlayer.Character.Humanoid.JumpHeight,
+    JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
+}
+
+Scripts.newSlider("Walkspeed", "(Changes your walkspeed)", 70, false, function(Value)
+    getgenv().Speed = tonumber(Value)
+end)
+
+Scripts.newToggle("Loop Walkspeed", "", false, function(Value)
+    -- Skidded from inf yield :3
+    getgenv().TpWalking = Value
+
+    local speaker = game:GetService("Players").LocalPlayer
+    local chr = speaker.Character
+    local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+    local hb = game:GetService("RunService").Heartbeat
+
+    while getgenv().TpWalking == true and chr and hum and hum.Parent do
+        local delta = hb:Wait()
+        if hum.MoveDirection.Magnitude > 0 then
+            chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
+        else
+            chr:TranslateBy(hum.MoveDirection * delta * 10)
+        end
+    end
+end)
+
+Scripts.newSlider("JumpPower", "(Changes your jumppower)", 500, false, function(Value)
+    getgenv().JumpPowerValue = Value
+
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpPowerValue
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
+end)
+
+Scripts.newToggle("Noclip", "", false, function(Value)
+    getgenv().TheyreMagsNotClips = Value
+
+    while getgenv().TheyreMagsNotClips == true do
+        wait(0.1)
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = false
+            end
+        end
+    end
+
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+        if v:IsA("BasePart") then
+            v.CanCollide = true
+        end
+    end
+end)
+
+Scripts.newToggle("X Ray", "", false, function(Value)
+    getgenv().XrayToggle = Value
+    if getgenv().XrayToggle == true then
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
+                v.LocalTransparencyModifier = 0.7
+            end
+        end
+    end
+    if getgenv().XrayToggle == false then
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("BasePart") and not v.Parent:FindFirstChild("Humanoid") and not v.Parent.Parent:FindFirstChild("Humanoid") then
+                v.LocalTransparencyModifier =  0
+            end
+        end
+    end
+end)
+
+Scripts.newToggle("Esp", "", false, function(Value)
+    -- Credits to Xiba
+    getgenv().FlaggingESP = Value
+
+    local function ApplyESP(v)
+        if v.Character and v.Character:FindFirstChildOfClass('Humanoid') then
+            v.Character.Humanoid.NameDisplayDistance = getgenv().FlaggingESP and 9e9 or 50
+            v.Character.Humanoid.NameOcclusion = getgenv().FlaggingESP and "NoOcclusion" or "OccludeAll"
+            v.Character.Humanoid.HealthDisplayDistance = getgenv().FlaggingESP and 9e9 or 50
+            v.Character.Humanoid.HealthDisplayType = getgenv().FlaggingESP and "AlwaysOn" or "Never"
+            v.Character.Humanoid.Health = v.Character.Humanoid.Health
+        end
+    end
+
+    for i, v in pairs(game.Players:GetPlayers()) do
+        ApplyESP(v)
+    end
+
+    game.Players.PlayerAdded:Connect(function(v)
+        ApplyESP(v)
+        v.CharacterAdded:Connect(function()
+            task.wait(0.33)
+            ApplyESP(v)
+        end)
+    end)
+end)
+
+Scripts.newLabel("Quick Scripts")
+Scripts.newButton("Infinite Yield", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
+end)
+
+Scripts.newButton("Remote Spy", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))();
+end)
+
+Scripts.newButton("Dark Explorer", "", function()
+    loadstring(game:HttpGet('https://ithinkimandrew.site/scripts/tools/dark-dex.lua'))();
+end)
+
+Scripts.newButton("Giga Chad Hub V4", "", function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/OWJBWKQLAISH/GigaChad-Hub/main/Gigachad%20Hub%20V4'))();
+end)
+
+--// 🟢 Project Menacing \\--
+if game.PlaceId == Supported.Project_Menacing then
+    task.spawn(function()
+        wait(3);
+
+    end)
+    --// Main Pages \\--
+    local Shoping = DrRayLibrary.newTab("Shoping", "ImageIdHere");
+    local Storage = DrRayLibrary.newTab("Storage", "ImageIdHere");
+    local Fighting = DrRayLibrary.newTab("Fighting", "ImageIdHere");
+    local Farming = DrRayLibrary.newTab("Farming", "ImageIdHere");
+    local Teleports = DrRayLibrary.newTab("Teleports", "ImageIdHere");
+
+    Shoping.newLabel("[+] Buy")
+    Shoping.newButton("Buy Arrow", "", function()
+        local args = {[1]="Stand Arrow"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+    end)
+
+    Shoping.newButton("Buy Fruit", "", function()
+        local args = {[1]="Rokakaka Fruit"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+    end)
+
+    Shoping.newButton("Buy DIO's Diary", "", function()
+        local args = {[1]="DIO's Diary"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+    end)
+
+    Shoping.newButton("Buy DIO's Bone", "", function()
+        local args = {[1]="DIO's Bone"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
+    end)
+
+    Storage.newLabel("[+] Storage")
+    Storage.newButton("Stand Storage", "", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(71.73101043701172, 27.405519485473633, -187.82508850097656)}):Play();
+        wait(0.35);
+        for i, v in pairs(game:GetService("Workspace").NPC.Rohan:GetDescendants()) do
+            if v:IsA("ProximityPrompt") then
+                fireproximityprompt(v, 0);
+            end
+        end
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
+    end)
+
+    Storage.newButton("Items Storage", "", function()
+        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
+        tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(31.423873901367188, 27.663740158081055, -71.35455322265625)}):Play();
+        wait(0.35);
+        for i, v in pairs(game:GetService("Workspace").NPC.Darby:GetDescendants()) do
+            if v:IsA("ProximityPrompt") then
+                fireproximityprompt(v, 0);
+            end
+        end
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
+    end)
+
+--[[
+    Fighting.newButton("xxx", "", function()
+
+    end)
+
+    Fighting.newButton("xxx", "", function()
+
+    end)
+
+    Fighting.newButton("xxx", "", function()
+
+    end)
+
+    Fighting.newButton("xxx", "", function()
+
+    end)
+--]]
+
+end
