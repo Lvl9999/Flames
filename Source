@@ -3789,16 +3789,11 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local SecondPageLabel = SecondPage.AddLabel("[+] Stand Storage  🗃️");
     local SecondButton = SecondPage.AddButton("Open It", function()
-        local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-394.4962463378906, -31.704174041748047, 1821.9903564453125)
-        wait(0.15);
         for i,v in pairs(game:GetService("Workspace").Map.NPCs.Simplrr:GetDescendants()) do
             if v:IsA("ClickDetector") then
                 fireclickdetector(v);
             end
         end
-        wait(0.15)
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
     end);
 
     local SecondPageLabel = SecondPage.AddLabel("[+] Fast Stand Switch  🔁");
@@ -3959,6 +3954,21 @@ if game.PlaceId == Supported.Sakura_Stand then
                     if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
                         local args = {[1] = tonumber(v:sub(5))};
                         game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto OFA  🦸");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming [Be standless]", false, function(Value)
+        getgenv().AFO = Value
+
+        while getgenv().AFO == true do wait(0.25)
+            pcall(function()
+                for i,v in pairs(workspace.Map.NPCs.AFO:GetDescendants()) do
+                    if v:IsA("ClickDetector") then
+                        fireclickdetector(v);
                     end
                 end
             end)
