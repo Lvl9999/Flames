@@ -118,6 +118,7 @@ local Supported = {
     Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
     Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
     Heaven_StandTestingPlace = 13748856054, -- Heaven Stand (Testing Place)
+    Heaven_StandFakeGame = 14561998168, -- Heaven Stand (Fake game)
     Heaven_Stand = 11981520251, -- Heaven Stand
     Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
     AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe [Scrapped Project]
@@ -1507,8 +1508,8 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);  
 end
 
---// 🟠 Heaven Stand \\--
-if game.PlaceId == Supported.Heaven_Stand or game.PlaceId == Supported.Heaven_StandTestingPlace then
+--// 🟠🟢 Heaven Stand \\--
+if game.PlaceId == Supported.Heaven_Stand or game.PlaceId == Supported.Heaven_StandTestingPlace or game.PlaceId == Supported.Heaven_StandFakeGame then
     task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Heaven Stand  🔥", "GothamSemibold", "Gotham", 2.5);
@@ -4365,7 +4366,7 @@ if game.PlaceId == Supported.Stardust_Reborn then
     local SecondPage = MainUI.AddPage("Farming");
 
     local SecondLabel = SecondPage.AddLabel("[+] Auto Pick Items  💍");
-    local SecondToggle = SecondPage.AddToggle("Start Farming", false, function(Value)
+    local SecondToggle = SecondPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().PickItems = Value
 
         while getgenv().PickItems == true do wait(0.15)
@@ -4379,7 +4380,7 @@ if game.PlaceId == Supported.Stardust_Reborn then
         end
     end);
 --[[
-    -- Auto stand farmer soon!
+    -- Auto stand farmer (Usless but works)
     getgenv().FarmingEz = true
     
     local Toggle = true
@@ -4416,26 +4417,87 @@ if game.PlaceId == Supported.Stardust_Reborn then
     end
 --]]
 
-    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
+    getgenv().AttackingOnStardustReborn = function()
+        keypress(0x42);keypress(0x43);keypress(0x46);keypress(0x47);keypress(0x48);keypress(0x52);keypress(0x54);keypress(0x59);
+    end
+
+    local SecondLabel = SecondPage.AddLabel("[+] Bosses  🤪");
+    local SecondButton = SecondPage.AddButton("One Shot Kill  💀", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StardustOneShotKill"))();
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("DIO  💀👊", false, function(Value)
+        getgenv().HittingNpc1 = Value
+        while getgenv().HittingNpc1 == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Game.Alive.DIO.HumanoidRootPart.Position + -workspace.Game.Alive.DIO.HumanoidRootPart.CFrame.LookVector * 11) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Game.Alive.DIO.HumanoidRootPart.Position + -workspace.Game.Alive.DIO.HumanoidRootPart.CFrame.LookVector * 11, workspace.Game.Alive.DIO.HumanoidRootPart.Position - -workspace.Game.Alive.DIO.HumanoidRootPart.CFrame.LookVector * 11));
+                task.spawn(function()
+                    getgenv().AttackingOnStardustReborn();
+                end)
+            end)
+        end
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Kujo  💀👊", false, function(Value)
+        getgenv().HittingNpc2 = Value
+        while getgenv().HittingNpc2 == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Game.Alive["Jotaro P3"].HumanoidRootPart.Position + -workspace.Game.Alive["Jotaro P3"].HumanoidRootPart.CFrame.LookVector * 11) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Game.Alive["Jotaro P3"].HumanoidRootPart.Position + -workspace.Game.Alive["Jotaro P3"].HumanoidRootPart.CFrame.LookVector * 11, workspace.Game.Alive["Jotaro P3"].HumanoidRootPart.Position - -workspace.Game.Alive["Jotaro P3"].HumanoidRootPart.CFrame.LookVector * 11));
+                task.spawn(function()
+                    getgenv().AttackingOnStardustReborn();
+                end)
+            end)
+        end
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Diavolo  💀👊", false, function(Value)
+        getgenv().HittingNpc3 = Value
+        while getgenv().HittingNpc3 == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Game.Alive.Diavolo.HumanoidRootPart.Position + -workspace.Game.Alive.Diavolo.HumanoidRootPart.CFrame.LookVector * 11) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Game.Alive.Diavolo.HumanoidRootPart.Position + -workspace.Game.Alive.Diavolo.HumanoidRootPart.CFrame.LookVector * 11, workspace.Game.Alive.Diavolo.HumanoidRootPart.Position - -workspace.Game.Alive.Diavolo.HumanoidRootPart.CFrame.LookVector * 11));
+                task.spawn(function()
+                    getgenv().AttackingOnStardustReborn();
+                end)
+            end)
+        end  
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Chaka  💀👊", false, function(Value)
+        getgenv().HittingNpc4 = Value
+        while getgenv().HittingNpc4 == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Game.Alive.Chaka.HumanoidRootPart.Position + -workspace.Game.Alive.Chaka.HumanoidRootPart.CFrame.LookVector * 11) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Game.Alive.Chaka.HumanoidRootPart.Position + -workspace.Game.Alive.Chaka.HumanoidRootPart.CFrame.LookVector * 11, workspace.Game.Alive.Chaka.HumanoidRootPart.Position - -workspace.Game.Alive.Chaka.HumanoidRootPart.CFrame.LookVector * 11));
+                task.spawn(function()
+                    getgenv().AttackingOnStardustReborn();
+                end)
+            end)
+        end  
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Giorno 💀👊", false, function(Value)
+        getgenv().HittingNpc4 = Value
+        while getgenv().HittingNpc4 == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Game.Alive["Giorno Giovanna"].HumanoidRootPart.Position + -workspace.Game.Alive["Giorno Giovanna"].HumanoidRootPart.CFrame.LookVector * 11) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Game.Alive["Giorno Giovanna"].HumanoidRootPart.Position + -workspace.Game.Alive["Giorno Giovanna"].HumanoidRootPart.CFrame.LookVector * 11, workspace.Game.Alive["Giorno Giovanna"].HumanoidRootPart.Position - -workspace.Game.Alive["Giorno Giovanna"].HumanoidRootPart.CFrame.LookVector * 11));
+                task.spawn(function()
+                    getgenv().AttackingOnStardustReborn();
+                end)
+            end)
+        end  
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Goku  💀👊", false, function(Value)
+        if Value == true then
+            Notif:Notification("Flame's Hub 🔥", "Sorry... But you cant", "GothamSemibold", "Gotham", 1);wait()Notif:Notification("Flame's Hub 🔥", "I love goku >:(", "GothamSemibold", "Gotham", 1);
+        end
+    end);
+
+    local SecondLabel = SecondPage.AddLabel("[+] Undetermined  🟠");
+    local SecondToggle = SecondPage.AddToggle("Soon?  🟠", false, function(Value)
         
     end);
 
-    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
-        
-    end);
-
-    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
-        
-    end);
-
-    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
-        
-    end);
-
-    local SecondToggle = SecondPage.AddToggle("Soon  🟠", false, function(Value)
-        
-    end);
-
+    -- More yet to come
 end
 
 local Settings = MainUI.AddPage("Settings");
