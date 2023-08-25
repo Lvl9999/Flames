@@ -31,7 +31,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 - [Stardust Reborn](https://www.roblox.com/games/9821272782/STW-REWORK-Stardust-Reborn) | 🟢
 
 
-  In Total: 9
+  In Total: 10
 
 ## Main Source:
 
