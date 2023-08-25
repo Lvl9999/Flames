@@ -20,15 +20,15 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | 🟢
   
-- [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟠 [GAME CLOSED UNTIL FURTHER NOTICE] | [Because of Gore 💀]
+- [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟠
 
-- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🟢 [ 🔵 Lazy to continue] 
+- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🟢 [ 🔵 Going to continue!] 
   
 - [Sakura Stand](https://www.roblox.com/games/8534845015/Gojo-Rework-Sakura-Stand) | 🟢
 
 - [Ragdoll Engine](https://www.roblox.com/games/9848789324/Ragdoll-Engine) | 🟢
 
-- [Stardust Reborn](https://www.roblox.com/games/9821272782/STW-REWORK-Stardust-Reborn) | 🔵
+- [Stardust Reborn](https://www.roblox.com/games/9821272782/STW-REWORK-Stardust-Reborn) | 🟢
 
 
   In Total: 9
