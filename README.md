@@ -45,7 +45,7 @@ end)
 ```
 
 ## Mobile Source:
-- Unfinished (Going to take a long time)
+- Unfinished (Going to take a long time | Lazyness overloads.)
 
 ```lua
 -- // Flame's Hub 🔥 [Mobile Support] \\
