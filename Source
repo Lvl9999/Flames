@@ -1139,11 +1139,6 @@ if game.PlaceId == Supported.SPTS_Endless then
         wait(3);
         Notif:Notification("Game Detected ⚠️", "SPTS ENDLESS 🔥", "GothamSemibold", "Gotham", 2.5);
     end)
-    -- Auto load for auto exeucte
-    -- Thanks to a friend for giving me this
-    local vim = game:GetService'VirtualInputManager' 
-    local x = game:GetService("Players").LocalPlayer.PlayerGui.IntroGui.PlayBtn
-    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1); wait(0.25); vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
 
     local SecondAndHalfPage = MainUI.AddPage("Training");
     local ThirdPage = MainUI.AddPage("Teleports");
