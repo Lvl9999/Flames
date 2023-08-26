@@ -111,25 +111,26 @@ local Notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/insaned
 
 --// Supported Games \\--
 local Supported = {
-    Project_Menacing = 5910449407, -- Project Menacing
-    Soul_Cultivation = 12454097560, -- Soul Cultivation
-    Chainsaw_ManDH = 11345435986, -- Chainsaw Man Devil Heart
-    SPTS_Endless = 12603365593, -- SPTS Endless
-    Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X
-    Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X
+    Project_Menacing = 5910449407, -- Project Menacing (Main)
+    Soul_Cultivation = 12454097560, -- Soul Cultivation (Main)
+    Chainsaw_ManDH = 11345435986, -- Chainsaw Man Devil Heart (Main)
+    SPTS_Endless = 12603365593, -- SPTS Endless (Main)
+    Chainsaw_ManXPVP = 14070046506, -- Chainsaw Man X (Pvp Place)
+    Chainsaw_ManXGrind = 13566086428, -- Chainsaw Man X (Grind Place)
     Heaven_StandTestingPlace = 13748856054, -- Heaven Stand (Testing Place)
     Heaven_StandFakeGame = 14561998168, -- Heaven Stand (Fake game)
-    Heaven_Stand = 11981520251, -- Heaven Stand
+    Heaven_Stand = 11981520251, -- Heaven Stand (Main)
     Stand_Upright_Rebooted = 8540168650, -- Stand Upright: Rebooted
     AUT_OldUniverse = 10523569082, -- A Universal Time: Old Universe [Scrapped Project]
-    Sakura_Stand = 8534845015, -- Sakura Stand
-    Ragdoll_Engine = 9848789324, -- Ragdoll Engine
-    Stardust_Reborn = 9821272782, -- Stardust Reborn
+    Sakura_Stand = 8534845015, -- Sakura Stand (Main)
+    Ragdoll_Engine = 9848789324, -- Ragdoll Engine (Main)
+    Stardust_Reborn = 9821272782, -- Stardust Reborn (Main)
+    A_Universal_Time = 6846458508, -- A Universal Time (Main)
 
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Heaven_StandFakeGame and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Heaven_StandFakeGame and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn  and  game.PlaceId ~= Supported.A_Universal_Time then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -152,7 +153,7 @@ local FirstButton = FirstPage.AddButton("Discord: Flames 🔥  | Scripter", func
 	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	end
 end);
-----------------------------------------------------------------------------------------------------------
+
 local FirstButton = FirstPage.AddButton("Github: insanedude59 | Notification UI  👍", function()
 	if setclipboard then
 	    Notif:Notification("Flame's Hub 🔥", "Copied to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
@@ -161,7 +162,6 @@ local FirstButton = FirstPage.AddButton("Github: insanedude59 | Notification UI 
 	    Notif:Notification("Flame's Hub 🔥", "Failed to clipboard 📋", "GothamSemibold", "Gotham", 2.5);
 	end
 end);
------------------------------------------------------------------------------------
 
 local FirstButton = FirstPage.AddButton("V3rmillion: Twink | UI Library  👍", function()
 	if setclipboard then
@@ -180,7 +180,6 @@ local FirstButton = FirstPage.AddButton("Suggetions 📝 [GUI]", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/Feedback"))();
 end);
 
------------------------------------------------------------------------------------------------------
 local ScriptXLabel = ScriptX.AddLabel("Lightweight Cheats  🍃");
 local ScriptXSlider = ScriptX.AddSlider("Gravity  🌎", {Min = 0, Max = 196.2, Def = 196.2}, function(Value)
     getgenv().GravityValue = Value
@@ -221,48 +220,6 @@ local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed", false, function(Value)
         end    
     end
 end)
-
--- I will decide what to do with this soon.
---[[
-local ScriptXToggle = ScriptX.AddToggle("Invisible  👻", false, function(Value)
-    getgenv().InvisibleToggle = Value
-
-    getgenv().InvisibleToggle = not getgenv().InvisibleToggle
-    local Invisible = workspace:FindFirstChild('invischair')
-    for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-        if v:IsA("BasePart") and v ~= game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
-            v.Transparency = 0
-        end
-    end
-    if getgenv().InvisibleToggle == true then
-        if Invisible then
-            Invisible:Remove()
-        end
-    else
-        for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-            if v:IsA("BasePart") and v ~= game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
-                v.Transparency = 0.7
-            end
-        end
-        local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        wait(0.0001)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e9,9e9)
-        wait(0.15)
-        if not Invisible then
-            Invisible = Instance.new('Seat', game.Workspace)
-            Invisible.Name = 'invischair'
-            Invisible.Transparency = 1
-            Invisible.Position = Vector3.new(9e9, 9e9, 9e9)
-            local Weld = Instance.new("Weld", Invisible)
-            Weld.Part0 = Invisible
-            Weld.Part1 = game.Players.LocalPlayer.Character:FindFirstChild("Torso") or game.Players.LocalPlayer.Character.UpperTorso
-        end
-        Invisible.Anchored = false
-        Invisible.CanCollide = false
-        Invisible.CFrame = X
-    end  
-end)
---]]
 
 local ScriptXToggle = ScriptX.AddToggle("Noclip   🧱", false, function(Value)
     getgenv().TheyreMagsNotClips = Value
@@ -393,8 +350,7 @@ local ScriptXButton = ScriptX.AddButton("Teleport Nearest Head", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/TeleportNearest/main/Universal"))();
 end);
 
------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------
+
 --// 🟢 Project Menacing \\--
 if game.PlaceId == Supported.Project_Menacing then
     task.spawn(function()
@@ -407,31 +363,27 @@ if game.PlaceId == Supported.Project_Menacing then
     local SecondAndHalfPage = MainUI.AddPage("Fighting");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Teleports");
-    -----------------------------------------------
+
     local SecondLabel = SecondPage.AddLabel("[+] Buy 💰");
     local SecondButton = SecondPage.AddButton("Buy Arrow 🎯 [150 ¥]", function()
         local args = {[1]="Stand Arrow"};
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
     end);
-    -----------------------------------------------------------------------------------
     
     local SecondButton = SecondPage.AddButton("Buy Fruit 🍎 [250 ¥]", function()
         local args = {[1]="Rokakaka Fruit"};
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
     end);
-    -----------------------------------------------------------------------------------
     
     local SecondButton = SecondPage.AddButton("Buy DIO's Diary  📕 [15,000 ¥]", function()
         local args = {[1]="DIO's Diary"};
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
     end);
-    -----------------------------------------------------------------------------------
     
     local SecondButton = SecondPage.AddButton("Buy DIO's Bone 🦴 [30,000 ¥]", function()
         local args = {[1]="DIO's Bone"};
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):FireServer(unpack(args));
     end);
-    -----------------------------------------------------------------------------------
     
     local BackupLabel = BackupPage.AddLabel("[+] Storage 📦");
     local BackupButton = BackupPage.AddButton("Stand Storage", function()
@@ -446,7 +398,6 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
     end);
-    -----------------------------------------------------------------------------------
     
     local BackupButton = BackupPage.AddButton("Items Storage", function()
         local X = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
@@ -460,7 +411,6 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = X;
     end);
-    -----------------------------------------------------------------------------------
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Store Items  💼");
     local FirstToggle = ThirdPage.AddToggle("Corpse Part  🌽", false, function(Value)
@@ -499,7 +449,6 @@ if game.PlaceId == Supported.Project_Menacing then
             end)
         end        
     end);
-    -----------------------------------------------------------------------------------
     
     local FirstToggle = ThirdPage.AddToggle("Rokakaka Fruit 🍎", false, function(Value)
         getgenv().AutofarmFruit = Value
@@ -542,13 +491,13 @@ if game.PlaceId == Supported.Project_Menacing then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Legit");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Legit Auto Dodge", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Semi Auto Dodge", false, function(Value)
         getgenv().Dodge = Value
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ProjectMenacingLegitDodge"))();
     end);
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Legit Auto Run", false, function(Value)
         getgenv().Run = Value
-        while getgenv().Run == true do wait(1.35);
+        while getgenv().Run == true do wait(1.15);
             local args = {[1] = true};
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Sprint"):FireServer(unpack(args));
             local args = {[1] = true};
@@ -557,31 +506,22 @@ if game.PlaceId == Supported.Project_Menacing then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Unlegit");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Unlegit Auto Block", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Semi Auto Block (Use speed Bypass)", false, function(Value)
         getgenv().Block = Value
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ProjectMenacingUnlegitAutoBlock"))();
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Unlegit Auto Escape", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dmg Auto Escape", false, function(Value)
         getgenv().Escape = Value
         getgenv().Back = 7.5
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoEscape"))();
     end);
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Unlegit Speed Bypass", false, function(Value)
-        getgenv().Speed = Value
-        getgenv().WS = 50
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SpeedBypass"))();
-    end);
-
-    -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quest Farm  💸");
     local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
     getgenv().FarmingThugs = Value
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoFarmProjectMenacing"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Stand Farm  👀");
     local ThirdLabel = ThirdPage.AddDropdown("Selected 1", {
@@ -791,68 +731,57 @@ if game.PlaceId == Supported.Project_Menacing then
             end
         end
     end);
-
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Train Station 🚉", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-31.46343421936035, 28.627548217773438, -215.8847198486328)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Truck Kun 🚛", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(123.78990173339844, 38.95568084716797, -180.37232971191406)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Clothing Shop 🛒👕", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(124.7226791381836, 28.359607696533203, -116.27722930908203)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Highest Point of View 🦅", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-29.07377815246582, 112.57449340820312, -222.1446533203125)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Morioh High School 🏫 | Basketball Area 🏀", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(252.43658447265625, 27.491676330566406, -90.378173828125)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Yoshikage Kira's House 🏡", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-266.17449951171875, 27.66372299194336, -9.87911319732666)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Thugs Area 👨🏿‍🦱", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(69.41024780273438, 27.48766326904297, -359.31878662109375)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Hill ⛰️", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(431.0728454589844, 62.37518310546875, -0.14900462329387665)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local FourthButton = FourthPage.AddButton("Safe Zone 🦺", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0.15, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")['LocalPlayer'].Character.HumanoidRootPart, tweenInfo, {CFrame=CFrame.new(-1735.9013671875, 25.64971160888672, -236.9815216064453)}):Play();
     end);
+  
+end
     
-    end
-    
-    --------------------------------------------------
-    --// 🟢 Soul Cultivation \\--
-    if game.PlaceId == Supported.Soul_Cultivation then
-        task.spawn(function()
+--// 🟢 Soul Cultivation \\--
+if game.PlaceId == Supported.Soul_Cultivation then
+    task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Soul Cultivation  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
@@ -861,29 +790,24 @@ if game.PlaceId == Supported.Project_Menacing then
     local SecondAndHalfPage = MainUI.AddPage("Misc");
     local ThirdPage = MainUI.AddPage("Farming");
     local FourthPage = MainUI.AddPage("Training");
-    local FivePage = MainUI.AddPage("Harvesting");
-    
-    ------------------------------------------------
-    
+        
     local SecondLabel = SecondPage.AddLabel("[+] Shop 🛒");
     local SecondLabel = SecondPage.AddButton("Mod Panel 🤧 [Fake]", function()
         game:GetService("Players").LocalPlayer.PlayerGui.ModPanel.Frame.Visible = true
     end);
-    -----------------------------------------------------------------------------------
+
     local SecondLabel = SecondPage.AddButton("Clothing Shop 🛒👕 [Bobux]", function()
         game:GetService("Players").LocalPlayer.PlayerGui.ClothingGui.Frame.Visible = true
     end);
-    -----------------------------------------------------------------------------------
     
     local SecondLabel = SecondPage.AddButton("Robux Store 💵 [Robux]", function()
         game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.Frame.Visible = true
     end);
-    -----------------------------------------------------------------------------------
     
     local SecondLabel = SecondPage.AddButton("Book Shop 📚", function()
         game:GetService("Players").LocalPlayer.PlayerGui.BookShop.Frame.Visible = true
     end);
-    -----------------------------------------------------------------------------------
+
     local ThirdLabel = ThirdPage.AddLabel("[+] OP Stuff ⚠️");
     local ThirdLabel = ThirdPage.AddButton("NPC Hitbox", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulzInfHitBox"))();
@@ -902,9 +826,7 @@ if game.PlaceId == Supported.Project_Menacing then
             game:GetService("Players").LocalPlayer.Character.Combat.Combo.C1:FireServer(unpack(args));
         end
     end);
-    
-    -----------------------------------------------------------------------------------
-    
+        
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Stuff❗");
     local SecondAndHalfLabel = SecondAndHalfPage.AddButton("No Cooldown", function()
         -- Credits: DekuDimz [Owner of V.G Hub] :3
@@ -933,7 +855,6 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdToggle = ThirdPage.AddToggle("Rogue Soldiers 👦🏻 [Required Rank: Qi Codenstation I]", false, function(Value)
         getgenv().Farming = Value
@@ -944,7 +865,6 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdToggle = ThirdPage.AddToggle("Miners ⛏️ [Required Rank: Qi Codenstation IV]", false, function(Value)
         getgenv().Farming = Value
@@ -954,7 +874,6 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdToggle = ThirdPage.AddToggle("Strong Miners ⛏️💪[Required Rank: Soul Formation VI]", false, function(Value)
         getgenv().Farming = Value
@@ -964,13 +883,11 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddButton("Advanced Area [Teleport]", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(1795.91943359375, 78.19364166259766, 1116.5872802734375)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdToggle = ThirdPage.AddToggle("Poachers [Required Rank: Core Formation X]", false, function(Value)
         getgenv().Farming = Value
@@ -981,7 +898,6 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdToggle = ThirdPage.AddToggle("Evil Cultivators [Required Rank: Nascent Soul V]", false, function(Value)
         getgenv().Farming = Value
@@ -992,13 +908,11 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddButton("Intermediate Area [Teleport]", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(1624.8345947265625, 76.9999771118164, 4450.787109375)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdToggle = ThirdPage.AddToggle("Delinquents [Required Rank: Soul Transformation I]", false, function(Value)
         getgenv().Farming = Value
@@ -1009,13 +923,11 @@ if game.PlaceId == Supported.Project_Menacing then
         end
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/SoulCultivationFarming"))();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdLabel = ThirdPage.AddButton("Heavenly Area [Teleport]", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
         tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-709.099853515625, 72.9999771118164, 4017.88232421875)}):Play();
     end);
-    -----------------------------------------------------------------------------------
     
     local ThirdToggle = ThirdPage.AddToggle("Heavenly Cultivator [Required Rank: Transcendent I]", false, function(Value)
         getgenv().Farming = Value
@@ -1088,20 +1000,16 @@ if game.PlaceId == Supported.Project_Menacing then
         Press("C");
     end);
     -- Lazy to do the "Teleports" part
+
+end
+
     
-    local FiveLabel = FivePage.AddLabel("[+] Auto Harvest 🧑🏿‍🌾");
-    local FiveLabel = FivePage.AddButton("Working On This... 🟠", function()
-        -- In Maintenance
-    end);
-    end
-    -------------------------------------------------------------------------------------
-    
-    --// 🟢 Chainsaw Man: Devil's Heart \\--
-    if game.PlaceId == Supported.Chainsaw_ManDH then
-        task.spawn(function()
+--// 🟢 Chainsaw Man: Devil's Heart \\--
+if game.PlaceId == Supported.Chainsaw_ManDH then
+    task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Chainsaw Man Devil's Heart  🔥", "GothamSemibold", "Gotham", 2.5);
-        end)
+    end)
 
         --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Parrying");
@@ -1133,7 +1041,7 @@ if game.PlaceId == Supported.Project_Menacing then
     end);  
     end
 
-    --// 🟢 SPTS Endless \\--
+--// 🟢 SPTS Endless \\--
 if game.PlaceId == Supported.SPTS_Endless then
     task.spawn(function()
         wait(3);
@@ -4350,7 +4258,7 @@ if game.PlaceId == Supported.Ragdoll_Engine then
 
 end
 
---// 🟠 Stardust Reborn \\--
+--// 🟢 Stardust Reborn \\--
 if game.PlaceId == Supported.Stardust_Reborn then
     task.spawn(function()
         wait(3);
@@ -4487,12 +4395,25 @@ if game.PlaceId == Supported.Stardust_Reborn then
         end
     end);
 
+--[[
     local SecondLabel = SecondPage.AddLabel("[+] Undetermined  🟠");
     local SecondToggle = SecondPage.AddToggle("Soon?  🟠", false, function(Value)
         
     end);
+--]]
 
     -- More yet to come
+end
+
+--// 🟠 A Universal Time \\--
+if game.PlaceId == Supported.A_Universal_Time then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", " A Universal Time  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    -- Later :3
+
 end
 
 local Settings = MainUI.AddPage("Settings");
@@ -4509,7 +4430,6 @@ local SettingsToggle = Settings.AddToggle("Fps Booster  📈", true, function(Va
 end)
 
 local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function()
-    Notif:Notification("Flame's Hub 🔥", "Restarting...", "GothamSemibold", "Gotham", 1);
     --// Flame's Hub 🔥\\--
     getgenv().Flames_Hub = "https://raw.githubusercontent.com/Lvl9999/Flames/main/Source";
 
