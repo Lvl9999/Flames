@@ -173,7 +173,7 @@ local FirstButton = FirstPage.AddButton("V3rmillion: Twink | UI Library  👍", 
 end);
 
 local FirstLabel = FirstPage.AddLabel("Attention ⚠️");
-local FirstButton = FirstPage.AddButton("Suggetions 📝 [GUI]", function()
+local FirstButton = FirstPage.AddButton("Report Issues  📝 [GUI]", function()
     -- Credits: Chatgpt
     -- Do not troll please
     getgenv().WebH = "https://discord.com/api/webhooks/1134784193109430376/ej1qCgdWKkYgtrV4a6QJqzniDT6YckTXNTNGJ7bnMva14oofVXppygamKyQ4_s71zifq";
