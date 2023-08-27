@@ -1003,43 +1003,28 @@ if game.PlaceId == Supported.Soul_Cultivation then
 
 end
 
-    
---// 🟢 Chainsaw Man: Devil's Heart \\--
+--// 🟠 Chainsaw Man: Devil's Heart \\--
 if game.PlaceId == Supported.Chainsaw_ManDH then
     task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Chainsaw Man Devil's Heart  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
 
-        --// Main Pages \\--
-    local SecondPage = MainUI.AddPage("Parrying");
-    local SecondAndHalfPage = MainUI.AddPage("Farming");
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Info");
     
-    local SecondLabel = SecondPage.AddLabel("[+] Parries");
-    local SecondButton = SecondPage.AddButton("Auto Parry 🙍‍♂️ [Players]", function()
+    local SecondLabel = SecondPage.AddLabel("[+] Information");
+    local SecondButton = SecondPage.AddButton("Click for info", function()
         task.spawn(function()
-            Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
-        end);
-        getgenv().Distance = 25
-        getgenv().AutoParry = true
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawManDevilAutoParry"))();
+            Notif:Notification("Flame's Hub 🔥", "Open f9 Console", "GothamSemibold", "Gotham", 2.5);
+        end)
+        warn("----[ Info ]----")
+        print("If you did not know, This script supported the older version of the game.")
+        print("This whole time I did not know an update occurred, and I am sorry for keeping you waiting.")
+        print("So give me a little bit of time to make this script better.")
     end);
-    local SecondButton = SecondPage.AddButton("Auto Parry 🐞 [Npcs]", function()
-        task.spawn(function()
-            Notif:Notification("Flame's Hub 🔥", 'Auto Parry Activated', "GothamSemibold", "Gotham", 2.5);
-        end);
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/AutoParryNpcsChainsawManDevilHeart"))();
-    end);
-    
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash 💸");
-    local SecondAndHalfLabel = SecondAndHalfPage.AddButton("Autofarm Fiends  🦟", function()
-        task.spawn(function()
-            Notif:Notification("Flame's Hub 🔥", 'Press "X" to turn off', "GothamSemibold", "Gotham", 2.5);
-        end);
-        getgenv().Mantis = {"Ant Fiend","Mantis Shrimp Fiend","Beetle Fiend"}
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/ChainsawAutofarmDevilHeart"))();
-    end);  
-    end
+ 
+end
 
 --// 🟢 SPTS Endless \\--
 if game.PlaceId == Supported.SPTS_Endless then
