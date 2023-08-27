@@ -18,7 +18,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [SPTS Endless](https://www.roblox.com/games/12603365593/SPTS-Endless) | 🟢
 
-- [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | 🟠 [ Fixing Soon (Cause of update)]
+- [Chainsaw Man X](https://www.roblox.com/games/13566086428/KATANA-DEVIL-Chainsaw-Man-X) | 🟢
   
 - [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟠 [Game is down] (link to alternative game: [Fake Heaven Stand](https://www.roblox.com/games/14561998168/OTHER-Heaven-Stand)
 
