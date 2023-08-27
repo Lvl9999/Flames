@@ -1056,12 +1056,30 @@ if game.PlaceId == Supported.Chainsaw_ManDH then
     end);
 
     local SecondLabel = SecondPage.AddLabel("[+] Delivery Quest  🍕");
+    local SecondButton = SecondPage.AddButton("Get Quest  ✨", function()
+        for i = 1,10 do wait(0.10)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-379.3523864746094, 449.5252685546875, 75.71353912353516)
+        end
+        wait(1.35)
+        for i, v in pairs(workspace.DialogNPCs.PizzaMan:GetDescendants()) do
+            if (v.ClassName == "ProximityPrompt") then
+                fireproximityprompt(v, 0);
+            end
+        end
+        wait(0.25);
+        local vim = game:GetService'VirtualInputManager'
+        local x = game:GetService("Players").LocalPlayer.PlayerGui.dialogGUI.f.sf.option.text
+        
+        vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+        vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+    end);
+
     local SecondToggle = SecondPage.AddToggle("Start delivering  🚚", false, function(Value)
         getgenv().Delivering = Value
     
         while getgenv().Delivering == true do
             pcall(function()
-                for i = 1,10 do wait(0.015)
+                for i = 1,10 do wait(0.10)
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-379.3523864746094, 449.5252685546875, 75.71353912353516)
                 end
                 wait(1.35)
