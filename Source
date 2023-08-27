@@ -1024,9 +1024,9 @@ if game.PlaceId == Supported.Chainsaw_ManDH then
         print("So give me a little bit of time to make this script better.")
     end);
 
-    local SecondLabel = SecondPage.AddLabel("[+] Cleaner Quest  🧹");
+    local SecondLabel = SecondPage.AddLabel("[+] Janitor Quest  🧹");
     local SecondButton = SecondPage.AddButton("Get Quest  ✨", function()
-        for i = 1,10 do wait(0.1);
+        for i = 1,10 do wait(0.10)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-283.7160949707031, 458.60162353515625, -426.21221923828125);
         end
         for i, v in pairs(workspace.DialogNPCs.Janitor:GetDescendants()) do
@@ -1052,6 +1052,36 @@ if game.PlaceId == Supported.Chainsaw_ManDH then
                     fireproximityprompt(v, 0);
                 end
             end
+        end
+    end);
+
+    local SecondLabel = SecondPage.AddLabel("[+] Delivery Quest  🍕");
+    local SecondToggle = SecondPage.AddToggle("Start delivering  🚚", false, function(Value)
+        getgenv().Delivering = Value
+    
+        while getgenv().Delivering == true do
+            pcall(function()
+                for i = 1,10 do wait(0.015)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-379.3523864746094, 449.5252685546875, 75.71353912353516)
+                end
+                wait(1.35)
+                for i, v in pairs(workspace.DialogNPCs.PizzaMan:GetDescendants()) do
+                    if (v.ClassName == "ProximityPrompt") then
+                        fireproximityprompt(v, 0);
+                    end
+                end
+                wait(0.25);
+                local vim = game:GetService'VirtualInputManager'
+                local x = game:GetService("Players").LocalPlayer.PlayerGui.dialogGUI.f.sf.option.text
+                
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+                wait(0.1)
+                for i = 1,50 do wait(0.015)
+                    local Table = {} for i,v in pairs(workspace.Interactable.pizzagoals:GetChildren()) do if v:IsA("BasePart") then table.insert(Table, v) end end if #Table > 0 then game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
+                end
+                wait(0.15)
+            end)
         end
     end);
 
