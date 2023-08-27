@@ -4530,7 +4530,6 @@ local SettingsButton = Settings.AddButton("Server Hop", function()
     until not Next
 end);
 
-
 local SettingsButton = Settings.AddButton("Low Server Hop", function()
     task.spawn(function()
 		Notif:Notification("Flame's Hub 🔥", 'Hopping...', "GothamSemibold", "Gotham", 0.5);
