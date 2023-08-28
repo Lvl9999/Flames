@@ -4221,6 +4221,46 @@ if game.PlaceId == Supported.Sakura_Stand then
         end        
     end);
 
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Toji  💀", false, function(Value)
+        getgenv().BossingToji = Value
+
+        while getgenv().BossingToji == true do wait(0.015)
+            if workspace.Living:FindFirstChild("Toji") and workspace.Living:FindFirstChild("Toji"):FindFirstChild("HumanoidRootPart") then
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7.5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7.5, game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7.5));                    
+                task.spawn(function()
+                    getgenv().Press = function(v) -- bruh 2
+                        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                    end
+                    Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                    game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Toji not found", "GothamSemibold", "Gotham", 3);
+                break
+            end
+        end 
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio  💀", false, function(Value)
+        getgenv().BossingDio = Value
+
+        while getgenv().BossingDio == true do wait(0.015)
+            if workspace.Living:FindFirstChild("Dio") and workspace.Living:FindFirstChild("Dio"):FindFirstChild("HumanoidRootPart") then
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7.5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7.5, game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7.5));                    
+                task.spawn(function()
+                    getgenv().Press = function(v) -- bruh 2
+                        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                    end
+                    Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                    game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Dio not found", "GothamSemibold", "Gotham", 3);
+                break
+            end
+        end 
+    end);
+
     local BackupEndLabel = BackupEndPage.AddLabel("[+] Places  🗺️");
     local BackupEndButton = BackupEndPage.AddButton("Shop   🏪", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-375.9766845703125, -31.704181671142578, 1810.9178466796875);
