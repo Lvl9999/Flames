@@ -212,12 +212,14 @@ local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed", false, function(Value)
     local hb = game:GetService("RunService").Heartbeat
 
     while getgenv().TpWalking == true and chr and hum and hum.Parent do
-        local delta = hb:Wait()
-        if hum.MoveDirection.Magnitude > 0 then
-            chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
-        else
-            chr:TranslateBy(hum.MoveDirection * delta * 10)
-        end    
+        pcall(function()
+            local delta = hb:Wait()
+            if hum.MoveDirection.Magnitude > 0 then
+                chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
+            else
+                chr:TranslateBy(hum.MoveDirection * delta * 10)
+            end 
+        end) 
     end
 end)
 
@@ -3858,61 +3860,47 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Items  👜");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
-        getgenv().FarmingItemsLoL = Value
-
+        getgenv().FarmingRightHere = Value
+        getgenv().Now = Value
+        getgenv().GoingOnIT = Value
+        
         getgenv().Press = function(v)
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
         end
         
-        if getgenv().FarmingItemsLoL == true then
-            Press("P");
-            game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(1.15);Press("P");
-            end)
+        if getgenv().FarmingRightHere == true then
+            game.Players.LocalPlayer.Character:BreakJoints();
         else
             Press("P");
         end
-        wait(1.55);
+        
         task.spawn(function()
-        while getgenv().FarmingItemsLoL == true do wait(0.015)
-            pcall(function()
-                if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List, v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end
-                task.spawn(function()
-                    getgenv().Press = function(v)
-                        return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+            while getgenv().FarmingRightHere == true do wait(0.01)
+                pcall(function()
+                    for i,v in pairs(workspace.Item:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v, 0);
+                        end
                     end
                 end)
-            end)
-        end
-        end)
-        task.spawn(function()
-            while getgenv().FarmingItemsLoL == true do wait(0.01)
-                pcall(function()
-                    for i,v in pairs(game:GetService("Workspace").Item:GetDescendants()) do if v:IsA("ProximityPrompt") then fireproximityprompt(v, 0); end end
-                end)
             end
         end)
-        --[[ idk what i am supposed to do with this
-        task.spawn(function()
-            while getgenv().FarmingItemsLoL == true do wait(13.5)
-                -- Fast resets so you wont have to wait for cooldown
-                pcall(function()
-                    local BaseReset = Instance.new("Part")
-                    BaseReset.Size = Vector3.new(100, 5, 100)
-                    BaseReset.Anchored = true
-                    BaseReset.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, -1100, 0)
-                    BaseReset.Parent = workspace
-                    BaseReset.Transparency = 1 
-                    wait(0.1)
-                    game.Workspace.Gravity = 9e9
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = BaseReset.CFrame + Vector3.new(0, 0, 0)
-                    BaseReset:Destroy()
-                    wait(2.35)
-                    game.Workspace.Gravity = 192.2
-                end)
+        local Con
+        Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+            if getgenv().FarmingRightHere == true then
+                getgenv().GoingOnIT = false
+                wait(0.5)
+                getgenv().GoingOnIT = true
+                if getgenv().Now == true then wait(2.25);Press("P");
+                end
+                wait(1);
+                while getgenv().GoingOnIT == true do wait(0.15)
+                    pcall(function()
+                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List, v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end
+                    end)
+                end
             end
         end)
-        --]]
     end);
  
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Store  ⚡");
@@ -4591,8 +4579,6 @@ if game.PlaceId == Supported.A_Universal_Time then
             end
         end)
     end);
-
-
 
 end
 
