@@ -3819,6 +3819,8 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset | God Mode  💀", function()
+        local Tog = true
+
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         local BaseReset = Instance.new("Part")
         BaseReset.Size = Vector3.new(100, 5, 100)
@@ -3826,17 +3828,25 @@ if game.PlaceId == Supported.Sakura_Stand then
         BaseReset.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, -1000, 0)
         BaseReset.Parent = workspace
         BaseReset.Transparency = 1 
-        wait(0.1)
-		game.Workspace.Gravity = 9e9
+        game.Workspace.Gravity = 9e9
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = BaseReset.CFrame + Vector3.new(0, 0, 0)
+        wait(0.1)
         BaseReset:Destroy()
-		wait(2.35)
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
-        game.Workspace.Gravity = 192.2
+        
+        local Con
+        Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+            if Tog == true then
+                wait(1.55)
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
+                game.Workspace.Gravity = 192.2
+                wait(0.15)
+                Tog = false
+            end
+        end)
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  ⚠️", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell", false, function(Value)
         getgenv().Rokia = Value
         while getgenv().Rokia == true do wait(0.0015)
             pcall(function()
@@ -3848,7 +3858,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming  👀", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Rebirth", false, function(Value)
         getgenv().Rebirthss = Value
         while getgenv().Rebirthss == true do wait(0.25)
             pcall(function()
@@ -3856,9 +3866,8 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
     end);
-
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Items  👜");
+ 
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Grinding Cash + Exp  🥵");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
@@ -3902,7 +3911,28 @@ if game.PlaceId == Supported.Sakura_Stand then
             end
         end)
     end);
- 
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Rares Sniper  💎");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
+        getgenv().AnyItemDrop = Value
+        while getgenv().AnyItemDrop == true do wait(0.45);
+            pcall(function()
+                local ItemTypes = {"Split Soul Katana","Inverted Spear Of Heaven","Chain of a Thousand Miles","Heavenly Restrictions","Kujo's Hat","Requiem Arrow","Dio's Bone","Dio's Diary","Sukuna's Cursed Finger"};
+                for i,Type in pairs(ItemTypes) do
+                    if game:GetService("Workspace").Item:FindFirstChild(Type) then
+                        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Item:FindFirstChild(Type).Position)
+                        wait(0.15);
+                        for i,v in pairs(workspace.Item:GetDescendants()) do
+                            if v:IsA("ProximityPrompt") then
+                                fireproximityprompt(v, 0);
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Store  ⚡");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Sukuna's Cursed Finger  ☝️", false, function(Value)
         getgenv().StoringItemlOL = Value
