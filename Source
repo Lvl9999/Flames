@@ -3886,8 +3886,12 @@ if game.PlaceId == Supported.Sakura_Stand then
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
         end
         
+        getgenv().Teleport = function(x, y, z)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, y, z);
+        end
+
         if getgenv().FarmingRightHere == true then
-            game.Players.LocalPlayer.Character:BreakJoints();
+            Teleport(9e9,9e9,9e9);
         else
             Press("P");
         end
