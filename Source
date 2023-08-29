@@ -3925,14 +3925,14 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh (20s)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh (25s)", false, function(Value)
         getgenv().Refreshss = Value
 
         getgenv().Teleport = function(x, y, z)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, y, z);
         end
 
-        while getgenv().Refreshss == true do wait(20);
+        while getgenv().Refreshss == true do wait(25);
             pcall(function()
                 Teleport(9e9,9e9,9e9);
             end)
