@@ -3912,12 +3912,12 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Rares Sniper  💎");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Rares Sniper  💎 [Laggy]");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().AnyItemDrop = Value
         while getgenv().AnyItemDrop == true do wait(0.45);
             pcall(function()
-                local ItemTypes = {"Split Soul Katana","Inverted Spear Of Heaven","Chain of a Thousand Miles","Heavenly Restrictions","Kujo's Hat","Requiem Arrow","Dio's Bone","Dio's Diary","Sukuna's Cursed Finger"};
+                local ItemTypes = {"Split Soul Katana","Inverted Spear Of Heaven","Chain of A Thousand Miles","Heavenly Restrictions","Kujo's Hat","Requiem Arrow","Dio's Bone","Dio's Diary","Sukuna's Cursed Finger"};
                 for i,Type in pairs(ItemTypes) do
                     if game:GetService("Workspace").Item:FindFirstChild(Type) then
                         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Item:FindFirstChild(Type).Position)
