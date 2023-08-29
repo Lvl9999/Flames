@@ -3867,6 +3867,15 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
  
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Breakthrough", false, function(Value)
+        getgenv().Breakthroughss = Value
+        while getgenv().Breakthroughss == true do wait(0.25)
+            pcall(function()
+                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("Breakthrough"):FireServer();
+            end)
+        end
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Grinding Cash + Exp  🥵");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
