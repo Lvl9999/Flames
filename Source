@@ -3819,7 +3819,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("Ban risk = ⚠️");
-    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset | God Mode  💀", function()
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀  | ⚠️", function()
         local Tog = true
 
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -3877,7 +3877,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Grinding Cash + Exp  🥵  | ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash/Token/Exp Farming  🧑🏿‍🌾 | ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
@@ -4209,7 +4209,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto OFA  🦸");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto One For All  🦸");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming [Be standless]", false, function(Value)
         getgenv().AFO = Value
 
@@ -4328,7 +4328,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bomu Bomu Devil Fruits", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bomu Bomu Devil Fruits  🍇", false, function(Value)
         getgenv().SellingBomu = Value
         while getgenv().SellingBomu == true do wait(0.15)
             pcall(function()
@@ -4338,7 +4338,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mochi Mochi Devil Fruits", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mochi Mochi Devil Fruits  🍐", false, function(Value)
         getgenv().SellingMochi = Value
         while getgenv().SellingMochi == true do wait(0.15)
             pcall(function()
@@ -4348,7 +4348,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bari Bari Devil Fruits", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bari Bari Devil Fruits  🍈", false, function(Value)
         getgenv().SellingBari = Value
         while getgenv().SellingBari == true do wait(0.15)
             pcall(function()
