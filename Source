@@ -3882,7 +3882,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         getgenv().Cashss = Value
         while getgenv().Cashss == true do wait(1.25)
             pcall(function()
-                local args = {[1] = "+50K Cash Capacity"};
+                local args = {[1] = "Cash"};
                 game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
             end)
         end
@@ -3892,7 +3892,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         getgenv().Standsss = Value
         while getgenv().Standsss == true do wait(1.25)
             pcall(function()
-                local args = {[1] = "+1 Stand Storage"};
+                local args = {[1] = "Storage"};
                 game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
             end)
         end
@@ -3902,7 +3902,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         getgenv().Bagss = Value
         while getgenv().Bagss == true do wait(1.25)
             pcall(function()
-                local args = {[1] = "5 Bags of Presents"};
+                local args = {[1] = "Present"};
                 game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
             end)
         end
