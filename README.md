@@ -4,7 +4,7 @@
 
 ### Supported Exploits:
 
-- **Krnl** | **Electron** | **Fluxus** | **Oxy-U** | **Valyse** | **etc...**
+- **Krnl** | **Fluxus** | **Oxy-U** | **Valyse** | **etc...**
 
 ## Supported Games:
 
