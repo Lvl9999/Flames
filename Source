@@ -3818,7 +3818,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("Ban Risk = ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("Ban Risk =  ⚠️");
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀  |  ⚠️", function()
         local Tog = true
 
