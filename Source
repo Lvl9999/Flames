@@ -3939,8 +3939,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Rares Sniper  💎");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item)", false, function(Value)
         getgenv().AnyItemDrop = Value
         while getgenv().AnyItemDrop == true do wait(0.35);
             pcall(function()
