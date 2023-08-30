@@ -3911,11 +3911,11 @@ if game.PlaceId == Supported.Sakura_Stand then
         Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
             if getgenv().FarmingRightHere == true then
                 getgenv().GoingOnIT = false
-                wait(0.5)
+                wait(0.55)
                 getgenv().GoingOnIT = true
                 if getgenv().Now == true then wait(2.25);Press("P");
                 end
-                wait(1);
+                wait(0.55);
                 while getgenv().GoingOnIT == true do wait(0.15)
                     pcall(function()
                         if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List, v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end
@@ -3932,10 +3932,11 @@ if game.PlaceId == Supported.Sakura_Stand then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, y, z);
         end
 
-        while getgenv().Refreshss == true do wait(25);
+        while getgenv().Refreshss == true do
             pcall(function()
                 Teleport(9e9,9e9,9e9);
             end)
+            wait(25);
         end
     end);
 
@@ -3956,7 +3957,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Store  ⚡");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Store  ⚡");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Sukuna's Cursed Finger  ☝️", false, function(Value)
         getgenv().StoringItemlOL = Value
 
@@ -3971,7 +3972,232 @@ if game.PlaceId == Supported.Sakura_Stand then
         
         while getgenv().StoringItemlOL == true do wait(0.15)
             pcall(function()
-                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Sukuna's Cursed Finger"));wait(0.15);
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Sukuna's Cursed Finger"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Inverted Spear Of Heaven  😇", false, function(Value)
+        getgenv().StoringItemlOL2 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL2 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Inverted Spear Of Heaven"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Split Soul Katana  ⚔️", false, function(Value)
+        getgenv().StoringItemlOL3 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL3 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Split Soul Katana"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Chain of A Thousand Miles  ⛓️", false, function(Value)
+        getgenv().StoringItemlOL4 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL4 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Chain of A Thousand Miles"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Heavenly Restrictions  😇⛓️", false, function(Value)
+        getgenv().StoringItemlOL5 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL5 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Heavenly Restrictions"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Requiem Arrow  🎯", false, function(Value)
+        getgenv().StoringItemlOL6 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL6 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Requiem Arrow"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio's Bone  🦴", false, function(Value)
+        getgenv().StoringItemlOL7 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL7 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dio's Bone"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio's Diary  📕", false, function(Value)
+        getgenv().StoringItemlOL8 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL8 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dio's Diary"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro's Bozo Hat  🎩", false, function(Value)
+        getgenv().StoringItemlOL9 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL9 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kujo's Hat"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Nikyu Nikyu Devil Fruit  🍇", false, function(Value)
+        getgenv().StoringItemlOL10 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL10 == true do wait(0.15)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Nikyu Nikyu Devil Fruit"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
                     if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
                         local args = {[1] = tonumber(v:sub(5))};
