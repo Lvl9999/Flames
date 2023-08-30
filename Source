@@ -73,17 +73,33 @@ task.spawn(function()
     end
 end)
 
+-- // Anti Client Kick \\ --
+-- Credits to https://scriptblox.com/u/Stars ✨
+task.spawn(function()
+    if game.PlaceId ~= 9821272782 then
+        local Kick 
+        Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
+            if getnamecallmethod() == "Kick" then
+                return
+            end
+            return Kick(Self, ...)
+        end)
+    else
+        return
+    end
+end)
+
 -- // Anti afk V2 \\--
 task.spawn(function()
     if game.PlaceId ~= 9821272782 then
         getgenv().Press = function(v)
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
         end
-        while true do wait(10)
+        while true do wait(3.5)
             Press("RightBracket");
         end
     else
-        while true do wait(10)
+        while true do wait(3.5)
             keypress(0xDD);
         end
     end
@@ -3860,15 +3876,6 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
     end);
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto ", false, function(Value)
-        getgenv().Breakthroughss = Value
-        while getgenv().Breakthroughss == true do wait(0.25)
-            pcall(function()
-                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("Breakthrough"):FireServer();
-            end)
-        end
-    end)
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Breakthrough Points  🅱️🅿️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("50,000$ Cash capacity+  💵", false, function(Value)
