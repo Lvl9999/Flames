@@ -4566,12 +4566,16 @@ if game.PlaceId == Supported.Sakura_Stand then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-520.662841796875, -31.358125686645508, 1584.3505859375)
     end);
 
+    local BackupEndButton = BackupEndPage.AddButton("Side Park  ⛲", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-73.15850830078125, -32.01318359375, 1636.9390869140625);
+    end);
+
     local BackupEndButton = BackupEndPage.AddButton("Park  🏞️", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-537.5374145507812, -32.051334381103516, 1419.20361328125);
     end);
 
-    local BackupEndButton = BackupEndPage.AddButton("Side Park  ⛲", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-73.15850830078125, -32.01318359375, 1636.9390869140625);
+    local BackupEndButton = BackupEndPage.AddButton("Ruined City  🌆", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7469.16259765625, -32.022640228271484, 1293.190185546875);
     end);
 
     local BackupEndButton = BackupEndPage.AddButton("Cave  💀", function()
