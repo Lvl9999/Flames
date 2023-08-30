@@ -3818,6 +3818,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("Ban risk = ⚠️");
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset | God Mode  💀", function()
         local Tog = true
 
@@ -3876,7 +3877,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Grinding Cash + Exp  🥵");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Grinding Cash + Exp  🥵  | ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
@@ -3940,8 +3941,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item)", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎  | ⚠️");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item) ", false, function(Value)
         getgenv().AnyItemDrop = Value
         while getgenv().AnyItemDrop == true do wait(0.35);
             pcall(function()
@@ -4378,7 +4379,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋  | ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage  ✊⚔️", false, function(Value)
         getgenv().ParryLolz = Value
 
@@ -4427,7 +4428,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥  | ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
         getgenv().BossingJotaroKuzo = Value
 
