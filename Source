@@ -3877,6 +3877,46 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto ", false, function(Value)
+        getgenv().Breakthroughss = Value
+        while getgenv().Breakthroughss == true do wait(0.25)
+            pcall(function()
+                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("Breakthrough"):FireServer();
+            end)
+        end
+    end)
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Breakthrough Points  🅱️🅿️");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("50,000$ Cash capacity+  💵", false, function(Value)
+        getgenv().Cashss = Value
+        while getgenv().Cashss == true do wait(1.25)
+            pcall(function()
+                local args = {[1] = "+50K Cash Capacity"};
+                game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+            end)
+        end
+    end)
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("1 Stand Storage Slot+  📦", false, function(Value)
+        getgenv().Standsss = Value
+        while getgenv().Standsss == true do wait(1.25)
+            pcall(function()
+                local args = {[1] = "+1 Stand Storage"};
+                game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+            end)
+        end
+    end)
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("5 Bags of Presents+  🎁", false, function(Value)
+        getgenv().Bagss = Value
+        while getgenv().Bagss == true do wait(1.25)
+            pcall(function()
+                local args = {[1] = "5 Bags of Presents"};
+                game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+            end)
+        end
+    end)
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash/Token/Exp Farming  🧑🏿‍🌾  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
@@ -3941,6 +3981,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
+--[[
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item) ", false, function(Value)
         getgenv().AnyItemDrop = Value
@@ -3957,6 +3999,8 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
     end);
+
+--]]
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Store  ⚡");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Sukuna's Cursed Finger  ☝️", false, function(Value)
@@ -4469,7 +4513,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                     Notif:Notification("Flame's Hub 🔥", "Chariot not found", "GothamSemibold", "Gotham", 3);
                 end
             end)
-        end        
+        end
     end);
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Toji Fushiguro  💀", false, function(Value)
