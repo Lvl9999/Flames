@@ -3818,8 +3818,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("Ban risk = ⚠️");
-    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀  | ⚠️", function()
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("Ban Risk = ⚠️");
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀  |  ⚠️", function()
         local Tog = true
 
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -3877,7 +3877,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash/Token/Exp Farming  🧑🏿‍🌾 | ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash/Token/Exp Farming  🧑🏿‍🌾  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
@@ -3941,7 +3941,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎  | ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item) ", false, function(Value)
         getgenv().AnyItemDrop = Value
         while getgenv().AnyItemDrop == true do wait(0.35);
@@ -4059,7 +4059,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Heavenly Restrictions  😇⛓️", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Heavenly Restrictions  ⛓️👼", false, function(Value)
         getgenv().StoringItemlOL5 = Value
 
         local ItemSlots = {
@@ -4379,7 +4379,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋  | ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage  ✊⚔️", false, function(Value)
         getgenv().ParryLolz = Value
 
@@ -4428,7 +4428,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥  | ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
         getgenv().BossingJotaroKuzo = Value
 
@@ -4471,7 +4471,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end        
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Toji  💀", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Toji Fushiguro  💀", false, function(Value)
         getgenv().BossingToji = Value
 
         while getgenv().BossingToji == true do wait(0.015)
@@ -4491,7 +4491,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end 
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio  💀", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio Brando  💀", false, function(Value)
         getgenv().BossingDio = Value
 
         while getgenv().BossingDio == true do wait(0.015)
