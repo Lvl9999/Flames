@@ -3939,21 +3939,17 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Rares Sniper  💎 [Laggy]");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Rares Sniper  💎");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().AnyItemDrop = Value
-        while getgenv().AnyItemDrop == true do wait(0.45);
+        while getgenv().AnyItemDrop == true do wait(0.35);
             pcall(function()
                 local ItemTypes = {"Split Soul Katana","Inverted Spear Of Heaven","Chain of A Thousand Miles","Heavenly Restrictions","Kujo's Hat","Requiem Arrow","Dio's Bone","Dio's Diary","Sukuna's Cursed Finger"};
                 for i,Type in pairs(ItemTypes) do
                     if game:GetService("Workspace").Item:FindFirstChild(Type) then
                         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Item:FindFirstChild(Type).Position)
                         wait(0.15);
-                        for i,v in pairs(workspace.Item:GetDescendants()) do
-                            if v:IsA("ProximityPrompt") then
-                                fireproximityprompt(v, 0);
-                            end
-                        end
+                        fireproximityprompt(game:GetService("Workspace").Item:FindFirstChild(Type):FindFirstChildOfClass("ProximityPrompt"), 0);
                     end
                 end
             end)
