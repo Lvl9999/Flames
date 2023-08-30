@@ -73,33 +73,17 @@ task.spawn(function()
     end
 end)
 
--- // Anti Client Kick \\ --
--- Credits to https://scriptblox.com/u/Stars ✨
-task.spawn(function()
-    if game.PlaceId ~= 9821272782 then
-        local Kick 
-        Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
-            if getnamecallmethod() == "Kick" then
-                return
-            end
-            return Kick(Self, ...)
-        end)
-    else
-        return
-    end
-end)
-
 -- // Anti afk V2 \\--
 task.spawn(function()
     if game.PlaceId ~= 9821272782 then
         getgenv().Press = function(v)
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
         end
-        while true do wait(3.5)
+        while true do wait(10)
             Press("RightBracket");
         end
     else
-        while true do wait(3.5)
+        while true do wait(10)
             keypress(0xDD);
         end
     end
