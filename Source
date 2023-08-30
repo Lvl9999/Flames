@@ -4461,7 +4461,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                             getgenv().Press = function(v) -- bruh 2
                                 return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                             end
-                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")Press("V");Press("H");Press("J");Press("U");
+                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")Press("V");Press("H");Press("J");Press("U");Press("B");
                             game:GetService("VirtualUser"):ClickButton1(Vector2.new());                    
                         end)
                     end)
