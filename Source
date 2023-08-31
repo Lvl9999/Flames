@@ -3928,21 +3928,24 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
         getgenv().Rokia = Value
 
-        while getgenv().Rokia == true do wait(0.0015)
+        while getgenv().Rokia == true do wait(0.25)
             pcall(function()
                 local args = {[1] = ""};
                 game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
                 local args = {[1] = "Rokakaka"};
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("SellItem"):FireServer(unpack(args));
-                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed:Destroy();
-                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess:Destroy();     
+            
+                if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseFailed") and game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseSuccess") then
+                    game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseSuccess"):Destroy();
+                    game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseFailed"):Destroy();
+                end
             end)
         end
     end);
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Rebirth  🎖️", false, function(Value)
         getgenv().Rebirthss = Value
-        while getgenv().Rebirthss == true do wait(0.25)
+        while getgenv().Rebirthss == true do wait(0.45)
             pcall(function()
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("UpgradeMas"):FireServer();
             end)
@@ -3951,7 +3954,7 @@ if game.PlaceId == Supported.Sakura_Stand then
  
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Breakthrough  😤", false, function(Value)
         getgenv().Breakthroughss = Value
-        while getgenv().Breakthroughss == true do wait(0.25)
+        while getgenv().Breakthroughss == true do wait(0.15)
             pcall(function()
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("Breakthrough"):FireServer();
             end)
