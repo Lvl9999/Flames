@@ -32,7 +32,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [A Universal Time](https://www.roblox.com/games/5130598377/2-7-Ascensions-A-Universal-Time) | 🔵
 
-  In Total: 10
+  In Total: 11
 
 ## Main Source:
 
