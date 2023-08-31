@@ -3958,8 +3958,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming 🧑🏿‍🌾  |  ⚠️");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming  🧺  (Any Item)", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  🧑🏿‍🌾  |  ⚠️");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   🧺  (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
         getgenv().GoingOnIT = Value
@@ -4007,7 +4007,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh ⚡  (15s)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh  ⚡  (15s)", false, function(Value)
         getgenv().Refreshss = Value
 
         getgenv().Teleport = function(x, y, z)
