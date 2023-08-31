@@ -45,7 +45,7 @@ pcall(function()
 end)
 ```
 # User Interface:
-![image](https://github.com/Lvl9999/Flames/assets/123672448/2d8011de-371e-4df8-8e6b-1d7e491f71c8)
+![image](https://github.com/Lvl9999/Flames/assets/123672448/2db2c31d-6dae-441f-90e2-9d2fcef68eab)
 
 
 ### Special Credits:
