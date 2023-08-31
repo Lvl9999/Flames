@@ -3925,7 +3925,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end)
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
         getgenv().Rokia = Value
 
         while getgenv().Rokia == true do wait(0.0015)
@@ -3940,7 +3940,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Rebirth", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Rebirth  🎖️", false, function(Value)
         getgenv().Rebirthss = Value
         while getgenv().Rebirthss == true do wait(0.25)
             pcall(function()
@@ -3949,7 +3949,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
  
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Breakthrough", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Breakthrough  😤", false, function(Value)
         getgenv().Breakthroughss = Value
         while getgenv().Breakthroughss == true do wait(0.25)
             pcall(function()
@@ -4022,7 +4022,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Intelligent  🧠", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Intelligent  🧠  (Title)", false, function(Value)
         getgenv().AutoIntelligent = Value
 
         while getgenv().AutoIntelligent == true do wait(1);
@@ -4468,7 +4468,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Arcade + Banner  👀");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Gambling | Arcade", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Gambling | Arcade  🕹️", false, function(Value)
         getgenv().Arcading = Value -- wtf?
         while getgenv().Arcading == true do wait(0.15)
             pcall(function()
@@ -4478,7 +4478,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Rolling | Banner", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Rolling | Banner  🀄", false, function(Value)
         getgenv().Bannering = Value -- wtf?
         while getgenv().Bannering == true do wait(0.15)
             pcall(function()
