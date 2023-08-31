@@ -3934,11 +3934,6 @@ if game.PlaceId == Supported.Sakura_Stand then
                 game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
                 local args = {[1] = "Rokakaka"};
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("SellItem"):FireServer(unpack(args));
-            
-                if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseFailed") and game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseSuccess") then
-                    game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseSuccess"):Destroy();
-                    game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("PurchaseFailed"):Destroy();
-                end
             end)
         end
     end);
