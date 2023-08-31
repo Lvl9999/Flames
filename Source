@@ -3928,7 +3928,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
         getgenv().Rokia = Value
 
-        while getgenv().Rokia == true do wait(0.25)
+        while getgenv().Rokia == true do wait(0.35)
             pcall(function()
                 local args = {[1] = ""};
                 game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
@@ -4339,7 +4339,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Sell  💸");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🖐️", false, function(Value)
         getgenv().EverythingLoL = Value
-        while getgenv().EverythingLoL == true do wait(0.015)
+        while getgenv().EverythingLoL == true do wait(0.35)
             pcall(function()
                 local Selling = {"Arrow","Barrel","Rokakaka","Stop Sign","Mysterious Camera" ,"Haunted Sword","Spin Manual","Hamon Manual","Stone Mask","Bomu Bomu Devil Fruit","Mochi Mochi Devil Fruit","Bari Bari Devil Fruit"}
                 for i,v in ipairs(Selling) do
