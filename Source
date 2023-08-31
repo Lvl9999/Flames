@@ -3849,6 +3849,11 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell", false, function(Value)
         getgenv().Rokia = Value
+        game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin1.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin2.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin3.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Outer.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.ConfirmationText.Visible = false
         while getgenv().Rokia == true do wait(0.0015)
             pcall(function()
                 local args = {[1] = ""};
