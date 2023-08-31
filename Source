@@ -3928,7 +3928,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
         getgenv().Rokia = Value
 
-        while getgenv().Rokia == true do wait(0.35)
+        while getgenv().Rokia == true do wait(1)
             pcall(function()
                 local args = {[1] = ""};
                 game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
@@ -3945,7 +3945,7 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Rebirth  🎖️", false, function(Value)
         getgenv().Rebirthss = Value
-        while getgenv().Rebirthss == true do wait(0.45)
+        while getgenv().Rebirthss == true do wait(1)
             pcall(function()
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("UpgradeMas"):FireServer();
             end)
@@ -3954,7 +3954,7 @@ if game.PlaceId == Supported.Sakura_Stand then
  
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Breakthrough  😤", false, function(Value)
         getgenv().Breakthroughss = Value
-        while getgenv().Breakthroughss == true do wait(0.15)
+        while getgenv().Breakthroughss == true do wait(0.25)
             pcall(function()
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("Breakthrough"):FireServer();
             end)
@@ -4049,7 +4049,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
---[[
+--[[ Broken
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item) ", false, function(Value)
@@ -4083,7 +4083,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL == true do wait(0.15)
+        while getgenv().StoringItemlOL == true do wait(1)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Sukuna's Cursed Finger"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4108,7 +4108,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL2 == true do wait(0.15)
+        while getgenv().StoringItemlOL2 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Inverted Spear Of Heaven"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4133,7 +4133,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL3 == true do wait(0.15)
+        while getgenv().StoringItemlOL3 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Split Soul Katana"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4158,7 +4158,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL4 == true do wait(0.15)
+        while getgenv().StoringItemlOL4 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Chain of A Thousand Miles"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4183,7 +4183,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL5 == true do wait(0.15)
+        while getgenv().StoringItemlOL5 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Heavenly Restrictions"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4208,7 +4208,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL6 == true do wait(0.15)
+        while getgenv().StoringItemlOL6 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Requiem Arrow"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4233,7 +4233,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL7 == true do wait(0.15)
+        while getgenv().StoringItemlOL7 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dio's Bone"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4258,7 +4258,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL8 == true do wait(0.15)
+        while getgenv().StoringItemlOL8 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dio's Diary"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4283,7 +4283,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL9 == true do wait(0.15)
+        while getgenv().StoringItemlOL9 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kujo's Hat"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4308,7 +4308,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             "Slot6"
         }
         
-        while getgenv().StoringItemlOL10 == true do wait(0.15)
+        while getgenv().StoringItemlOL10 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Nikyu Nikyu Devil Fruit"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
@@ -4325,7 +4325,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming [Be standless]", false, function(Value)
         getgenv().AFO = Value
 
-        while getgenv().AFO == true do wait(0.25)
+        while getgenv().AFO == true do wait(1)
             pcall(function()
                 for i,v in pairs(workspace.Map.NPCs.AFO:GetDescendants()) do
                     if v:IsA("ClickDetector") then
@@ -4339,7 +4339,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Sell  💸");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🖐️", false, function(Value)
         getgenv().EverythingLoL = Value
-        while getgenv().EverythingLoL == true do wait(0.35)
+        while getgenv().EverythingLoL == true do wait(1)
             pcall(function()
                 local Selling = {"Arrow","Barrel","Rokakaka","Stop Sign","Mysterious Camera" ,"Haunted Sword","Spin Manual","Hamon Manual","Stone Mask","Bomu Bomu Devil Fruit","Mochi Mochi Devil Fruit","Bari Bari Devil Fruit"}
                 for i,v in ipairs(Selling) do
