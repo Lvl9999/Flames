@@ -3846,6 +3846,84 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Breakthrough Points  🅱️🅿️");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("50,000$ Cash capacity+  💵", false, function(Value)
+        getgenv().Cashss = Value
+
+        local notifications1 = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
+        notifications1:notify{
+            Title = "Warning!",
+            Description = "Are you sure you want to enable this feature? | 1",
+            Accept = {
+            Text = "Yes",
+                Callback = function()
+                    while getgenv().Cashss == true do wait(1.25)
+                        pcall(function()
+                            local args = {[1] = "Cash"};
+                            game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+                        end)
+                    end
+                end,
+            },
+            Dismiss = {
+                Text = "No",
+                Callback = function()
+                end,
+            }
+        }
+    end)
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("1 Stand Storage Slot+  📦", false, function(Value)
+        getgenv().Standsss = Value
+
+        local notifications2 = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
+        notifications2:notify{
+            Title = "Warning!",
+            Description = "Are you sure you want to enable this feature? | 2",
+            Accept = {
+            Text = "Yes",
+                Callback = function()
+                    while getgenv().Standsss == true do wait(1.25)
+                        pcall(function()
+                            local args = {[1] = "Storage"};
+                            game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+                        end)
+                    end
+                end,
+            },
+            Dismiss = {
+                Text = "No",
+                Callback = function()
+                end,
+            }
+        }
+    end)
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("5 Bags of Presents+  🎁", false, function(Value)
+        getgenv().Bagss = Value
+        local notifications3 = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
+        notifications3:notify{
+            Title = "Warning!",
+            Description = "Are you sure you want to enable this feature? | 3",
+            Accept = {
+            Text = "Yes",
+                Callback = function()
+                    while getgenv().Bagss == true do wait(1.25)
+                        pcall(function()
+                            local args = {[1] = "Present"};
+                            game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+                        end)
+                    end
+                end,
+            },
+            Dismiss = {
+                Text = "No",
+                Callback = function()
+                end,
+            }
+        }
+    end)
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell", false, function(Value)
         getgenv().Rokia = Value
@@ -3881,37 +3959,6 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
     end);
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Breakthrough Points  🅱️🅿️");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("50,000$ Cash capacity+  💵", false, function(Value)
-        getgenv().Cashss = Value
-        while getgenv().Cashss == true do wait(1.25)
-            pcall(function()
-                local args = {[1] = "Cash"};
-                game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
-            end)
-        end
-    end)
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("1 Stand Storage Slot+  📦", false, function(Value)
-        getgenv().Standsss = Value
-        while getgenv().Standsss == true do wait(1.25)
-            pcall(function()
-                local args = {[1] = "Storage"};
-                game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
-            end)
-        end
-    end)
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("5 Bags of Presents+  🎁", false, function(Value)
-        getgenv().Bagss = Value
-        while getgenv().Bagss == true do wait(1.25)
-            pcall(function()
-                local args = {[1] = "Present"};
-                game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
-            end)
-        end
-    end)
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash/Token/Exp Farming  🧑🏿‍🌾  |  ⚠️");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
