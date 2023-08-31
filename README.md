@@ -44,19 +44,6 @@ pcall(function()
     loadstring(game:HttpGet(getgenv().Flames_Hub))();
 end)
 ```
-
-## Mobile Source:
-- Unfinished (Going to take a long time | Lazyness overloads.)
-
-```lua
--- // Flame's Hub 🔥 [Mobile Support] \\
-getgenv().Flames_HubMobile = "https://raw.githubusercontent.com/Lvl9999/Flames/main/MobileSource";
-
-pcall(function()
-    loadstring(game:HttpGet(getgenv().Flames_HubMobile))();
-end)
-```
-
 # User Interface:
 ![image](https://github.com/Lvl9999/Flames/assets/123672448/2d8011de-371e-4df8-8e6b-1d7e491f71c8)
 
