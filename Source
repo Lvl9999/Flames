@@ -3928,6 +3928,16 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
         getgenv().Rokia = Value
 
+        if getgenv().Rokia == false then wait(0.15);
+            pcall(function()
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin1.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin2.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin3.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Outer.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.ConfirmationText.Visible = false
+            end)
+        end
+
         while getgenv().Rokia == true do wait(1)
             pcall(function()
                 local args = {[1] = ""};
