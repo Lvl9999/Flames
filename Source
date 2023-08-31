@@ -3958,8 +3958,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cash/Token/Exp Farming  🧑🏿‍🌾  |  ⚠️");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming 🧑🏿‍🌾  |  ⚠️");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming  🧺  (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
         getgenv().GoingOnIT = Value
@@ -4007,7 +4007,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh (15s)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh ⚡  (15s)", false, function(Value)
         getgenv().Refreshss = Value
 
         getgenv().Teleport = function(x, y, z)
@@ -4019,6 +4019,30 @@ if game.PlaceId == Supported.Sakura_Stand then
                 Teleport(9e9,9e9,9e9);
             end)
             wait(15);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Intelligent  🧠", false, function(Value)
+        getgenv().AutoIntelligent = Value
+
+        while getgenv().AutoIntelligent == true do wait(1);
+            local x,b = pcall(function()
+                return game:GetService("Players").LocalPlayer.Data.Achievements["The Intelligent"]
+            end)
+            
+            if x and b then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Outer.AchievementFrame["The Intelligent"].Title.Apply.Text == "Apply" then
+                        local args = {[1] = "The Intelligent"};
+                        game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("ApplyAchievement"):FireServer(unpack(args));
+                    else
+                        return
+                    end
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Title not owned", "GothamSemibold", "Gotham", 2.5);
+                break
+            end
         end
     end);
 
