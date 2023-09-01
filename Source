@@ -3938,7 +3938,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
 
-        while getgenv().Rokia == true do wait(0.05)
+        while getgenv().Rokia == true do wait(0.10)
             pcall(function()
                 local args = {[1] = ""};
                 game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
