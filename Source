@@ -191,7 +191,7 @@ getgenv().Saves = {
     JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
 }
 
-local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 5, Max = 50, Def = 50}, function(Value)
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 5, Max = 100, Def = 50}, function(Value)
     getgenv().Speed = tonumber(Value)
 end)
 
