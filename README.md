@@ -22,7 +22,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
   
 - [Heaven Stand](https://www.roblox.com/games/11981520251/GOJO-REWORK-Heaven-Stand) | 🟠 | Alternative: [Fake Heaven Stand](https://www.roblox.com/games/14561998168/OTHER-Heaven-Stand)
 
-- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🔵
+- [Stand Upright: Rebooted](https://www.roblox.com/games/8540168650/Diegos-TW-more-Stand-Upright-Rebooted) | 🔵 (Taking a lil break cause of school)
   
 - [Sakura Stand](https://www.roblox.com/games/8534845015/Gojo-Rework-Sakura-Stand) | 🟢
 
@@ -30,7 +30,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [Stardust Reborn](https://www.roblox.com/games/9821272782/STW-REWORK-Stardust-Reborn) | 🟢
 
-- [A Universal Time](https://www.roblox.com/games/5130598377/2-7-Ascensions-A-Universal-Time) | 🔵
+- [A Universal Time](https://www.roblox.com/games/5130598377/2-7-Ascensions-A-Universal-Time) | 🔵 (Taking a lil break cause of school)
 
   In Total: 11
 
