@@ -3928,7 +3928,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
         getgenv().Rokia = Value
 
-        if getgenv().Rokia == false then wait(0.15);
+        if getgenv().Rokia == false then wait(0.25);
             pcall(function()
                 game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin1.Visible = false
                 game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin2.Visible = false
@@ -3938,7 +3938,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end
 
-        while getgenv().Rokia == true do wait(1)
+        while getgenv().Rokia == true do wait(0.15)
             pcall(function()
                 local args = {[1] = ""};
                 game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
