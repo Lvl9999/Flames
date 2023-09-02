@@ -3073,17 +3073,19 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     local ThirdToggle = ThirdPage.AddToggle("Start Farming", false, function(Value)
         getgenv().ItemsFarming = Value
 
-        while getgenv().ItemsFarming == true do wait(0.1);
-            for i,v in pairs(game.Workspace.Vfx:GetChildren()) do
-                if v:IsA("Tool") then
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Handle.Position);wait(0.1525);
-                    for i,v in pairs(game.Workspace.Vfx:GetDescendants()) do
-                        if v:IsA("ProximityPrompt") then
-                            fireproximityprompt(v,0)
+        while getgenv().ItemsFarming == true do wait(0.35);
+            pcall(function()
+                for i,v in pairs(game.Workspace.Vfx:GetChildren()) do
+                    if v:IsA("Tool") then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Handle.Position);wait(0.2525);
+                        for i,v in pairs(game.Workspace.Vfx:GetDescendants()) do
+                            if v:IsA("ProximityPrompt") then
+                                fireproximityprompt(v,0)
+                           end
                        end
-                   end
-                end
-            end
+                    end
+                end                
+            end)
         end
     end);
 
@@ -3494,64 +3496,9 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
     end)
 
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Quests  ❗");
-    local ThirdToggle = ThirdPage.AddToggle("Lvl 1+ | Giorno Givoanna", false, function(Value)
-        getgenv().BadGi = Value
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightBadGiQuest"))();
-    end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Lvl 10+ | Scared Noob", false, function(Value)
-        getgenv().ScaredNoob = Value
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightScaredNoobQuest"))();
-    end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Lvl 20+ | Koichi", false, function(Value)
-        getgenv().Giorno = Value
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightGiornoQuest"))();
-    end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Lvl 30+ | aLLmemester [BEST + LEGIT]", false, function(Value)
-        getgenv().Rker = Value
-        while getgenv().Rker == true do wait(0.15)
-            workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("aLLmemester"):WaitForChild("Done"):FireServer();
-            workspace:WaitForChild("Map"):WaitForChild("NPCs"):WaitForChild("aLLmemester"):WaitForChild("QuestDone"):FireServer();
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-618.796630859375, 66.4908218383789, -475.3385925292969);            local args = {[1] = true};
-            game:GetService("Players").LocalPlayer.Character.StandEvents.M1:FireServer();
-            game:GetService("Players").LocalPlayer.Character.StandEvents.Barrage:FireServer(unpack(args));
-            game:GetService("Players").LocalPlayer.Character.StandEvents.Heavy:FireServer();
-        end
-    end)
-
     local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
 
     end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
-    end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
-    end)
-
-    local ThirdLabel = ThirdPage.AddLabel("[+] Auto Lairs  👀");
-    local ThirdToggle = ThirdPage.AddToggle("Lvl 15+ | Lair 1", false, function(Value)
-        getgenv().Lair1 = Value
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/StandUprightLair1Farm"))();
-    end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
-    end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
-    end)
-
-    local ThirdToggle = ThirdPage.AddToggle("Soon  🟠", false, function(Value)
-
-    end)
-
--- More Yet to come!
 
 end
 
