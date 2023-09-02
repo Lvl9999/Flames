@@ -112,11 +112,11 @@ local Supported = {
     Ragdoll_Engine = 9848789324, -- Ragdoll Engine (Main)
     Stardust_Reborn = 9821272782, -- Stardust Reborn (Main)
     A_Universal_Time = 6846458508, -- A Universal Time (Main)
-
+    Murim_Cultivation = 13645439359, -- Murim Cultivation (Main)
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Heaven_StandFakeGame and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn  and  game.PlaceId ~= Supported.A_Universal_Time then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Heaven_StandFakeGame and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn  and  game.PlaceId ~= Supported.A_Universal_Time and game.PlaceId ~= Supported.Murim_Cultivation then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -366,6 +366,7 @@ if game.PlaceId == Supported.Project_Menacing then
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Project Menacing  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
+
     --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Shoping");
     local BackupPage = MainUI.AddPage("Storage");
@@ -794,7 +795,8 @@ if game.PlaceId == Supported.Soul_Cultivation then
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Soul Cultivation  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
-        --// Main Pages \\--
+
+    --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Shoping");
     local SecondAndHalfPage = MainUI.AddPage("Misc");
     local ThirdPage = MainUI.AddPage("Farming");
@@ -1012,7 +1014,7 @@ if game.PlaceId == Supported.Soul_Cultivation then
 
 end
 
---// 🟠 Chainsaw Man: Devil's Heart \\--
+--// 🟢 Chainsaw Man: Devil's Heart \\--
 if game.PlaceId == Supported.Chainsaw_ManDH then
     task.spawn(function()
         wait(3);
@@ -1511,7 +1513,7 @@ if game.PlaceId == Supported.Chainsaw_ManXPVP  or game.PlaceId == Supported.Chai
         end);  
 end
 
---// 🟠🟢 Heaven Stand \\--
+--// 🟢 Heaven Stand \\--
 if game.PlaceId == Supported.Heaven_Stand or game.PlaceId == Supported.Heaven_StandTestingPlace or game.PlaceId == Supported.Heaven_StandFakeGame then
     task.spawn(function()
         wait(3);
@@ -4874,7 +4876,7 @@ if game.PlaceId == Supported.Stardust_Reborn then
     -- More yet to come
 end
 
---// 🟠 A Universal Time \\--
+--// 🟢 A Universal Time \\--
 if game.PlaceId == Supported.A_Universal_Time then
     task.spawn(function()
         wait(3);
@@ -4970,6 +4972,23 @@ if game.PlaceId == Supported.A_Universal_Time then
         end)
     end);
 
+end
+
+--// 🟢 Murim Cultivation \\--
+if game.PlaceId == Supported.Murim_Cultivation then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", " Murim Cultivation  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Soon | 1");
+    local BackupPage = MainUI.AddPage("Soon | 2");
+    local SecondAndHalfPage = MainUI.AddPage("Soon | 3");
+    local ThirdPage = MainUI.AddPage("Soon | 4");
+    local FourthPage = MainUI.AddPage("Soon | 5");
+
+    -- Soon!~
 end
 
 local Settings = MainUI.AddPage("Settings");
