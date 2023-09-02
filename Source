@@ -188,25 +188,41 @@ local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500,
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("Enable/Disable | Walkspeed", false, function(Value)
     -- Skidded from inf yield :3
     getgenv().TpWalking = Value
-
-    local speaker = game:GetService("Players").LocalPlayer
-    local chr = speaker.Character
-    local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-    local hb = game:GetService("RunService").Heartbeat
-
-    while getgenv().TpWalking == true and chr and hum and hum.Parent do
-        pcall(function()
-            local delta = hb:Wait()
-            if hum.MoveDirection.Magnitude > 0 then
-                chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
-            else
-                chr:TranslateBy(hum.MoveDirection * delta * 10)
-            end 
-        end) 
+    getgenv().RestartSpeed = Value
+    
+    local TeleportWalking = function()
+        task.spawn(function()
+            pcall(function()
+                local speaker = game:GetService("Players").LocalPlayer
+                local chr = speaker.Character
+                local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+                local hb = game:GetService("RunService").Heartbeat
+    
+                while getgenv().TpWalking == true and chr and hum and hum.Parent do
+                    local delta = hb:Wait()
+                    if hum.MoveDirection.Magnitude > 0 then
+                        chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
+                    else
+                        chr:TranslateBy(hum.MoveDirection * delta * 10)
+                    end
+                end
+            end)
+        end)
     end
+    
+    local Con
+    Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        if getgenv().RestartSpeed == true then
+            wait(2.55)
+            getgenv().Speed = 5 -- By default
+            TeleportWalking();
+        end
+    end)
+    
+    TeleportWalking();
 end)
 
 local ScriptXToggle = ScriptX.AddToggle("Noclip   🧱", false, function(Value)
