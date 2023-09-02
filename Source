@@ -73,37 +73,23 @@ task.spawn(function()
     end
 end)
 
--- // Anti Client Kick \\ --
--- Credits to https://scriptblox.com/u/Stars ✨
-task.spawn(function()
-    if game.PlaceId ~= 9821272782 then
-        local Kick 
-        Kick = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...)
-            if getnamecallmethod() == "Kick" then
-                return
-            end
-            return Kick(Self, ...)
-        end)
-    else
-        return
-    end
-end)
-
 -- // Anti afk V2 \\--
 task.spawn(function()
     if game.PlaceId ~= 9821272782 then
         getgenv().Press = function(v)
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
         end
-        while true do wait(3.5)
+        while true do wait(10.5)
             Press("RightBracket");
         end
     else
-        while true do wait(3.5)
+        while true do wait(10.5)
             keypress(0xDD);
         end
     end
 end)
+
+setfpscap(math.huge); -- Fun fact: your eyes are stuck at 60 fps ;)
 
 --// Main Libs \\--
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Twink/main/BackUp"))();
@@ -286,6 +272,11 @@ local ScriptXToggle = ScriptX.AddToggle("Esp   👁️", false, function(Value)
         end)
     end)
 end)
+
+local ScriptXToggle = ScriptX.AddToggle("Nearest Aimlock  🎯", false, function(Value)
+    getgenv().Aimming = Value
+    game:GetService("RunService").RenderStepped:Connect(function() if not getgenv().Aimming == true then return end local x,b for _,v in ipairs(game:GetService("Players"):GetPlayers()) do if v.Character and v ~= game:GetService("Players").LocalPlayer then if not x or (v.Character.Head.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude < b then x = v b = (v.Character.Head.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude end end end if x and b <= 15 then game:GetService("Workspace").CurrentCamera.CFrame = CFrame.new(game:GetService("Workspace").CurrentCamera.CFrame.p, x.Character.HumanoidRootPart.Position) end end);
+end);
 
 getgenv().Stored = {}
 
@@ -3731,20 +3722,10 @@ if game.PlaceId == Supported.Sakura_Stand then
         Notif:Notification("Game Detected ⚠️", "Sakura Stand  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
 
-    --// Anti Ban Bypass\\-- [Not sure if it works]
-    task.spawn(function()
-        local OldNameCall;
-        OldNameCall = hookmetamethod(game,"__namecall",newcclosure(function(Self,...)
-            if Self.Name == "BanRemote" and getnamecallmethod() == "FireServer" then
-                return
-            end
-            return OldNameCall(Self,...)
-        end))
-    end)
-
     --// Main Pages \\--
     local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
+    local SecondAndHalfHalfPage = MainUI.AddPage("Fighting");
     local SecondAndHalfPage = MainUI.AddPage("Farming");
     local BackupEndPage = MainUI.AddPage("Teleports");
 
@@ -3818,8 +3799,27 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage"):WaitForChild("StorageRemote"):WaitForChild("Slot6"):FireServer();
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("Ban Risk =  ⚠️");
-    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀  |  ⚠️", function()
+    local SecondAndHalfHalfLabel = SecondAndHalfHalfPage.AddLabel("[+] Fighting  ✊⚔️");
+    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Anti Stun  🤓", false, function(Value)
+        getgenv().SlientNoStun = Value
+        getgenv().Speed = 2.15
+        
+        local speaker = game:GetService("Players").LocalPlayer
+        local chr = speaker.Character
+        local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+        local hb = game:GetService("RunService").Heartbeat
+        while getgenv().SlientNoStun and chr and hum and hum.Parent do
+            local delta = hb:Wait()
+            if hum.MoveDirection.Magnitude > 0 then
+                chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 2)
+            else
+                chr:TranslateBy(hum.MoveDirection * delta * 2)
+            end
+        end
+    end);
+
+
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀", function()
         local Tog = true
 
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -3966,7 +3966,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  🧑🏿‍🌾  |  ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  🧑🏿‍🌾");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   🧺  (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
@@ -4056,7 +4056,7 @@ if game.PlaceId == Supported.Sakura_Stand then
 
 --[[ Broken
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎  |  ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item) ", false, function(Value)
         getgenv().AnyItemDrop = Value
         while getgenv().AnyItemDrop == true do wait(0.35);
@@ -4166,31 +4166,6 @@ if game.PlaceId == Supported.Sakura_Stand then
         while getgenv().StoringItemlOL4 == true do wait(0.35)
             pcall(function()
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Chain of A Thousand Miles"));wait(1.15);
-                for i,v in ipairs(ItemSlots) do
-                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
-                        local args = {[1] = tonumber(v:sub(5))};
-                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
-                    end
-                end
-            end)
-        end
-    end);
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Heavenly Restrictions  ⛓️👼", false, function(Value)
-        getgenv().StoringItemlOL5 = Value
-
-        local ItemSlots = {
-            "Slot1",
-            "Slot2",
-            "Slot3",
-            "Slot4",
-            "Slot5",
-            "Slot6"
-        }
-        
-        while getgenv().StoringItemlOL5 == true do wait(0.35)
-            pcall(function()
-                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Heavenly Restrictions"));wait(1.15);
                 for i,v in ipairs(ItemSlots) do
                     if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
                         local args = {[1] = tonumber(v:sub(5))};
@@ -4496,7 +4471,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋  |  ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage  ✊⚔️", false, function(Value)
         getgenv().ParryLolz = Value
 
@@ -4544,7 +4519,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end          
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥  |  ⚠️");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
         getgenv().BossingJotaroKuzo = Value
 
@@ -5035,7 +5010,6 @@ if game.PlaceId == Supported.A_Universal_Time then
 end
 
 local Settings = MainUI.AddPage("Settings");
-
 local SettingsLabel = Settings.AddLabel("Settings  ⚙️");
 local SettingsToggle = Settings.AddToggle("Fps Booster  📈", true, function(Value)
     getgenv().Fps = Value
@@ -5046,6 +5020,7 @@ local SettingsToggle = Settings.AddToggle("Fps Booster  📈", true, function(Va
         setfpscap(60);
     end
 end)
+
 
 local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function()
     --// Flame's Hub 🔥\\--
