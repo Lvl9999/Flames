@@ -4984,13 +4984,13 @@ if game.PlaceId == Supported.Murim_Cultivation then
     --// Main Pages \\--
     local SecondPage = MainUI.AddPage("Fighting");
     local BackupPage = MainUI.AddPage("Farming");
-    local SecondAndHalfPage = MainUI.AddPage("Soon | 3");
+    local SecondAndHalfPage = MainUI.AddPage("Teleports");
     local ThirdPage = MainUI.AddPage("Soon | 4");
     local FourthPage = MainUI.AddPage("Soon | 5");
 
 
     local SecondLabel = SecondPage.AddLabel("[+] Miscellaneous  ❓");
-    local SecondToggle = SecondPage.AddToggle("Auto run   🏃‍♂️💨", false, function(Value)
+    local SecondToggle = SecondPage.AddToggle("Auto Run  🏃‍♂️💨", false, function(Value)
         getgenv().Walking = Value
         local Tog = false
 
@@ -5032,35 +5032,19 @@ if game.PlaceId == Supported.Murim_Cultivation then
     end);
 
     local BackupLabel = BackupPage.AddLabel("[+] Gains   💪");
-    local BackupToggle = BackupPage.AddToggle("Safe Zone | (1.25s)  🦺", false, function(Value)
-        getgenv().SafeAndSound = Value
-
-        while getgenv().SafeAndSound == true do wait(1.25);
-            pcall(function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2365.27197265625, 554.14404296875, 3226.5205078125);wait(1.15);
-            end)
-        end
-    end);
-
-    -- Auto Meditate  🧘‍♀️
-    local BackupToggle = BackupPage.AddToggle("Soon  🟠", false, function(Value)
-        getgenv().CultivatingRn = Value
-
-        while getgenv().CultivatingRn == true do wait(9e9);
-            pcall(function()
-
-            end)
-        end
-    end);
-
-    local BackupToggle = BackupPage.AddToggle("Auto Breakthrough  ✨", false, function(Value)
+    local BackupToggle = BackupPage.AddToggle("Auto Meditate + Auto Breakthrough   🧘‍♀️✨", false, function(Value)
         getgenv().LimitBreaker = Value
 
-        while getgenv().LimitBreaker == true do 
+        while getgenv().LimitBreaker == true do
             pcall(function()
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Misc"):WaitForChild("BodyBreakthrough"):FireServer();
+                if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild("MeditationHighlight") then
+                    local args = {[1] = "Meditate"};
+                    game:GetService("ReplicatedStorage"):WaitForChild("InventorySystem"):WaitForChild("Remotes"):WaitForChild("EquipTool"):InvokeServer(unpack(args));
+                    wait(0.25);
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Meditate"):Activate();
+                end
             end)
-            wait(1.15);
+            wait(1);
         end
     end);
 
@@ -5072,6 +5056,87 @@ if game.PlaceId == Supported.Murim_Cultivation then
             local v1={};local v2=0;local v3=Instance.new("Part",game.Workspace);local v4=workspace.Interactables.Wheat;v3.Name="FloatPart";v3.Size=Vector3.new(6,0.1,6);v3.Anchored=true;v3.Transparency=1;getgenv().Press=function(v11)return game:GetService("VirtualInputManager"):SendKeyEvent(true,v11,false,game);end;task.spawn(function()while getgenv().WheatFarming==true  do wait(0.15);pcall(function()v3.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -3.05,0) ;end);end end);task.spawn(function()while getgenv().WheatFarming==true  do pcall(function()for v22,v23 in pairs(v1) do v2=v2 + 1 ;end for v24,v25 in pairs(v4:GetDescendants()) do if (v25:IsA("Highlight")) then table.insert(v1,v25);end end game:GetService("Players").LocalPlayer.Character:MoveTo(v1[math.random(1,v2)].Position);wait(0.25);Press("E");end);wait(2.15);end end);getgenv().WheatFarming=true;local v1={};local v2=0;local v3=Instance.new("Part",game.Workspace);local v4=workspace.Interactables.Wheat;v3.Name="FloatPart";v3.Size=Vector3.new(6,0.1,6);v3.Anchored=true;v3.Transparency=1;getgenv().Press=function(v12)return game:GetService("VirtualInputManager"):SendKeyEvent(true,v12,false,game);end;local function v10(v13)local v14=3;local v15=0;while v15<v14  do local v16,v17=pcall(function()game:GetService("Players").LocalPlayer.Character:MoveTo(v13);end);if v16 then return true;else v15=v15 + 1 ;wait(0.25);end end return false;end task.spawn(function()while getgenv().WheatFarming==true  do wait(0.15);pcall(function()v3.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -3.05,0) ;end);end end);task.spawn(function()while getgenv().WheatFarming==true  do pcall(function()v2=0;v1={};for v26,v27 in pairs(v4:GetDescendants()) do if (v27:IsA("BasePart")) then table.insert(v1,v27);end end local v20=math.random(1, #v1);local v21=v1[v20].Position;if v10(v21) then wait(0.25);Press("E");wait(2.15);end end);end end);wait(9e9);
         end
     end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] World Teleports  🗺️");
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Bakery  🍞", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4695.2275390625, 20.79999542236328, 4137.6630859375);
+    end);
+    
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Blacksmith  ⚒️", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4512.9921875, 20.979761123657227, 4376.85009765625);
+    end);
+    
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Wheat Buyer  🌾", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6373.4345703125, 356.9999084472656, 4901.759765625);
+    end);
+
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Neko Trainer  🐱", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6292.5390625, 259.5467834472656, 4881.75341796875);
+    end);
+
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Dragon Trainer  🐉", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6293.5576171875, 259.5467834472656, 4877.85888671875);
+    end);
+    
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Qi Plam Trainer  ✋", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4405.9892578125, 121.64087677001953, 4968.32763671875);
+    end);
+    
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cultivation Zones  ☯");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Lily Pad Pond | 2x [ Req:None ]  🐸", false, function(Value)
+        getgenv().TP1 = Value
+
+        while getgenv().TP1 == true do wait(1.25);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4906.640625, -18.97146987915039, 3748.27880859375);
+            end)
+        end
+    end);
+
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Small Temple | 5x [ Req:Peak ]  ⛩️", false, function(Value)
+        getgenv().TP2 = Value
+
+        while getgenv().TP2 == true do wait(1.25);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5557.62060546875, 70.58281707763672, 3190.236083984375);
+            end)
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Cave | 10x [ Req:Liquidation ]  ⛰", false, function(Value)
+        getgenv().TP3 = Value
+
+        while getgenv().TP3 == true do wait(1.25);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6245.00341796875, 240.78892517089844, 4847.04052734375);
+            end)
+        end
+    end);
+
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mini Forest Temple |  25x [ Req:Golden Core ]  🦌", false, function(Value)
+        getgenv().TP4 = Value
+
+        while getgenv().TP4 == true do wait(1.25);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4731.603515625, 70.81939697265625, 6414.9931640625);
+            end)
+        end
+    end);
+
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Big Temple |  50x [ Req:Perfected Soul ]  🏛️", false, function(Value)
+        getgenv().TP5 = Value
+
+        while getgenv().TP5 == true do wait(1.25);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6349.1337890625, 35.183258056640625, 7660.05126953125);
+            end)
+        end
+    end);
+
 
     -- Soon!~
 end
