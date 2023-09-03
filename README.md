@@ -4,7 +4,7 @@
 
 # Supported Devices:
 
-- Windows (UWP)
+- Windows | (UWP)
 
 
 ### Supported Exploits:
