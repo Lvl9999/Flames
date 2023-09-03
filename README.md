@@ -2,6 +2,11 @@
 
 - Script Hub that supports various games with OP features.
 
+# Supported Devices:
+
+- PC (UWP)
+
+
 ### Supported Exploits:
 
 - **Krnl** | **Fluxus** | **Oxy-U** | **Valyse** | **etc...**
