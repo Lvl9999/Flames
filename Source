@@ -4982,11 +4982,96 @@ if game.PlaceId == Supported.Murim_Cultivation then
     end)
 
     --// Main Pages \\--
-    local SecondPage = MainUI.AddPage("Soon | 1");
-    local BackupPage = MainUI.AddPage("Soon | 2");
+    local SecondPage = MainUI.AddPage("Fighting");
+    local BackupPage = MainUI.AddPage("Farming");
     local SecondAndHalfPage = MainUI.AddPage("Soon | 3");
     local ThirdPage = MainUI.AddPage("Soon | 4");
     local FourthPage = MainUI.AddPage("Soon | 5");
+
+
+    local SecondLabel = SecondPage.AddLabel("[+] Miscellaneous  ❓");
+    local SecondToggle = SecondPage.AddToggle("Auto run   🏃‍♂️💨", false, function(Value)
+        getgenv().Walking = Value
+        local Tog = false
+
+        if getgenv().Walking == false then
+            local args = {[1] = false};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Movement"):WaitForChild("Run"):FireServer(unpack(args));
+        end
+        
+        while getgenv().Walking == true do wait(0.01)
+            pcall(function()
+                if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 and not Tog then
+                    local args = {[1] = true};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Movement"):WaitForChild("Run"):FireServer(unpack(args));
+                    Tog = true
+                elseif game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude == 0 and Tog then
+                    local args = {[1] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Movement"):WaitForChild("Run"):FireServer(unpack(args));
+                    Tog = false
+                end
+            end)
+        end
+    end);
+
+    local SecondToggle = SecondPage.AddToggle("Auto Block  💥", false, function(Value)
+        getgenv().AutoBlockingLol = Value
+
+        while getgenv().AutoBlockingLol == false do wait(0.01)
+            local args = {[1] = false};
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Combat"):WaitForChild("Block"):FireServer(unpack(args));
+            break
+        end
+
+        while getgenv().AutoBlockingLol == true do wait(0.01)
+            pcall(function()
+                local args = {[1] = true};
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Combat"):WaitForChild("Block"):FireServer(unpack(args));
+            end)
+        end
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Gains   💪");
+    local BackupToggle = BackupPage.AddToggle("Safe Zone | (1.25s)  🦺", false, function(Value)
+        getgenv().SafeAndSound = Value
+
+        while getgenv().SafeAndSound == true do wait(1.25);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2365.27197265625, 554.14404296875, 3226.5205078125);wait(1.15);
+            end)
+        end
+    end);
+
+    -- Auto Meditate  🧘‍♀️
+    local BackupToggle = BackupPage.AddToggle("Soon  🟠", false, function(Value)
+        getgenv().CultivatingRn = Value
+
+        while getgenv().CultivatingRn == true do wait(9e9);
+            pcall(function()
+
+            end)
+        end
+    end);
+
+    local BackupToggle = BackupPage.AddToggle("Auto Breakthrough  ✨", false, function(Value)
+        getgenv().LimitBreaker = Value
+
+        while getgenv().LimitBreaker == true do 
+            pcall(function()
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Misc"):WaitForChild("BodyBreakthrough"):FireServer();
+            end)
+            wait(1.15);
+        end
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Farming   👩🏿‍🌾👴🏻");
+    local BackupToggle = BackupPage.AddToggle("Start Farming  |  Wheat   🌾", false, function(Value)
+        getgenv().WheatFarming = Value
+        getgenv().LOlOK = Value
+        while getgenv().LOlOK == true do wait(0.15);
+            local v1={};local v2=0;local v3=Instance.new("Part",game.Workspace);local v4=workspace.Interactables.Wheat;v3.Name="FloatPart";v3.Size=Vector3.new(6,0.1,6);v3.Anchored=true;v3.Transparency=1;getgenv().Press=function(v11)return game:GetService("VirtualInputManager"):SendKeyEvent(true,v11,false,game);end;task.spawn(function()while getgenv().WheatFarming==true  do wait(0.15);pcall(function()v3.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -3.05,0) ;end);end end);task.spawn(function()while getgenv().WheatFarming==true  do pcall(function()for v22,v23 in pairs(v1) do v2=v2 + 1 ;end for v24,v25 in pairs(v4:GetDescendants()) do if (v25:IsA("Highlight")) then table.insert(v1,v25);end end game:GetService("Players").LocalPlayer.Character:MoveTo(v1[math.random(1,v2)].Position);wait(0.25);Press("E");end);wait(2.15);end end);getgenv().WheatFarming=true;local v1={};local v2=0;local v3=Instance.new("Part",game.Workspace);local v4=workspace.Interactables.Wheat;v3.Name="FloatPart";v3.Size=Vector3.new(6,0.1,6);v3.Anchored=true;v3.Transparency=1;getgenv().Press=function(v12)return game:GetService("VirtualInputManager"):SendKeyEvent(true,v12,false,game);end;local function v10(v13)local v14=3;local v15=0;while v15<v14  do local v16,v17=pcall(function()game:GetService("Players").LocalPlayer.Character:MoveTo(v13);end);if v16 then return true;else v15=v15 + 1 ;wait(0.25);end end return false;end task.spawn(function()while getgenv().WheatFarming==true  do wait(0.15);pcall(function()v3.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -3.05,0) ;end);end end);task.spawn(function()while getgenv().WheatFarming==true  do pcall(function()v2=0;v1={};for v26,v27 in pairs(v4:GetDescendants()) do if (v27:IsA("BasePart")) then table.insert(v1,v27);end end local v20=math.random(1, #v1);local v21=v1[v20].Position;if v10(v21) then wait(0.25);Press("E");wait(2.15);end end);end end);wait(9e9);
+        end
+    end);
 
     -- Soon!~
 end
