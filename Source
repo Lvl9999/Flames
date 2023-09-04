@@ -5081,8 +5081,8 @@ if game.PlaceId == Supported.Murim_Cultivation then
         end
     end);
 
-    local BackupLabel = BackupPage.AddLabel("[+] Farming   👩🏿‍🌾👴🏻");
-    local BackupToggle = BackupPage.AddToggle("Start Farming  |  Wheat   🌾", false, function(Value)
+    local BackupLabel = BackupPage.AddLabel("[+] Wheat Farming  🌾");
+    local BackupToggle = BackupPage.AddToggle("Start Farming  👩🏿‍🌾", false, function(Value)
         getgenv().WheatFarming = Value
         getgenv().LOlOK = Value
         while getgenv().LOlOK == true do wait(0.15);
