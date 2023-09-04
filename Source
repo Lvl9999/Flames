@@ -5090,6 +5090,48 @@ if game.PlaceId == Supported.Murim_Cultivation then
         end
     end);
 
+    local BackupToggle = BackupPage.AddToggle("Auto Sell Wheats  🌾", false, function(Value)
+        getgenv().Wheats = Value
+        while getgenv().Wheats == true do wait(0.15);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4899.9501953125, 22.65610694885254, 3484.287109375);
+                wait(0.1);
+                for i, v in pairs(workspace.Interactables.NPC.Farmer:GetDescendants()) do
+                    if (v.ClassName == "ProximityPrompt") then
+                        fireproximityprompt(v, 0);
+                    end
+                end
+                wait(0.1);
+                local vim = game:GetService'VirtualInputManager'
+                local x = game:GetService("Players").LocalPlayer.PlayerGui.NPC.MainFrame.Option1.TextLabel
+                
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)            
+            end)
+        end
+    end);
+
+    local BackupToggle = BackupPage.AddToggle("Auto Buy Breads  🍞", false, function(Value)
+        getgenv().Breads = Value
+        while getgenv().Breads == true do wait(0.15);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4695.2275390625, 20.79999542236328, 4137.6630859375);
+                wait(0.1);
+                for i, v in pairs(workspace.Interactables.NPC.Baker:GetDescendants()) do
+                    if (v.ClassName == "ProximityPrompt") then
+                        fireproximityprompt(v, 0);
+                    end
+                end
+                wait(0.1);
+                local vim = game:GetService'VirtualInputManager'
+                local x = game:GetService("Players").LocalPlayer.PlayerGui.NPC.MainFrame.Option1.TextLabel
+                
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)            
+            end)
+        end
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] World Teleports  🗺️");
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Bakery  🍞", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4695.2275390625, 20.79999542236328, 4137.6630859375);
