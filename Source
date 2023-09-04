@@ -850,7 +850,6 @@ if game.PlaceId == Supported.Soul_Cultivation then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/UniversalPlayerHitbox"))();
     end);
     
-    
     local ThirdLabel = ThirdPage.AddLabel("[+] Auto Farm 🤑");
     local ThirdLabel = ThirdPage.AddButton("Starter Area [Teleport]", function()
         tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(12, Enum.EasingStyle.Linear);
@@ -5063,7 +5062,7 @@ if game.PlaceId == Supported.Murim_Cultivation then
                     pcall(function()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5557.62060546875, 70.58281707763672, 3190.236083984375);
                     end)
-                elseif Relam == "Qi Liquidation" or Realm == "Qi Crystalization" or Realm == "Foundation Establishment" or Realm == "False Core Formation" or Realm == "True Core Formation" then
+                elseif Relam == "Qi Liquidation" or Realm == "Qi Crystalization" or Realm == "Foundation Establishment" or  Realm == "Perfected Foundation" or  Realm == "False Core Formation" or Realm == "True Core Formation" then
                     pcall(function()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6245.00341796875, 240.78892517089844, 4847.04052734375);
                     end)
