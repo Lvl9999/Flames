@@ -5081,12 +5081,19 @@ if game.PlaceId == Supported.Murim_Cultivation then
     end);
 
     local BackupLabel = BackupPage.AddLabel("[+] Wheat Farming  🌾");
-    -- Start Farming  👩🏿‍🌾
-    local BackupToggle = BackupPage.AddToggle("Fixing  🟠", false, function(Value)
+    local BackupToggle = BackupPage.AddToggle("Start Farming  👩🏿‍🌾", false, function(Value)
         getgenv().WheatFarming = Value
-        getgenv().LOlOK = Value
-        while getgenv().LOlOK == true do wait(0.15);
 
+        getgenv().Press = function(v) 
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game); 
+        end
+
+        while getgenv().WheatFarming == true do
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(workspace.Interactables.Wheat:GetChildren()[math.random(1,#workspace.Interactables.Wheat:GetChildren())].Union.Position);wait(0.25);game.Workspace.CurrentCamera.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,10,0),game.Players.LocalPlayer.Character.HumanoidRootPart.Position);
+                wait(0.15);Press("E");
+            end)
+            wait(2.15);
         end
     end);
 
