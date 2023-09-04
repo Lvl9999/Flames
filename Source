@@ -5091,7 +5091,7 @@ if game.PlaceId == Supported.Murim_Cultivation then
     end);
 
     local BackupLabel = BackupPage.AddLabel("[+] Auto Sell + Auto Buy  💰");
-    local BackupToggle = BackupPage.AddToggle("Auto Sell Wheats  🌾", false, function(Value)
+    local BackupToggle = BackupPage.AddToggle("Auto Sell | Wheats  🌾", false, function(Value)
         getgenv().Wheats = Value
         while getgenv().Wheats == true do wait(0.15);
             pcall(function()
@@ -5112,7 +5112,7 @@ if game.PlaceId == Supported.Murim_Cultivation then
         end
     end);
 
-    local BackupToggle = BackupPage.AddToggle("Auto Buy Breads  🍞", false, function(Value)
+    local BackupToggle = BackupPage.AddToggle("Auto Buy | Breads  🍞", false, function(Value)
         getgenv().Breads = Value
         while getgenv().Breads == true do wait(0.15);
             pcall(function()
