@@ -5143,11 +5143,11 @@ if game.PlaceId == Supported.Murim_Cultivation then
     end);
     
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Wheat Buyer  🌾", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6373.4345703125, 356.9999084472656, 4901.759765625);
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4899.9501953125, 22.65610694885254, 3484.287109375);
     end);
 
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Neko Trainer  🐱", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6292.5390625, 259.5467834472656, 4881.75341796875);
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4405.9892578125, 121.64087677001953, 4968.32763671875);
     end);
 
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Dragon Trainer  🐉", function()
@@ -5155,7 +5155,7 @@ if game.PlaceId == Supported.Murim_Cultivation then
     end);
     
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Qi Plam Trainer  ✋", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4405.9892578125, 121.64087677001953, 4968.32763671875);
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6374.7841796875, 356.9998779296875, 4900.77978515625);
     end);
     
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cultivation Zones  ☯");
