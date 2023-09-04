@@ -5048,6 +5048,39 @@ if game.PlaceId == Supported.Murim_Cultivation then
         end
     end);
 
+    local BackupToggle = BackupPage.AddToggle("Auto Detect Realm  🌌", false, function(Value)
+        getgenv().RealmDetector = Value
+
+        while getgenv().RealmDetector == true do
+            pcall(function()
+                local Realm = game:GetService("Players").LocalPlayer.DataValues.Realm.Value
+
+                if Realm == "ThirdRate" or Realm == "SecondRate" or Realm == "FirstRate" then
+                    pcall(function()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4906.640625, -18.97146987915039, 3748.27880859375);
+                    end)
+                elseif Realm == "Peak" or Realm == "Qi Sensing" or Realm == "Qi Guiding" or Realm == "Qi Condensation" then
+                    pcall(function()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5557.62060546875, 70.58281707763672, 3190.236083984375);
+                    end)
+                elseif Relam == "Qi Liquidation" or Realm == "Qi Crystalization" or Realm == "Foundation Establishment" or Realm == "False Core Formation" or Realm == "True Core Formation" then
+                    pcall(function()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6245.00341796875, 240.78892517089844, 4847.04052734375);
+                    end)
+                elseif Realm == "Golden Core Formation" or Realm == "Perfected Core Formation" or Realm == "Soul Awakening" or Realm == "Soul Formation" or Realm == "Nascent Soul" then
+                    pcall(function()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4731.603515625, 70.81939697265625, 6414.9931640625);
+                    end)
+                elseif Realm == "Perfected Soul" or Realm == "Void Enlightenment" or Realm == "Void Shaking" or Realm == "Void Shattering" then
+                    pcall(function()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6349.1337890625, 35.183258056640625, 7660.05126953125);
+                    end)
+                end                
+            end)
+            wait(1.25);
+        end
+    end);
+
     local BackupLabel = BackupPage.AddLabel("[+] Farming   👩🏿‍🌾👴🏻");
     local BackupToggle = BackupPage.AddToggle("Start Farming  |  Wheat   🌾", false, function(Value)
         getgenv().WheatFarming = Value
