@@ -5157,58 +5157,59 @@ if game.PlaceId == Supported.Murim_Cultivation then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4405.9892578125, 121.64087677001953, 4968.32763671875);
     end);
     
-
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Cultivation Zones  ☯");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Lily Pad Pond | 2x [ Req:None ]  🐸", false, function(Value)
         getgenv().TP1 = Value
 
-        while getgenv().TP1 == true do wait(1.25);
+        while getgenv().TP1 == true do
             pcall(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4906.640625, -18.97146987915039, 3748.27880859375);
             end)
+            wait(1.25);
         end
     end);
-
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Small Temple | 5x [ Req:Peak ]  ⛩️", false, function(Value)
         getgenv().TP2 = Value
 
-        while getgenv().TP2 == true do wait(1.25);
+        while getgenv().TP2 == true do
             pcall(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5557.62060546875, 70.58281707763672, 3190.236083984375);
             end)
+            wait(1.25);
         end
     end);
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Cave | 10x [ Req:Liquidation ]  ⛰", false, function(Value)
         getgenv().TP3 = Value
 
-        while getgenv().TP3 == true do wait(1.25);
+        while getgenv().TP3 == true do
             pcall(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6245.00341796875, 240.78892517089844, 4847.04052734375);
             end)
+            wait(1.25);
         end
     end);
-
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Mini Forest Temple |  25x [ Req:Golden Core ]  🦌", false, function(Value)
         getgenv().TP4 = Value
 
-        while getgenv().TP4 == true do wait(1.25);
+        while getgenv().TP4 == true do
             pcall(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4731.603515625, 70.81939697265625, 6414.9931640625);
             end)
+            wait(1.25);
         end
     end);
-
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Big Temple |  50x [ Req:Perfected Soul ]  🏛️", false, function(Value)
         getgenv().TP5 = Value
 
-        while getgenv().TP5 == true do wait(1.25);
+        while getgenv().TP5 == true do
             pcall(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6349.1337890625, 35.183258056640625, 7660.05126953125);
             end)
+            wait(1.25);
         end
     end);
 
