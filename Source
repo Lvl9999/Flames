@@ -5031,7 +5031,7 @@ if game.PlaceId == Supported.Murim_Cultivation then
         end
     end);
 
-    local BackupLabel = BackupPage.AddLabel("[+] Gains   💪");
+    local BackupLabel = BackupPage.AddLabel("[+] Body Gains   💪");
     local BackupToggle = BackupPage.AddToggle("Auto Meditate + Auto Breakthrough   🧘‍♀️✨", false, function(Value)
         getgenv().LimitBreaker = Value
 
@@ -5090,6 +5090,7 @@ if game.PlaceId == Supported.Murim_Cultivation then
         end
     end);
 
+    local BackupLabel = BackupPage.AddLabel("[+] Auto Sell + Auto Buy  💰");
     local BackupToggle = BackupPage.AddToggle("Auto Sell Wheats  🌾", false, function(Value)
         getgenv().Wheats = Value
         while getgenv().Wheats == true do wait(0.15);
