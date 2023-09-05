@@ -35,12 +35,12 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 
 - [Stardust Reborn](https://www.roblox.com/games/9821272782/STW-REWORK-Stardust-Reborn) | 🟢
 
-- [A Universal Time](https://www.roblox.com/games/5130598377/2-7-Ascensions-A-Universal-Time) | 🔵
+- [A Universal Time](https://www.roblox.com/games/5130598377/2-7-Ascensions-A-Universal-Time) | 🟢
 
-- [Murim Cultivation](https://www.roblox.com/games/13645439359/Murim-Cultivation-RE-RELEASE) | 🔵
+- [Murim Cultivation](https://www.roblox.com/games/13645439359/Murim-Cultivation-RE-RELEASE) | 🟢
 
 
-  In Total: 11
+  In Total: 12
 
 ## Main Source:
 
