@@ -5404,7 +5404,6 @@ if game.PlaceId == Supported.Stands_Awakening then
                     "Camera",
                     "Vampire Mask",
                     "Frog",
-                    "Banknote",
                     "Pot Diary",
                     "DIO's Skull",
                     "DIO's Diary",
@@ -5438,6 +5437,160 @@ if game.PlaceId == Supported.Stands_Awakening then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Store  ⚡");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Bone  🦴", false, function(Value)
+        getgenv().SansBone = Value
+
+        while getgenv().SansBone == true do
+            pcall(function()
+                local StoreType = "Bone"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Camera  📸", false, function(Value)
+        getgenv().Camera = Value
+
+        while getgenv().Camera == true do
+            pcall(function()
+                local StoreType = "Camera"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Ice Shard  🧊", false, function(Value)
+        getgenv().IceShard = Value
+
+        while getgenv().IceShard == true do
+            pcall(function()
+                local StoreType = "Ice Shard"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("DIO's Skull  ☠️", false, function(Value)
+        getgenv().DioSkull = Value
+
+        while getgenv().DioSkull == true do
+            pcall(function()
+                local StoreType = "DIO's Skull"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Canny Key  🔑", false, function(Value)
+        getgenv().CannyKey = Value
+
+        while getgenv().CannyKey == true do
+            pcall(function()
+                local StoreType = "Canny Key"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Red Heart  ❤️", false, function(Value)
+        getgenv().CauseEverytimeWeTouch = Value
+
+        while getgenv().CauseEverytimeWeTouch == true do
+            pcall(function()
+                local StoreType = "Red Heart"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Pot Diary  📖", false, function(Value)
+        getgenv().PotDiary = Value
+
+        while getgenv().PotDiary == true do
+            pcall(function()
+                local StoreType = "Pot Diary"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Hell Arrow  🔥", false, function(Value)
         getgenv().HellArrow = Value
 
@@ -5460,8 +5613,8 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stand Farmer  😎");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Rokakaka 🍎 + Arrow 🎯", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stand Farmer  🎊");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("[ Rokakaka 🍎 + Arrow 🎯 ]", false, function(Value)
         getgenv().ArrowRoka = Value
 
         if getgenv().ArrowRoka == true then
