@@ -113,10 +113,11 @@ local Supported = {
     Stardust_Reborn = 9821272782, -- Stardust Reborn (Main)
     A_Universal_Time = 6846458508, -- A Universal Time (Main)
     Murim_Cultivation = 13645439359, -- Murim Cultivation (Main)
+    Stands_Awakening = 5780309044, -- Stands Awakening (Main)
 }
 
 --// Unsupported Game Result \\--
-if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Heaven_StandFakeGame and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn  and  game.PlaceId ~= Supported.A_Universal_Time and game.PlaceId ~= Supported.Murim_Cultivation then
+if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Heaven_StandFakeGame and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn  and  game.PlaceId ~= Supported.A_Universal_Time and game.PlaceId ~= Supported.Murim_Cultivation and game.PlaceId ~= Supported.Stands_Awakening then
     Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
     return
 end
@@ -3503,7 +3504,7 @@ if game.PlaceId == Supported.Stand_Upright_Rebooted then
 
 end
 
---// 🟢 AUT:OldUniverse \\-- [Lazy to continue, But enjoy what it has
+--// 🟢 AUT:OldUniverse \\-- [Lazy to continue, But enjoy what it has]
 if game.PlaceId == Supported.AUT_OldUniverse then
     task.spawn(function()
         wait(3);
@@ -3675,8 +3676,6 @@ if game.PlaceId == Supported.AUT_OldUniverse then
             end
         end
     end)
-
-
 end
 
 --// 🟢 Sakura Stand \\--
@@ -4647,8 +4646,6 @@ if game.PlaceId == Supported.Sakura_Stand then
     local BackupEndButton = BackupEndPage.AddButton("Hikarishi | Quest", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-508.49334716796875, -32.792144775390625, 1508.5386962890625);
     end);
-
--- More to come!
 end
 
 --// 🟢 Ragdoll Engine \\--
@@ -4725,7 +4722,6 @@ if game.PlaceId == Supported.Ragdoll_Engine then
             end)
         end
     end);
-
 end
 
 --// 🟢 Stardust Reborn \\--
@@ -4864,15 +4860,6 @@ if game.PlaceId == Supported.Stardust_Reborn then
             Notif:Notification("Flame's Hub 🔥", "Sorry... But you cant", "GothamSemibold", "Gotham", 1);wait()Notif:Notification("Flame's Hub 🔥", "I love goku >:(", "GothamSemibold", "Gotham", 1);
         end
     end);
-
---[[
-    local SecondLabel = SecondPage.AddLabel("[+] Undetermined  🟠");
-    local SecondToggle = SecondPage.AddToggle("Soon?  🟠", false, function(Value)
-        
-    end);
---]]
-
-    -- More yet to come
 end
 
 --// 🟢 A Universal Time \\--
@@ -4971,6 +4958,7 @@ if game.PlaceId == Supported.A_Universal_Time then
         end)
     end);
 
+    -- More yet to come (Probably)~
 end
 
 --// 🟢 Murim Cultivation \\--
@@ -5221,8 +5209,221 @@ if game.PlaceId == Supported.Murim_Cultivation then
         end
     end);
 
-
     -- Soon!~
+end
+
+--// 🟢 Stands Awakening \\--
+if game.PlaceId == Supported.Stands_Awakening then
+    task.spawn(function()
+        wait(3);
+        Notif:Notification("Game Detected ⚠️", "Stands Awakening  🔥", "GothamSemibold", "Gotham", 2.5);
+    end)
+
+    --// Main Pages \\--
+    local SecondPage = MainUI.AddPage("Shoping");
+    local BackupPage = MainUI.AddPage("Storage");
+    local SecondAndHalfPage = MainUI.AddPage("Farming");
+    local ThirdPage = MainUI.AddPage("Teleports");
+    local FourthPage = MainUI.AddPage("Soon | 5");
+
+    local SecondLabel = SecondPage.AddLabel("[+] Shop 🏪");
+    local SecondButton = SecondPage.AddButton("Arrow 🎯 [500 ¥]", function()
+        local args = {[1] = "Arrow"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Purchase"):FireServer(unpack(args));     
+    end);
+
+    local SecondButton = SecondPage.AddButton("Rokakaka 🍎 [250 ¥]", function()
+        local args = {[1] = "Rokakaka Fruit"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Purchase"):FireServer(unpack(args));
+    end);
+
+    local SecondButton = SecondPage.AddButton("Sword ⚔️ [13,500 ¥]", function()
+        local args = {[1] = "Sword"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Purchase"):FireServer(unpack(args));     
+    end);
+
+    local SecondButton = SecondPage.AddButton("Shiny Sword 🌟 [100,000 ¥]", function()
+        local args = {[1] = "Shiny Sword"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Purchase"):FireServer(unpack(args));     
+    end);
+
+    local SecondButton = SecondPage.AddButton("Hamon 🕯️ [50,000 ¥]", function()
+        local args = {[1] = "Hamon"};
+        game:GetService("ReplicatedStorage"):WaitForChild("Purchase"):FireServer(unpack(args));     
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage  🗃️");
+    local BackupButton = BackupPage.AddButton("Open | Stand Storage", function()
+        for i,v in pairs(workspace.Map.Timmy:GetDescendants()) do
+            if v:IsA("ClickDetector") then
+                fireclickdetector(v);
+            end
+        end
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 1");
+    local BackupButton = BackupPage.AddButton("Storage  📦 | Slot 1", function()
+        local args = {[1] = "Slot1",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw  ♻️ | Slot 1", function()
+        local args = {[1] = "Slot1",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 2");
+    local BackupButton = BackupPage.AddButton("Storage  📦 | Slot 2", function()
+        local args = {[1] = "Slot2",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw  ♻️ | Slot 2", function()
+        local args = {[1] = "Slot2",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 3");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 3", function()
+        local args = {[1] = "Slot3",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 3", function()
+        local args = {[1] = "Slot3",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 4");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 4", function()
+        local args = {[1] = "Slot4",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 4", function()
+        local args = {[1] = "Slot4",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 5");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 5", function()
+        local args = {[1] = "Slot5",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 5", function()
+        local args = {[1] = "Slot5",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 6");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 6", function()
+        local args = {[1] = "Slot6",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 6", function()
+        local args = {[1] = "Slot6",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 7");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 7", function()
+        local args = {[1] = "Slot7",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 7", function()
+        local args = {[1] = "Slot7",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 8");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 8", function()
+        local args = {[1] = "Slot8",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 8", function()
+        local args = {[1] = "Slot8",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 9");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 9", function()
+        local args = {[1] = "Slot9",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 9", function()
+        local args = {[1] = "Slot9",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupLabel = BackupPage.AddLabel("[+] Stand Storage | 10");
+    local BackupButton = BackupPage.AddButton("Storage 📦 | Slot 10", function()
+        local args = {[1] = "Slot10",[2] = false};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local BackupButton = BackupPage.AddButton("Withdraw ♻️ | Slot 10", function()
+        local args = {[1] = "Slot10",[2] = true};
+        game:GetService("ReplicatedStorage"):WaitForChild("StandStorage"):FireServer(unpack(args));
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Areas 🗺️");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddButton("Farming Area  👨🏿‍🌾", function()
+        for i = 1,5 do wait(0.01);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-284.17254638671875, 543.6371765136719, -1485.3123779296875);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddButton("Safe Zone  🦺", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(897.5128173828125, 680.41259765625, -634.6746215820312);
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  ✨");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
+        getgenv().GrindingLikeHell = Value
+
+        while getgenv().GrindingLikeHell == true do 
+            pcall(function()
+                local Paths = {
+                    "Requiem Arrow",
+                    "Arrow",
+                    "Hell Arrow",
+                    "Rokakaka Fruit",
+                    "Camera",
+                    "Vampire Mask",
+                    "Frog",
+                    "Banknote",
+                    "Pot Diary",
+                    "DIO's Skull",
+                    "DIO's Diary",
+                    "True Requiem Arrow",
+                    "Volcanic Rock",
+                    "Ornstein's Spear",
+                    "Ender Pearl",
+                    "Toxic Chemicals",
+                    "Aja Mask",
+                    "Samurai Diary",
+                    -- There are probably more which I will add soon~
+                }
+                
+                for i,k in pairs(Paths) do
+                    if workspace:FindFirstChild(k) and workspace:FindFirstChild(k):FindFirstChild("Handle") then
+                        for i,v in pairs(workspace:FindFirstChild(k).Handle:GetChildren()) do
+                            if v.Name == "TouchInterest" then
+                                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1)
+                            end
+                        end
+                    end
+                end
+            end)
+            wait(0.15);
+        end
+    end);
+
 end
 
 local Settings = MainUI.AddPage("Settings");
@@ -5236,7 +5437,6 @@ local SettingsToggle = Settings.AddToggle("Fps Booster  📈", true, function(Va
         setfpscap(60);
     end
 end)
-
 
 local SettingsButton = Settings.AddButton("Restart Flame's Hub  🔥", function()
     --// Flame's Hub 🔥\\--
@@ -5292,7 +5492,6 @@ local SettingsButton = Settings.AddButton("Server Hop", function()
        Next = Servers.nextPageCursor
     until not Next
 end);
-
 
 local SettingsButton = Settings.AddButton("Low Server Hop", function()
     task.spawn(function()
