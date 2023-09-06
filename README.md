@@ -38,6 +38,8 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 - [A Universal Time](https://www.roblox.com/games/5130598377/2-7-Ascensions-A-Universal-Time) | 🟢
 
 - [Murim Cultivation](https://www.roblox.com/games/13645439359/Murim-Cultivation-RE-RELEASE) | 🟢
+  
+- [Stands Awakening](https://www.roblox.com/games/5780309044/TCaU-Stands-Awakening) | 🔵
 
 
   In Total: 12
