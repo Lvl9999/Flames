@@ -5420,7 +5420,42 @@ if game.PlaceId == Supported.Stands_Awakening then
                     end
                 end
             end)
-            wait(0.15);
+            wait(2.15);
+        end
+    end);
+
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stand Farmer  😎");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 1", {
+        "GoldExperience",
+        "CrazyDiamond",
+
+    
+    },
+    function(StandFarmer1)
+        getgenv().StandFarmer1 = StandFarmer1
+    end)
+   
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming", false, function(Value)
+        getgenv().ActuallyFarming = Value
+    
+        while getgenv().ActuallyFarming == true do
+            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Standless") then
+                pcall(function()
+                -- game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"));
+                wait(0.1);
+                -- game:GetService("ReplicatedStorage"):WaitForChild("ItemEvents"):WaitForChild("Arrow"):FireServer();
+                end)
+            elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer1) then
+                Notif:Notification("Flame's Hub 🔥", "You got something 🥳🎉🎊", "GothamSemibold", "Gotham", 9e9)
+                break
+            else
+                pcall(function()
+                -- game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit"));
+                wait(0.1);
+                --  game:GetService("ReplicatedStorage"):WaitForChild("ItemEvents"):WaitForChild("Roka"):FireServer();
+                end)
+            end
+            wait(1.15);
         end
     end);
 
