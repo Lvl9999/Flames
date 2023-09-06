@@ -42,7 +42,7 @@ Operational = 🟢 | Unoperational = 🔴 | In Maintenance = 🟠 | In Progress 
 - [Stands Awakening](https://www.roblox.com/games/5780309044/TCaU-Stands-Awakening) | 🔵
 
 
-  In Total: 12
+  In Total: 13
 
 ## Main Source:
 
