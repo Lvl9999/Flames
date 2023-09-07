@@ -5377,16 +5377,24 @@ if game.PlaceId == Supported.Stands_Awakening then
 
         while getgenv().CashingIn == true do
             pcall(function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace["Banknote"].Handle.Position);
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Banknote"));
+                wait(0.1);
+                game:GetService("Players").LocalPlayer.Character:FindFirstChild("Banknote"):Activate();
+                wait(0.25);
+                for i,v in pairs(workspace["Banknote"].Handle:GetChildren()) do 
+                    if v.Name == "TouchInterest" then
+                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1);
+                    end
+                end
                 wait(0.15)
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Banknote"));
-                wait(0.25);
+                wait(0.15);
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Banknote"):Activate();
+                wait(1.15);
             end)
             wait(1.15);
         end
     end);
-
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  ✨");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().GrindingLikeHell = Value
