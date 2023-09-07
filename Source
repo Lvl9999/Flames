@@ -5377,16 +5377,11 @@ if game.PlaceId == Supported.Stands_Awakening then
 
         while getgenv().CashingIn == true do
             pcall(function()
-                for i,v in pairs(workspace["Banknote"].Handle:GetChildren()) do 
-                    if v.Name == "TouchInterest" then
-                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1);
-                    end
-                end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace["Banknote"].Handle.Position);
                 wait(0.15)
                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Banknote"));
-                wait(0.15);
+                wait(0.25);
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Banknote"):Activate();
-                wait(1.15);
             end)
             wait(1.15);
         end
@@ -5433,15 +5428,11 @@ if game.PlaceId == Supported.Stands_Awakening then
                 
                 for i,k in pairs(Paths) do
                     if workspace:FindFirstChild(k) and workspace:FindFirstChild(k):FindFirstChild("Handle") then
-                        for i,v in pairs(workspace:FindFirstChild(k).Handle:GetChildren()) do
-                            if v.Name == "TouchInterest" then
-                                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1)
-                            end
-                        end
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild(k).Handle.CFrame
                     end
                 end
             end)
-            wait(3.15);
+            wait(1.15);
         end
     end);
 
@@ -5643,28 +5634,6 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Blue Heart  💙", false, function(Value)
-        getgenv().CauseEverytimeWeTouch = Value
-
-        while getgenv().CauseEverytimeWeTouch == true do
-            pcall(function()
-                local StoreType = "Red Heart"
-
-                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
-                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
-                    wait(0.1);
-                    for i = 1,16 do
-                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
-                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
-                    end
-                else
-                    return
-                end
-            end)
-            wait(1);
-        end
-    end);
-
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Pot's Diary  📖", false, function(Value)
         getgenv().PotDiary = Value
 
@@ -5687,51 +5656,20 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stand Farmer  🎊");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("[ Rokakaka 🍎 + Arrow 🎯 ]", false, function(Value)
-        getgenv().ArrowRoka = Value
-
-        if getgenv().ArrowRoka == true then
-            if not getgenv().AlreadyRan == true then
-                getgenv().AlreadyRan = true
-                for i = 1,5 do wait(0.01);
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-284.17254638671875, 543.6371765136719, -1485.3123779296875);
-                end
-            end
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stand Farmer  🎊  [Fixing Later~]");
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("[ Teleport Farming Area  👨🏿‍🌾 ]", function()
+        for i = 1,5 do wait(0.01);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-284.17254638671875, 543.6371765136719, -1485.3123779296875);
         end
-
-        task.spawn(function()
-            while getgenv().ArrowRoka == true do 
-                pcall(function()
-                    local Paths = {
-                        workspace["Arrow"].Handle,
-                        workspace["Rokakaka Fruit"].Handle
-                    }
-
-                    for i,k in pairs(Paths) do
-                        for i,v in pairs(k:GetChildren()) do 
-                            if v.Name == "TouchInterest" then
-                                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1)
-                            end
-                        end
-                    end
-                end)
-                wait(1.15);
-            end
-        end)
     end);
 
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("How to use ⁉️ (Open f9 console)", function()
         warn("---HOW TO USE---")
-        print("1. Turn on 'Rokakaka 🍎 + Arrow 🎯' feature.")
-        print("2. Wait (The most tools, The better.")
-        print("3. Come back here choose stands you want from the dropdown")
-        warn("---IMPORTANT---")
-        print("Incase you want a few stands (Only 1 - 5)")
-        print("then select the things you want and then fill the rest of the dropdown with 1 type of the stand you wanted")
-        print("(Cause theres a bug)")
+        print("Press on 'Teleport Farming Area'")
+        print("Then Select stands you wanna farm for")
+        print("If you wanna farm for few. Then fill the rest with 'Select This For Nothing'")
     end);
-
+--[[
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 1", {
         "Anubis",
         "CreeperQueen",
@@ -5852,126 +5790,6 @@ if game.PlaceId == Supported.Stands_Awakening then
         getgenv().StandFarmer5 = StandFarmer5
     end)
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 6", {
-        "Anubis",
-        "CreeperQueen",
-        "D4C",
-        "DoppioKingCrimson",
-        "HierophantGreen",
-        "KillerQueen",
-        "KingCrimsonAU",
-        "OneMoreTime",
-        "SoftAndWet",
-        "StarPlatinum",
-        "StarPlatinumOVA",
-        "TheWorld",
-        "TheWorldAlternateUniverse",
-        "TheWorldOVA",
-        "WhiteSnakeAlternateUniverseStand",
-        "Whitesnake",
-        "--------------",
-
-    },
-    function(StandFarmer6)
-        getgenv().StandFarmer6 = StandFarmer6
-    end)
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 7", {
-        "Anubis",
-        "CreeperQueen",
-        "D4C",
-        "DoppioKingCrimson",
-        "HierophantGreen",
-        "KillerQueen",
-        "KingCrimsonAU",
-        "OneMoreTime",
-        "SoftAndWet",
-        "StarPlatinum",
-        "StarPlatinumOVA",
-        "TheWorld",
-        "TheWorldAlternateUniverse",
-        "TheWorldOVA",
-        "WhiteSnakeAlternateUniverseStand",
-        "Whitesnake",
-        "--------------",
-
-    },
-    function(StandFarmer7)
-        getgenv().StandFarmer7 = StandFarmer7
-    end)
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 8", {
-        "Anubis",
-        "CreeperQueen",
-        "D4C",
-        "DoppioKingCrimson",
-        "HierophantGreen",
-        "KillerQueen",
-        "KingCrimsonAU",
-        "OneMoreTime",
-        "SoftAndWet",
-        "StarPlatinum",
-        "StarPlatinumOVA",
-        "TheWorld",
-        "TheWorldAlternateUniverse",
-        "TheWorldOVA",
-        "WhiteSnakeAlternateUniverseStand",
-        "Whitesnake",
-        "--------------",
-
-    },
-    function(StandFarmer8)
-        getgenv().StandFarmer8 = StandFarmer8
-    end)
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 9", {
-        "Anubis",
-        "CreeperQueen",
-        "D4C",
-        "DoppioKingCrimson",
-        "HierophantGreen",
-        "KillerQueen",
-        "KingCrimsonAU",
-        "OneMoreTime",
-        "SoftAndWet",
-        "StarPlatinum",
-        "StarPlatinumOVA",
-        "TheWorld",
-        "TheWorldAlternateUniverse",
-        "TheWorldOVA",
-        "WhiteSnakeAlternateUniverseStand",
-        "Whitesnake",
-        "--------------",
-
-    },
-    function(StandFarmer9)
-        getgenv().StandFarmer9 = StandFarmer9
-    end)
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 10", {
-        "Anubis",
-        "CreeperQueen",
-        "D4C",
-        "DoppioKingCrimson",
-        "HierophantGreen",
-        "KillerQueen",
-        "KingCrimsonAU",
-        "OneMoreTime",
-        "SoftAndWet",
-        "StarPlatinum",
-        "StarPlatinumOVA",
-        "TheWorld",
-        "TheWorldAlternateUniverse",
-        "TheWorldOVA",
-        "WhiteSnakeAlternateUniverseStand",
-        "Whitesnake",
-        "--------------",
-
-    },
-    function(StandFarmer10)
-        getgenv().StandFarmer10 = StandFarmer10
-    end)
-
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming", false, function(Value)
         getgenv().ActuallyFarming = Value
     
@@ -6006,7 +5824,7 @@ if game.PlaceId == Supported.Stands_Awakening then
             wait(1.15);
         end
     end);
-
+--]]
 
     local FourthLabel = FourthPage.AddLabel("[+] Server Crasher  💀");
     local FourthButton = FourthPage.AddButton("How to use ⁉️ (Open f9 console)", function()
