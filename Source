@@ -5404,8 +5404,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                     "Camera",
                     "Vampire Mask",
                     "Frog",
-                    "Pot Diary",
-                    "DIO's Skull",
+                    "Pot Platinum's Diary",
                     "DIO's Diary",
                     "True Requiem Arrow",
                     "Volcanic Rock",
@@ -5417,8 +5416,14 @@ if game.PlaceId == Supported.Stands_Awakening then
                     "Uncanny Key",
                     "Canny Key",
                     "Red Heart",
+                    "Blue Heart",
                     "Bone",
                     "Ice Shard",
+                    "Scythe",
+                    "Pot Platinum's Diary",
+                    "DIO's Skull 2",
+                    "Alien",
+                    "robin",
                     -- There are probably more which I will add soon~
                 }
                 
@@ -5443,6 +5448,28 @@ if game.PlaceId == Supported.Stands_Awakening then
         while getgenv().SansBone == true do
             pcall(function()
                 local StoreType = "Bone"
+
+                if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
+                    game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
+                    wait(0.1);
+                    for i = 1,10 do
+                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
+                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                    end
+                else
+                    return
+                end
+            end)
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Scythe 🔪", false, function(Value)
+        getgenv().ScytheLol = Value
+
+        while getgenv().ScytheLol == true do
+            pcall(function()
+                local StoreType = "Scythe"
 
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
@@ -5508,7 +5535,7 @@ if game.PlaceId == Supported.Stands_Awakening then
 
         while getgenv().DioSkull == true do
             pcall(function()
-                local StoreType = "DIO's Skull"
+                local StoreType = "DIO's Skull 2"
 
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
@@ -5569,12 +5596,12 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Pot Diary  📖", false, function(Value)
-        getgenv().PotDiary = Value
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Blue Heart  💙", false, function(Value)
+        getgenv().CauseEverytimeWeTouch = Value
 
-        while getgenv().PotDiary == true do
+        while getgenv().CauseEverytimeWeTouch == true do
             pcall(function()
-                local StoreType = "Pot Diary"
+                local StoreType = "Red Heart"
 
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
@@ -5591,12 +5618,12 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Hell Arrow  🔥", false, function(Value)
-        getgenv().HellArrow = Value
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Pot Diary  📖", false, function(Value)
+        getgenv().PotDiary = Value
 
-        while getgenv().HellArrow == true do
+        while getgenv().PotDiary == true do
             pcall(function()
-                local StoreType = "Hell Arrow"
+                local StoreType = "Pot Platinum's Diary"
 
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
