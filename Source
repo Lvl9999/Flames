@@ -5496,7 +5496,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
                     wait(0.1);
-                    for i = 1,10 do
+                    for i = 1,16 do
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
@@ -5518,7 +5518,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
                     wait(0.1);
-                    for i = 1,10 do
+                    for i = 1,16 do
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
@@ -5540,7 +5540,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
                     wait(0.1);
-                    for i = 1,10 do
+                    for i = 1,16 do
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
@@ -5558,16 +5558,59 @@ if game.PlaceId == Supported.Stands_Awakening then
         while getgenv().CannyKey == true do
             pcall(function()
                 local StoreType = "Canny Key"
-
+            
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
-                    wait(0.1);
-                    for i = 1,10 do
-                        local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
-                        game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
-                    end
-                else
-                    return
+                wait(0.1);
+                if game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["1"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot1",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["2"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot2",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["3"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot3",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["4"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot4",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["5"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot5",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["6"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot6",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["7"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot7",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["8"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot8",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["9"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot9",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["10"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot10",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["11"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot11",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["12"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot12",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["13"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot13",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                end
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["14"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot14",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["15"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot15",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
+                elseif game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["16"].ItemName.Value == "Nothing" then
+                    local args = {[1] = "Slot16",[2] = false,[3] = false};
+                    game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                 end
             end)
             wait(1);
@@ -5584,7 +5627,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
                     wait(0.1);
-                    for i = 1,10 do
+                    for i = 1,16 do
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
@@ -5606,7 +5649,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
                     wait(0.1);
-                    for i = 1,10 do
+                    for i = 1,16 do
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
@@ -5628,7 +5671,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
                     wait(0.1);
-                    for i = 1,10 do
+                    for i = 1,16 do
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
