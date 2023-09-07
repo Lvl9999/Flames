@@ -5618,7 +5618,7 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Pot Diary  📖", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Pot's Diary  📖", false, function(Value)
         getgenv().PotDiary = Value
 
         while getgenv().PotDiary == true do
