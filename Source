@@ -5993,14 +5993,51 @@ if game.PlaceId == Supported.Stands_Awakening then
     end);
 
 
-    local FourthLabel = FourthPage.AddLabel("[+] Hakai  💀");
+    local FourthLabel = FourthPage.AddLabel("[+] Server Crasher  💀");
     local FourthButton = FourthPage.AddButton("How to use ⁉️ (Open f9 console)", function()
         warn("---HOW TO USE---")
-        print("1. Goto 'Farming' Section.")
-        print("2. Turn on Rokakaka + Arrow Item farm.")
-        print("3. Wait (The most tools, The faster the crash.")
-        print("4. Come back here and activate 'Eror 266'")
-        print("5. Server will be gone within 3+ minutes")
+        print("1. Turn on 'Pick Tools' feature.")
+        print("2. Wait (The most tools, The faster the crash.")
+        print("3. Come back here and activate 'Eror 266'")
+        print("4. Server will be gone within 3+ minutes")
+    end);
+
+    local FourthToggle = FourthPage.AddToggle("Pick Tools (For Crash)", false, function(Value)
+        getgenv().DoingHakai = Value
+
+        while getgenv().DoingHakai == true do wait(0.015);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279.4271545410156, 462.6766357421875, -1512.7794189453125);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-287.15899658203125, 463.3305969238281, -1515.7135009765625);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-294.2677001953125, 462.6967468261719, -1519.5946044921875);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-301.2286682128906, 462.6967468261719, -1523.4874267578125);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-308.3722839355469, 462.69683837890625, -1526.852294921875);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-314.42474365234375, 462.6967468261719, -1530.8121337890625);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-322.0000915527344, 462.6967468261719, -1534.1507568359375);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-328.6918029785156, 462.6967468261719, -1538.6800537109375);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-353.2288818359375, 462.6967468261719, -1492.922607421875);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-345.3491516113281, 462.6967468261719, -1490.059814453125);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-338.1710510253906, 462.6967468261719, -1485.756103515625);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-330.9267883300781, 462.6967468261719, -1481.23486328125);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-324.2834167480469, 462.6967468261719, -1477.9805908203125);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-317.2073974609375, 462.6967468261719, -1474.2542724609375);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-310.2513122558594, 463.80450439453125, -1470.391357421875);
+            wait(0.1);
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-302.9306945800781, 462.6966857910156, -1466.54052734375);
+        end
     end);
 
     local FourthToggle = FourthPage.AddToggle("Crash Server | Error 266  💀", false, function(Value)
@@ -6021,8 +6058,6 @@ if game.PlaceId == Supported.Stands_Awakening then
             Press("One");
         end
     end);
-
-
 
 end
 
