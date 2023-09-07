@@ -5422,7 +5422,11 @@ if game.PlaceId == Supported.Stands_Awakening then
                     "Scythe",
                     "Pot Platinum's Diary",
                     "DIO's Skull 2",
+                    "Uncanny Pumpkin",
+                    "Solar Diary",
+                    "Solar Diary",
                     "Alien",
+                    "Valentine's Day Diary",
                     "robin",
                     -- There are probably more which I will add soon~
                 }
