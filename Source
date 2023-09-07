@@ -5561,7 +5561,7 @@ if game.PlaceId == Supported.Stands_Awakening then
             
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType) then
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(StoreType));
-                wait(0.1);
+                wait(0.25);
                 if game:GetService("Players").LocalPlayer.PlayerGui.BankNEW.Right.ImageLabel.ItemSlots.Slots["1"].ItemName.Value == "Nothing" then
                     local args = {[1] = "Slot1",[2] = false,[3] = false};
                     game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
