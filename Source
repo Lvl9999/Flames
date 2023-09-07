@@ -5721,6 +5721,17 @@ if game.PlaceId == Supported.Stands_Awakening then
         end)
     end);
 
+    local SecondAndHalfButton = SecondAndHalfPage.AddButton("How to use ⁉️ (Open f9 console)", function()
+        warn("---HOW TO USE---")
+        print("1. Turn on 'Rokakaka 🍎 + Arrow 🎯' feature.")
+        print("2. Wait (The most tools, The better.")
+        print("3. Come back here choose stands you want from the dropdown")
+        warn("---IMPORTANT---")
+        print("Incase you want a few stands (Only 1 - 5)")
+        print("then select the things you want and then fill the rest of the dropdown with 1 type of the stand you wanted")
+        print("(Cause theres a bug)")
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 1", {
         "Anubis",
         "CreeperQueen",
