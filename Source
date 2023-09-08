@@ -5284,7 +5284,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                     end
                 end
             end)
-            wait(3.5);
+            wait(0.5);
         end
     end);
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  ✨");
