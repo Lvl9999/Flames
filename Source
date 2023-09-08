@@ -5271,14 +5271,12 @@ if game.PlaceId == Supported.Stands_Awakening then
             }
             
             pcall(function()
-                for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+                for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
                     if v:IsA("Tool") and table.find(Paths, v.Name) then
                         game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(v);
                         game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Banknote"));
                         wait(0.1);
                         game:GetService("Players").LocalPlayer.Character:FindFirstChild("Banknote"):Activate();
-                        wait(0.25);
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace["Banknote"].Handle.Position);
                         wait(0.15)
                         game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Banknote"));
                         wait(0.15);
@@ -5286,7 +5284,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                     end
                 end
             end)
-            wait(0.5);
+            wait(3.5);
         end
     end);
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  ✨");
@@ -5327,13 +5325,13 @@ if game.PlaceId == Supported.Stands_Awakening then
             }
             
             pcall(function()
-                for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+                for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
                     if v:IsA("Tool") and table.find(Paths, v.Name) then
                         game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(v);
                     end
                 end
             end)
-            wait(1.15);
+            wait(3.15);
         end
     end);
 
@@ -5771,7 +5769,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                     "Rokakaka Fruit",
                 }
                 
-            for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+            for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
                 if v:IsA("Tool") and table.find(Paths, v.Name) then
                     game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(v);
                 end
