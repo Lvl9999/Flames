@@ -3692,7 +3692,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end)
 
     task.spawn(function()
-        wait(3.5);
+        wait(2.5);
         local vim = game:GetService('VirtualInputManager');
         local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
         
