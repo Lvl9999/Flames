@@ -4269,14 +4269,15 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming [Be standless]", false, function(Value)
         getgenv().AFO = Value
 
-        while getgenv().AFO == true do wait(1)
+        while getgenv().AFO == true do
             pcall(function()
-                for i,v in pairs(workspace.Map.NPCs.AFO:GetDescendants()) do
+                for i,v in pairs(workspace.Map.NPCs.AFO:GetChildren()) do
                     if v:IsA("ClickDetector") then
                         fireclickdetector(v);
                     end
                 end
             end)
+            wait(1)
         end
     end);
 
@@ -4288,10 +4289,10 @@ if game.PlaceId == Supported.Sakura_Stand then
                 if game:GetService("Players").LocalPlayer.Data.StandName.Value == "One For All [Stage 1]" then
                     for i = 1,25 do
                         if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot"..i].Text.Text == "Standless" then
-                            game:GetService("ReplicatedStorage").StorageRemote["Slot"..i]:FireServer()
+                            game:GetService("ReplicatedStorage").StorageRemote["Slot"..i]:FireServer();
                         else
-                            local args = {"Slot"..i}
-                            game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args))
+                            local args = {"Slot"..i};
+                            game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
                         end
                     end
                 end
