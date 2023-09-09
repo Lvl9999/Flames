@@ -4196,6 +4196,18 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto One For All  🦸");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy Storage [3,000 - 35,000 ¥]", false, function(Value)
+        getgenv().AutoBuyStorage = Value
+
+        while getgenv().AutoBuyStorage == true do
+            pcall(function()
+                local args = {[1] = false};
+                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("MoreStoragePurchase"):FireServer(unpack(args));             
+            end)
+            wait(1);
+        end
+    end);
+
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming [Be standless]", false, function(Value)
         getgenv().AFO = Value
 
