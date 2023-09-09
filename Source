@@ -4553,6 +4553,29 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Izuku Midoriya  💀", false, function(Value)
+        getgenv().BossingMidoriya = Value
+
+        while getgenv().BossingMidoriya == true do wait(0.015)
+            pcall(function()
+                if workspace.Living:FindFirstChild("Deku") and workspace.Living:FindFirstChild("Deku"):FindFirstChild("HumanoidRootPart") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector *7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * 7));
+                    task.spawn(function()
+                        pcall(function()
+                            getgenv().Press = function(v) -- bruh 2
+                                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                            end
+                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                            game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                        end)
+                    end)
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Deku not found", "GothamSemibold", "Gotham", 3);
+                end
+            end)
+        end     
+    end);
+
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Toji Fushiguro  💀", false, function(Value)
         getgenv().BossingToji = Value
 
