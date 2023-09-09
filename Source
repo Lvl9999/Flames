@@ -4281,7 +4281,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Store it [Be standless]", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Store it", false, function(Value)
         getgenv().AutoAFOStore = Value
 
         while getgenv().AutoAFOStore == true do
