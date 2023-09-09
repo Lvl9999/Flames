@@ -3918,7 +3918,12 @@ if game.PlaceId == Supported.Sakura_Stand then
 
         while getgenv().Refreshss == true do
             pcall(function()
-                Teleport(9e9,9e9,9e9);
+                if getgenv().AFO or getgenv().AFO == true then
+                        Notif:Notification("Flame's Hub 🔥", "Not good for OFA.", "GothamSemibold", "Gotham", 2.5);
+                    return
+                else
+                    Teleport(9e9,9e9,9e9);
+                end
             end)
             wait(15);
         end
