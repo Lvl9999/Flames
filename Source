@@ -3685,6 +3685,23 @@ if game.PlaceId == Supported.Sakura_Stand then
         Notif:Notification("Game Detected ⚠️", "Sakura Stand  🔥", "GothamSemibold", "Gotham", 2.5);
     end)
 
+    task.spawn(function()
+        for i = 1,35 do
+            local vim = game:GetService('VirtualInputManager')
+            local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
+            
+            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
+            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
+            
+            local vim = game:GetService('VirtualInputManager')
+            local x = game:GetService('Players').LocalPlayer.PlayerGui.FrontMenu.Play
+            
+            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
+            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
+            wait(1);
+        end
+    end)
+
     --// Main Pages \\--
     local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
