@@ -3683,11 +3683,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Sakura Stand  🔥", "GothamSemibold", "Gotham", 2.5);
-    end)
-
-    --// Skip Assets \\--
-    task.spawn(function()
-        wait(1.5);
+        wait(0.5);
         local vim = game:GetService('VirtualInputManager');
         local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
         
