@@ -3686,20 +3686,22 @@ if game.PlaceId == Supported.Sakura_Stand then
     end)
 
     task.spawn(function()
-        for i = 1,35 do
-            local vim = game:GetService('VirtualInputManager')
-            local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
-            
-            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
-            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
-            
-            local vim = game:GetService('VirtualInputManager')
-            local x = game:GetService('Players').LocalPlayer.PlayerGui.FrontMenu.Play
-            
-            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
-            vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
-            wait(1);
-        end
+        pcall(function()
+            for i = 1,35 do
+                local vim = game:GetService('VirtualInputManager')
+                local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
+                
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
+                
+                local vim = game:GetService('VirtualInputManager')
+                local x = game:GetService('Players').LocalPlayer.PlayerGui.FrontMenu.Play
+                
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
+                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
+                wait(1);
+            end       
+        end)
     end)
 
     --// Main Pages \\--
@@ -3798,7 +3800,6 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀", function()
         local Tog = true
 
@@ -3825,84 +3826,6 @@ if game.PlaceId == Supported.Sakura_Stand then
             end
         end)
     end);
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Breakthrough Points  🅱️🅿️");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("50,000$ Cash capacity+  💵", false, function(Value)
-        getgenv().Cashss = Value
-
-        local notifications1 = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
-        notifications1:notify{
-            Title = "Warning!",
-            Description = "Are you sure you want to enable this feature? | 1",
-            Accept = {
-            Text = "Yes",
-                Callback = function()
-                    while getgenv().Cashss == true do wait(1.25)
-                        pcall(function()
-                            local args = {[1] = "Cash"};
-                            game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
-                        end)
-                    end
-                end,
-            },
-            Dismiss = {
-                Text = "No",
-                Callback = function()
-                end,
-            }
-        }
-    end)
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("1 Stand Storage Slot+  📦", false, function(Value)
-        getgenv().Standsss = Value
-
-        local notifications2 = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
-        notifications2:notify{
-            Title = "Warning!",
-            Description = "Are you sure you want to enable this feature? | 2",
-            Accept = {
-            Text = "Yes",
-                Callback = function()
-                    while getgenv().Standsss == true do wait(1.25)
-                        pcall(function()
-                            local args = {[1] = "Storage"};
-                            game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
-                        end)
-                    end
-                end,
-            },
-            Dismiss = {
-                Text = "No",
-                Callback = function()
-                end,
-            }
-        }
-    end)
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("5 Bags of Presents+  🎁", false, function(Value)
-        getgenv().Bagss = Value
-        local notifications3 = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"),true))()
-        notifications3:notify{
-            Title = "Warning!",
-            Description = "Are you sure you want to enable this feature? | 3",
-            Accept = {
-            Text = "Yes",
-                Callback = function()
-                    while getgenv().Bagss == true do wait(1.25)
-                        pcall(function()
-                            local args = {[1] = "Present"};
-                            game:GetService("ReplicatedStorage"):WaitForChild("BPPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
-                        end)
-                    end
-                end,
-            },
-            Dismiss = {
-                Text = "No",
-                Callback = function()
-                end,
-            }
-        }
-    end)
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
