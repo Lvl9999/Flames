@@ -43,7 +43,7 @@ task.spawn(function()
 end)
 
 -- // Credits to ao-0
-shared.LoaderTitle = "Flame's Hub 🔥"
+shared.LoaderTitle = "Flame's Hub  🔥 | Porn Hub Exclusive ❗"
 shared.LoaderKeyFrames = {
    [1] = {0.5, 100},
    [2] = {0.5, 0.5}
@@ -51,7 +51,7 @@ shared.LoaderKeyFrames = {
 loadstring(game:HttpGet'https://raw.githubusercontent.com/ao-0/miami-nights/main/Resources/Loady/v1/Portable.lua')();
 
 -- // LoL
-if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") end
+-- if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") end
 
 -- // JumpPower Bypass \\ --
 task.spawn(function()
@@ -122,7 +122,7 @@ if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul
     return
 end
 
-local MainUI = UILibrary.Load("Flame's Hub 🔥");
+local MainUI = UILibrary.Load("Flame's Hub  🔥  | Porn Hub Edition [Premium] 🟠⚫");
 local FirstPage = MainUI.AddPage("Home");
 local ScriptX = MainUI.AddPage("Scripts");
 
