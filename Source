@@ -3687,6 +3687,7 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     --// Skip Assets \\--
     task.spawn(function()
+        wait(1.5);
         local vim = game:GetService('VirtualInputManager');
         local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
         
