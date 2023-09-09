@@ -4280,6 +4280,26 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Store it [Be standless]", false, function(Value)
+        getgenv().AutoAFOStore = Value
+
+        while getgenv().AutoAFOStore == true do
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Data.StandName.Value == "One For All [Stage 1]" then
+                    for i = 1,25 do
+                        if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot"..i].Text.Text == "Standless" then
+                            game:GetService("ReplicatedStorage").StorageRemote["Slot"..i]:FireServer()
+                        else
+                            local args = {"Slot"..i}
+                            game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args))
+                        end
+                    end
+                end
+            end)
+            wait(1);
+        end
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Sell  💸");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🖐️", false, function(Value)
         getgenv().EverythingLoL = Value
