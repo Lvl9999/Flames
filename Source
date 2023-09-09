@@ -4290,7 +4290,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                     for i = 1,25 do
                         if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot"..i].Text.Text == "Standless" then
                             game:GetService("ReplicatedStorage").StorageRemote["Slot"..i]:FireServer();
-                        else
+                        elseif i > 7 then
                             local args = {"Slot"..i};
                             game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
                         end
