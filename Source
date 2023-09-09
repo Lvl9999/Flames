@@ -43,7 +43,7 @@ task.spawn(function()
 end)
 
 -- // Credits to ao-0
-shared.LoaderTitle = "Flame's Hub  🔥 | Porn Hub Exclusive ❗"
+shared.LoaderTitle = "Flame's Hub  🔥"
 shared.LoaderKeyFrames = {
    [1] = {0.5, 100},
    [2] = {0.5, 0.5}
@@ -122,7 +122,7 @@ if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul
     return
 end
 
-local MainUI = UILibrary.Load("Flame's Hub  🔥  | Porn Hub Edition [Premium] 🟠⚫");
+local MainUI = UILibrary.Load("Flame's Hub  🔥");
 local FirstPage = MainUI.AddPage("Home");
 local ScriptX = MainUI.AddPage("Scripts");
 
@@ -3683,25 +3683,6 @@ if game.PlaceId == Supported.Sakura_Stand then
     task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Sakura Stand  🔥", "GothamSemibold", "Gotham", 2.5);
-    end)
-
-    task.spawn(function()
-        pcall(function()
-            for i = 1,100 do
-                local vim = game:GetService('VirtualInputManager')
-                local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
-                
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
-                
-                local vim = game:GetService('VirtualInputManager')
-                local x = game:GetService('Players').LocalPlayer.PlayerGui.FrontMenu.Play
-                
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
-                vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
-                wait(0.0015);
-            end       
-        end)
     end)
 
     --// Main Pages \\--
