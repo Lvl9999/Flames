@@ -3691,6 +3691,15 @@ if game.PlaceId == Supported.Sakura_Stand then
         vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
     end)
 
+    task.spawn(function()
+        wait(3.5);
+        local vim = game:GetService('VirtualInputManager');
+        local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
+        
+        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
+        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
+    end)
+
     --// Main Pages \\--
     local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
