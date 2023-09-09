@@ -3683,12 +3683,6 @@ if game.PlaceId == Supported.Sakura_Stand then
     task.spawn(function()
         wait(3);
         Notif:Notification("Game Detected ⚠️", "Sakura Stand  🔥", "GothamSemibold", "Gotham", 2.5);
-        wait(0.5);
-        local vim = game:GetService('VirtualInputManager');
-        local x = game:GetService('Players').LocalPlayer.PlayerGui.Loading.BG.SkipButton
-        
-        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, true, x, 1);
-        vim:SendMouseButtonEvent(x.AbsolutePosition.X + x.AbsoluteSize.X / 2, x.AbsolutePosition.Y + 50, 0, false, x, 1);
     end)
 
     task.spawn(function()
