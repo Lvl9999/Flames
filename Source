@@ -3870,31 +3870,36 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Mastery  💪");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Buy + Sell  💰", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Level Farming  📈");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy + Auto Sell  🍎", false, function(Value)
         getgenv().Rokia = Value
-
-        if getgenv().Rokia == false then wait(0.25);
-            pcall(function()
-                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin1.Visible = false
-                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin2.Visible = false
-                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin3.Visible = false
-                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Outer.Visible = false
-                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.ConfirmationText.Visible = false
-            end)
-        end
 
         while getgenv().Rokia == true do wait(0.10)
             pcall(function()
+                local Selling = {"Arrow","Barrel","Rokakaka","Stop Sign","Mysterious Camera" ,"Haunted Sword","Spin Manual","Hamon Manual","Stone Mask","Bomu Bomu Devil Fruit","Mochi Mochi Devil Fruit","Bari Bari Devil Fruit"}
+                for i,v in ipairs(Selling) do
+                    local args = {[1] = v}
+                    game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("SellItem"):FireServer(unpack(args))
+                end 
                 local args = {[1] = ""};
                 game:GetService("ReplicatedStorage"):WaitForChild("BuyItemRemote"):WaitForChild("Rokakaka"):FireServer(unpack(args));
                 local args = {[1] = "Rokakaka"};
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("SellItem"):FireServer(unpack(args));
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin1.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin2.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin3.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Outer.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.ConfirmationText.Visible = false     
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Spin1.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Spin2.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Spin3.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Outer.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.ConfirmationText.Visible = false
             end)
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Rebirth  🎖️", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Upgrade Mastery  🎖️", false, function(Value)
         getgenv().Rebirthss = Value
         while getgenv().Rebirthss == true do wait(1)
             pcall(function()
@@ -4266,7 +4271,17 @@ if game.PlaceId == Supported.Sakura_Stand then
         while getgenv().AutoBuyStorage == true do
             pcall(function()
                 local args = {[1] = false};
-                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("MoreStoragePurchase"):FireServer(unpack(args));             
+                game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("MoreStoragePurchase"):FireServer(unpack(args));
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin1.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin2.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Spin3.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.Outer.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseFailed.ConfirmationText.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Spin1.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Spin2.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Spin3.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.Outer.Visible = false
+                game:GetService("Players").LocalPlayer.PlayerGui.PurchaseSuccess.ConfirmationText.Visible = false
             end)
             wait(1);
         end
@@ -4400,8 +4415,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Sell  💸");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Everything  🖐️", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Selling  💸");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Anything  ❓", false, function(Value)
         getgenv().EverythingLoL = Value
         while getgenv().EverythingLoL == true do wait(0.015)
             pcall(function()
