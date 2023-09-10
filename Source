@@ -3985,7 +3985,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Intelligent  🧠  (Title)", false, function(Value)
         getgenv().AutoIntelligent = Value
 
-        while getgenv().AutoIntelligent == true do wait(1);
+        while getgenv().AutoIntelligent == true do
             local x,b = pcall(function()
                 return game:GetService("Players").LocalPlayer.Data.Achievements["The Intelligent"]
             end)
@@ -4003,6 +4003,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                 Notif:Notification("Flame's Hub 🔥", "Title not owned", "GothamSemibold", "Gotham", 2.5);
                 break
             end
+            wait(1);
         end
     end);
 
@@ -4619,6 +4620,31 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Bosses  💥");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Boss Raid  👑  (Title)", false, function(Value)
+        getgenv().AutoBossRaid = Value
+
+        while getgenv().AutoBossRaid == true do
+            local x,b = pcall(function()
+                return game:GetService("Players").LocalPlayer.Data.Achievements["Boss Raid"]
+            end)
+            
+            if x and b then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Outer.AchievementFrame["Boss Raid"].Title.Apply.Text == "Apply" then
+                        local args = {[1] = "Boss Raid"};
+                        game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("ApplyAchievement"):FireServer(unpack(args));
+                    else
+                        return
+                    end
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Title not owned", "GothamSemibold", "Gotham", 2.5);
+                break
+            end
+            wait(1);
+        end
+    end);
+
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
         getgenv().BossingJotaroKuzo = Value
 
