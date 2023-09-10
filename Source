@@ -4249,7 +4249,18 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto One For All  🦸");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy Storage [3,000 - 35,000 ¥]", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Avoid Players | Safe Zone  🦺", false, function(Value)
+        getgenv().SafeAndSound = Value
+
+        while getgenv().SafeAndSound == true do
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-637.7359008789062, -33.393035888671875, 1031.9337158203125);
+            end)
+            wait(3.15);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy Storage [3,000 - 35,000 ¥]  💵", false, function(Value)
         getgenv().AutoBuyStorage = Value
 
         while getgenv().AutoBuyStorage == true do
@@ -4261,7 +4272,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming [Be standless]", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming [Be standless]  🤷‍♀️", false, function(Value)
         getgenv().AFO = Value
 
         while getgenv().AFO == true do
@@ -4284,7 +4295,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Store it", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Store it  📩", false, function(Value)
         getgenv().AutoAFOStore = Value
 
         while getgenv().AutoAFOStore == true do
