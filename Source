@@ -3742,8 +3742,8 @@ if game.PlaceId == Supported.Sakura_Stand then
         for i,v in pairs(game:GetService("Workspace").Map.NPCs.Simplrr:GetChildren()) do
             if v:IsA("ClickDetector") then
                 fireclickdetector(v);
-                wait(0.5);
-                for i = 1,3 do wait(0.15);
+                wait(0.15);
+                for i = 1,5 do wait(0.15);
                     local vim = game:GetService'VirtualInputManager'
                     local x = game:GetService("Players").LocalPlayer.PlayerGui.Dialogue.Outer.Inner.TextLabel
                     
