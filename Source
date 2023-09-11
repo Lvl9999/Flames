@@ -3921,7 +3921,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  🧑🏿‍🌾");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   🧺  (Any Item)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   🧺   (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
         getgenv().GoingOnIT = Value
@@ -3970,7 +3970,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh  ⚡  (15s)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh  ⚡   (15s)", false, function(Value)
         getgenv().Refreshss = Value
 
         getgenv().Teleport = function(x, y, z)
@@ -3985,8 +3985,14 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Intelligent  🧠  (Title)", false, function(Value)
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Titles   🎨");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Intelligent  🧠   (Title)", false, function(Value)
         getgenv().AutoIntelligent = Value
+
+        if getgenv().AutoWorth == true or getgenv().AutoWealth == true then
+                Notif:Notification("Flame's Hub 🔥", "One title at once", "GothamSemibold", "Gotham", 2.5);
+            return
+        end
 
         while getgenv().AutoIntelligent == true do
             local x,b = pcall(function()
@@ -3997,6 +4003,66 @@ if game.PlaceId == Supported.Sakura_Stand then
                 pcall(function()
                     if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Outer.AchievementFrame["The Intelligent"].Title.Apply.Text == "Apply" then
                         local args = {[1] = "The Intelligent"};
+                        game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("ApplyAchievement"):FireServer(unpack(args));
+                    else
+                        return
+                    end
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Title not owned", "GothamSemibold", "Gotham", 2.5);
+                break
+            end
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Wealth  💸   (Title)", false, function(Value)
+        getgenv().AutoWealth = Value
+
+        if getgenv().AutoIntelligent == true or getgenv().AutoWorth == true then
+                Notif:Notification("Flame's Hub 🔥", "One title at once", "GothamSemibold", "Gotham", 2.5);
+            return
+        end
+    
+        while getgenv().AutoWealth == true do
+            local x,b = pcall(function()
+                return game:GetService("Players").LocalPlayer.Data.Achievements["The Wealth"]
+            end)
+            
+            if x and b then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Outer.AchievementFrame["The Wealth"].Title.Apply.Text == "Apply" then
+                        local args = {[1] = "The Wealth"};
+                        game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("ApplyAchievement"):FireServer(unpack(args));
+                    else
+                        return
+                    end
+                end)
+            else
+                Notif:Notification("Flame's Hub 🔥", "Title not owned", "GothamSemibold", "Gotham", 2.5);
+                break
+            end
+            wait(1);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Worth  ⭕   (Title)", false, function(Value)
+        getgenv().AutoWorth = Value
+
+        if getgenv().AutoIntelligent == true or getgenv().AutoWealth == true then
+                Notif:Notification("Flame's Hub 🔥", "One title at once", "GothamSemibold", "Gotham", 2.5);
+            return
+        end
+
+        while getgenv().AutoWorth == true do
+            local x,b = pcall(function()
+                return game:GetService("Players").LocalPlayer.Data.Achievements["The Worth"]
+            end)
+            
+            if x and b then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Outer.AchievementFrame["The Worth"].Title.Apply.Text == "Apply" then
+                        local args = {[1] = "The Worth"};
                         game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("ApplyAchievement"):FireServer(unpack(args));
                     else
                         return
