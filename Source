@@ -4412,6 +4412,156 @@ if game.PlaceId == Supported.Sakura_Stand then
                         local args = {"Slot20"};
                         game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
                     end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot21"].Text.Text == "Standless" then
+                        local args = {"Slot21"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot22"].Text.Text == "Standless" then
+                        local args = {"Slot22"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot23"].Text.Text == "Standless" then
+                        local args = {"Slot23"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot24"].Text.Text == "Standless" then
+                        local args = {"Slot24"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot25"].Text.Text == "Standless" then
+                        local args = {"Slot25"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot26"].Text.Text == "Standless" then
+                        local args = {"Slot26"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot27"].Text.Text == "Standless" then
+                        local args = {"Slot27"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot28"].Text.Text == "Standless" then
+                        local args = {"Slot28"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot29"].Text.Text == "Standless" then
+                        local args = {"Slot29"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot30"].Text.Text == "Standless" then
+                        local args = {"Slot30"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot31"].Text.Text == "Standless" then
+                        local args = {"Slot31"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot32"].Text.Text == "Standless" then
+                        local args = {"Slot32"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot33"].Text.Text == "Standless" then
+                        local args = {"Slot33"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot34"].Text.Text == "Standless" then
+                        local args = {"Slot34"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot35"].Text.Text == "Standless" then
+                        local args = {"Slot35"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot36"].Text.Text == "Standless" then
+                        local args = {"Slot36"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot37"].Text.Text == "Standless" then
+                        local args = {"Slot37"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot38"].Text.Text == "Standless" then
+                        local args = {"Slot38"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot39"].Text.Text == "Standless" then
+                        local args = {"Slot39"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot40"].Text.Text == "Standless" then
+                        local args = {"Slot40"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot41"].Text.Text == "Standless" then
+                        local args = {"Slot41"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot42"].Text.Text == "Standless" then
+                        local args = {"Slot42"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot43"].Text.Text == "Standless" then
+                        local args = {"Slot43"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot44"].Text.Text == "Standless" then
+                        local args = {"Slot44"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot45"].Text.Text == "Standless" then
+                        local args = {"Slot45"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot46"].Text.Text == "Standless" then
+                        local args = {"Slot46"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot47"].Text.Text == "Standless" then
+                        local args = {"Slot47"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot48"].Text.Text == "Standless" then
+                        local args = {"Slot48"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot49"].Text.Text == "Standless" then
+                        local args = {"Slot49"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
+
+                    if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot50"].Text.Text == "Standless" then
+                        local args = {"Slot50"};
+                        game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
+                    end
                 end
             end)
             wait(3.5);
