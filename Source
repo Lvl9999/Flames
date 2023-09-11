@@ -4399,7 +4399,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                     end
             
                     if game:GetService("Players").LocalPlayer.PlayerGui.StandStorage.Outer.Inner.Inner["Slot18"].Text.Text == "Standless" then
-                        local args = {"Slot17"};
+                        local args = {"Slot18"};
                         game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
                     end
             
