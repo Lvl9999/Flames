@@ -3697,7 +3697,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     --// Main Pages \\--
     local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
-    local SecondAndHalfHalfPage = MainUI.AddPage("Fighting");
+    -- local SecondAndHalfHalfPage = MainUI.AddPage("Fighting");
     local SecondAndHalfPage = MainUI.AddPage("Farming");
     local BackupEndPage = MainUI.AddPage("Teleports");
 
@@ -3824,6 +3824,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
     end);
 
+--[[
     local SecondAndHalfHalfLabel = SecondAndHalfHalfPage.AddLabel("[+] Fighting  ✊⚔️");
     local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Anti Stun  🤓", false, function(Value)
         getgenv().SlientNoStun = Value
@@ -3869,6 +3870,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end
         end)
     end);
+--]]
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Level Farming  📈");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy + Auto Sell  🍎", false, function(Value)
