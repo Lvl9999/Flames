@@ -54,9 +54,6 @@ pcall(function()
     loadstring(game:HttpGet(getgenv().Flames_Hub))();
 end)
 ```
-# User Interface:
-![image](https://github.com/Lvl9999/Flames/assets/123672448/2db2c31d-6dae-441f-90e2-9d2fcef68eab)
-
 
 ### Special Credits:
 - [Flames](https://discord.com/users/656455297979908106) | Scripter / Support / Owner ✍️
