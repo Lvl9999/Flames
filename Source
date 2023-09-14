@@ -6294,7 +6294,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                     wait(0.25);
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-374.95184326171875, 482.6610412597656, -1539.323486328125);
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"));
-                wait(0.1);
+                wait(0.15);
                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow"):Activate();
                 end)
             elseif 
@@ -6305,6 +6305,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                 or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer5)
              then
                 getgenv().ActuallyFarming = false
+                    Notif:Notification("Flame's Hub 🔥", 'You got something  🎉', "GothamSemibold", "Gotham", 9e9);
                 break
             else
                 pcall(function()
@@ -6312,7 +6313,7 @@ if game.PlaceId == Supported.Stands_Awakening then
                     wait(0.25);
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-374.95184326171875, 482.6610412597656, -1539.323486328125);
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit"));
-                    wait(0.1);
+                    wait(0.15);
                     game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka Fruit"):Activate();
                     wait(0.15);
                     local vim = game:GetService'VirtualInputManager'
