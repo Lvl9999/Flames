@@ -3697,7 +3697,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     --// Main Pages \\--
     local BackupPage = MainUI.AddPage("Shoping");
     local SecondPage = MainUI.AddPage("Storage");
-    -- local SecondAndHalfHalfPage = MainUI.AddPage("Fighting");
+    local SecondAndHalfHalfPage = MainUI.AddPage("Fighting");
     local SecondAndHalfPage = MainUI.AddPage("Farming");
     local BackupEndPage = MainUI.AddPage("Teleports");
 
@@ -3824,11 +3824,17 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
     end);
 
---[[
+
     local SecondAndHalfHalfLabel = SecondAndHalfHalfPage.AddLabel("[+] Fighting  ✊⚔️");
-    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Anti Stun  🤓", false, function(Value)
+    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddButton("Jump No Cooldown  🦘", function()
+        pcall(function()
+            workspace.Living[game.Players.LocalPlayer.Name].JumpCooldown:Remove();
+        end)
+    end);
+
+    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Speed Booster   🥾", false, function(Value)
         getgenv().SlientNoStun = Value
-        getgenv().Speed = 2.15
+        getgenv().Speed = 2.35
         
         local speaker = game:GetService("Players").LocalPlayer
         local chr = speaker.Character
@@ -3843,7 +3849,121 @@ if game.PlaceId == Supported.Sakura_Stand then
             end
         end
     end);
---]]
+
+    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddButton("Deku Tools Giver  🎒", function()
+        if game:GetService("Players").LocalPlayer.Data.StandName.Value == "Deku" then
+            getgenv().Press = function(v)
+                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+            end;
+            getgenv().Unpress = function(v)
+                return game:GetService("VirtualInputManager"):SendKeyEvent(false, v, false, game);
+            end;
+            task.spawn(function()
+                while wait(0.15) do
+                    local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                    game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("USWS"):FireServer(unpack(args));
+                end
+            end);
+            task.spawn(function()
+                while wait(0.015) do
+                    Press("Z");
+                    Unpress("Z");
+                end
+            end);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "45% Percent Detroit smash";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("Detroit45"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "Delaware Smash : Air Force";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("Delaware"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "Faux 100 Percent";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("Faux100"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "Detroit Smash : Quintuple";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("DetroitQuintuple"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "Black Cage";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("Detain"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "Black Chain";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("Blackchain"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "Overdrive Detroit Smash";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("Overdrive"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "OFaux 100 Percent : Manchester Smash";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("Manchester100"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+            wait(0.15);
+            game:GetService("Players").LocalPlayer:GetMouse();
+            local Tool = Instance.new("Tool");
+            Tool.RequiresHandle = false;
+            Tool.Name = "One For All : Full Cowling 100 Percent";
+            Tool.Activated:Connect(function()
+                local args = {[1]=Vector3.new(0, 0, 0, 0)};
+                game:GetService("ReplicatedStorage"):WaitForChild("DekuRemote"):WaitForChild("FullCowl"):FireServer(unpack(args));
+            end);
+            Tool.Parent = game:GetService("Players").LocalPlayer.Backpack;
+        else
+            Notif:Notification("Flame's Hub 🔥", "Not Deku aint ya?", "GothamSemibold", "Gotham", 1);
+            return
+        end        
+    end);
 
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀", function()
         local Tog = true
@@ -4867,42 +4987,74 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
         getgenv().BossingJotaroKuzo = Value
 
-        while getgenv().BossingJotaroKuzo == true do wait(0.015)
+        getgenv().FixAttacking = Value
+        
+        task.spawn(function()
+        local Con
+            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                wait(0.5);
+                if getgenv().FixAttacking == true then
+                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                    end
+                end
+            end)
+        end)
+        
+        while getgenv().BossingJotaroKuzo == true do wait(0.15)
             pcall(function()
                 if workspace.Living:FindFirstChild("Jotaro Kujo") and workspace.Living:FindFirstChild("Jotaro Kujo"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector *7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7));
                     task.spawn(function()
-                        pcall(function()
-                            getgenv().Press = function(v) -- bruh 2
-                                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                            end
-                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                            game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                        end)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                     end)
                 else
                     Notif:Notification("Flame's Hub 🔥", "Jotaro Bozo not found", "GothamSemibold", "Gotham", 3);
                 end
             end)
-        end     
+        end   
     end);
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Chariot Requiem  💀", false, function(Value)
         getgenv().BossingChriotRequiem = Value
 
-        while getgenv().BossingChriotRequiem == true do wait(0.015)
+        getgenv().FixAttacking = Value
+        
+        task.spawn(function()
+        local Con
+            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                wait(0.5);
+                if getgenv().FixAttacking == true then
+                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                    end
+                end
+            end)
+        end)
+
+        while getgenv().BossingChriotRequiem == true do wait(0.15)
             pcall(function()
                 if workspace.Living:FindFirstChild("Chariot Requiem") and workspace.Living:FindFirstChild("Chariot Requiem"):FindFirstChild("HumanoidRootPart") then
                     pcall(function()
                         game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * 3) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * 3, game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Chariot Requiem"].HumanoidRootPart.CFrame.LookVector * 3));                    
                         task.spawn(function()
-                            pcall(function()
-                                getgenv().Press = function(v) -- bruh 2
-                                    return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                                end
-                                Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")Press("V");Press("H");Press("J");Press("U");Press("B");
-                                game:GetService("VirtualUser"):ClickButton1(Vector2.new());             
-                            end)
+                            getgenv().Press = function(v) -- bruh 2
+                                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                            end
+                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")Press("V");Press("H");Press("J");Press("U");Press("B");
+                            game:GetService("VirtualUser"):ClickButton1(Vector2.new());             
                         end)
                     end)
                 else
@@ -4915,18 +5067,34 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Izuku Midoriya  💀", false, function(Value)
         getgenv().BossingMidoriya = Value
 
+        getgenv().FixAttacking = Value
+        
+        task.spawn(function()
+        local Con
+            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                wait(0.5);
+                if getgenv().FixAttacking == true then
+                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                    end
+                end
+            end)
+        end)
+
         while getgenv().BossingMidoriya == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Deku") and workspace.Living:FindFirstChild("Deku"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector *7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * 7));
                     task.spawn(function()
-                        pcall(function()
-                            getgenv().Press = function(v) -- bruh 2
-                                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                            end
-                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                            game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                        end)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                     end)
                 else
                     Notif:Notification("Flame's Hub 🔥", "Deku not found", "GothamSemibold", "Gotham", 3);
@@ -4938,18 +5106,34 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Toji Fushiguro  💀", false, function(Value)
         getgenv().BossingToji = Value
 
-        while getgenv().BossingToji == true do wait(0.015)
+        getgenv().FixAttacking = Value
+        
+        task.spawn(function()
+        local Con
+            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                wait(0.5);
+                if getgenv().FixAttacking == true then
+                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                    end
+                end
+            end)
+        end)
+
+        while getgenv().BossingToji == true do wait(0.15)
             pcall(function()
                 if workspace.Living:FindFirstChild("Toji") and workspace.Living:FindFirstChild("Toji"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7));
                     task.spawn(function()
-                        pcall(function()
-                            getgenv().Press = function(v) -- bruh 2
-                                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                            end
-                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                            game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                        end)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                     end)
                 else
                     Notif:Notification("Flame's Hub 🔥", "Toji not found", "GothamSemibold", "Gotham", 3);
@@ -4961,18 +5145,34 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio Brando  💀", false, function(Value)
         getgenv().BossingDio = Value
 
-        while getgenv().BossingDio == true do wait(0.015)
+        getgenv().FixAttacking = Value
+        
+        task.spawn(function()
+        local Con
+            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                wait(0.5);
+                if getgenv().FixAttacking == true then
+                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                    end
+                end
+            end)
+        end)
+
+        while getgenv().BossingDio == true do wait(0.15)
             pcall(function()
                 if workspace.Living:FindFirstChild("Dio") and workspace.Living:FindFirstChild("Dio"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7));
                     task.spawn(function()
-                        pcall(function()
-                            getgenv().Press = function(v) -- bruh 2
-                                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                            end
-                            Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                            game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                        end)
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end
+                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                     end)
                 else
                     Notif:Notification("Flame's Hub 🔥", "Dio not found", "GothamSemibold", "Gotham", 3);
