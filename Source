@@ -5887,9 +5887,10 @@ if game.PlaceId == Supported.Stands_Awakening then
                     end
                 end
             end)
-            wait(0.5);
+            wait(3.5);
         end
     end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  ✨");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming (Any Item)", false, function(Value)
         getgenv().GrindingLikeHell = Value
@@ -5953,8 +5954,6 @@ if game.PlaceId == Supported.Stands_Awakening then
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
-                else
-                    return
                 end
             end)
             wait(1);
@@ -5975,8 +5974,6 @@ if game.PlaceId == Supported.Stands_Awakening then
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
-                else
-                    return
                 end
             end)
             wait(1);
@@ -5997,8 +5994,6 @@ if game.PlaceId == Supported.Stands_Awakening then
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
-                else
-                    return
                 end
             end)
             wait(1);
@@ -6019,8 +6014,6 @@ if game.PlaceId == Supported.Stands_Awakening then
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
-                else
-                    return
                 end
             end)
             wait(1);
@@ -6041,8 +6034,6 @@ if game.PlaceId == Supported.Stands_Awakening then
                         local args = {[1] = "Slot" .. i,[2] = false,[3] = false};
                         game:GetService("ReplicatedStorage"):WaitForChild("Bank"):FireServer(unpack(args));
                     end
-                else
-                    return
                 end
             end)
             wait(1);
@@ -6154,7 +6145,7 @@ if game.PlaceId == Supported.Stands_Awakening then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stand Farmer  🎊  [Fixing Later~]");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Stand Farmer  🎊");
     local SecondAndHalfButton = SecondAndHalfPage.AddButton("[ Teleport Farming Area  👨🏿‍🌾 ]", function()
         for i = 1,5 do wait(0.01);
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-284.17254638671875, 543.6371765136719, -1485.3123779296875);
@@ -6165,12 +6156,13 @@ if game.PlaceId == Supported.Stands_Awakening then
         warn("---HOW TO USE---")
         print("Press on 'Teleport Farming Area'")
         print("Then Select stands you wanna farm for")
-        print("If you wanna farm for few. Then fill the rest with 'Select This For Nothing'")
+        print('Select "[ Select This For Nothing ]" on the rest "Selected" that you wanna leave empty (For people who want less than 5 stands to choose)')
     end);
---[[
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 1", {
         "Anubis",
         "CreeperQueen",
+        "CrazyDiamond",
         "D4C",
         "DoppioKingCrimson",
         "HierophantGreen",
@@ -6185,7 +6177,7 @@ if game.PlaceId == Supported.Stands_Awakening then
         "TheWorldOVA",
         "WhiteSnakeAlternateUniverseStand",
         "Whitesnake",
-        "--------------",
+        "---[ Select This For Nothing ]---",
 
     },
     function(StandFarmer1)
@@ -6195,6 +6187,7 @@ if game.PlaceId == Supported.Stands_Awakening then
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 2", {
         "Anubis",
         "CreeperQueen",
+        "CrazyDiamond",
         "D4C",
         "DoppioKingCrimson",
         "HierophantGreen",
@@ -6209,7 +6202,7 @@ if game.PlaceId == Supported.Stands_Awakening then
         "TheWorldOVA",
         "WhiteSnakeAlternateUniverseStand",
         "Whitesnake",
-        "--------------",
+        "---[ Select This For Nothing ]---",
 
     },
     function(StandFarmer2)
@@ -6219,6 +6212,7 @@ if game.PlaceId == Supported.Stands_Awakening then
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 3", {
         "Anubis",
         "CreeperQueen",
+        "CrazyDiamond",
         "D4C",
         "DoppioKingCrimson",
         "HierophantGreen",
@@ -6233,7 +6227,7 @@ if game.PlaceId == Supported.Stands_Awakening then
         "TheWorldOVA",
         "WhiteSnakeAlternateUniverseStand",
         "Whitesnake",
-        "--------------",
+        "---[ Select This For Nothing ]---",
 
     },
     function(StandFarmer3)
@@ -6243,6 +6237,7 @@ if game.PlaceId == Supported.Stands_Awakening then
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 4", {
         "Anubis",
         "CreeperQueen",
+        "CrazyDiamond",
         "D4C",
         "DoppioKingCrimson",
         "HierophantGreen",
@@ -6257,7 +6252,7 @@ if game.PlaceId == Supported.Stands_Awakening then
         "TheWorldOVA",
         "WhiteSnakeAlternateUniverseStand",
         "Whitesnake",
-        "--------------",
+        "---[ Select This For Nothing ]---",
 
     },
     function(StandFarmer4)
@@ -6267,6 +6262,7 @@ if game.PlaceId == Supported.Stands_Awakening then
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Selected 5", {
         "Anubis",
         "CreeperQueen",
+        "CrazyDiamond",
         "D4C",
         "DoppioKingCrimson",
         "HierophantGreen",
@@ -6281,7 +6277,7 @@ if game.PlaceId == Supported.Stands_Awakening then
         "TheWorldOVA",
         "WhiteSnakeAlternateUniverseStand",
         "Whitesnake",
-        "--------------",
+        "---[ Select This For Nothing ]---",
 
     },
     function(StandFarmer5)
@@ -6290,39 +6286,45 @@ if game.PlaceId == Supported.Stands_Awakening then
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming", false, function(Value)
         getgenv().ActuallyFarming = Value
-    
+
         while getgenv().ActuallyFarming == true do
             if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Standless") then
                 pcall(function()
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-279.013916015625, 462.6766662597656, -1512.71923828125);
+                    wait(0.25);
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-374.95184326171875, 482.6610412597656, -1539.323486328125);
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Arrow"));
                 wait(0.1);
-                    game:GetService("ReplicatedStorage"):WaitForChild("ItemEvents"):WaitForChild("Arrow"):FireServer();
+                   game:GetService("Players").LocalPlayer.Character:FindFirstChild("Arrow"):Activate();
                 end)
-            elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer1)
-            or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer2)
-            or  game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer3)
-            or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer4)
-            or  game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer5)
-            or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer6)
-            or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer7)
-            or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer8)
-            or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer9)
-            or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer10) 
-            
-            then
-                Notif:Notification("Flame's Hub 🔥", "You got something 🥳🎉🎊", "GothamSemibold", "Gotham", 9e9)
+            elseif 
+                game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer1)
+                or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer2)
+                or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer3)
+                or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer4)
+                or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(getgenv().StandFarmer5)
+             then
+                getgenv().ActuallyFarming = false
                 break
             else
                 pcall(function()
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-310.3283996582031, 462.6966857910156, -1470.3829345703125);
+                    wait(0.25);
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-374.95184326171875, 482.6610412597656, -1539.323486328125);
                     game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rokakaka Fruit"));
-                wait(0.1);
-                    game:GetService("ReplicatedStorage"):WaitForChild("ItemEvents"):WaitForChild("Roka"):FireServer();
+                    wait(0.1);
+                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rokakaka Fruit"):Activate();
+                    wait(0.15);
+                    local vim = game:GetService'VirtualInputManager'
+                    local x = game:GetService("Players").LocalPlayer.PlayerGui.RokaGUI.Frame.Yes
+        
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+                    vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
                 end)
             end
-            wait(1.15);
+            wait(3.35);
         end
     end);
---]]
 
     local FourthLabel = FourthPage.AddLabel("[+] Server Crasher  💀");
     local FourthButton = FourthPage.AddButton("How to use ⁉️ (Open f9 console)", function()
