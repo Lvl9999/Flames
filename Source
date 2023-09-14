@@ -3825,32 +3825,14 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
 
-    local SecondAndHalfHalfLabel = SecondAndHalfHalfPage.AddLabel("[+] Fighting  ✊⚔️");
+    local SecondAndHalfHalfLabel = SecondAndHalfHalfPage.AddLabel("[+] Fighting  ⚔️");
     local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddButton("Jump No Cooldown  🦘", function()
         pcall(function()
             workspace.Living[game.Players.LocalPlayer.Name].JumpCooldown:Remove();
         end)
     end);
 
-    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Speed Booster   🥾", false, function(Value)
-        getgenv().SlientNoStun = Value
-        getgenv().Speed = 2.35
-        
-        local speaker = game:GetService("Players").LocalPlayer
-        local chr = speaker.Character
-        local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-        local hb = game:GetService("RunService").Heartbeat
-        while getgenv().SlientNoStun and chr and hum and hum.Parent do
-            local delta = hb:Wait()
-            if hum.MoveDirection.Magnitude > 0 then
-                chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 2)
-            else
-                chr:TranslateBy(hum.MoveDirection * delta * 2)
-            end
-        end
-    end);
-
-    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddButton("Deku Tools Giver  🎒", function()
+    local SecondAndHalfHalfLButton = SecondAndHalfHalfPage.AddButton("Deku Moveset Assister  🐕‍🦺", function()
         if game:GetService("Players").LocalPlayer.Data.StandName.Value == "Deku" then
             getgenv().Press = function(v)
                 return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
@@ -3965,7 +3947,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end        
     end);
 
-    local SecondAndHalfButton = SecondAndHalfPage.AddButton("Fast Reset + Return  💀", function()
+    local SecondAndHalfHalfLButton = SecondAndHalfHalfPage.AddButton("Fast Reset + Return  💀", function()
         local Tog = true
 
         local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -3992,6 +3974,23 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
+    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Speed Booster    🏃🏿‍♂️💨     🔫👴🏻💨   | ⛓️👨🏿‍🌾🌾", false, function(Value)
+        getgenv().SlientNoStun = Value
+        getgenv().Speed = 2.35
+        
+        local speaker = game:GetService("Players").LocalPlayer
+        local chr = speaker.Character
+        local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+        local hb = game:GetService("RunService").Heartbeat
+        while getgenv().SlientNoStun and chr and hum and hum.Parent do
+            local delta = hb:Wait()
+            if hum.MoveDirection.Magnitude > 0 then
+                chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 2)
+            else
+                chr:TranslateBy(hum.MoveDirection * delta * 2)
+            end
+        end
+    end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Level Farming  📈");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy + Auto Sell  🍎", false, function(Value)
