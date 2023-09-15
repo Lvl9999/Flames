@@ -218,7 +218,7 @@ local ScriptXToggle = ScriptX.AddToggle("Enable/Disable | Walkspeed", false, fun
     Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
         if getgenv().RestartSpeed == true then
             wait(2.55)
-            getgenv().Speed = 5 -- By default
+            getgenv().Speed = 0 -- By default
             TeleportWalking();
         end
     end)
