@@ -218,7 +218,7 @@ local ScriptXToggle = ScriptX.AddToggle("Enable/Disable | Walkspeed", false, fun
     Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
         if getgenv().RestartSpeed == true then
             wait(2.55)
-            getgenv().Speed = 0 -- By default
+            getgenv().Speed = 5 -- By default
             TeleportWalking();
         end
     end)
@@ -5117,7 +5117,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(0.5);
+                wait(1);
                 if getgenv().FixAttacking == true then
                     while getgenv().BossingJotaroKuzo == true do wait(0.15)
                         getgenv().Press = function(v) -- bruh 2
@@ -5156,9 +5156,9 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(0.5);
+                wait(1);
                 if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
                             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                         end
@@ -5197,9 +5197,9 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(0.5);
+                wait(1);
                 if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
                             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                         end
@@ -5236,9 +5236,9 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(0.5);
+                wait(1);
                 if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
                             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                         end
@@ -5275,9 +5275,9 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(0.5);
+                wait(1);
                 if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
                             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                         end
@@ -5288,7 +5288,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end)
 
-        while getgenv().BossingDio == true do wait(0.15)
+        while getgenv().BossingDio == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Dio") and workspace.Living:FindFirstChild("Dio"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Dio"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Dio"].HumanoidRootPart.CFrame.LookVector * 7));
