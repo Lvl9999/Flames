@@ -5117,7 +5117,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(1);
+                wait(2.15);
                 if getgenv().FixAttacking == true then
                     while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
@@ -5156,7 +5156,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(1);
+                wait(2.15);
                 if getgenv().FixAttacking == true then
                     while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
@@ -5197,7 +5197,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(1);
+                wait(2.15);
                 if getgenv().FixAttacking == true then
                     while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
@@ -5236,7 +5236,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(1);
+                wait(2.15);
                 if getgenv().FixAttacking == true then
                     while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
@@ -5275,7 +5275,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
         local Con
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(1);
+                wait(2.15);
                 if getgenv().FixAttacking == true then
                     while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
