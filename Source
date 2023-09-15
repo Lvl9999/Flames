@@ -4626,107 +4626,107 @@ if game.PlaceId == Supported.Sakura_Stand then
                 end
     
                 if Value == 0 then
-                    Notif:Notification("Flame's Hub 🔥", "Bruh Really?", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "Bruh, Really?", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 1 then
-                    Notif:Notification("Flame's Hub 🔥", "One for the count!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "1 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 2 then
-                    Notif:Notification("Flame's Hub 🔥", "Two for the count!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "2 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 3 then
-                    Notif:Notification("Flame's Hub 🔥", "Three for the count!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "3 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 4 then
-                    Notif:Notification("Flame's Hub 🔥", "Four for the count!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "4 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 5 then
-                    Notif:Notification("Flame's Hub 🔥", "Five for the count!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "5 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 6 then
-                    Notif:Notification("Flame's Hub 🔥", "Six for the count!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "6 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 7 then
-                    Notif:Notification("Flame's Hub 🔥", "Seven for the count!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "7 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 8 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "8  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 9 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "9  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 10 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "10  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 11 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "11  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 12 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "12  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 13 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "13  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 14 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "14  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 15 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "15  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 16 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "16  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 17 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "17  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 18 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "18  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 19 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "19  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 20 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "20  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 21 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "21  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 22 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "22  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 23 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "23  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 24 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "24  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 25 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "25  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 26 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "26  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 27 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "27  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 28 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "28  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 29 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "29  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 30 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "30  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 31 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "31  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 32 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "32  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 33 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "33  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 34 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "34  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 35 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "35  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 36 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "36  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 37 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "37  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 38 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "38  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 39 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "39  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 40 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "40  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 41 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "41  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 42 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "42  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 43 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "43  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 44 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "44  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 45 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "45  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 46 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "46  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 47 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "47  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 48 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "48  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 49 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "49  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 50 then
-                    Notif:Notification("Flame's Hub 🔥", "Enough To make Stage 4!", "GothamSemibold", "Gotham", 2.5);
+                    Notif:Notification("Flame's Hub 🔥", "50  (Enough To make Stage 4)", "GothamSemibold", "Gotham", 2.5);
                 end
             end)
             wait(1.35)
