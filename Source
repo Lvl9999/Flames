@@ -5119,7 +5119,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
                 wait(1);
                 if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.15)
+                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
                         getgenv().Press = function(v) -- bruh 2
                             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                         end
@@ -5130,7 +5130,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end)
         
-        while getgenv().BossingJotaroKuzo == true do wait(0.15)
+        while getgenv().BossingJotaroKuzo == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Jotaro Kujo") and workspace.Living:FindFirstChild("Jotaro Kujo"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector *7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7));
@@ -5249,7 +5249,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end)
         end)
 
-        while getgenv().BossingToji == true do wait(0.15)
+        while getgenv().BossingToji == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Toji") and workspace.Living:FindFirstChild("Toji"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7));
