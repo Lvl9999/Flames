@@ -4121,9 +4121,16 @@ if game.PlaceId == Supported.Sakura_Stand then
                             fireproximityprompt(v, 0);
                         end
                     end
+
+                    for i,v in pairs(workspace.Item2:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v, 0);
+                        end
+                    end
                 end)
             end
         end)
+
         local Con
         Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
             if getgenv().FarmingRightHere == true then
