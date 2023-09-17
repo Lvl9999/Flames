@@ -5172,7 +5172,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
 
         task.spawn(function()
-            while getgenv().AttackingLol == true do wait(0.15);
+            while getgenv().AttackingLol == true do wait(0.015);
                 pcall(function()
                     if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then wait(0.15);
                         Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R");
@@ -5183,7 +5183,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end
         end)
 
-        while getgenv().BossingJotaroKuzo == true do wait(0.15)
+        while getgenv().BossingJotaroKuzo == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Jotaro Kujo") and workspace.Living:FindFirstChild("Jotaro Kujo"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector *7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7));
@@ -5203,7 +5203,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
 
         task.spawn(function()
-            while getgenv().AttackingLol == true do wait(0.15);
+            while getgenv().AttackingLol == true do wait(0.015);
                 pcall(function()
                     if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then wait(0.15);
                         Press("H");Press("R");Press("T");Press("V");Press("G");Press("Y");Press("E");
@@ -5245,7 +5245,7 @@ if game.PlaceId == Supported.Sakura_Stand then
             end
         end)
 
-        while getgenv().BossingToji == true do wait(0.15)
+        while getgenv().BossingToji == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Toji") and workspace.Living:FindFirstChild("Toji"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7));
@@ -5265,7 +5265,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
 
         task.spawn(function()
-            while getgenv().AttackingLol == true do wait(0.15);
+            while getgenv().AttackingLol == true do wait(0.015);
                 pcall(function()
                     if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then wait(0.15);
                         Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R");
