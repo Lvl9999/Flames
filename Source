@@ -5205,7 +5205,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                 wait(1.15);
             end
         end)
-        
+
         wait(0.35);
 
         while getgenv().BlockingLol == true do wait(0.015)
