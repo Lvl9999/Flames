@@ -4250,7 +4250,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item) ", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item)", false, function(Value)
         getgenv().StealingHaAHaHAHaAHA = Value
         getgenv().PickingWithUltraInstinct = Value
 
@@ -4278,6 +4278,26 @@ if game.PlaceId == Supported.Sakura_Stand then
                 local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
             end)
         end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Legit Snatch Items (Be Near Item)", false, function(Value)
+        getgenv().SnatchingWithUltraInstinct = Value
+
+        pcall(function()
+            while getgenv().SnatchingWithUltraInstinct == true do wait(0.01);
+                for i,v in pairs(workspace.Item2:GetDescendants()) do
+                    if v:IsA("ProximityPrompt") then
+                        fireproximityprompt(v, 0);
+                    end
+                end
+
+                for i,v in pairs(workspace.Item:GetDescendants()) do
+                    if v:IsA("ProximityPrompt") then
+                        fireproximityprompt(v, 0);
+                    end
+                end
+            end
+        end)
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Store Items  ⚡");
@@ -5348,7 +5368,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local BackupEndButton = BackupEndPage.AddButton("Ruined City  🌆", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7469.16259765625, -32.022640228271484, 1293.190185546875);
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7150.1806640625, -32.022640228271484, 1294.813720703125);
     end);
 
     local BackupEndButton = BackupEndPage.AddButton("Cave  💀", function()
@@ -5356,7 +5376,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local BackupEndButton = BackupEndPage.AddButton("Hall of Heroes  🦸", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3642.984619140625, -234.16964721679688, 4537.80078125);
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3932.30126953125, -234.16961669921875, 4539.80810546875);
     end);
 
     local BackupEndLabel = BackupEndPage.AddLabel("[+] NPC  🌐");
