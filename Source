@@ -4275,7 +4275,9 @@ if game.PlaceId == Supported.Sakura_Stand then
         while getgenv().StealingHaAHaHAHaAHA == true do wait(0.35);
             pcall(function()
                 task.spawn(function()
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["SukunaFinger"].Position);
+                    pcall(function()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["SukunaFinger"].Position);
+                    end)
                 end)
                 local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
             end)
@@ -5147,7 +5149,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Quests  📋");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Parry Damage + Block Damage  ✊⚔️", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Parry Damage  🔴", false, function(Value)
         getgenv().ParryLolz = Value
 
         while getgenv().ParryLolz == true do wait(0.001)
@@ -5167,7 +5169,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Deal Damage   👊", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Deal Damage   🔴", false, function(Value)
         getgenv().DealingPainX = Value
         
         while getgenv().DealingPainX == true do wait(0.015)
@@ -5184,7 +5186,36 @@ if game.PlaceId == Supported.Sakura_Stand then
         end          
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Take Damage  🤕", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Block Damage  🔴", false, function(Value)
+        getgenv().BlockingLol = Value
+        
+
+        task.spawn(function()
+            while getgenv().BlockingLol == true do
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Stats.BG.BlockN.Text == "30 / 30" then
+
+                        getgenv().Press = function(v) -- bruh 2
+                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+                        end 
+
+                        Press("F");
+                    end
+                end)
+                wait(1.15);
+            end
+        end)
+        
+        wait(0.35);
+
+        while getgenv().BlockingLol == true do wait(0.015)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5, game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5));            
+            end)
+        end  
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Take Damage  🔴", false, function(Value)
         getgenv().Masochist = Value
         
         while getgenv().Masochist == true do wait(0.015)
