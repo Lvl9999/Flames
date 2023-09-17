@@ -4274,7 +4274,9 @@ if game.PlaceId == Supported.Sakura_Stand then
 
         while getgenv().StealingHaAHaHAHaAHA == true do wait(0.35);
             pcall(function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["SukunaFinger"].Position);
+                task.spawn(function()
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["SukunaFinger"].Position);
+                end)
                 local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
             end)
         end
