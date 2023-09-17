@@ -5163,7 +5163,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                     getgenv().Unpress = function(v)
                         return game:GetService("VirtualInputManager"):SendKeyEvent(false, v, false, game);
                     end
-                    Press("F");wait(0.15);Unpress("F");
+                    Press("F");wait(0.35);Unpress("F");
                 end
             end)
         end
