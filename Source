@@ -3824,15 +3824,56 @@ if game.PlaceId == Supported.Sakura_Stand then
         game:GetService("ReplicatedStorage").StorageRemote.UseStorageExtra:FireServer(unpack(args));
     end);
 
-
     local SecondAndHalfHalfLabel = SecondAndHalfHalfPage.AddLabel("[+] Fighting  ⚔️");
+    local SecondAndHalfHalfLButton = SecondAndHalfHalfPage.AddButton('Fast Respawn [Keybind: "V"]  💀', function()
+        if not getgenv().IiIiIiI == true then
+            task.spawn(function()
+                Notif:Notification("Flame's Hub 🔥", 'Press "V" To Respawn', "GothamSemibold", "Gotham", 1);
+            end)     
+               
+            game:GetService("UserInputService").InputBegan:Connect(function(x,b)
+                if not b and x.KeyCode == Enum.KeyCode.V then
+                    local Tog = true
+                    game.Workspace.Gravity = 9e9
+        
+                    local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    local BaseReset = Instance.new("Part")
+                    BaseReset.Size = Vector3.new(100, 5, 100)
+                    BaseReset.Anchored = false
+                    BaseReset.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, -1000, 0)
+                    BaseReset.Parent = workspace
+                    BaseReset.Transparency = 1
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = BaseReset.CFrame + Vector3.new(0, 0, 0)
+                    BaseReset:Destroy()
+        
+                    local Con
+                    Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                        if Tog == true then
+                            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart");
+                            wait(0.15);
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
+                            wait(0.15);
+                            game.Workspace.Gravity = 192.2
+                            wait(0.15);
+                            Tog = false
+                            Con:Disconnect();
+                        end
+                    end)
+                end
+            end)
+            getgenv().IiIiIiI = true
+        else
+            Notif:Notification("Flame's Hub 🔥", "Script Already Running", "GothamSemibold", "Gotham", 1);
+        end
+    end);
+
     local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddButton("Jump No Cooldown  🦘", function()
         pcall(function()
             workspace.Living[game.Players.LocalPlayer.Name].JumpCooldown:Remove();
         end)
     end);
 
-    local SecondAndHalfHalfLButton = SecondAndHalfHalfPage.AddButton("Deku Moveset Assister  🐕‍🦺", function()
+    local SecondAndHalfHalfLButton = SecondAndHalfHalfPage.AddButton("Deku Moveset Assister  💁‍♀️", function()
         if game:GetService("Players").LocalPlayer.Data.StandName.Value == "Deku" then
             getgenv().Press = function(v)
                 return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
@@ -3947,34 +3988,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end        
     end);
 
-    local SecondAndHalfHalfLButton = SecondAndHalfHalfPage.AddButton("Fast Reset + Return  💀", function()
-        local Tog = true
-
-        local CurrentLoc = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        local BaseReset = Instance.new("Part")
-        BaseReset.Size = Vector3.new(100, 5, 100)
-        BaseReset.Anchored = true
-        BaseReset.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, -1000, 0)
-        BaseReset.Parent = workspace
-        BaseReset.Transparency = 1 
-        game.Workspace.Gravity = 9e9
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = BaseReset.CFrame + Vector3.new(0, 0, 0)
-        wait(0.1)
-        BaseReset:Destroy()
-        
-        local Con
-        Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-            if Tog == true then
-                wait(1.55)
-                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CurrentLoc
-                game.Workspace.Gravity = 192.2
-                wait(0.15)
-                Tog = false
-            end
-        end)
-    end);
-
-    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Speed Booster    🏃🏿‍♂️💨     🔫👴🏻💨   | ⛓️👨🏿‍🌾🌾", false, function(Value)
+    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Slient Speed Booster  💨", false, function(Value)
         getgenv().SlientNoStun = Value
         getgenv().Speed = 2.35
         
@@ -3990,6 +4004,46 @@ if game.PlaceId == Supported.Sakura_Stand then
                 chr:TranslateBy(hum.MoveDirection * delta * 2)
             end
         end
+    end);
+
+    local SecondAndHalfHalfLToggle = SecondAndHalfHalfPage.AddToggle("Ctrl Click TP  💨", false, function(Value)
+        getgenv().Enabled = Value
+
+        local speed = 10000
+        local bodyvelocityenabled = true
+        
+        local UIS = game:GetService("UserInputService")
+        local Plr = game.Players.LocalPlayer
+        local Mouse = Plr:GetMouse()
+        
+        function To(position)
+         local Chr = Plr.Character
+           if Chr ~= nil then
+           local ts = game:GetService("TweenService")
+           local char = game.Players.LocalPlayer.Character
+           local hm = char.HumanoidRootPart
+           local dist = (hm.Position - Mouse.Hit.p).magnitude
+           local tweenspeed = dist/tonumber(speed)
+           local ti = TweenInfo.new(tonumber(tweenspeed), Enum.EasingStyle.Linear)
+           local tp = {CFrame = CFrame.new(position)}
+           ts:Create(hm, ti, tp):Play()
+           if bodyvelocityenabled == true then
+           local bv = Instance.new("BodyVelocity")
+           bv.Parent = hm
+           bv.MaxForce = Vector3.new(100000,100000,100000)
+           bv.Velocity = Vector3.new(0,0,0)
+           wait(tonumber(tweenspeed))
+           bv:Destroy()
+           end
+         end
+        end
+        
+        
+        UIS.InputBegan:Connect(function(input)
+         if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:IsKeyDown(Enum.KeyCode.LeftControl) and Enabled then
+           To(Mouse.Hit.p)
+         end
+        end)
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Level Farming  📈");
@@ -5066,7 +5120,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                     getgenv().Press = function(v) -- bruh 2
                         return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                     end
-                    Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
+                    Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R");
                     game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                 end)
             end)
@@ -5111,26 +5165,8 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Jotaro Kujo  💀", false, function(Value)
         getgenv().BossingJotaroKuzo = Value
-
-        getgenv().FixAttacking = Value
         
-        task.spawn(function()
-        local Con
-            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(2.15);
-                if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
-                        getgenv().Press = function(v) -- bruh 2
-                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                        end
-                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                    end
-                end
-            end)
-        end)
-        
-        while getgenv().BossingJotaroKuzo == true do wait(0.015)
+        while getgenv().BossingJotaroKuzo == true do wait(0.15)
             pcall(function()
                 if workspace.Living:FindFirstChild("Jotaro Kujo") and workspace.Living:FindFirstChild("Jotaro Kujo"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector *7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Jotaro Kujo"].HumanoidRootPart.CFrame.LookVector * 7));
@@ -5150,24 +5186,6 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Chariot Requiem  💀", false, function(Value)
         getgenv().BossingChriotRequiem = Value
-
-        getgenv().FixAttacking = Value
-        
-        task.spawn(function()
-        local Con
-            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(2.15);
-                if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
-                        getgenv().Press = function(v) -- bruh 2
-                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                        end
-                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                    end
-                end
-            end)
-        end)
 
         while getgenv().BossingChriotRequiem == true do wait(0.15)
             pcall(function()
@@ -5192,24 +5210,6 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Izuku Midoriya  💀", false, function(Value)
         getgenv().BossingMidoriya = Value
 
-        getgenv().FixAttacking = Value
-        
-        task.spawn(function()
-        local Con
-            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(2.15);
-                if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
-                        getgenv().Press = function(v) -- bruh 2
-                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                        end
-                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                    end
-                end
-            end)
-        end)
-
         while getgenv().BossingMidoriya == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Deku") and workspace.Living:FindFirstChild("Deku"):FindFirstChild("HumanoidRootPart") then
@@ -5231,25 +5231,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Toji Fushiguro  💀", false, function(Value)
         getgenv().BossingToji = Value
 
-        getgenv().FixAttacking = Value
-        
-        task.spawn(function()
-        local Con
-            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(2.15);
-                if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
-                        getgenv().Press = function(v) -- bruh 2
-                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                        end
-                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                    end
-                end
-            end)
-        end)
-
-        while getgenv().BossingToji == true do wait(0.015)
+        while getgenv().BossingToji == true do wait(0.15)
             pcall(function()
                 if workspace.Living:FindFirstChild("Toji") and workspace.Living:FindFirstChild("Toji"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7, game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7));
@@ -5270,24 +5252,6 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio Brando  💀", false, function(Value)
         getgenv().BossingDio = Value
 
-        getgenv().FixAttacking = Value
-        
-        task.spawn(function()
-        local Con
-            Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-                wait(2.15);
-                if getgenv().FixAttacking == true then
-                    while getgenv().BossingJotaroKuzo == true do wait(0.015)
-                        getgenv().Press = function(v) -- bruh 2
-                            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-                        end
-                        Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                    end
-                end
-            end)
-        end)
-
         while getgenv().BossingDio == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Dio") and workspace.Living:FindFirstChild("Dio"):FindFirstChild("HumanoidRootPart") then
@@ -5297,7 +5261,6 @@ if game.PlaceId == Supported.Sakura_Stand then
                             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                         end
                         Press("E");Press("T");Press("V");Press("G");Press("Y");Press("H");Press("R")
-                        game:GetService("VirtualUser"):ClickButton1(Vector2.new());
                     end)
                 else
                     Notif:Notification("Flame's Hub 🔥", "Dio not found", "GothamSemibold", "Gotham", 3);
