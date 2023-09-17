@@ -4284,7 +4284,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Legit Snatch Items (Be Near Item)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Snatch Items (Be Near Item)", false, function(Value)
         getgenv().SnatchingWithUltraInstinct = Value
 
         pcall(function()
