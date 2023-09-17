@@ -4306,6 +4306,31 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("One For All's Grace  💡", false, function(Value)
+        getgenv().StoringItemlOL2 = Value
+
+        local ItemSlots = {
+            "Slot1",
+            "Slot2",
+            "Slot3",
+            "Slot4",
+            "Slot5",
+            "Slot6"
+        }
+        
+        while getgenv().StoringItemlOL2 == true do wait(0.35)
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("One For All's Grace"));wait(1.15);
+                for i,v in ipairs(ItemSlots) do
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ItemStorage.Outer.Inner.Inner[v].Text.Text == "None" then
+                        local args = {[1] = tonumber(v:sub(5))};
+                        game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
+                    end
+                end
+            end)
+        end
+    end);
+
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Inverted Spear Of Heaven  😇", false, function(Value)
         getgenv().StoringItemlOL2 = Value
 
