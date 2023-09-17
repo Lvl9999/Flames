@@ -4094,7 +4094,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  🧑🏿‍🌾");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   🧺   (Any Item)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   💤   (Any Item)", false, function(Value)
         getgenv().FarmingRightHere = Value
         getgenv().Now = Value
         getgenv().GoingOnIT = Value
