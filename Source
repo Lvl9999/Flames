@@ -4136,7 +4136,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                 -- wait(0.55);
                 while getgenv().GoingOnIT == true do wait(0.15)
                     pcall(function()
-                        if #game:GetService("Workspace").Item2:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List, v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end
+                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
                     end)
                 end
             end
@@ -4249,28 +4249,38 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
---[[ Broken
-
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item) ", false, function(Value)
-        getgenv().AnyItemDrop = Value
-        while getgenv().AnyItemDrop == true do wait(0.35);
+        getgenv().StealingHaAHaHAHaAHA = Value
+        getgenv().PickingWithUltraInstinct = Value
+
+        task.spawn(function()
             pcall(function()
-                local ItemTypes = {"Split Soul Katana","Inverted Spear Of Heaven","Chain of A Thousand Miles","Heavenly Restrictions","Kujo's Hat","Requiem Arrow","Dio's Bone","Dio's Diary","Sukuna's Cursed Finger"};
-                for i,Type in pairs(ItemTypes) do
-                    if game:GetService("Workspace").Item:FindFirstChild(Type) then
-                        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Item:FindFirstChild(Type).Position)
-                        wait(0.15);
-                        fireproximityprompt(game:GetService("Workspace").Item:FindFirstChild(Type):FindFirstChildOfClass("ProximityPrompt"), 0);
+                while getgenv().PickingWithUltraInstinct == true do wait(0.01);
+                    for i,v in pairs(workspace.Item2:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v, 0);
+                        end
+                    end
+    
+                    for i,v in pairs(workspace.Item:GetDescendants()) do
+                        if v:IsA("ProximityPrompt") then
+                            fireproximityprompt(v, 0);
+                        end
                     end
                 end
+            end)
+        end)
+
+        while getgenv().StealingHaAHaHAHaAHA == true do wait(0.35);
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["SukunaFinger"].Position);
+                local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
             end)
         end
     end);
 
---]]
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Store  ⚡");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Store Items  ⚡");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Sukuna's Cursed Finger  ☝️", false, function(Value)
         getgenv().StoringItemlOL = Value
 
