@@ -116,19 +116,25 @@ local Supported = {
     Stands_Awakening = 5780309044, -- Stands Awakening (Main)
 }
 
---// Unsupported Game Result \\--
+--// Check Supported Game Result \\--
 if game.PlaceId ~= Supported.Project_Menacing and game.PlaceId ~= Supported.Soul_Cultivation and game.PlaceId ~= Supported.Chainsaw_ManDH and game.PlaceId ~= Supported.SPTS_Endless and game.PlaceId ~= Supported.Chainsaw_ManXPVP and game.PlaceId ~= Supported.Chainsaw_ManXGrind and game.PlaceId ~= Supported.Heaven_Stand and game.PlaceId ~= Supported.Heaven_StandTestingPlace and game.PlaceId ~= Supported.Heaven_StandFakeGame and game.PlaceId ~= Supported.Stand_Upright_Rebooted and game.PlaceId ~= Supported.AUT_OldUniverse and game.PlaceId ~= Supported.Sakura_Stand and game.PlaceId ~= Supported.Ragdoll_Engine and game.PlaceId ~= Supported.Stardust_Reborn  and  game.PlaceId ~= Supported.A_Universal_Time and game.PlaceId ~= Supported.Murim_Cultivation and game.PlaceId ~= Supported.Stands_Awakening then
-    Notif:Notification("Flame's Hub 🔥", "Game not Supported  ❌", "GothamSemibold", "Gotham", 2.5);
+    Notif:Notification("Flame's Hub 🔥", "Game not Supported   ❌", "GothamSemibold", "Gotham", 0.5);
     return
 end
+
+--// Check Supported Exploit Result \\--
+task.spawn(function()
+    if firetouchinterest and fireproximityprompt and fireclickdetector then
+        Notif:Notification("Flame's Hub 🔥", "Supported Exploit  ✅", "GothamSemibold", "Gotham", 1.5);
+    else
+        Notif:Notification("Flame's Hub 🔥", "Unsupported Exploit  ❌", "GothamSemibold", "Gotham", 3.5);
+        game:Shutdown();
+    end
+end)
 
 local MainUI = UILibrary.Load("Flame's Hub  🔥");
 local FirstPage = MainUI.AddPage("Home");
 local ScriptX = MainUI.AddPage("Scripts");
-
-task.spawn(function()
-    Notif:Notification("Flame's Hub 🔥", "Loaded Successfully  ✅", "GothamSemibold", "Gotham", 2.5);
-end)
 
 local FirstButton = FirstPage.AddButton("Discord: Flames 🔥  | Scripter", function()
 	if setclipboard then
