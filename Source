@@ -4744,10 +4744,8 @@ if game.PlaceId == Supported.Sakura_Stand then
                         end
                     end)
                 end
-    
-                if Value == 0 then
-                    Notif:Notification("Flame's Hub 🔥", "Bruh, Really?", "GothamSemibold", "Gotham", 2.5);
-                elseif Value == 1 then
+                
+                if Value == 1 then
                     Notif:Notification("Flame's Hub 🔥", "1 for the count!", "GothamSemibold", "Gotham", 2.5);
                 elseif Value == 2 then
                     Notif:Notification("Flame's Hub 🔥", "2 for the count!", "GothamSemibold", "Gotham", 2.5);
