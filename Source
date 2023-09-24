@@ -5354,7 +5354,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         while getgenv().BossingToji == true do wait(0.015)
             pcall(function()
                 if workspace.Living:FindFirstChild("Toji") and workspace.Living:FindFirstChild("Toji"):FindFirstChild("HumanoidRootPart") then
-                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 9) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 9, game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 9));
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7.5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7.5, game:GetService("Workspace").Living["Toji"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Toji"].HumanoidRootPart.CFrame.LookVector * 7.5));
                     task.spawn(function()
                         pcall(function()
                             if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then wait(0.15);
