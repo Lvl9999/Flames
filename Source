@@ -4482,7 +4482,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Selling  💸");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Any Item  💰", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Sell   💰  (Any Item)", false, function(Value)
         getgenv().EverythingLoL = Value
         while getgenv().EverythingLoL == true do wait(0.015)
             pcall(function()
