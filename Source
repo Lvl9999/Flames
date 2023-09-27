@@ -4099,76 +4099,67 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  🧑🏿‍🌾");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   💤   (Any Item)", false, function(Value)
-        getgenv().FarmingRightHere = Value
-        getgenv().Now = Value
-        getgenv().GoingOnIT = Value
-        
-        getgenv().Press = function(v)
-            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  📦");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Methods", {
+        "Item Farming + Refresh",
+        "Item Farming + Token Farming + Refresh",
+        "--------------",
+    }, function(Value)
+        if Value == "Item Farming + Token Farming + Refresh" then
+            getgenv().BestMethod = true
+
+            getgenv().SecondMethod = false
+        elseif Value == "Item Farming + Refresh" then
+            getgenv().SecondMethod = true
+
+            getgenv().BestMethod = false
+        end
+    end)
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   💤", false, function(Value)
+        getgenv().Activated = Value
+        getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Bandit","Thug","Spider Curse"};
+        getgenv().SakuraItemFarming = Value
+
+        if getgenv().BestMethod == true then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/TokenFarmingSakuraStand"))();
         end
 
-        getgenv().Teleport = function(x, y, z)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, y, z);
-        end
+        if getgenv().SecondMethod == true then
+            task.spawn(function()
+                while getgenv().SakuraItemFarming == true do
+                    pcall(function()
+                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
+                    end)
+                    wait(0.15);
+                end
+            end)
 
-        if getgenv().FarmingRightHere == true then
-            Teleport(9e9,9e9,9e9);
-        else
-            -- Press("P");
-        end
-        
-        task.spawn(function()
-            while getgenv().FarmingRightHere == true do wait(0.01)
-                pcall(function()
+            task.spawn(function()
+                while getgenv().SakuraItemFarming == true do
                     for i,v in pairs(workspace.Item:GetDescendants()) do
                         if v:IsA("ProximityPrompt") then
                             fireproximityprompt(v, 0);
                         end
                     end
-
+        
                     for i,v in pairs(workspace.Item2:GetDescendants()) do
                         if v:IsA("ProximityPrompt") then
                             fireproximityprompt(v, 0);
                         end
                     end
-                end)
-            end
-        end)
-
-        local Con
-        Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-            if getgenv().FarmingRightHere == true then
-                getgenv().GoingOnIT = false
-                wait(0.45);
-                -- wait(0.55)
-                getgenv().GoingOnIT = true
-                --if getgenv().Now == true then wait(2.25);Press("P");
-                --end
-                -- wait(0.55);
-                while getgenv().GoingOnIT == true do wait(0.15)
-                    pcall(function()
-                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end 
-                        -- local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
-                    end)
+                    wait(0.015);
                 end
-            end
-        end)
-    end);
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Refresh  ⚡   (15s)", false, function(Value)
-        getgenv().Refreshss = Value
-
-        getgenv().Teleport = function(x, y, z)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, y, z);
-        end
-
-        while getgenv().Refreshss == true do
-            pcall(function()
-                Teleport(9e9,9e9,9e9);
             end)
-            wait(15);
+            
+            task.spawn(function()
+                while getgenv().SakuraItemFarming == true do
+                    pcall(function()
+                        Teleport(9e9,9e9,9e9);
+                    end)
+                    wait(15);
+                end
+            end)
         end
     end);
 
