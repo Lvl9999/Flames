@@ -3977,7 +3977,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy + Auto Sell  🍎", false, function(Value)
         getgenv().Rokia = Value
 
-        while getgenv().Rokia == true do wait(0.10)
+        while getgenv().Rokia == true do wait(0.015)
             pcall(function()
                 local Selling = {"Arrow","Barrel","Rokakaka","Stop Sign","Mysterious Camera" ,"Haunted Sword","Spin Manual","Hamon Manual","Stone Mask","Bomu Bomu Devil Fruit","Mochi Mochi Devil Fruit","Bari Bari Devil Fruit"}
                 for i,v in ipairs(Selling) do
