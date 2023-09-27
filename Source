@@ -5152,7 +5152,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end   
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Izuku Midoriya  💀 [1]", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Izuku Midoriya  💀", false, function(Value)
         getgenv().BossingMidoriya = Value
         getgenv().AttackingLol = Value
 
@@ -5164,33 +5164,6 @@ if game.PlaceId == Supported.Sakura_Stand then
             pcall(function()
                 if workspace.Living:FindFirstChild("Deku") and workspace.Living:FindFirstChild("Deku"):FindFirstChild("HumanoidRootPart") then
                     game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector *7.5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * 7.5, game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * 7.5));
-                    task.spawn(function()
-                        pcall(function()
-                            if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then wait(0.15);
-                                Press("H");Press("R");Press("T");Press("G");Press("Y");Press("E");
-                                wait(0.15);
-                                game:GetService("VirtualUser"):ClickButton1(Vector2.new());
-                            end
-                        end)
-                    end)
-                else
-                    Notif:Notification("Flame's Hub 🔥", "Deku not found", "GothamSemibold", "Gotham", 3);
-                end
-            end)
-        end     
-    end);
-
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Izuku Midoriya  💀 [2]", false, function(Value)
-        getgenv().BossingMidoriya = Value
-
-        getgenv().Press = function(v) -- bruh 2
-            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
-        end
-
-        while getgenv().BossingMidoriya == true do wait(0.015)
-            pcall(function()
-                if workspace.Living:FindFirstChild("Deku") and workspace.Living:FindFirstChild("Deku"):FindFirstChild("HumanoidRootPart") then
-                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * -8.5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * -8.5, game:GetService("Workspace").Living["Deku"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Deku"].HumanoidRootPart.CFrame.LookVector * -8.5));
                     task.spawn(function()
                         pcall(function()
                             if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then wait(0.15);
