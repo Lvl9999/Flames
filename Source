@@ -4043,7 +4043,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Level Farming  📈");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Level Farming  📈");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Buy + Auto Sell  🍎", false, function(Value)
         getgenv().Rokia = Value
 
@@ -4090,7 +4090,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item / Token Farming  😴");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item / Token Farming  😴");
     local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Autofarm Methods", {
         "Item Farming",
         "Item Farming + Token Farming",
@@ -4245,7 +4245,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Public Rares Sniper  💎");
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Public Rares Sniper  💎");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item)", false, function(Value)
         getgenv().StealingHaAHaHAHaAHA = Value
         getgenv().PickingWithUltraInstinct = Value
