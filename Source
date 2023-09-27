@@ -5024,7 +5024,9 @@ if game.PlaceId == Supported.Sakura_Stand then
         
         while getgenv().Masochist == true do wait(0.015)
             pcall(function()
-                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5, game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Attacking Dummy"].HumanoidRootPart.CFrame.LookVector * -5));            
+                game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Counter Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Counter Dummy"].HumanoidRootPart.CFrame.LookVector * -5); game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Counter Dummy"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Counter Dummy"].HumanoidRootPart.CFrame.LookVector * -5, game:GetService("Workspace").Living["Counter Dummy"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Counter Dummy"].HumanoidRootPart.CFrame.LookVector * -5));            
+                Press("H");Press("R");Press("T");Press("G");Press("Y");Press("E");
+                game:GetService("VirtualUser"):ClickButton1(Vector2.new());
             end)
         end          
     end);
