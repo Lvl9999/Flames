@@ -4091,23 +4091,23 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Item Farming  📦");
-    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Methods", {
-        "Item Farming + Refresh",
-        "Item Farming + Token Farming + Refresh",
+    local SecondAndHalfLabel = SecondAndHalfPage.AddDropdown("Autofarm Types", {
+        "Item Farming",
+        "Item Farming + Token Farming",
         "--------------",
     }, function(Value)
-        if Value == "Item Farming + Token Farming + Refresh" then
+        if Value == "Item Farming + Token Farming" then
             getgenv().BestMethod = true
 
             getgenv().SecondMethod = false
-        elseif Value == "Item Farming + Refresh" then
+        elseif Value == "Item Farming" then
             getgenv().SecondMethod = true
 
             getgenv().BestMethod = false
         end
     end)
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   💤", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   💤  (Any Item)", false, function(Value)
         getgenv().Activated = Value
         getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Bandit","Thug","Spider Curse"};
         getgenv().SakuraItemFarming = Value
