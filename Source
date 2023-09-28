@@ -4166,6 +4166,20 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
+    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Selling  💸");
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Sell   💰  (Any Item)", false, function(Value)
+        getgenv().EverythingLoL = Value
+        while getgenv().EverythingLoL == true do wait(0.015)
+            pcall(function()
+                local Selling = {"Arrow","Barrel","Rokakaka","Stop Sign","Mysterious Camera" ,"Haunted Sword","Spin Manual","Hamon Manual","Stone Mask","Bomu Bomu Devil Fruit","Mochi Mochi Devil Fruit","Bari Bari Devil Fruit"}
+                for i,v in ipairs(Selling) do
+                    local args = {[1] = v}
+                    game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("SellItem"):FireServer(unpack(args))
+                end    
+            end)
+        end
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Public Rares Sniper  💎");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Stealing (Any Item)", false, function(Value)
         getgenv().StealingHaAHaHAHaAHA = Value
@@ -4468,20 +4482,6 @@ if game.PlaceId == Supported.Sakura_Stand then
                         game:GetService("ReplicatedStorage"):WaitForChild("ItemStorageRemote"):WaitForChild("UseItemStorage"):FireServer(unpack(args));
                     end
                 end
-            end)
-        end
-    end);
-
-    local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Item Selling  💸");
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Sell   💰  (Any Item)", false, function(Value)
-        getgenv().EverythingLoL = Value
-        while getgenv().EverythingLoL == true do wait(0.015)
-            pcall(function()
-                local Selling = {"Arrow","Barrel","Rokakaka","Stop Sign","Mysterious Camera" ,"Haunted Sword","Spin Manual","Hamon Manual","Stone Mask","Bomu Bomu Devil Fruit","Mochi Mochi Devil Fruit","Bari Bari Devil Fruit"}
-                for i,v in ipairs(Selling) do
-                    local args = {[1] = v}
-                    game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("SellItem"):FireServer(unpack(args))
-                end    
             end)
         end
     end);
