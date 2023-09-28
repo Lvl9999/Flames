@@ -53,14 +53,18 @@ loadstring(game:HttpGet'https://raw.githubusercontent.com/ao-0/miami-nights/main
 -- // LoL
 -- if not isfile("Flame's_File.txt") then writefile("Flame's_File.txt", "Seen") end
 
--- // JumpPower Bypass \\ --
+-- // Walkspeed + JumpPower Bypass \\ --
 task.spawn(function()
     if game.PlaceId ~= 9821272782 then
         local mt = getrawmetatable(game)
         local oldindex = mt.__index
         setreadonly(mt, false)
         mt.__index = newcclosure(function(self, method)
-    
+        
+        if method == 'WalkSpeed' then
+            return 16
+        end
+
         if method == 'JumpPower' then
           return 50
         end
@@ -180,12 +184,15 @@ local ScriptXSlider = ScriptX.AddSlider("Gravity  🌎", {Min = 0, Max = 196.2, 
 end)
 
 getgenv().Saves = {
+    WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed,
     JumpHeight = game.Players.LocalPlayer.Character.Humanoid.JumpHeight,
     JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower,
 }
 
-local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 5, Max = 100, Def = 50}, function(Value)
-    getgenv().Speed = tonumber(Value)
+local ScriptXSlider = ScriptX.AddSlider("WalkSpeed 🏃‍♂️", {Min = 16, Max = 500, Def = 16}, function(Value)
+    getgenv().WalkSpeedValue = Value
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
 end)
 
 local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500, Def = 50}, function(Value)
@@ -195,41 +202,25 @@ local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500,
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("Enable/Disable | Walkspeed", false, function(Value)
-    -- Skidded from inf yield :3
-    getgenv().TpWalking = Value
-    getgenv().RestartSpeed = Value
-    
-    local TeleportWalking = function()
-        task.spawn(function()
-            pcall(function()
-                local speaker = game:GetService("Players").LocalPlayer
-                local chr = speaker.Character
-                local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-                local hb = game:GetService("RunService").Heartbeat
-    
-                while getgenv().TpWalking == true and chr and hum and hum.Parent do
-                    local delta = hb:Wait()
-                    if hum.MoveDirection.Magnitude > 0 then
-                        chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().Speed) * delta * 10)
-                    else
-                        chr:TranslateBy(hum.MoveDirection * delta * 10)
-                    end
-                end
-            end)
+local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower", false, function(Value)
+    getgenv().LoopingPowers = Value
+
+    if not getgenv().LoopingPowers == true then
+        pcall(function()
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().Saves.WalkSpeed
+            game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().Saves.JumpHeight
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().Saves.JumpPower
         end)
     end
-    
-    local Con
-    Con = game.Players.LocalPlayer.CharacterAdded:Connect(function()
-        if getgenv().RestartSpeed == true then
-            wait(2.55)
-            getgenv().Speed = 5 -- By default
-            TeleportWalking();
-        end
-    end)
-    
-    TeleportWalking();
+
+    while getgenv().LoopingPowers == true do
+        pcall(function()
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue        
+            game.Players.LocalPlayer.Character.Humanoid.JumpHeight = getgenv().JumpHeightValue
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
+        end)
+        wait(0.0001);
+    end
 end)
 
 local ScriptXToggle = ScriptX.AddToggle("Noclip   🧱", false, function(Value)
