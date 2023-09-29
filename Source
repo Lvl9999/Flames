@@ -4031,7 +4031,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   💤  (Any Item)", false, function(Value)
         getgenv().Activated = Value
         getgenv().SakuraItemFarming = Value
-        getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Bandit","Thug","Spider Curse"};
+        getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Bandit","Thug","Jotaro Kujo","Spider Curse"};
 
         if getgenv().BestMethod == true then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/TokenFarmingSakuraStand"))();
