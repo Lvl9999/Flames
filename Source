@@ -4049,77 +4049,74 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming Items  🎃  (Any Items)", false, function(Value)
-        getgenv().SakuraItemFarming = Value
+        getgenv().OkFarmingRn = Value
 
-        if getgenv().Activated == true then
-            task.spawn(function()
-                while getgenv().Activated == true do
-                    if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Bandit") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Thug") or workspace.Living:FindFirstChild("Spider Curse") then else
-                        pcall(function()
-                            Teleport(9e9,9e9,9e9);
-                        end)
-                    end
-                    wait(15);
-                end
-            end)
-            
-            task.spawn(function()
-                while getgenv().Activated == true do
-                    if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Bandit") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Thug") or workspace.Living:FindFirstChild("Spider Curse") then else
-                        pcall(function()
-                            if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
-                            for i,v in pairs(workspace.Item:GetDescendants()) do
-                                if v:IsA("ProximityPrompt") then
-                                    fireproximityprompt(v, 0);
-                                end
-                            end
-            
-                            for i,v in pairs(workspace.Item2:GetDescendants()) do
-                                if v:IsA("ProximityPrompt") then
-                                    fireproximityprompt(v, 0);
-                                end
-                            end
-                        end)
-                    end
-                    wait(0.15);
-                end
-            end)
-        else
-            task.spawn(function()
-                while getgenv().SakuraItemFarming == true do
+        task.spawn(function()
+            while getgenv().OkFarmingRn == true do
+                if not getgenv().Activated then
                     pcall(function()
                         if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
-                    end)
-                    wait(0.15);
-                end
-            end)
-    
-            task.spawn(function()
-                while getgenv().SakuraItemFarming == true do
-                    for i,v in pairs(workspace.Item:GetDescendants()) do
-                        if v:IsA("ProximityPrompt") then
-                            fireproximityprompt(v, 0);
+                        for i,v in pairs(workspace.Item:GetDescendants()) do
+                            if v:IsA("ProximityPrompt") then
+                                fireproximityprompt(v, 0);
+                            end
                         end
-                    end
         
-                    for i,v in pairs(workspace.Item2:GetDescendants()) do
-                        if v:IsA("ProximityPrompt") then
-                            fireproximityprompt(v, 0);
+                        for i,v in pairs(workspace.Item2:GetDescendants()) do
+                            if v:IsA("ProximityPrompt") then
+                                fireproximityprompt(v, 0);
+                            end
                         end
-                    end
-                    wait(0.015);
+                    end)
                 end
-            end)
-            
-            task.spawn(function()
-                while getgenv().SakuraItemFarming == true do
+                wait(0.15);
+            end
+        end)
+
+
+        task.spawn(function()
+            while getgenv().OkFarmingRn == true do
+                if not getgenv().Activated then
                     pcall(function()
                         Teleport(9e9,9e9,9e9);
                     end)
-                    wait(15);
                 end
-            end)
-        end
+                wait(15);
+            end
+        end)
+
+        task.spawn(function()
+            while getgenv().Activated == true do
+                if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Bandit") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Thug") or workspace.Living:FindFirstChild("Spider Curse") then else
+                    pcall(function()
+                        Teleport(9e9,9e9,9e9);
+                    end)
+                end
+                wait(15);
+            end
+        end)
+        
+        task.spawn(function()
+            while getgenv().Activated == true do
+                if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Bandit") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Thug") or workspace.Living:FindFirstChild("Spider Curse") then else
+                    pcall(function()
+                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
+                        for i,v in pairs(workspace.Item:GetDescendants()) do
+                            if v:IsA("ProximityPrompt") then
+                                fireproximityprompt(v, 0);
+                            end
+                        end
+        
+                        for i,v in pairs(workspace.Item2:GetDescendants()) do
+                            if v:IsA("ProximityPrompt") then
+                                fireproximityprompt(v, 0);
+                            end
+                        end
+                    end)
+                end
+                wait(0.15);
+            end
+        end)
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Titles   🎨");
@@ -4127,7 +4124,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         getgenv().AutoIntelligent = Value
 
         if getgenv().AutoWorth == true or getgenv().AutoWealth == true then
-                Notif:Notification("Flame's Hub 🔥", "One title at once", "GothamSemibold", "Gotham", 2.5);
+            Notif:Notification("Flame's Hub 🔥", "One title at once", "GothamSemibold", "Gotham", 2.5);
             return
         end
 
