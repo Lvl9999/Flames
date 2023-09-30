@@ -4039,12 +4039,6 @@ if game.PlaceId == Supported.Sakura_Stand then
                         local v = game:GetService("Workspace").Living:FindFirstChild(x);if v and v.Name ~= game.Players.LocalPlayer.Name and v:FindFirstChild("Head") then
                             if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
                                 workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).HumanoidRootPart.CFrame = CFrame.new(v.HumanoidRootPart.Position - v.HumanoidRootPart.CFrame.lookVector * 6.5, v.HumanoidRootPart.Position);Attacking();
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["BoxDrop1"].Position);
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["BoxDrop2"].Position);
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["BoxDrop3"].Position);
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["BoxDrop4"].Position);
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["BoxDrop5"].Position);
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["BoxDrop6"].Position);
                                 local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
                                 for i,v in pairs(workspace.Item:GetDescendants()) do
                                     if v:IsA("ProximityPrompt") then
