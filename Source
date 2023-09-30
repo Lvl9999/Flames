@@ -4030,11 +4030,72 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming   💤  (Any Item)", false, function(Value)
         getgenv().Activated = Value
-        getgenv().SakuraItemFarming = Value
         getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Bandit","Thug","Jotaro Kujo","Spider Curse"};
 
+        getgenv().SakuraItemFarming = Value
+
         if getgenv().BestMethod == true then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Lvl9999/Throwables/main/TokenFarmingSakuraStand"))();
+            getgenv().Press = function(v)
+                return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+            end
+            
+            getgenv().Teleport = function(x, y, z)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(x, y, z);
+            end
+            
+            local Attacking = function()
+                if game:GetService("Players").LocalPlayer.Data.StandName.Value == "Standless" then
+                    Press("H");Press("R");Press("T");Press("Y");Press("E");game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                else
+                    Press("H");Press("R");Press("T");Press("G");Press("Y");Press("E");game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                end
+            end
+            
+            task.spawn(function()
+                while getgenv().Activated == true do
+                    for i,x in pairs(getgenv().ListOfNpcs) do
+                        local v = game:GetService("Workspace").Living:FindFirstChild(x);if v and v.Name ~= game.Players.LocalPlayer.Name and v:FindFirstChild("Head") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                            if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                                workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).HumanoidRootPart.CFrame = CFrame.new(v.HumanoidRootPart.Position - v.HumanoidRootPart.CFrame.lookVector * 6.5, v.HumanoidRootPart.Position);Attacking();
+                            end
+                        end
+                    end
+                    wait(0.015);
+                end
+            end)
+            
+            task.spawn(function()
+                while getgenv().Activated == true do
+                    if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Bandit") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Thug") or workspace.Living:FindFirstChild("Spider Curse") then else
+                        pcall(function()
+                            Teleport(9e9,9e9,9e9);
+                        end)
+                    end
+                    wait(15);
+                end
+            end)
+            
+            task.spawn(function()
+                while getgenv().Activated == true do
+                    if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Bandit") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Thug") or workspace.Living:FindFirstChild("Spider Curse") then else
+                        pcall(function()
+                            if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
+                            for i,v in pairs(workspace.Item:GetDescendants()) do
+                                if v:IsA("ProximityPrompt") then
+                                    fireproximityprompt(v, 0);
+                                end
+                            end
+            
+                            for i,v in pairs(workspace.Item2:GetDescendants()) do
+                                if v:IsA("ProximityPrompt") then
+                                    fireproximityprompt(v, 0);
+                                end
+                            end
+                        end)
+                    end
+                    wait(15);
+                end
+            end)
         end
 
         if getgenv().SecondMethod == true then
