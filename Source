@@ -4093,7 +4093,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                             end
                         end)
                     end
-                    wait(15);
+                    wait(0.15);
                 end
             end)
         end
