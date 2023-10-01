@@ -4012,6 +4012,10 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Token Farming | Auto Item Farming  🔥");
+    local SecondAndHalfSlider = SecondAndHalfPage.AddSlider("Distance From Mob (Choose)", {Min = 0.5, Max = 15, Def = 1}, function(Value)
+        getgenv().Disz = Value
+    end)
+
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming  Tokens  ⭕  (Any Mobs)", false, function(Value)
         getgenv().Activated = Value
         getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Bandit","Thug","Jotaro Kujo","Spider Curse"};
@@ -4033,34 +4037,21 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
         
         task.spawn(function()
-            while getgenv().Activated == true do
-                pcall(function()
-                    for i,x in pairs(getgenv().ListOfNpcs) do
-                        local v = game:GetService("Workspace").Living:FindFirstChild(x);if v and v.Name ~= game.Players.LocalPlayer.Name and v:FindFirstChild("Head") then
+                while getgenv().Activated == true do
+                    for i,x in pairs(getgenv().ListOfNpcs) do local v = game:GetService("Workspace").Living:FindFirstChild(x);if v and v.Name ~= game.Players.LocalPlayer.Name and v:FindFirstChild("Head") then
+                        pcall(function()
                             if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
-                                workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).HumanoidRootPart.CFrame = CFrame.new(v.HumanoidRootPart.Position - v.HumanoidRootPart.CFrame.lookVector * 6.5, v.HumanoidRootPart.Position);Attacking();
-                                local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
-                                for i,v in pairs(workspace.Item:GetDescendants()) do
-                                    if v:IsA("ProximityPrompt") then
-                                        fireproximityprompt(v, 0);
-                                    end
-                                end
-                
-                                for i,v in pairs(workspace.Item2:GetDescendants()) do
-                                    if v:IsA("ProximityPrompt") then
-                                        fireproximityprompt(v, 0);
-                                    end
-                                end
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.HumanoidRootPart.Position - v.HumanoidRootPart.CFrame.lookVector * getgenv().Disz, v.HumanoidRootPart.Position);Attacking();
                             end
-                        end
+                        end)
                     end
-                end)
-                wait(0.015);
+                    task.wait(0.015);
+                end
             end
         end)
     end);
 
-    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming Items  🎃  (Any Items)", false, function(Value)
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming Items  🚀  (Any Items)", false, function(Value)
         getgenv().OkFarmingRn = Value
 
         task.spawn(function()
@@ -4084,7 +4075,6 @@ if game.PlaceId == Supported.Sakura_Stand then
                 wait(0.15);
             end
         end)
-
 
         task.spawn(function()
             while getgenv().OkFarmingRn == true do
