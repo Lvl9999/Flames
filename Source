@@ -4018,7 +4018,7 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming  Tokens  ⭕  (Any Mobs)", false, function(Value)
         getgenv().Activated = Value
-        getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Spider Curse","Paper Curse","Paper Curse Quarter","Jotaro Kujo"};
+        getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Spider Curse","Paper Curse","Paper Curse Quarter","Paper Curse Half","Jotaro Kujo"};
 
         getgenv().Press = function(v)
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
@@ -4100,7 +4100,7 @@ if game.PlaceId == Supported.Sakura_Stand then
 
         task.spawn(function()
             while getgenv().Activated == true do
-                if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Paper Curse") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Paper Curse Quarter") or workspace.Living:FindFirstChild("Spider Curse") then else
+                if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Paper Curse") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Paper Curse Quarter") or workspace.Living:FindFirstChild("Paper Curse Half") or workspace.Living:FindFirstChild("Spider Curse") then else
                     pcall(function()
                         Teleport(9e9,9e9,9e9);
                     end)
