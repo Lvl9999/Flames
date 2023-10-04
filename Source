@@ -5034,8 +5034,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         task.spawn(function()
             while getgenv().BlockingLol == true do
                 pcall(function()
-                    if game:GetService("Players").LocalPlayer.PlayerGui.Stats.BG.BlockN.Text == "30 / 30" then
-
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Stats.BG.BlockBG.BlockBar.BlockN.Text == "30" then
                         getgenv().Press = function(v) -- bruh 2
                             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
                         end 
