@@ -202,7 +202,7 @@ local ScriptXSlider = ScriptX.AddSlider("JumpPower  🦘", {Min = 50, Max = 500,
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = getgenv().JumpPowerValue
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower", false, function(Value)
+local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower  ♾️", false, function(Value)
     getgenv().LoopingPowers = Value
 
     if not getgenv().LoopingPowers == true then
@@ -222,6 +222,33 @@ local ScriptXToggle = ScriptX.AddToggle("Loop Walkspeed + JumpPower", false, fun
         wait(0.0001);
     end
 end)
+
+local ScriptXToggle = ScriptX.AddToggle("Full Acceleration  👟", false, function(Value)
+    getgenv().MaxSpeed = Value
+
+    if getgenv().MaxSpeed == true then
+        local Force = 5000
+        
+        for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v.ClassName == "Part" then
+                v.CustomPhysicalProperties = PhysicalProperties.new(Force,0.3,0.5);
+            end
+        end
+    else
+        local Force = 10
+
+        for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v.ClassName == "Part" then
+                v.CustomPhysicalProperties = PhysicalProperties.new(Force,0.3,0.5);
+            end
+        end
+    end    
+end)
+
+local ScriptXToggle = ScriptX.AddToggle("Nearest Aimlock  🎯", false, function(Value)
+    getgenv().Aimming = Value
+    game:GetService("RunService").RenderStepped:Connect(function() if not getgenv().Aimming == true then return end local x,b for _,v in ipairs(game:GetService("Players"):GetPlayers()) do if v.Character and v ~= game:GetService("Players").LocalPlayer then if not x or (v.Character.Head.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude < b then x = v b = (v.Character.Head.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude end end end if x and b <= 15 then game:GetService("Workspace").CurrentCamera.CFrame = CFrame.new(game:GetService("Workspace").CurrentCamera.CFrame.p, x.Character.HumanoidRootPart.Position) end end);
+end);
 
 local ScriptXToggle = ScriptX.AddToggle("Noclip   🧱", false, function(Value)
     getgenv().TheyreMagsNotClips = Value
@@ -287,37 +314,8 @@ local ScriptXToggle = ScriptX.AddToggle("Esp   👁️", false, function(Value)
     end)
 end)
 
-local ScriptXToggle = ScriptX.AddToggle("Nearest Aimlock  🎯", false, function(Value)
-    getgenv().Aimming = Value
-    game:GetService("RunService").RenderStepped:Connect(function() if not getgenv().Aimming == true then return end local x,b for _,v in ipairs(game:GetService("Players"):GetPlayers()) do if v.Character and v ~= game:GetService("Players").LocalPlayer then if not x or (v.Character.Head.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude < b then x = v b = (v.Character.Head.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude end end end if x and b <= 15 then game:GetService("Workspace").CurrentCamera.CFrame = CFrame.new(game:GetService("Workspace").CurrentCamera.CFrame.p, x.Character.HumanoidRootPart.Position) end end);
-end);
-
-getgenv().Stored = {}
-
-for i,v in ipairs(game.Players:GetPlayers()) do
-    if v ~= game.Players.LocalPlayer then
-        table.insert(getgenv().Stored, v.Name)
-    end
-end
-
-local ScriptXToggle = ScriptX.AddDropdown("Teleport Player   💁‍♂️", getgenv().Stored, function(Value)
-    for i,v in ipairs(game.Players:GetPlayers()) do
-        if v.Name == Value then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[v.Name].Character.HumanoidRootPart.CFrame
-        end
-    end
-end)
-
-local ScriptXToggle = ScriptX.AddDropdown("Tween Player   💁‍♂️", getgenv().Stored, function(Value)
-    for i,v in ipairs(game.Players:GetPlayers()) do
-        if v.Name == Value then
-            game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"), TweenInfo.new((v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude / 100, Enum.EasingStyle.Linear), {CFrame = CFrame.new(v.Character.HumanoidRootPart.Position)}):Play();
-        end
-    end
-end)
-
 local ScriptXLabel = ScriptX.AddLabel("Quick Scripts  ⚡");
-local ScriptXButton = ScriptX.AddButton("Teleport GUI [Better]", function()
+local ScriptXButton = ScriptX.AddButton("Teleport GUI", function()
     task.spawn(function()
 		Notif:Notification("Flame's Hub 🔥", 'Loading...', "GothamSemibold", "Gotham", 0.5);
 	end);
@@ -4012,14 +4010,18 @@ if game.PlaceId == Supported.Sakura_Stand then
     end);
 
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Token Farming | Auto Item Farming  🔥");
-    local SecondAndHalfSlider = SecondAndHalfPage.AddSlider("Distance From Mob (Choose)", {Min = 0.5, Max = 15, Def = 1}, function(Value)
+    local SecondAndHalfSlider = SecondAndHalfPage.AddSlider("Distance From Mob (Choose)", {Min = 1, Max = 25, Def = 1}, function(Value)
         getgenv().Disz = Value
     end)
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming  Tokens  ⭕  (Any Mobs)", false, function(Value)
         getgenv().Activated = Value
-        getgenv().ListOfNpcs = {"Contorted Curse","Glutton Curse","Mosquito Curse","Spider Curse","Paper Curse","Paper Curse Quarter","Paper Curse Half","Jotaro Kujo"};
 
+        if not getgenv().Disz and not getgenv().HasBeenUsed and getgenv().Activated then
+            Notif:Notification("Flame's Hub 🔥", "Choose distance first...", "GothamSemibold", "Gotham", 2.5);
+            getgenv().HasBeenUsed = true
+        end
+        
         getgenv().Press = function(v)
             return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
         end
@@ -4037,30 +4039,65 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
 
         task.spawn(function()
-            local Target = nil
-            
             while getgenv().Activated == true do
-                if not Target then for i,x in pairs(getgenv().ListOfNpcs) do local v = game:GetService("Workspace").Living:FindFirstChild(x) if v and v.Name ~= game.Players.LocalPlayer.Name and v:FindFirstChild("Head") then
-                            Target = v ;break
-                        end
-                    end
-                end
-                
-                if Target then
-                    pcall(function()
+                pcall(function()
+                    if workspace.Living:FindFirstChild("Contorted Curse") and workspace.Living:FindFirstChild("Contorted Curse"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Contorted Curse"].HumanoidRootPart
+        
                         if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
-                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Target.HumanoidRootPart.Position - Target.HumanoidRootPart.CFrame.lookVector * getgenv().Disz, Target.HumanoidRootPart.Position);Attacking();
-                            if Target.Humanoid.Health <= 0 then Target = nil
-                            end
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
                         end
-                    end)
-                end
-
-                task.wait(0.015)
+                    elseif workspace.Living:FindFirstChild("Glutton Curse") and workspace.Living:FindFirstChild("Glutton Curse"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Glutton Curse"].HumanoidRootPart
+        
+                        if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
+                        end
+                    elseif workspace.Living:FindFirstChild("Mosquito Curse") and workspace.Living:FindFirstChild("Mosquito Curse"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Mosquito Curse"].HumanoidRootPart
+        
+                        if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
+                        end
+                    elseif workspace.Living:FindFirstChild("Spider Curse") and workspace.Living:FindFirstChild("Spider Curse"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Spider Curse"].HumanoidRootPart
+            
+                        if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
+                        end
+                    elseif workspace.Living:FindFirstChild("Paper Curse") and workspace.Living:FindFirstChild("Paper Curse"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Paper Curse"].HumanoidRootPart
+        
+                        if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
+                        end
+                    elseif workspace.Living:FindFirstChild("Paper Curse Half") and workspace.Living:FindFirstChild("Paper Curse Half"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Paper Curse Half"].HumanoidRootPart
+                    
+                        if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
+                        end
+                    elseif workspace.Living:FindFirstChild("Paper Curse Quarter") and workspace.Living:FindFirstChild("Paper Curse Quarter"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Paper Curse Quarter"].HumanoidRootPart
+                    
+                        if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
+                        end
+                    elseif workspace.Living:FindFirstChild("Jotaro Kujo") and workspace.Living:FindFirstChild("Jotaro Kujo"):FindFirstChild("Head") then
+                        local NPC = game.Workspace.Living["Jotaro Kujo"].HumanoidRootPart
+        
+                        if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(NPC.Position - NPC.CFrame.lookVector * getgenv().Disz, NPC.Position);Attacking();
+                        end
+                    else
+                        wait(5.5);
+                    end
+                end)
+                task.wait(0.015);
             end
         end)
     end);
-
+    
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Start Farming Items  🚀  (Any Items)", false, function(Value)
         getgenv().OkFarmingRn = Value
 
@@ -4103,7 +4140,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
 
         task.spawn(function()
-            while getgenv().OkFarmingRn == true and getgenv().Activated == true do
+            while getgenv().Activated == true do
                 if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Paper Curse") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Paper Curse Quarter") or workspace.Living:FindFirstChild("Paper Curse Half") or workspace.Living:FindFirstChild("Spider Curse") then else
                     pcall(function()
                         Teleport(9e9,9e9,9e9);
@@ -4114,7 +4151,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         end)
         
         task.spawn(function()
-            while getgenv().OkFarmingRn == true and getgenv().Activated == true do
+            while getgenv().Activated == true do
                 if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Paper Curse") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Paper Curse Quarter") or workspace.Living:FindFirstChild("Spider Curse") then else
                     pcall(function()
                         if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
