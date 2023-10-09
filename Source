@@ -4055,7 +4055,7 @@ if game.PlaceId == Supported.Sakura_Stand then
                     end
         
                     if not Check then
-                        task.wait(7.5);
+                        task.wait(10.5);
                     end
                 end)
                 task.wait(0.15);
