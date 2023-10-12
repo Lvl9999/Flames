@@ -4119,11 +4119,13 @@ if game.PlaceId == Supported.Sakura_Stand then
             while getgenv().Activated == true do
                 if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Paper Curse") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Paper Curse Quarter") or workspace.Living:FindFirstChild("Spider Curse") then else
                     pcall(function()
-                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
+                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 and v.Name ~= "SukunaFinger" then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1, #List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
                         task.spawn(function()
-                            pcall(function()
-                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["SukunaFinger"].Position);
-                            end)
+                            if game:GetService("Players").LocalPlayer.Data.Mastery.Value == 0 then else
+                                pcall(function()
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Item["SukunaFinger"].Position);
+                                end)
+                            end
                         end)
                         for i,v in pairs(workspace.Item:GetDescendants()) do
                             if v:IsA("ProximityPrompt") then
