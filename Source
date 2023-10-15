@@ -4147,6 +4147,42 @@ if game.PlaceId == Supported.Sakura_Stand then
         end
     end);
 
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto 5 Souls [$7,500]  🟢", false, function(Value)
+        getgenv().BuySoulsWithCash = Value
+
+        while getgenv().BuySoulsWithCash == true do
+            pcall(function()
+                local args = {[1] = "CashExchange"};
+                game:GetService("ReplicatedStorage"):WaitForChild("SoulPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+            end)
+            wait(3);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto 5 Souls [5% Worthiness]  🟡", false, function(Value)
+        getgenv().BuySoulsWithWorth = Value
+
+        while getgenv().BuySoulsWithWorth == true do
+            pcall(function()
+                local args = {[1] = "WorthExchange"};
+                game:GetService("ReplicatedStorage"):WaitForChild("SoulPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+            end)
+            wait(3);
+        end
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto 5 Souls [20 Tokens]  🔴", false, function(Value)
+        getgenv().BuySoulsWithToken = Value
+
+        while getgenv().BuySoulsWithToken == true do
+            pcall(function()
+                local args = {[1] = "TokenExchange"};
+                game:GetService("ReplicatedStorage"):WaitForChild("SoulPurchase"):WaitForChild("Purchase"):FireServer(unpack(args));
+            end)
+            wait(3);
+        end
+    end);
+
     local SecondAndHalfLabel = SecondAndHalfPage.AddLabel("[+] Auto Titles   🎨");
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Auto Intelligent  🧠   (Title)", false, function(Value)
         getgenv().AutoIntelligent = Value
