@@ -4070,8 +4070,32 @@ if game.PlaceId == Supported.Sakura_Stand then
             while getgenv().OkFarmingRn == true do
                 if not getgenv().Activated then
                     pcall(function()
-                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude < 90000 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1,#List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
-                        local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name == "SoulSpawn" and v.CFrame.Position ~= Vector3.new(-291.166412,-64.5565033,1667.29993) then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
+                        local Table1 = {}
+
+                        for i, v in ipairs(workspace.Item:GetChildren()) do
+                            if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude < 90000 then
+                                table.insert(Table1, v);
+                            end
+                        end
+                        
+                        local Table2 = {}
+                        
+                        for i,v in ipairs(workspace.Item2:GetChildren()) do
+                            if v:IsA("Part") and v.Name ~= "SoulSpawn" then
+                                table.insert(Table2,v);
+                            end
+                        end
+                        
+                        local Table3 = {}
+                        
+                        for i,v in ipairs(workspace.Item2:GetChildren()) do
+                            if v:IsA("Part") and v.Name == "SoulSpawn" and v.CFrame.Position ~= Vector3.new(-291.166412, -64.5565033, 1667.29993) then
+                                table.insert(Table3,v);
+                            end
+                        end
+                        
+                        local BigTable = {} for i,v in pairs(Table1) do table.insert(BigTable,v) end for i,v in pairs(Table2) do table.insert(BigTable,v) end for i,v in pairs(Table3) do table.insert(BigTable,v) end for i = #BigTable, 2,-1 do BigTable[i],BigTable[math.random(i)] = BigTable[math.random(i)],BigTable[i] end game:GetService("Players").LocalPlayer.Character:MoveTo(table.remove(BigTable,1).Position);                     
+                        -----------------------------------------------------
                         for i,v in pairs(workspace.Item:GetDescendants()) do
                             if v:IsA("ProximityPrompt") then
                                 fireproximityprompt(v, 0);
@@ -4115,8 +4139,32 @@ if game.PlaceId == Supported.Sakura_Stand then
             while getgenv().Activated == true do
                 if workspace.Living:FindFirstChild("Contorted Curse") or workspace.Living:FindFirstChild("Glutton Curse") or workspace.Living:FindFirstChild("Mosquito Curse") or workspace.Living:FindFirstChild("Paper Curse") or workspace.Living:FindFirstChild("Jotaro Kujo") or workspace.Living:FindFirstChild("Paper Curse Quarter") or workspace.Living:FindFirstChild("Paper Curse Half") or workspace.Living:FindFirstChild("Spider Curse") then else
                     pcall(function()
-                        if #game:GetService("Workspace").Item:GetChildren() > 0 then local List = {} for i,v in ipairs(game:GetService("Workspace").Item:GetChildren()) do if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude < 90000 then table.insert(List,v) end end if #List > 0 then game:GetService("Players").LocalPlayer.Character:MoveTo(List[math.random(1,#List)].Position) end end local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name ~= "SoulSpawn" then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
-                        local Table = {} for i,v in ipairs(workspace.Item2:GetChildren()) do if v:IsA("Part") and v.Name == "SoulSpawn" and v.CFrame.Position ~= Vector3.new(-291.166412,-64.5565033,1667.29993) then table.insert(Table,v) end end if #Table > 0 then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Table[math.random(1,#Table)].CFrame end
+                        local Table1 = {}
+
+                        for i, v in ipairs(workspace.Item:GetChildren()) do
+                            if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude < 90000 then
+                                table.insert(Table1, v);
+                            end
+                        end
+                        
+                        local Table2 = {}
+                        
+                        for i,v in ipairs(workspace.Item2:GetChildren()) do
+                            if v:IsA("Part") and v.Name ~= "SoulSpawn" then
+                                table.insert(Table2,v);
+                            end
+                        end
+                        
+                        local Table3 = {}
+                        
+                        for i,v in ipairs(workspace.Item2:GetChildren()) do
+                            if v:IsA("Part") and v.Name == "SoulSpawn" and v.CFrame.Position ~= Vector3.new(-291.166412, -64.5565033, 1667.29993) then
+                                table.insert(Table3,v);
+                            end
+                        end
+                        
+                        local BigTable = {} for i,v in pairs(Table1) do table.insert(BigTable,v) end for i,v in pairs(Table2) do table.insert(BigTable,v) end for i,v in pairs(Table3) do table.insert(BigTable,v) end for i = #BigTable, 2,-1 do BigTable[i],BigTable[math.random(i)] = BigTable[math.random(i)],BigTable[i] end game:GetService("Players").LocalPlayer.Character:MoveTo(table.remove(BigTable,1).Position);
+                        -----------------------------------------------------
                         for i,v in pairs(workspace.Item:GetDescendants()) do
                             if v:IsA("ProximityPrompt") then
                                 fireproximityprompt(v, 0);
