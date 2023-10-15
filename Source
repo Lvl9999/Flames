@@ -3727,8 +3727,7 @@ if game.PlaceId == Supported.Sakura_Stand then
     local SecondButton = SecondPage.AddButton("Open It", function()
         for i,v in pairs(game:GetService("Workspace").Map.NPCs.Simplrr:GetChildren()) do
             if v:IsA("ClickDetector") then
-                fireclickdetector(v);
-                wait(0.15);
+                fireclickdetector(v);wait(0.15);
                 for i = 1,5 do wait(0.15);
                     local vim = game:GetService'VirtualInputManager'
                     local x = game:GetService("Players").LocalPlayer.PlayerGui.Dialogue.Outer.Inner.TextLabel
@@ -4141,9 +4140,9 @@ if game.PlaceId == Supported.Sakura_Stand then
                     pcall(function()
                         local Table1 = {}
 
-                        for i, v in ipairs(workspace.Item:GetChildren()) do
+                        for i,v in ipairs(workspace.Item:GetChildren()) do
                             if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Y - v.Position.Y < 50 and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude < 90000 then
-                                table.insert(Table1, v);
+                                table.insert(Table1,v);
                             end
                         end
                         
@@ -5329,12 +5328,20 @@ if game.PlaceId == Supported.Sakura_Stand then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-520.662841796875, -31.358125686645508, 1584.3505859375)
     end);
 
+    local BackupEndButton = BackupEndPage.AddButton("Parking Lot  🚗", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-325.8447570800781, -33.014976501464844, 1369.499755859375);
+    end);
+
     local BackupEndButton = BackupEndPage.AddButton("Side Park  ⛲", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-73.15850830078125, -32.01318359375, 1636.9390869140625);
     end);
 
     local BackupEndButton = BackupEndPage.AddButton("Park  🏞️", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-537.5374145507812, -32.051334381103516, 1419.20361328125);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Library  📚", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-50.88117599487305, -116.3696060180664, 344.53594970703125);
     end);
 
     local BackupEndButton = BackupEndPage.AddButton("Ruined City  🌆", function()
@@ -5349,11 +5356,15 @@ if game.PlaceId == Supported.Sakura_Stand then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3932.30126953125, -234.16961669921875, 4539.80810546875);
     end);
 
-    local BackupEndLabel = BackupEndPage.AddLabel("[+] NPC  🌐");
-    local BackupEndButton = BackupEndPage.AddButton("Skin Remover [$5,000]", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55.15070724487305, -32.537261962890625, 1576.3802490234375);
+    local BackupEndButton = BackupEndPage.AddButton("EthrixLame  🔥", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2036.6947021484375, -386.40875244140625, -5355.85888671875);
     end);
 
+    local BackupEndButton = BackupEndPage.AddButton("Tallest Peak  🗻", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2122.210693359375, -113.98542022705078, -4635.59130859375);
+    end);
+
+    local BackupEndLabel = BackupEndPage.AddLabel("[+] Npcs  🤖");
     local BackupEndButton = BackupEndPage.AddButton("Normal Dummies", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.98736572265625, -32.53725814819336, 1775.2222900390625);
     end);
@@ -5376,6 +5387,10 @@ if game.PlaceId == Supported.Sakura_Stand then
 
     local BackupEndButton = BackupEndPage.AddButton("Gojo | Quest", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-581.3973999023438, -32.15133285522461, 1416.25390625);
+    end);
+
+    local BackupEndButton = BackupEndPage.AddButton("Midknight | Souls", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-220.8629913330078, -32.648170471191406, 1720.2164306640625);
     end);
 
     local BackupEndButton = BackupEndPage.AddButton("Hikarishi | Quest", function()
