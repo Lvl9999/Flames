@@ -5082,7 +5082,7 @@ if game.PlaceId == Supported.Sakura_Stand then
         getgenv().Arcading = Value -- wtf?
         while getgenv().Arcading == true do wait(0.15)
             pcall(function()
-                local args = {[1] = false,[2] = true};
+                local args = {[1] = false,[2] = false};
                 game:GetService("ReplicatedStorage"):WaitForChild("GlobalUsedRemotes"):WaitForChild("ArcadePurchase"):FireServer(unpack(args));                         
             end)
         end
@@ -5282,6 +5282,34 @@ if game.PlaceId == Supported.Sakura_Stand then
                 end
             end)
         end 
+    end);
+
+    local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Midknight  💀", false, function(Value)
+        getgenv().BossingMidknight = Value
+        getgenv().AttackingLol = Value
+
+        getgenv().Press = function(v) -- bruh 2
+            return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game);
+        end
+
+        while getgenv().BossingMidknight == true do wait(0.015)
+            pcall(function()
+                if workspace.Living:FindFirstChild("Midknight") and workspace.Living:FindFirstChild("Midknight"):FindFirstChild("HumanoidRootPart") then
+                    game:GetService("Players").LocalPlayer.Character:MoveTo(game:GetService("Workspace").Living["Midknight"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Midknight"].HumanoidRootPart.CFrame.LookVector *7.5) game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(game:GetService("Workspace").Living["Midknight"].HumanoidRootPart.Position + -game:GetService("Workspace").Living["Midknight"].HumanoidRootPart.CFrame.LookVector * 7.5, game:GetService("Workspace").Living["Midknight"].HumanoidRootPart.Position - -game:GetService("Workspace").Living["Midknight"].HumanoidRootPart.CFrame.LookVector * 7.5));
+                    task.spawn(function()
+                        pcall(function()
+                            if game.Players[game.Players.LocalPlayer.Name].Character.Humanoid.Health ~= 0 then wait(0.15);
+                                Press("H");Press("R");Press("T");Press("G");Press("Y");Press("E");
+                                wait(0.15);
+                                game:GetService("VirtualUser"):ClickButton1(Vector2.new());
+                            end
+                        end)
+                    end)
+                else
+                    Notif:Notification("Flame's Hub 🔥", "Midknight not found", "GothamSemibold", "Gotham", 3);
+                end
+            end)
+        end     
     end);
 
     local SecondAndHalfToggle = SecondAndHalfPage.AddToggle("Dio Brando  💀", false, function(Value)
