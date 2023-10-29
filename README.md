@@ -1,4 +1,4 @@
-# Flame's Hub 🔥
+# Flame's Hub 🔥 [DISCONTINUED]
 
 - Script Hub that supports various games with OP features.
 
