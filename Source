@@ -100,7 +100,7 @@ task.spawn(function()
     end
 end)
 
-local MainUI = UILibrary.Load("Flame's Hub  🎃");
+local MainUI = UILibrary.Load("Flame's Hub 🔥 [DISCONTINUED]");
 local FirstPage = MainUI.AddPage("Home");
 local ScriptX = MainUI.AddPage("Scripts");
 
