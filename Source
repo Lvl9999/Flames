@@ -43,7 +43,7 @@ task.spawn(function()
 end)
 
 -- // Credits to ao-0
-shared.LoaderTitle = "Flame's Hub  🎃🎃🎃🎃🎃"
+shared.LoaderTitle = "Flame's Hub 🔥 [DISCONTINUED]"
 shared.LoaderKeyFrames = {
    [1] = {0.5, 100},
    [2] = {0.5, 0.5}
