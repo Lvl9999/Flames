@@ -62,4 +62,4 @@ end)
 - [Twink](https://v3rmillion.net/member.php?action=profile&uid=1078854) | UI Library 👍
 - [insanedude59](https://github.com/insanedude59) | Notification UI 👍
 
-- Stay tuned for updates!
+- This hub will no longer recieve updates... As I am quitting roblox.
