@@ -6634,3 +6634,5 @@ local SettingsButton = Settings.AddButton("Low Server Hop", function()
     
     TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
 end);
+
+-- I quit roblox.
