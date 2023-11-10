@@ -96,7 +96,7 @@ task.spawn(function()
         Notif:Notification("Flame's Hub 🔥", "Supported Exploit  ✅", "GothamSemibold", "Gotham", 1.5);
     else
         Notif:Notification("Flame's Hub 🔥", "Unsupported Exploit  ❌", "GothamSemibold", "Gotham", 3.5);
-        game:Shutdown();
+        -- game:Shutdown();
     end
 end)
 
